@@ -49,9 +49,12 @@ const Index = () => {
     func: (_run: Activity, _value: string) => boolean
   ) => {
     scrollToMap();
+    if(name != 'Year'){
+      setYear(thisYear)
+    }
     setActivity(filterAndSortRuns(activities, item, func, sortDateFunc));
     setRunIndex(-1);
-    setTitle(`${item} ${name} Running Heatmap`);
+    setTitle(`${item} ${name} Heatmap`);
   };
 
   const changeYear = (y: string) => {
@@ -77,7 +80,22 @@ const Index = () => {
   };
 
   const changeType = (type: string) => {
-    changeByItem(type, 'Type', filterTypeRuns, false);
+    changeByItem(type, 'Type', filterTypeRuns);
+  };
+
+  const changeTypeInYear = (year:string, type: string) => {
+    scrollToMap();
+    // type in year, filter year first, then type
+    if(year != 'Total'){
+      setYear(year);
+      setActivity(filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc, type, filterTypeRuns));
+    }
+    else {
+      setYear(thisYear);
+      setActivity(filterAndSortRuns(activities, type, filterTypeRuns, sortDateFunc));
+    }
+    setRunIndex(-1);
+    setTitle(`${year} ${type} Type Heatmap`);
   };
 
 
@@ -112,8 +130,8 @@ const Index = () => {
   useEffect(() => {
     const runsNum = runs.length;
     // maybe change 20 ?
-    const sliceNume = runsNum >= 20 ? runsNum / 20 : 1;
-    let i = sliceNume;
+    const sliceNum = runsNum >= 10 ? runsNum / 10 : 1;
+    let i = sliceNum;
     const id = setInterval(() => {
       if (i >= runsNum) {
         clearInterval(id);
@@ -121,8 +139,8 @@ const Index = () => {
 
       const tempRuns = runs.slice(0, i);
       setGeoData(geoJsonForRuns(tempRuns));
-      i += sliceNume;
-    }, 100);
+      i += sliceNum;
+    }, 10);
     setIntervalId(id);
   }, [runs]);
 
@@ -184,9 +202,10 @@ const Index = () => {
             changeYear={changeYear}
             changeCity={changeCity}
             changeType={changeType}
+            onClickTypeInYear={changeTypeInYear}
           />
         ) : (
-          <YearsStat year={year} onClick={changeYear} />
+          <YearsStat year={year} onClick={changeYear} onClickTypeInYear={changeTypeInYear}/>
         )}
       </div>
       <div className="fl w-100 w-70-l">
