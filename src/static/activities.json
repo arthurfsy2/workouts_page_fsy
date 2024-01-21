@@ -4108,5 +4108,20 @@
 "average_speed": 3.816154403435274,
 "source": "Garmin Connect",
 "streak": 1
+},
+{
+"run_id": 1705808497000,
+"name": "\u6df1\u5733\u5e02 \u5f92\u6b65",
+"distance": 5355.061723285024,
+"moving_time": "2:18:35",
+"type": "Hike",
+"start_date": "2024-01-21 03:41:37",
+"start_date_local": "2024-01-21 11:41:37",
+"location_country": "\u6b22\u4e50\u5e72\u7ebf, \u5174\u9686\u897f\u8857, \u4e2d\u65b0\u8857\u793e\u533a, \u6c99\u6cb3\u8857\u9053, \u5357\u5c71\u533a, \u6df1\u5733\u5e02, \u5e7f\u4e1c\u7701, 518000, \u4e2d\u56fd",
+"summary_polyline": "cgphC}ytvTjCrCFnC^JeA[gAf@hBwABbA^DgAYaA^m@nBI]WLZEA^uAtCYCTJ{@h@eBJC|Af@ZhAYP`Ad@oA{@N~B_@oLmP{A`Af@MIjA~AErEfD~EzBFl@b@BSf@?_@B^p@Gg@COi@nDyDxBpAiBs@S`@lDbA]l@RcAfAKGr@RI_@Mr@a@AeD_@j@mBMtBHPg@_@OBm@h@DKv@U_C`BEoB?mAwGjAQ_@N?k@I\\IWNRm@AeD{G^h@S{@\\~AqAk@Wq@ZWBcAcAlADxBZ[]VjArAAxCPQwAn@?yHWn@hAc@hAp@u@i@hABp@vAa@S?ZA]h@T\\`Bk@\\p@a@Tz@E]hAAkA@m@wAu@ZUfBcCHg@gCrAkAId@CWcAh@yASPr@Y?@oA^WMUGXAeF\\K_@BCkCh@UO~BZz@u@`IDUi@P`@BQo@c@MFR]k@s@PWgAkAS[RHmCdB}@Hy@",
+"average_heartrate": 83.0,
+"average_speed": 0.6440242601665693,
+"source": "Garmin Connect",
+"streak": 1
 }
 ]
