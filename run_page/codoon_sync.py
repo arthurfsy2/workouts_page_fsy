@@ -67,7 +67,7 @@ TCX_TYPE_DICT = {
 }
 
 # only for running sports, if you want others, please change the True to False
-IS_ONLY_RUN = True
+IS_ONLY_RUN = False
 
 # If your points need trans from gcj02 to wgs84 coordinate which use by Mappbox
 TRANS_GCJ02_TO_WGS84 = False
@@ -346,9 +346,9 @@ class CodoonAuth:
             r.headers["timestamp"] = timestamp
             if "refresh_token" in params:
                 r.headers["authorization"] = "Basic " + basic_auth
-                r.headers[
-                    "content-type"
-                ] = "application/x-www-form-urlencode; charset=utf-8"
+                r.headers["content-type"] = (
+                    "application/x-www-form-urlencode; charset=utf-8"
+                )
             else:
                 r.headers["authorization"] = "Bearer " + self.token
                 r.headers["content-type"] = "application/json; charset=utf-8"

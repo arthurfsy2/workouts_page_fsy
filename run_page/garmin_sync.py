@@ -43,9 +43,6 @@ GARMIN_CN_URL_DICT = {
     "ACTIVITY_URL": "https://connectapi.garmin.cn/activity-service/activity/{activity_id}",
 }
 
-# set to True if you want to sync all time activities
-# default only sync last 20
-GET_ALL = True
 
 
 class Garmin:
@@ -121,7 +118,9 @@ class Garmin:
         response.raise_for_status()
         return response.read()
 
-    async def upload_activities_original(self, datas, use_fake_garmin_device=False):
+    async def upload_activities_original_from_strava(
+        self, datas, use_fake_garmin_device=False
+    ):
         print(
             "start upload activities to garmin!, use_fake_garmin_device:",
             use_fake_garmin_device,
@@ -154,6 +153,38 @@ class Garmin:
                 print("garmin upload success: ", resp)
             except Exception as e:
                 print("garmin upload failed: ", e)
+        await self.req.aclose()
+
+    async def upload_activity_from_file(self, file):
+        print("Uploading " + str(file))
+        f = open(file, "rb")
+
+        file_body = BytesIO(f.read())
+        files = {"file": (file, file_body)}
+
+        try:
+            res = await self.req.post(
+                self.upload_url, files=files, headers=self.headers
+            )
+            f.close()
+        except Exception as e:
+            print(str(e))
+            # just pass for now
+            return
+        try:
+            resp = res.json()["detailedImportResult"]
+            print("garmin upload success: ", resp)
+        except Exception as e:
+            print("garmin upload failed: ", e)
+
+    async def upload_activities_files(self, files):
+        print("start upload activities to garmin!")
+
+        await gather_with_concurrency(
+            10,
+            [self.upload_activity_from_file(file=f) for f in files],
+        )
+
         await self.req.aclose()
 
 
@@ -205,10 +236,18 @@ async def download_garmin_data(client, activity_id, file_type="gpx"):
             zip_file = zipfile.ZipFile(file_path, "r")
             for file_info in zip_file.infolist():
                 zip_file.extract(file_info, folder)
-                os.rename(
-                    os.path.join(folder, f"{activity_id}_ACTIVITY.fit"),
-                    os.path.join(folder, f"{activity_id}.fit"),
-                )
+                if file_info.filename.endswith(".fit"):
+                    os.rename(
+                        os.path.join(folder, f"{activity_id}_ACTIVITY.fit"),
+                        os.path.join(folder, f"{activity_id}.fit"),
+                    )
+                elif file_info.filename.endswith(".gpx"):
+                    os.rename(
+                        os.path.join(folder, f"{activity_id}_ACTIVITY.gpx"),
+                        os.path.join(FOLDER_DICT["gpx"], f"{activity_id}.gpx"),
+                    )
+                else:
+                    os.remove(os.path.join(folder, file_info.filename))
             os.remove(file_path)
     except Exception as e:
         print(f"Failed to download activity {activity_id}: {str(e)}")
@@ -216,22 +255,13 @@ async def download_garmin_data(client, activity_id, file_type="gpx"):
 
 
 async def get_activity_id_list(client, start=0):
-    if GET_ALL:
-        activities = await client.get_activities(start, 100)
-        if len(activities) > 0:
-            ids = list(map(lambda a: str(a.get("activityId", "")), activities))
-            print("Syncing Activity IDs")
-            return ids + await get_activity_id_list(client, start + 100)
-        else:
-            return []
+    activities = await client.get_activities(start, 100)
+    if len(activities) > 0:
+        ids = list(map(lambda a: str(a.get("activityId", "")), activities))
+        print("Syncing Activity IDs")
+        return ids + await get_activity_id_list(client, start + 100)
     else:
-        activities = await client.get_activities(start, 20)
-        if len(activities) > 0:
-            ids = list(map(lambda a: str(a.get("activityId", "")), activities))
-            print(f"Syncing Activity IDs")
-            return ids
-        else:
-            return []
+        return []
 
 
 async def gather_with_concurrency(n, tasks):
@@ -333,4 +363,9 @@ if __name__ == "__main__":
         )
     )
     loop.run_until_complete(future)
+    # fit may contain gpx(maybe upload by user)
+    if file_type == "fit":
+        make_activities_file_only(
+            SQL_FILE, FOLDER_DICT["gpx"], JSON_FILE, file_suffix="gpx"
+        )
     make_activities_file_only(SQL_FILE, folder, JSON_FILE, file_suffix=file_type)
