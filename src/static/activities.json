@@ -4798,5 +4798,20 @@
 "average_speed": 5.326015471857781,
 "source": "Garmin Connect",
 "streak": 1
+},
+{
+"run_id": 1712880557000,
+"name": "\u6df1\u5733\u5e02 \u9a91\u884c",
+"distance": 8906.664101304323,
+"moving_time": "0:35:03",
+"type": "Ride",
+"start_date": "2024-04-12 00:09:17",
+"start_date_local": "2024-04-12 08:09:17",
+"location_country": "\u6d2a\u5b89\u8def, \u76d0\u7530\u8857\u9053, \u76d0\u7530\u533a, \u6df1\u5733\u5e02, \u5e7f\u4e1c\u7701, 518000, \u4e2d\u56fd",
+"summary_polyline": "e|zhC{akxT]fBmCeAIs@vHaVI_@jD}Im@y@`@kByAuAIq@cEwCeEkHk@aD@iD~C_OxBaFfCeDsFeGx@sHD}Dm@wCBaFg@a@j@kCAkIx@mDpBkEYy@CwKfEwGpCiPn@uHvEaHGiA_B}BYiC`B}H@wDn@{BtAoB^}J_Aw@{DLkC[cC|C_E~AiCrD{GXeFc@aCiAaEcEeJkDmFqEe@Jw@_B{@k@_@FyEgF_OoKoI~IeBlGyW\\m@{AdCoEx@yI_AuL}@aAFaAwB{Bt@{D",
+"average_heartrate": 131.0,
+"average_speed": 4.235218307800439,
+"source": "Garmin Connect",
+"streak": 1
 }
 ]
