@@ -1243,5 +1243,20 @@
 "average_speed": 2.441,
 "source": "strava",
 "streak": 1
+},
+{
+"run_id": 11343718222,
+"name": "Afternoon Walk",
+"distance": 2951.4,
+"moving_time": "2:35:27",
+"type": "Hike",
+"start_date": "2024-05-06 06:33:23+00:00",
+"start_date_local": "2024-05-06 14:33:23",
+"location_country": "China",
+"summary_polyline": "",
+"average_heartrate": 98.0,
+"average_speed": 0.316,
+"source": "strava",
+"streak": 1
 }
 ]
