@@ -13,7 +13,7 @@ interface ISiteMetadataResult {
 const data: ISiteMetadataResult = {
   siteTitle: 'Feng Siyuan锻炼记录',
   siteUrl: 'https://fengsy.cn',
-  logo: 'https://pan.4a1801.life:11443/d/NAS/logo1.jpg',
+  logo: 'https://pan.4a1801.life:11443/d/public/logo1.jpg',
   description: 'Personal site and blog',
   keywords: 'workouts, running, cycling, riding, roadtrip, hiking, swimming',
   navLinks: [
