@@ -5376,6 +5376,22 @@
 "streak": 1
 },
 {
+"run_id": 1681825122000,
+"name": "",
+"distance": 3020.0,
+"moving_time": "0:21:31.480000",
+"type": "Run",
+"start_date": "2023-04-18 13:38:42",
+"start_date_local": "2023-04-18 21:38:42",
+"location_country": "",
+"summary_polyline": null,
+"average_heartrate": 152.0,
+"average_speed": 2.338,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 1
+},
+{
 "run_id": 1681992952000,
 "name": "",
 "distance": 5008.79,
