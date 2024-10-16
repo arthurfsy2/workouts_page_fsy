@@ -3,7 +3,7 @@ name: Run Data Sync
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 1 * * *'  # 北京时间09:30运行
+    - cron: '00 1 * * *'  # 北京时间09:00运行
     - cron: '30 11 * * *' # 北京时间19:30运行
   push:
     branches:
