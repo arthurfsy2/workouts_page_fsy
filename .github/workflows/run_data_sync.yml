@@ -29,10 +29,12 @@ env:
   RUN_TYPE: garmin_sync_cn_global # support strava/nike/garmin/garmin_cn/keep/only_gpx/only_fit/nike_to_strava/strava_to_garmin/strava_to_garmin_cn/garmin_to_strava/garmin_to_strava_cn/codoon, Please change the 'pass' it to your own
   ATHLETE: Feng Siyuan
   TITLE: Workouts
+
   MIN_GRID_DISTANCE: 20 # change min distance here
   TITLE_GRID: 超过20公里的活动 # also here
-  GITHUB_NAME: arthurfsy2  # change to yours
-  GITHUB_EMAIL: fsyflh@gmail.com # change to yours
+  GITHUB_NAME: arthurfsy2  # default Actions bot you can change it to yours
+  GITHUB_EMAIL: fsyflh@gmail.com # default Actions bot you can change it to yours
+
 
   # IGNORE_BEFORE_SAVING: True # if you want to ignore some data before saving, set this to True
   IGNORE_START_END_RANGE: 0 # Unit meter
