@@ -30,8 +30,8 @@ env:
   ATHLETE: Feng Siyuan
   TITLE: Workouts
 
-  MIN_GRID_DISTANCE: 20 # change min distance here
-  TITLE_GRID: 超过20公里的活动 # also here
+  MIN_GRID_DISTANCE: 5 # change min distance here
+  TITLE_GRID: 超过5公里的活动 # also here
   GITHUB_NAME: arthurfsy2  # default Actions bot you can change it to yours
   GITHUB_EMAIL: fsyflh@gmail.com # default Actions bot you can change it to yours
 
@@ -214,7 +214,7 @@ jobs:
         if: env.RUN_TYPE != 'pass'
         run: |
           python run_page/gen_svg.py --from-db --title "${{ env.TITLE }}" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5
-          python run_page/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}" --output assets/grid.svg --special-color yellow --special-color2 red --special-distance 20 --special-distance2 40 --use-localtime --min-distance "${{ env.MIN_GRID_DISTANCE }}"
+          python run_page/gen_svg.py --from-db --title "${{ env.TITLE_GRID }}" --type grid --athlete "${{ env.ATHLETE }}" --output assets/grid.svg --special-color yellow --special-color2 red --special-distance 20 --special-distance2 100 --use-localtime --min-distance "${{ env.MIN_GRID_DISTANCE }}"
           python run_page/gen_svg.py --from-db --type circular --use-localtime
           python run_page/gen_svg.py --from-db --year $(date +"%Y")  --language zh_CN --title "$(date +"%Y") Workouts" --type github --athlete "${{ env.ATHLETE }}" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github_$(date +"%Y").svg --use-localtime --min-distance 0.5
 

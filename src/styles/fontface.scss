@@ -1,0 +1,17 @@
+// place your custom styles here
+@font-face {
+    font-family: 'MGI-Light'; /* 自定义字体名称 */
+    src: url('/fonts/MGI-Light.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+@font-face {
+font-family: 'MGI-Regular'; /* 自定义字体名称 */
+src: url('/fonts/MGI-Regular.woff2') format('woff2');
+font-weight: normal;
+font-style: normal;
+}
+body {
+font-family: 'MGI-Light', sans-serif; /* 使用自定义字体 */
+}
