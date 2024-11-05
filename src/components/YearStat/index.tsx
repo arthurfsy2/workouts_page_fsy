@@ -3,7 +3,6 @@ import Stat from '@/components/Stat';
 import WorkoutStat from '@/components/WorkoutStat';
 import useActivities from '@/hooks/useActivities';
 import { formatPace, colorFromType } from '@/utils/utils';
-import styles from './style.module.scss';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
@@ -21,12 +20,14 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
   }
   let sumDistance = 0;
   let streak = 0;
+  let sumElevationGain = 0;
   let heartRate = 0;
   let heartRateNullCount = 0;
   const workoutsCounts = {};
 
   runs.forEach((run) => {
     sumDistance += run.distance || 0;
+    sumElevationGain += run.elevation_gain || 0;
     if (run.average_speed) {
       if(workoutsCounts[run.type]){
         var [oriCount, oriSecondsAvail, oriMetersAvail] = workoutsCounts[run.type]
@@ -55,7 +56,7 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
   });
   return (
     <div
-      style={{ cursor: 'pointer' }}
+      className="cursor-pointer"
       onClick={() => onClick(year)}
       {...eventHandlers}
     >
@@ -83,18 +84,25 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
             }}
           />
         ))}
+        { sumElevationGain > 0 &&
+          <Stat
+            value={`${(sumElevationGain).toFixed(0)} `}
+            description="M Elevation Gain"
+            className="pb-2"
+          />
+        }
         <Stat
           value={`${streak} day`}
           description=" Streak"
-          className="mb0 pb0"
+          className="pb-2"
         />
         {hasHeartRate && (
           <Stat value={avgHeartRate} description=" Avg Heart Rate" />
         )}
       </section>
-      {year !== "Total" && hovered && (
+      {year !== 'Total' && hovered && (
         <Suspense fallback="loading...">
-          <YearSVG className={styles.yearSVG} />
+          <YearSVG className="my-4 h-4/6 w-4/6 border-0 p-0" />
         </Suspense>
       )}
       <hr color="red" />

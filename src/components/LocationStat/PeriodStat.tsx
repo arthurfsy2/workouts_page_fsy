@@ -8,14 +8,14 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
   const periodArr = Object.entries(runPeriod);
   periodArr.sort((a, b) => b[1] - a[1]);
   return (
-    <div style={{ cursor: 'pointer' }}>
+    <div className="cursor-pointer">
       <section>
         {periodArr.map(([type, times]) => (
           <Stat
             key={type}
             value={`${IS_CHINESE && titleForType(type)} ${times} `}
             description={type + (times>1 ? "s" : "") }
-            citySize={1}
+            citySize={5}
             onClick={() => onClick(type)}
           />
         ))}

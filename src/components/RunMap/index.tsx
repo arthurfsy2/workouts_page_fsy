@@ -1,5 +1,5 @@
 import MapboxLanguage from '@mapbox/mapbox-gl-language';
-import React, {useRef, useCallback, useState} from 'react';
+import React, {useRef, useCallback, useState, useEffect} from 'react';
 import Map, {Layer, Source, FullscreenControl, NavigationControl, MapRef} from 'react-map-gl';
 import {MapInstance} from "react-map-gl/src/types/lib";
 import useActivities from '@/hooks/useActivities';
@@ -19,7 +19,7 @@ import {
 import { Coordinate, IViewState, geoJsonForMap } from '@/utils/utils';
 import RunMarker from './RunMarker';
 import RunMapButtons from './RunMapButtons';
-import styles from './style.module.scss';
+import styles from './style.module.css';
 import { FeatureCollection } from 'geojson';
 import { RPGeometry } from '@/static/run_countries';
 import './mapbox.css';
@@ -127,6 +127,18 @@ const RunMap = ({
     right: '0px',
     opacity: 0.3,
   };
+
+  useEffect(() => {
+    const handleFullscreenChange = () => {
+      if (mapRef.current) {
+        mapRef.current.getMap().resize();
+      }
+    };
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    return () => {
+      document.removeEventListener('fullscreenchange', handleFullscreenChange);
+    };
+  }, []);
 
   return (
     <Map

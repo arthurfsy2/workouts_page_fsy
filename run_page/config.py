@@ -26,7 +26,7 @@ NAME_MAPPING_FILE = os.path.join(FIT_FOLDER, "name_mapping.json")
 
 
 BASE_TIMEZONE = "Asia/Shanghai"
-
+UTC_TIMEZONE = "UTC"
 
 start_point = namedtuple("start_point", "lat lon")
 run_map = namedtuple("polyline", "summary_polyline")
@@ -60,6 +60,7 @@ TYPE_DICT = {
     "cycling": "Ride",
     "CYCLING": "Ride",
     "Ride": "Ride",
+    "EBikeRide": "Ride",
     "road_biking": "Ride",
     "VirtualRide": "VirtualRide",
     "indoor_cycling": "Indoor Ride",
