@@ -1,0 +1,13 @@
+/* Stat.module.css */
+.statContainer {
+  background-color: rgb(245, 245, 245);
+  border-radius: 8px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, .35);
+  color: rgb(67,91,163);
+  /* color: rgb(0,108,184); */
+  margin: 0rem 1rem 2rem;
+  margin-right: 2rem;
+  /* overflow: hidden; */
+  padding: 1rem 1rem 2rem 0.5rem;
+  
+}

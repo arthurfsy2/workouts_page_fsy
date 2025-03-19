@@ -6,6 +6,7 @@ import { formatPace, colorFromType } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
+import styles from './style.module.css'; // 引入样式模块
 
 const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick: (_year: string) => void ,
     onClickTypeInYear: (_year: string, _type: string) => void }) => {
@@ -56,7 +57,7 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
   });
   return (
     <div
-      className="cursor-pointer"
+      className={styles.statContainer}
       onClick={() => onClick(year)}
       {...eventHandlers}
     >
@@ -105,7 +106,7 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
           <YearSVG className="my-4 h-4/6 w-4/6 border-0 p-0" />
         </Suspense>
       )}
-      <hr color="red" />
+      {/* <hr color="red" /> */}
     </div>
   );
 };

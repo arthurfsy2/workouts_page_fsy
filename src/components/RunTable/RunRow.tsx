@@ -33,7 +33,8 @@ const RunRow = ({ elementIndex, locateActivity, run, runIndex, setRunIndex }: IR
       onClick={handleClick}
       style={{color: colorFromType(type)}}
     >
-      <td>{titleForRun(run)}</td>
+      
+      <td>{elementIndex + 1}. {titleForRun(run)}</td>
       <td>{type}</td>
       <td>{distance}</td>
       <td>{elevation_gain}</td>

@@ -99,22 +99,24 @@ const RunTable = ({
   };
 
   return (
-    <div className={styles.tableContainer}>
-      本年最佳记录： <br/>
-    {max_ride ? (
-      <>
-        骑行(时间：{max_ride.start_date_local.split(" ")[0]}，时速：{kmh}，距离：{rrdistance}km) <br/>
-      </>
-    ) : (
-      ""
-    )}
-    {max_run ? (
-      <>
-        跑步(时间：{max_run.start_date_local.split(" ")[0]}，配速：{rpaceParts}，距离：{rdistance}km)
-      </>
-    ) : (
-      ""
-    )}
+    <div className={`${styles.tableContainer} p-4 bg-gray-100 rounded-lg`}>
+      <h2 className="text-lg font-bold mb-2">本年最佳记录：</h2>
+      <div className="mb-2">
+        {max_ride ? (
+          <p className="text-md text-blue-600">
+            骑行（时间：{max_ride.start_date_local.split(" ")[0]}，时速：{kmh}，距离：{rrdistance}km）
+          </p>
+        ) : (
+          <p className="text-md text-gray-500">暂无最佳骑行记录可显示</p>
+        )}
+        {max_run ? (
+          <p className="text-md text-green-600">
+            跑步（时间：{max_run.start_date_local.split(" ")[0]}，配速：{rpaceParts}，距离：{rdistance}km）
+          </p>
+        ) : (
+          <p className="text-md text-gray-500">暂无最佳跑步记录可显示</p>
+        )}
+      </div>
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
