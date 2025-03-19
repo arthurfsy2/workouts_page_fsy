@@ -5,6 +5,7 @@ import {
   convertMovingTime2Sec,
   Activity,
   RunIds,
+  formatPace,
 } from '@/utils/utils';
 import RunRow from './RunRow';
 import styles from './style.module.css';
@@ -26,6 +27,30 @@ const RunTable = ({
   runIndex,
   setRunIndex,
 }: IRunTableProperties) => {
+  let run_speed =  0
+  let max_run = ""
+  let ride_speed =  0
+  let max_ride = ""
+  runs.forEach(item => {
+      if (item.type == "Run") {
+        if (item.average_speed > run_speed) {
+          run_speed = item.average_speed
+          max_run = item
+        }
+      } 
+      if (item.type == "Ride") {
+        if (item.average_speed > ride_speed) {
+          ride_speed = item.average_speed
+          max_ride = item
+        }
+      }
+  })
+  const rdistance = (max_run.distance / 1000.0).toFixed(2);
+  const rpaceParts = max_run.average_speed ? formatPace(max_run.average_speed) : null;
+
+  const rrdistance = (max_ride.distance / 1000.0).toFixed(2);
+  const kmh = (max_ride.distance * 3600.0 / convertMovingTime2Sec(max_ride.moving_time)/1000.0).toFixed(2) + "km/h";
+
   const [sortFuncInfo, setSortFuncInfo] = useState('');
   // TODO refactor?
   const sortTypeFunc: SortFunc = (a, b) =>
@@ -74,7 +99,22 @@ const RunTable = ({
   };
 
   return (
-    <div className={styles.tableContainer} style={{ maxHeight: '400px', overflowY: 'auto' }}>
+    <div className={styles.tableContainer}>
+      本年最佳记录： <br/>
+    {max_ride ? (
+      <>
+        骑行(时间：{max_ride.start_date_local.split(" ")[0]}，时速：{kmh}，距离：{rrdistance}km) <br/>
+      </>
+    ) : (
+      ""
+    )}
+    {max_run ? (
+      <>
+        跑步(时间：{max_run.start_date_local.split(" ")[0]}，配速：{rpaceParts}，距离：{rdistance}km)
+      </>
+    ) : (
+      ""
+    )}
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
         <thead>
           <tr>
@@ -95,6 +135,7 @@ const RunTable = ({
               run={run}
               runIndex={runIndex}
               setRunIndex={setRunIndex}
+              maxRecord = {max_run.run_id == run.run_id || max_ride.run_id == run.run_id}
             />
           ))}
         </tbody>

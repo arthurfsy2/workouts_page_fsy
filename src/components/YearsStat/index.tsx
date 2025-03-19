@@ -14,7 +14,7 @@ const YearsStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick
   // for short solution need to refactor
   return (
     <div className="w-full lg:w-full pb-16 pr-16 lg:pr-16" style={{
-      maxHeight: '550px', // 设置最大高度为 400px
+      maxHeight: '700px', // 设置最大高度为 400px
       overflowY: 'auto',  // 当内容超过最大高度时显示垂直滚动条
       border: '0px solid #ccc', // 为了便于观察，可以添加边框
       padding: '0px' // 添加一些内边距

@@ -1,1 +1,7 @@
-样式：thanks for [danielyu316](https://github.com/danielyu316/running_page)
+
+
+Thanks for:
+
+样式： [danielyu316/running_page: Make your own running home page](https://github.com/danielyu316/running_page)
+
+汇总表：[mxz94/mxz_run: Make your own workouts page](https://github.com/mxz94/mxz_run)
