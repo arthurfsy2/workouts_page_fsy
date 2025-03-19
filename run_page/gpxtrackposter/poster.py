@@ -52,7 +52,7 @@ class Poster:
             "special": "#FFFF00",
             "track": "#4DD2FF",
         }
-        self.special_distance = {"special_distance": 10, "special_distance2": 20}
+        self.special_distance = {"special_distance": 20, "special_distance2": 40}
         self.width = 200
         self.height = 300
         self.years = None
@@ -111,10 +111,10 @@ class Poster:
         width = self.width
         if self.drawer_type == "plain":
             height = height - 100
-            self.colors["background"] = "#1a1a1a"
+            self.colors["background"] = "#f5f5f5"
             self.colors["track"] = "red"
             self.colors["special"] = "yellow"
-            self.colors["text"] = "#e1ed5e"
+            self.colors["text"] = "#006cb8"
         d = svgwrite.Drawing(output, (f"{width}mm", f"{height}mm"))
         d.viewbox(0, 0, self.width, height)
         d.add(d.rect((0, 0), (width, height), fill=self.colors["background"]))
