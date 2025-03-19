@@ -136,7 +136,7 @@ class GithubDrawer(TracksDrawer):
                     if int(github_rect_day.year) > year:
                         break
                     rect_y += 3.5
-                    color = "#444444"
+                    color = "#C0C0C0"
                     date_title = str(github_rect_day)
                     if date_title in self.poster.tracks_by_date:
                         tracks = self.poster.tracks_by_date[date_title]
