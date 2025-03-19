@@ -23,6 +23,6 @@ iframe {
 hr {
   border-top: none;
   border-bottom: 1px solid;
-  border-color: #0003;
+  border-color: rgb(114, 69, 163);
   margin: 2rem 0;
 }
