@@ -112,4 +112,4 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
   );
 };
 
-export default YearStat;
+export default YearStat; 

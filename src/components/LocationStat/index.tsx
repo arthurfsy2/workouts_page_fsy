@@ -6,7 +6,7 @@ import {
 import CitiesStat from './CitiesStat';
 import LocationSummary from './LocationSummary';
 import PeriodStat from './PeriodStat';
-
+import QuoteOfTheDay from '@/utils/QuoteOfTheDay';
 interface ILocationStatProps {
   changeYear: (_year: string) => void;
   changeCity: (_city: string) => void;
@@ -35,8 +35,9 @@ const LocationStat = ({
         .
         <br />
         <br />
-        Yesterday you said tomorrow.
+        <QuoteOfTheDay  /> {/* 在这里插入每日一言组件 */}
       </p>
+      
     </section>
     <hr color="red" />
     <LocationSummary />

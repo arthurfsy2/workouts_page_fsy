@@ -59,6 +59,7 @@
     "@types/react-dom": "^18.2.7",
     "@typescript-eslint/parser": "^5.62.0",
     "autoprefixer": "^10.4.19",
+    "axios": "^1.8.4",
     "eslint": "^8.48.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-plugin-prettier": "^4.2.1",
