@@ -24,7 +24,6 @@ import { FeatureCollection } from 'geojson';
 import { RPGeometry } from '@/static/run_countries';
 import './mapbox.css';
 import LightsControl from "@/components/RunMap/LightsControl";
-
 interface IRunMapProps {
   title: string;
   viewState: IViewState;

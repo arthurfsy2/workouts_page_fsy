@@ -13,6 +13,7 @@ interface ILocationStatProps {
   changeType: (_type: string) => void;
   onClickTypeInYear: (_year: string, _type: string) => void;
 }
+import styles from './style.module.css';
 
 const LocationStat = ({
   changeYear,
@@ -21,8 +22,12 @@ const LocationStat = ({
   onClickTypeInYear
 }: ILocationStatProps) => (
   <div className="w-full pb-16 lg:w-full lg:pr-16">
-    <section className="pb-0">
-      <p className="leading-relaxed">
+    <section className={`bg-white shadow-md rounded-lg p-6 text-gray-800 text-lg font-semibold leading-relaxed hover:shadow-lg transition-shadow duration-300`}
+      style={{ 
+        backgroundColor: 'rgb(245, 245, 245)', // 设置背景颜色
+        color:  'rgb(0, 175, 170)'
+    }}>
+      <p >
         {CHINESE_LOCATION_INFO_MESSAGE_FIRST}
         .
         <br />

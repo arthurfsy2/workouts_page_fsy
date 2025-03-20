@@ -57,11 +57,12 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
   });
   return (
     <div
-      className={styles.statContainer}
+      className={`mr-8 my-0 mb-8 py-4 px-2 rounded-xl text-[#579EFB] bg-[#F5F5F5]`}
+      
       onClick={() => onClick(year)}
       {...eventHandlers}
     >
-      <section>
+      <section >
         <Stat value={year} description=" Journey" />
         { sumDistance > 0 &&
           <WorkoutStat

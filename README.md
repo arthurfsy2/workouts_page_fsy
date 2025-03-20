@@ -1,6 +1,10 @@
-Thanks for:
 
-样式： 
+
+running_page浅色主题
+
+参考了以下仓库的样式，Thanks！
+
+样式：
 
 [- danielyu316/running_page: Make your own running home page](https://github.com/danielyu316/running_page)
 

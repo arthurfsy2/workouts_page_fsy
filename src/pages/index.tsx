@@ -190,24 +190,15 @@ const Index = () => {
       svgStat && svgStat.removeEventListener('click', handleClick);
     };
   }, [year]);
-  const buttonStyle = {
-    backgroundColor: '#006CB8', // 背景色
-    color: 'white', // 文字颜色
-    margin: '100px', // 去除边框
-    borderRadius: '15px', // 圆角
-    padding: '15px 20px', // 内边距
-    fontSize: '18px', // 字体大小
-    cursor: 'pointer', // 鼠标指针样式
-    marginBottom: '20px', // 底部外边距
-  };
+  
   return (
     <Layout>
-      <div className="w-full lg:w-1/4">
-      <h1 className="my-12 text-3xl font-extrabold italic">
+      <div className="flex flex-col items-center w-full lg:w-1/4">
+      <h1 className="my-6 text-3xl font-extrabold italic">
           <a >{siteTitle}</a>
         </h1>
-          <button className={"mb-8 font-extrabold"}>
-              <a href="/log" style={buttonStyle}>查看日志汇总</a>
+          <button  className={"flex justify-center mb-5 bg-[#006CB8] text-white rounded-[15px] p-2.5 text-lg cursor-pointer font-extrabold"}>
+              <a href="/log">查看日志汇总</a>
           </button>
         {(viewState.zoom ?? 0) <= 5 && IS_CHINESE ? (
           <LocationStat

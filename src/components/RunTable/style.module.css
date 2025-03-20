@@ -24,7 +24,7 @@
   margin: 1rem 0 5rem 0;
 
   :is(thead) {
-    color: #ffffff;
+    color: #ffffff; /* 设置表头字体颜色 */
     text-align: center;
 
     :is(th) {
@@ -44,7 +44,7 @@
     &:first-child {
       font-weight: 700;
       text-align: left;
-      min-width: 50px;
+      min-width: 100px;
     }
   }
 
@@ -68,6 +68,7 @@
 .tableContainer {
   width: 100%;
   overflow-x: auto;
+  margin-top: 1.5em;
 }
 
 /* .runDate {
