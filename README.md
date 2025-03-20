@@ -6,10 +6,10 @@ running_page浅色主题
 
 样式：
 
-[- danielyu316/running_page: Make your own running home page](https://github.com/danielyu316/running_page)
+[- danielyu316](https://github.com/danielyu316/running_page)  [网站](https://danielyu316.github.io/running_page/)
 
-[- LiuXin.Run](https://liuxin.run/)
+[- ](https://liuxin.run/)[liuxindtc (Blaine)](https://github.com/liuxindtc) [网站](https://liuxin.run/)
 
 汇总表功能：
 
-[- mxz94/mxz_run: Make your own workouts page](https://github.com/mxz94/mxz_run)
+[- ](https://github.com/mxz94)[mxz94 (mx)](https://github.com/mxz94) [网站](https://run.malanxi.top/)

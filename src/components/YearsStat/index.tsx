@@ -1,7 +1,7 @@
 import YearStat from '@/components/YearStat';
 import useActivities from '@/hooks/useActivities';
 import { INFO_MESSAGE } from '@/utils/const';
-import styles from './style.module.css'; // 引入样式模块
+// import styles from './style.module.css'; // 引入样式模块
 import QuoteOfTheDay from '@/utils/QuoteOfTheDay';
 const YearsStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick: (_year: string) => void,
     onClickTypeInYear: (_year: string, _type: string) => void }) => {
@@ -14,7 +14,7 @@ const YearsStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick
 
   // for short solution need to refactor
   return (
-    <div style={styles}>
+    <div>
       <section className="pb-0">
         <p className="text-[#00AFAA] text-lg font-bold text-left leading-[1.8]">
           {INFO_MESSAGE(years.length, year)}

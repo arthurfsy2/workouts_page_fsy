@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef  } from 'react';
 import axios from 'axios';
 
 interface TypewriterProps {
@@ -6,45 +6,30 @@ interface TypewriterProps {
   delay?: number; // 控制逐字显示的延迟
 }
 
-const Typewriter: React.FC<TypewriterProps> = ({ text, delay = 100 }) => {
-  const [displayedText, setDisplayedText] = useState<string>('');
-
-  useEffect(() => {
-    let index = 0;
-    const typingInterval = setInterval(() => {
-      if (index < text.length) {
-        setDisplayedText((prev) => prev + text.charAt(index));
-        index++;
-      } else {
-        clearInterval(typingInterval);
-      }
-    }, delay);
-
-    return () => clearInterval(typingInterval); // 清理定时器
-  }, [text, delay]);
-
-  return <span >{displayedText}</span>;
-};
 
 const QuoteOfTheDay: React.FC = () => {
-  const [quote, setQuote] = useState<string>('');
+  const [quote, setQuote] = useState<string | null>(null);
 
   const fetchQuote = async () => {
     try {
-      const response = await axios.get('https://international.v1.hitokoto.cn/?c=k');
-      setQuote(response.data.hitokoto);
+        const response = await axios.get('https://international.v1.hitokoto.cn/?c=i');
+        
+        const hitokoto = response.data.hitokoto; // 直接获取名言
+        const fromWho = response.data.from_who ? `-- ${response.data.from_who}` : '-- ';
+        const quoteText = `『${hitokoto}』${fromWho}「${response.data.from}」`;
+        setQuote(quoteText);
     } catch (error) {
-      console.error('Error fetching the quote:', error);
+        console.error('Error fetching the quote:', error);
     }
-  };
+};
 
   useEffect(() => {
     fetchQuote();
   }, []);
 
   return (
-    <div className="text-[#ED55DB]">
-      每日一言：{quote && <Typewriter text={quote} delay={100} />} {/* 使用 Typewriter 组件来显示逐字打印效果 */}
+    <div className="text-[grey] italic text-base mr-8">
+      {quote}
     </div>
   );
 };
