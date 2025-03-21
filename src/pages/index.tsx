@@ -96,21 +96,30 @@ const Index = () => {
     changeByItem(type, 'Type', filterTypeRuns);
   };
 
-  const changeTypeInYear = (year:string, type: string) => {
+  const changeTypeInYear = (year: string, type: string) => {
     scrollToMap();
     // type in year, filter year first, then type
-    if(year != 'Total'){
+    if (year != 'Total') {
       setYear(year);
-      setActivity(filterAndSortRuns(activities, year, filterYearRuns, sortDateFunc, type, filterTypeRuns));
-    }
-    else {
+      setActivity(
+        filterAndSortRuns(
+          activities,
+          year,
+          filterYearRuns,
+          sortDateFunc,
+          type,
+          filterTypeRuns
+        )
+      );
+    } else {
       setYear(thisYear);
-      setActivity(filterAndSortRuns(activities, type, filterTypeRuns, sortDateFunc));
+      setActivity(
+        filterAndSortRuns(activities, type, filterTypeRuns, sortDateFunc)
+      );
     }
     setRunIndex(-1);
     setTitle(`${year} ${type} Type Heatmap`);
   };
-
 
   const locateActivity = (runIds: RunIds) => {
     const ids = new Set(runIds);
@@ -216,67 +225,65 @@ const Index = () => {
 
   return (
     <Layout>
-    <div className="items-center w-full lg:w-1/4">
-      <h1 className="my-6 text-3xl font-extrabold italic">
-        <a>{siteTitle}</a>
-      </h1>
-      
-      <div className="justify-center items-center space-x-4 my-5">
-        <button 
-          onClick={handleToggle} 
-          className="bg-[#00AFAA] text-white rounded-[15px] p-2.5 text-lg font-extrabold cursor-pointer"
-        >
-          {state.showLocationStat ? '切换至年份统计' : '切换至地点统计'}
-        </button>
+      <div className="w-full items-center lg:w-1/4">
+        <h1 className="my-6 text-3xl font-extrabold italic">
+          <a>{siteTitle}</a>
+        </h1>
 
-        <button 
-          className="bg-[#006CB8] text-white rounded-[15px] p-2.5 text-lg font-extrabold cursor-pointer"
-        >
-          <a href="/log">汇总分析</a>
-        </button>
+        <div className="my-5 items-center justify-center space-x-4">
+          <button
+            onClick={handleToggle}
+            className="cursor-pointer rounded-[15px] bg-[#00AFAA] p-2.5 text-lg font-extrabold text-white"
+          >
+            {state.showLocationStat ? '👉 年份统计' : '👉 地点统计'}
+          </button>
+
+          <button className="cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white">
+            <a href="/log">📊 汇总分析</a>
+          </button>
+        </div>
+
+        {state.showLocationStat ? (
+          <LocationStat
+            changeYear={changeYear}
+            changeCity={changeCity}
+            changeType={changeType}
+            onClickTypeInYear={changeTypeInYear}
+          />
+        ) : (
+          <YearsStat
+            year={year}
+            onClick={changeYear}
+            onClickTypeInYear={changeTypeInYear}
+          />
+        )}
       </div>
 
-      {state.showLocationStat ? (
-        <LocationStat
+      <div className="w-full lg:w-4/5">
+        <RunMap
+          title={title}
+          viewState={viewState}
+          geoData={geoData}
+          setViewState={setViewState}
           changeYear={changeYear}
-          changeCity={changeCity}
-          changeType={changeType}
-          onClickTypeInYear={changeTypeInYear}
+          thisYear={year}
         />
-      ) : (
-        <YearsStat
-          year={year}
-          onClick={changeYear}
-          onClickTypeInYear={changeTypeInYear}
-        />
-      )}
-    </div>
+        {year === 'Total' ? (
+          <SVGStat />
+        ) : (
+          <RunTable
+            runs={runs}
+            locateActivity={locateActivity}
+            setActivity={setActivity}
+            runIndex={runIndex}
+            setRunIndex={setRunIndex}
+          />
+        )}
+      </div>
 
-  <div className="w-full lg:w-4/5">
-    <RunMap
-      title={title}
-      viewState={viewState}
-      geoData={geoData}
-      setViewState={setViewState}
-      changeYear={changeYear}
-      thisYear={year}
-    />
-    {year === 'Total' ? (
-      <SVGStat />
-    ) : (
-      <RunTable
-        runs={runs}
-        locateActivity={locateActivity}
-        setActivity={setActivity}
-        runIndex={runIndex}
-        setRunIndex={setRunIndex}
-      />
-    )}
-  </div>
-
-  {/* Enable Audiences in Vercel Analytics: https://vercel.com/docs/concepts/analytics/audiences/quickstart */}
-  {import.meta.env.VERCEL && <Analytics />}
-</Layout>
+      {/* Enable Audiences in Vercel Analytics: https://vercel.com/docs/concepts/analytics/audiences/quickstart */}
+      {import.meta.env.VERCEL && <Analytics />}
+    </Layout>
   );
 };
 

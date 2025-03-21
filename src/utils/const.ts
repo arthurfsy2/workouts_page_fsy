@@ -62,22 +62,22 @@ const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
 const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '不要停下来，不要停下探索的脚步';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
-const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松' : 'Full Marathon';
-const HALF_MARATHON_RUN_TITLE = IS_CHINESE ? '半程马拉松' : 'Half Marathon';
-const RUN_TITLE = IS_CHINESE ? '跑步' : 'Run';
-const TRAIL_RUN_TITLE = IS_CHINESE ? '越野跑' : 'Trail Run';
-const SWIM_TITLE = IS_CHINESE ? '游泳' : 'Swim';
+const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松 🏃‍♂️' : 'Full Marathon 🏃‍♂️';
+const HALF_MARATHON_RUN_TITLE = IS_CHINESE ? '半程马拉松 🏃‍♀️' : 'Half Marathon 🏃‍♀️';
+const RUN_TITLE = IS_CHINESE ? '跑步 🏃' : 'Run 🏃';
+const TRAIL_RUN_TITLE = IS_CHINESE ? '越野跑 🏞️' : 'Trail Run 🏞️';
+const SWIM_TITLE = IS_CHINESE ? '游泳 🏊‍♂️' : 'Swim 🏊‍♂️';
 
-const RIDE_TITLE = IS_CHINESE ? '骑行' : 'Ride';
-const INDOOR_RIDE_TITLE = IS_CHINESE ? '室内骑行' : 'Indoor Ride';
-const VIRTUAL_RIDE_TITLE = IS_CHINESE ? '虚拟骑行' : 'Virtual Ride';
-const HIKE_TITLE = IS_CHINESE ? '徒步' : 'Hike';
-const ROWING_TITLE = IS_CHINESE ? '划船' : 'Rowing';
-const KAYAKING_TITLE = IS_CHINESE ? '皮划艇' : 'Kayaking';
-const SNOWBOARD_TITLE = IS_CHINESE ? '单板滑雪' : 'Snowboard';
-const SKI_TITLE = IS_CHINESE ? '双板滑雪' : 'Ski';
-const ROAD_TRIP_TITLE = IS_CHINESE ? '自驾' : 'RoadTrip';
-const FLIGHT_TITLE = IS_CHINESE ? '飞行' : 'Flight';
+const RIDE_TITLE = IS_CHINESE ? '骑行 🚴‍♂️' : 'Ride 🚴‍♂️';
+const INDOOR_RIDE_TITLE = IS_CHINESE ? '室内骑行 🚴‍♀️' : 'Indoor Ride 🚴‍♀️';
+const VIRTUAL_RIDE_TITLE = IS_CHINESE ? '虚拟骑行 🎮' : 'Virtual Ride 🎮';
+const HIKE_TITLE = IS_CHINESE ? '徒步 🥾' : 'Hike 🥾';
+const ROWING_TITLE = IS_CHINESE ? '划船 🚣‍♂️' : 'Rowing 🚣‍♂️';
+const KAYAKING_TITLE = IS_CHINESE ? '皮划艇 🛶' : 'Kayaking 🛶';
+const SNOWBOARD_TITLE = IS_CHINESE ? '单板滑雪 🏂' : 'Snowboard 🏂';
+const SKI_TITLE = IS_CHINESE ? '双板滑雪 🎿' : 'Ski 🎿';
+const ROAD_TRIP_TITLE = IS_CHINESE ? '自驾 🚗' : 'Road Trip 🚗';
+const FLIGHT_TITLE = IS_CHINESE ? '飞行 ✈️' : 'Flight ✈️';
 
 const RUN_TITLES = {
   FULL_MARATHON_RUN_TITLE,
@@ -124,6 +124,7 @@ const yellow = 'rgb(224,237,94)';
 const mgi_green = 'rgb(0,175,170)';
 const mgi_blue = 'rgb(0,108,184)';
 const mgi_blue2 = 'rgb(87,158,251)';
+const mgi_blue3 = 'rgb(67,91,163)';
 const pink = 'rgb(237,85,219)';
 const cyan = 'rgb(112,243,255)';
 const IKB = 'rgb(0,47,167)';
@@ -133,15 +134,16 @@ const purple = 'rgb(114,69,152)';
 const veryPeri = 'rgb(105,106,173)';//长春花蓝
 const red = 'rgb(255,0,0)';//大红色
 const mgi_black = 'rgb(27,43,56)';
+const mgi_purple = 'rgb(114, 69, 152)';
 
 // If your map has an offset please change this line
 // issues #92 and #198
 export const NEED_FIX_MAP = false;
 export const MAIN_COLOR = mgi_blue;
-export const RUN_COLOR = mgi_blue2;
+export const RUN_COLOR = mgi_purple;
 export const RIDE_COLOR = mgi_green;
 export const VIRTUAL_RIDE_COLOR = veryPeri;
-export const HIKE_COLOR = pink;
+export const HIKE_COLOR = mgi_blue2;
 export const SWIM_COLOR = gold;
 export const ROWING_COLOR = cyan;
 export const ROAD_TRIP_COLOR = purple;

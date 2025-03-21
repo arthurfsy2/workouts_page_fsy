@@ -9,12 +9,14 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
   periodArr.sort((a, b) => b[1] - a[1]);
   return (
     <div className="cursor-pointer">
-      <section className={`mr-8 my-0 mb-8 py-4 px-2 rounded-xl text-[#579EFB] bg-[#F5F5F5]`}>
+      <section
+        className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
+      >
         {periodArr.map(([type, times]) => (
           <Stat
             key={type}
-            value={`${IS_CHINESE && titleForType(type)} ${times} `}
-            description={type + (times>1 ? "s" : "") }
+            value={`${IS_CHINESE && titleForType(type)}`}
+            description={`${times} ${type + (times > 1 ? 's' : '')}`}
             citySize={3}
             onClick={() => onClick(type)}
           />

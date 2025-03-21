@@ -1,4 +1,11 @@
-import { formatPace, colorFromType, formatRunTime, Activity, RunIds, titleForRun } from '@/utils/utils';
+import {
+  formatPace,
+  colorFromType,
+  formatRunTime,
+  Activity,
+  RunIds,
+  titleForRun,
+} from '@/utils/utils';
 import styles from './style.module.css';
 
 interface IRunRowProperties {
@@ -9,7 +16,13 @@ interface IRunRowProperties {
   setRunIndex: (_ndex: number) => void;
 }
 
-const RunRow = ({ elementIndex, locateActivity, run, runIndex, setRunIndex }: IRunRowProperties) => {
+const RunRow = ({
+  elementIndex,
+  locateActivity,
+  run,
+  runIndex,
+  setRunIndex,
+}: IRunRowProperties) => {
   const distance = (run.distance / 1000.0).toFixed(2);
   const elevation_gain = run.elevation_gain?.toFixed(0);
   const paceParts = run.average_speed ? formatPace(run.average_speed) : null;
@@ -20,8 +33,8 @@ const RunRow = ({ elementIndex, locateActivity, run, runIndex, setRunIndex }: IR
     if (runIndex === elementIndex) {
       setRunIndex(-1);
       locateActivity([]);
-      return
-    };
+      return;
+    }
     setRunIndex(elementIndex);
     locateActivity([run.run_id]);
   };
@@ -31,10 +44,11 @@ const RunRow = ({ elementIndex, locateActivity, run, runIndex, setRunIndex }: IR
       className={`${styles.runRow} ${runIndex === elementIndex ? styles.selected : ''}`}
       key={run.start_date_local}
       onClick={handleClick}
-      style={{color: colorFromType(type)}}
+      style={{ color: colorFromType(type) }}
     >
-      
-      <td>{elementIndex + 1}. {titleForRun(run)}</td>
+      <td>
+        {elementIndex + 1}. {titleForRun(run)}
+      </td>
       <td>{type}</td>
       <td>{distance}</td>
       <td>{elevation_gain}</td>

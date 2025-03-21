@@ -78,7 +78,7 @@ const YearStat = ({
       {...eventHandlers}
     >
       <section>
-        <Stat value={year} description=" Journey" />
+        <Stat value={year} description=" Journey 🛣️" />
         {sumDistance > 0 && (
           <WorkoutStat
             key="total"
@@ -104,13 +104,17 @@ const YearStat = ({
         {sumElevationGain > 0 && (
           <Stat
             value={`${sumElevationGain.toFixed(0)} `}
-            description="M Elevation Gain"
+            description="M Elevation Gain 📈"
             className="pb-2"
           />
         )}
-        <Stat value={`${streak} day`} description=" Streak" className="pb-2" />
+        <Stat
+          value={`${streak} day`}
+          description=" Streak 🔁"
+          className="pb-2"
+        />
         {hasHeartRate && (
-          <Stat value={avgHeartRate} description=" Avg Heart Rate" />
+          <Stat value={avgHeartRate} description=" Avg Heart Rate 💓" />
         )}
       </section>
       {year !== 'Total' && hovered && (
