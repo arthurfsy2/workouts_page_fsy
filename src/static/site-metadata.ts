@@ -11,7 +11,7 @@ interface ISiteMetadataResult {
 }
 
 const data: ISiteMetadataResult = {
-  siteTitle: 'Feng Siyuan锻炼记录',
+  siteTitle: 'Arthur Feng 锻炼记录',
   siteUrl: 'https://fengsy.cn',
   logo: 'https://pan.4a1801.life:11443/d/public/logo1.jpg',
   description: 'Personal site and blog',

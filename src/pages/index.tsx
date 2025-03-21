@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import React, { useReducer } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Layout from '@/components/Layout';
 import LocationStat from '@/components/LocationStat';
@@ -25,6 +26,18 @@ import {
   RunIds,
 } from '@/utils/utils';
 
+const SHOW_LOCATION_STAT = 'SHOW_LOCATION_STAT';
+const SHOW_YEARS_STAT = 'SHOW_YEARS_STAT';
+const reducer = (state: any, action: { type: any }) => {
+  switch (action.type) {
+    case SHOW_LOCATION_STAT:
+      return { showLocationStat: true };
+    case SHOW_YEARS_STAT:
+      return { showLocationStat: false };
+    default:
+      return state;
+  }
+};
 const Index = () => {
   const { siteTitle } = useSiteMetadata();
   const { activities, thisYear } = useActivities();
@@ -190,51 +203,80 @@ const Index = () => {
       svgStat && svgStat.removeEventListener('click', handleClick);
     };
   }, [year]);
-  
+  // 初始化 state 和 dispatch 函数
+  const [state, dispatch] = useReducer(reducer, { showLocationStat: false });
+  // 切换显示组件的函数
+  const handleToggle = () => {
+    if (state.showLocationStat) {
+      dispatch({ type: SHOW_YEARS_STAT });
+    } else {
+      dispatch({ type: SHOW_LOCATION_STAT });
+    }
+  };
+
   return (
     <Layout>
-      <div className="flex flex-col items-center w-full lg:w-1/4">
+    <div className="items-center w-full lg:w-1/4">
       <h1 className="my-6 text-3xl font-extrabold italic">
-          <a >{siteTitle}</a>
-        </h1>
-          <button  className={"flex justify-center mb-5 bg-[#006CB8] text-white rounded-[15px] p-2.5 text-lg cursor-pointer font-extrabold"}>
-              <a href="/log">查看日志汇总</a>
-          </button>
-        {(viewState.zoom ?? 0) <= 5 && IS_CHINESE ? (
-          <LocationStat
-            changeYear={changeYear}
-            changeCity={changeCity}
-            changeType={changeType}
-            onClickTypeInYear={changeTypeInYear}
-          />
-        ) : (
-          <YearsStat year={year} onClick={changeYear} onClickTypeInYear={changeTypeInYear}/>
-        )}
+        <a>{siteTitle}</a>
+      </h1>
+      
+      <div className="justify-center items-center space-x-4 my-5">
+        <button 
+          onClick={handleToggle} 
+          className="bg-[#00AFAA] text-white rounded-[15px] p-2.5 text-lg font-extrabold cursor-pointer"
+        >
+          {state.showLocationStat ? '切换至年份统计' : '切换至地点统计'}
+        </button>
+
+        <button 
+          className="bg-[#006CB8] text-white rounded-[15px] p-2.5 text-lg font-extrabold cursor-pointer"
+        >
+          <a href="/log">汇总分析</a>
+        </button>
       </div>
-      <div className="w-full lg:w-4/5">
-        <RunMap
-          title={title}
-          viewState={viewState}
-          geoData={geoData}
-          setViewState={setViewState}
+
+      {state.showLocationStat ? (
+        <LocationStat
           changeYear={changeYear}
-          thisYear={year}
+          changeCity={changeCity}
+          changeType={changeType}
+          onClickTypeInYear={changeTypeInYear}
         />
-        {year === 'Total' ? (
-          <SVGStat />
-        ) : (
-          <RunTable
-            runs={runs}
-            locateActivity={locateActivity}
-            setActivity={setActivity}
-            runIndex={runIndex}
-            setRunIndex={setRunIndex}
-          />
-        )}
-      </div>
-      {/* Enable Audiences in Vercel Analytics: https://vercel.com/docs/concepts/analytics/audiences/quickstart */}
-      {import.meta.env.VERCEL && <Analytics /> }
-    </Layout>
+      ) : (
+        <YearsStat
+          year={year}
+          onClick={changeYear}
+          onClickTypeInYear={changeTypeInYear}
+        />
+      )}
+    </div>
+
+  <div className="w-full lg:w-4/5">
+    <RunMap
+      title={title}
+      viewState={viewState}
+      geoData={geoData}
+      setViewState={setViewState}
+      changeYear={changeYear}
+      thisYear={year}
+    />
+    {year === 'Total' ? (
+      <SVGStat />
+    ) : (
+      <RunTable
+        runs={runs}
+        locateActivity={locateActivity}
+        setActivity={setActivity}
+        runIndex={runIndex}
+        setRunIndex={setRunIndex}
+      />
+    )}
+  </div>
+
+  {/* Enable Audiences in Vercel Analytics: https://vercel.com/docs/concepts/analytics/audiences/quickstart */}
+  {import.meta.env.VERCEL && <Analytics />}
+</Layout>
   );
 };
 

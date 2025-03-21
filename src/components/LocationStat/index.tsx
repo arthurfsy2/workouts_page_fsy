@@ -19,15 +19,13 @@ const LocationStat = ({
   changeYear,
   changeCity,
   changeType,
-  onClickTypeInYear
+  onClickTypeInYear,
 }: ILocationStatProps) => (
-  <div className="w-full pb-16 lg:w-full lg:pr-16">
-    <section className={`bg-white shadow-md rounded-lg p-6 text-gray-800 text-lg font-semibold leading-relaxed hover:shadow-lg transition-shadow duration-300`}
-      style={{ 
-        backgroundColor: 'rgb(245, 245, 245)', // 设置背景颜色
-        color:  'rgb(0, 175, 170)'
-    }}>
-      <p >
+  <div className="">
+    <section>
+      <p
+        className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-xl font-extrabold text-[#00AFAA]`}
+      >
         {CHINESE_LOCATION_INFO_MESSAGE_FIRST}
         .
         <br />
@@ -35,15 +33,18 @@ const LocationStat = ({
         .
         <br />
         <br />
-        <QuoteOfTheDay  /> {/* 在这里插入每日一言组件 */}
+        <QuoteOfTheDay /> {/* 在这里插入每日一言组件 */}
       </p>
-      
     </section>
-    <hr color="red" />
+    {/* <hr color="red" /> */}
     <LocationSummary />
     <CitiesStat onClick={changeCity} />
     <PeriodStat onClick={changeType} />
-    <YearStat year="Total" onClick={changeYear} onClickTypeInYear={onClickTypeInYear}/>
+    <YearStat
+      year="Total"
+      onClick={changeYear}
+      onClickTypeInYear={onClickTypeInYear}
+    />
   </div>
 );
 

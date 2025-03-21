@@ -3,8 +3,15 @@ import useActivities from '@/hooks/useActivities';
 import { INFO_MESSAGE } from '@/utils/const';
 // import styles from './style.module.css'; // 引入样式模块
 import QuoteOfTheDay from '@/utils/QuoteOfTheDay';
-const YearsStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick: (_year: string) => void,
-    onClickTypeInYear: (_year: string, _type: string) => void }) => {
+const YearsStat = ({
+  year,
+  onClick,
+  onClickTypeInYear,
+}: {
+  year: string;
+  onClick: (_year: string) => void;
+  onClickTypeInYear: (_year: string, _type: string) => void;
+}) => {
   const { years } = useActivities();
   // make sure the year click on front
   let yearsArrayUpdate = years.slice();
@@ -15,24 +22,36 @@ const YearsStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick
   // for short solution need to refactor
   return (
     <div>
-      <section className="pb-0">
-        <p className="text-[#00AFAA] text-lg font-bold text-left leading-[1.8]">
+      <section>
+        <p className="my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-xl font-extrabold text-[#00AFAA]">
           {INFO_MESSAGE(years.length, year)}
           <br />
-          <QuoteOfTheDay  /> {/* 在这里插入每日一言组件 */}
+          <br />
+          <QuoteOfTheDay /> {/* 在这里插入每日一言组件 */}
         </p>
-        
       </section>
-      <hr color="red" />
+      {/* <hr color="red" /> */}
       {yearsArrayUpdate.map((year) => (
-        <YearStat key={year} year={year} onClick={onClick} onClickTypeInYear={onClickTypeInYear}/>
+        <YearStat
+          key={year}
+          year={year}
+          onClick={onClick}
+          onClickTypeInYear={onClickTypeInYear}
+        />
       ))}
-      {// eslint-disable-next-line no-prototype-builtins
+      {
+        // eslint-disable-next-line no-prototype-builtins
         yearsArrayUpdate.hasOwnProperty('Total') ? (
-          <YearStat key="Total" year="Total" onClick={onClick} onClickTypeInYear={onClickTypeInYear}/>
+          <YearStat
+            key="Total"
+            year="Total"
+            onClick={onClick}
+            onClickTypeInYear={onClickTypeInYear}
+          />
         ) : (
           <div />
-        )}
+        )
+      }
     </div>
   );
 };

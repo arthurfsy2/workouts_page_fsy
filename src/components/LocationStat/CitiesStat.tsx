@@ -9,7 +9,9 @@ const CitiesStat = ({ onClick }: { onClick: (_city: string) => void }) => {
   citiesArr.sort((a, b) => b[1] - a[1]);
   return (
     <div className="cursor-pointer">
-      <section className={`mr-8 my-0 mb-8 py-4 px-2 rounded-xl text-[#579EFB] bg-[#F5F5F5]`}>
+      <section
+        className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
+      >
         {citiesArr.map(([city, distance]) => (
           <Stat
             key={city}

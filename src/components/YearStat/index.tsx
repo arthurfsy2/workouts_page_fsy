@@ -8,8 +8,15 @@ import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import styles from './style.module.css'; // 引入样式模块
 
-const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick: (_year: string) => void ,
-    onClickTypeInYear: (_year: string, _type: string) => void }) => {
+const YearStat = ({
+  year,
+  onClick,
+  onClickTypeInYear,
+}: {
+  year: string;
+  onClick: (_year: string) => void;
+  onClickTypeInYear: (_year: string, _type: string) => void;
+}) => {
   let { activities: runs, years } = useActivities();
   // for hover
   const [hovered, eventHandlers] = useHover();
@@ -30,11 +37,20 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
     sumDistance += run.distance || 0;
     sumElevationGain += run.elevation_gain || 0;
     if (run.average_speed) {
-      if(workoutsCounts[run.type]){
-        var [oriCount, oriSecondsAvail, oriMetersAvail] = workoutsCounts[run.type]
-        workoutsCounts[run.type] = [oriCount + 1, oriSecondsAvail + (run.distance || 0) / run.average_speed, oriMetersAvail + (run.distance || 0)]
-      }else{
-        workoutsCounts[run.type] = [1, (run.distance || 0) / run.average_speed, run.distance]
+      if (workoutsCounts[run.type]) {
+        var [oriCount, oriSecondsAvail, oriMetersAvail] =
+          workoutsCounts[run.type];
+        workoutsCounts[run.type] = [
+          oriCount + 1,
+          oriSecondsAvail + (run.distance || 0) / run.average_speed,
+          oriMetersAvail + (run.distance || 0),
+        ];
+      } else {
+        workoutsCounts[run.type] = [
+          1,
+          (run.distance || 0) / run.average_speed,
+          run.distance,
+        ];
       }
     }
     if (run.average_heartrate) {
@@ -53,30 +69,29 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
 
   const workoutsArr = Object.entries(workoutsCounts);
   workoutsArr.sort((a, b) => {
-    return b[1][0] - a[1][0]
+    return b[1][0] - a[1][0];
   });
   return (
     <div
-      className={`mr-8 my-0 mb-8 py-4 px-2 rounded-xl text-[#579EFB] bg-[#F5F5F5]`}
-      
+      className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
       onClick={() => onClick(year)}
       {...eventHandlers}
     >
-      <section >
+      <section>
         <Stat value={year} description=" Journey" />
-        { sumDistance > 0 &&
+        {sumDistance > 0 && (
           <WorkoutStat
-            key='total'
+            key="total"
             value={runs.length}
-            description={" Total"}
+            description={' Total'}
             distance={(sumDistance / 1000.0).toFixed(0)}
           />
-        }
-        { workoutsArr.map(([type, count]) => (
+        )}
+        {workoutsArr.map(([type, count]) => (
           <WorkoutStat
             key={type}
             value={count[0]}
-            description={` ${type}`+"s"}
+            description={` ${type}` + 's'}
             // pace={formatPace(count[2] / count[1])}
             distance={(count[2] / 1000.0).toFixed(0)}
             // color={colorFromType(type)}
@@ -86,18 +101,14 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
             }}
           />
         ))}
-        { sumElevationGain > 0 &&
+        {sumElevationGain > 0 && (
           <Stat
-            value={`${(sumElevationGain).toFixed(0)} `}
+            value={`${sumElevationGain.toFixed(0)} `}
             description="M Elevation Gain"
             className="pb-2"
           />
-        }
-        <Stat
-          value={`${streak} day`}
-          description=" Streak"
-          className="pb-2"
-        />
+        )}
+        <Stat value={`${streak} day`} description=" Streak" className="pb-2" />
         {hasHeartRate && (
           <Stat value={avgHeartRate} description=" Avg Heart Rate" />
         )}
@@ -112,4 +123,4 @@ const YearStat = ({ year, onClick, onClickTypeInYear }: { year: string, onClick:
   );
 };
 
-export default YearStat; 
+export default YearStat;
