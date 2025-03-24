@@ -93,13 +93,13 @@ const RunTable = ({
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
-    ['类型', sortTypeFunc],
-    ['距离', sortKMFunc],
-    ['总爬升', sortElevationGainFunc],
-    ['配速', sortPaceFunc],
-    ['BPM', sortBPMFunc],
-    ['时长', sortRunTimeFunc],
-    ['日期', sortDateFuncClick],
+    ['🗂️ 类型', sortTypeFunc],
+    ['📏 距离', sortKMFunc],
+    ['⬆️ 总爬升', sortElevationGainFunc],
+    ['🏃 配速', sortPaceFunc],
+    ['❤️ BPM', sortBPMFunc],
+    ['⏳ 时长', sortRunTimeFunc],
+    ['📅 日期', sortDateFuncClick],
   ]);
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (e) => {
@@ -130,19 +130,22 @@ const RunTable = ({
       <div className="mb-2">
         {max_ride ? (
           <p className="text-md font-semibold text-[#00AFAA]">
-            <span className="text-lg font-bold">最佳骑行：</span>
-            {max_ride.start_date_local} | {kmh} | {rrdistance}km
+            {/* <span className="text-lg font-bold">骑行：</span> */}
+            {/* <br /> */}
+            最佳配速（骑行）：{max_ride.start_date_local} | {kmh} | {rrdistance}
+            km
           </p>
         ) : (
-          <p className="text-md text-gray-500">今年没骑车！</p>
+          <p className="text-md text-gray-500"></p>
         )}
         {max_run ? (
           <p className="text-md font-semibold text-[#ED55DB]">
-            <span className="text-lg font-bold">最佳跑步：</span>
-            {max_run.start_date_local} | {rpaceParts} | {rdistance}km
+            {/* <span className="text-lg font-bold">最佳跑步：</span> */}
+            最佳配速（跑步）：{max_run.start_date_local} | {rpaceParts} |{' '}
+            {rdistance}km
           </p>
         ) : (
-          <p className="text-md text-gray-500">今年没跑步！</p>
+          <p className="text-md text-gray-500"></p>
         )}
       </div>
       <table className={styles.runTable} cellSpacing="0" cellPadding="0">
