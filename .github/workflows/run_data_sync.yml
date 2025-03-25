@@ -220,7 +220,7 @@ jobs:
           ATHLETE: ${{ env.ATHLETE }}
           MIN_GRID_DISTANCE: ${{ env.MIN_GRID_DISTANCE }}
         run: |
-          python run_page/gen_svg.py --from-db --title "$TITLE" --type github --github-style "align-firstday" --athlete "$ATHLETE" --special-distance 10 --special-distance2 20 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5 --background-color "#f5f5f5" --text-color "#006cb8" --track-color "#00AFAA"
+          python run_page/gen_svg.py --from-db --title "$TITLE" --type github --github-style "align-firstday" --athlete "$ATHLETE" --special-distance 20 --special-distance2 40 --special-color yellow --special-color2 red --output assets/github.svg --use-localtime --min-distance 0.5 --background-color "#f5f5f5" --text-color "#006cb8" --track-color "#00AFAA"
 
           python run_page/gen_svg.py --from-db --title "超过100公里的活动" --type github --github-style "align-firstday" --athlete "$ATHLETE" --special-distance 120 --special-distance2 140 --special-color yellow --special-color2 red --output assets/github_100.svg --use-localtime --min-distance 100 --background-color "#f5f5f5" --text-color "#006cb8" --track-color "#00AFAA"
           
