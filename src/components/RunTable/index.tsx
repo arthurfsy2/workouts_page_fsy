@@ -56,7 +56,7 @@ const RunTable = ({
       (max_ride.distance * 3600.0) /
       convertMovingTime2Sec(max_ride.moving_time) /
       1000.0
-    ).toFixed(2) + 'km/h';
+    ).toFixed(1) + 'km/h';
 
   const [sortFuncInfo, setSortFuncInfo] = useState('');
   // TODO refactor?
@@ -96,7 +96,7 @@ const RunTable = ({
     ['🗂️ 类型', sortTypeFunc],
     ['📏 距离', sortKMFunc],
     ['⬆️ 总爬升', sortElevationGainFunc],
-    ['🏃 配速', sortPaceFunc],
+    ['🏃 配速(时速)', sortPaceFunc],
     ['❤️ BPM', sortBPMFunc],
     ['⏳ 时长', sortRunTimeFunc],
     ['📅 日期', sortDateFuncClick],
@@ -132,7 +132,8 @@ const RunTable = ({
           <p className="text-md font-semibold text-[#00AFAA]">
             {/* <span className="text-lg font-bold">骑行：</span> */}
             {/* <br /> */}
-            最佳配速（骑行）：{max_ride.start_date_local} | {kmh} | {rrdistance}
+            最佳配速（骑行）：📅 {max_ride.start_date_local} | 🚴‍♂️ {kmh} | 📏{' '}
+            {rrdistance}
             km
           </p>
         ) : (
@@ -141,8 +142,8 @@ const RunTable = ({
         {max_run ? (
           <p className="text-md font-semibold text-[#ED55DB]">
             {/* <span className="text-lg font-bold">最佳跑步：</span> */}
-            最佳配速（跑步）：{max_run.start_date_local} | {rpaceParts} |{' '}
-            {rdistance}km
+            最佳配速（跑步）：📅 {max_run.start_date_local} | 🏃 {rpaceParts} |{' '}
+            📏 {rdistance}km
           </p>
         ) : (
           <p className="text-md text-gray-500"></p>
