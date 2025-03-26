@@ -98,6 +98,8 @@ const RUN_TITLES = {
   SKI_TITLE,
 };
 
+const DEFAULT_LOCATION = { longitude: 113.9353, latitude: 22.5431, zoom: 9 }  //当某个活动的坐标数据为空时，定义到的城市
+
 export {
   USE_GOOGLE_ANALYTICS,
   GOOGLE_ANALYTICS_TRACKING_ID,
@@ -117,6 +119,7 @@ export {
   PRIVACY_MODE,
   LIGHTS_ON,
   RICH_TITLE,
+  DEFAULT_LOCATION
 };
 
 const nike = 'rgb(224,237,94)';

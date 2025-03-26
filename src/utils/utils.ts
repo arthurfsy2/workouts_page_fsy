@@ -4,6 +4,7 @@ import { WebMercatorViewport } from 'viewport-mercator-project';
 import { chinaGeojson, RPGeometry } from '@/static/run_countries';
 import worldGeoJson from '@surbowl/world-geo-json-zh/world.zh.json';
 import { chinaCities } from '@/static/city';
+import { DEFAULT_LOCATION } from '@/utils/const';
 import {
   MAIN_COLOR,
   MUNICIPALITY_CITIES_ARR,
@@ -389,7 +390,7 @@ const getBoundsForGeoData = (
     }
   }
   if (points.length === 0) {
-    return { longitude: 20, latitude: 20, zoom: 3 };
+    return DEFAULT_LOCATION;
   }
   if (points.length === 2 && String(points[0]) === String(points[1])) {
     return { longitude: points[0][0], latitude: points[0][1], zoom: 9 };
