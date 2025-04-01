@@ -125,7 +125,9 @@ const RunTable = ({
   };
 
   return (
-    <div className={`${styles.tableContainer} rounded-lg bg-gray-100 p-4`}>
+    <div
+      className={`${styles.tableContainer} max-h-[400px] overflow-y-auto rounded-lg bg-gray-100 p-4 `}
+    >
       {/* <h2 className="text-lg font-bold mb-2">本年最佳记录：</h2> */}
       <div className="mb-2">
         {max_ride ? (

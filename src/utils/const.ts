@@ -54,16 +54,17 @@ const CHINESE_INFO_MESSAGE = (yearLength: number, year: string): string =>
   `运动 ${yearLength} 年 ` + ( year === 'Total' ? '' : `，右图为 ${year} 年的轨迹`);
 
 const ENGLISH_INFO_MESSAGE = (yearLength: number, year: string): string =>
-  `Logged ${yearLength} Years of Journey` +  ( year === 'Total' ? '' : `, the map show routes in ${year}`);
+  `Movement ${yearLength} years` + ( year === 'Total' ? '' : `, the right picture is the trajectory of ${year} years`);
 
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
-  '我去过了一些地方，希望随着时间推移，地图点亮的地方越来越多';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '不要停下来，不要停下探索的脚步';
+  '我一开始是一个极度讨厌运动的人，后来喜欢上跑步机，接着是路跑，到最近的骑行';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '只要动起来，就能日渐健康！';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松 🏃‍♂️' : 'Full Marathon 🏃‍♂️';
 const HALF_MARATHON_RUN_TITLE = IS_CHINESE ? '半程马拉松 🏃‍♀️' : 'Half Marathon 🏃‍♀️';
+const ONE_HUNDRED_KM_CYCLING_TITLE = IS_CHINESE ? '百公里骑行 🚴‍♂️' : '100 KM Ride 🚴‍♂️';
 const RUN_TITLE = IS_CHINESE ? '跑步 🏃' : 'Run 🏃';
 const TRAIL_RUN_TITLE = IS_CHINESE ? '越野跑 🏞️' : 'Trail Run 🏞️';
 const SWIM_TITLE = IS_CHINESE ? '游泳 🏊‍♂️' : 'Swim 🏊‍♂️';
@@ -82,6 +83,7 @@ const FLIGHT_TITLE = IS_CHINESE ? '飞行 ✈️' : 'Flight ✈️';
 const RUN_TITLES = {
   FULL_MARATHON_RUN_TITLE,
   HALF_MARATHON_RUN_TITLE,
+  ONE_HUNDRED_KM_CYCLING_TITLE,
   RUN_TITLE,
   TRAIL_RUN_TITLE,
 

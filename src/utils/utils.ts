@@ -263,6 +263,8 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.TRAIL_RUN_TITLE;
     case 'Ride':
       return RUN_TITLES.RIDE_TITLE;
+    case '100 KM Ride':
+      return RUN_TITLES.ONE_HUNDRED_KM_CYCLING_TITLE;
     case 'Indoor Ride':
       return RUN_TITLES.INDOOR_RIDE_TITLE;
     case 'VirtualRide':
@@ -293,21 +295,24 @@ const typeForRun = (run: Activity): string => {
   var distance = run.distance / 1000;
   switch (type) {
     case 'Run':
-      if (distance >= 40) {
+      if (distance >= 42.195) {
         return 'Full Marathon';
-      }
-      else if (distance > 20) {
+      } else if (distance > 21.0975) {
         return 'Half Marathon';
       }
       return 'Run';
     case 'Trail Run':
-      if (distance >= 40) {
+      if (distance >= 42.195) {
         return 'Full Marathon';
-      }
-      else if (distance > 20) {
+      } else if (distance > 21.0975) {
         return 'Half Marathon';
       }
       return 'Trail Run';
+    case 'Ride':
+      if (distance >= 100) {
+        return '100 KM Ride';
+      }
+      return 'Ride';
     default:
       return type;
   }
@@ -336,6 +341,9 @@ const titleForRun = (run: Activity): string => {
       else if (runDistance > 20) {
         return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
       }
+  }
+  if (type === 'Ride' && (run.distance / 1000) >= 100) {
+    return RUN_TITLES.ONE_HUNDRED_KM_CYCLING_TITLE;
   }
   return titleForType(type);
 };
@@ -430,13 +438,15 @@ const filterTitleRuns = (run: Activity, title: string) =>
   titleForRun(run) === title;
 
 const filterTypeRuns = (run: Activity, type: string) => {
-  switch (type){
+  switch (type) {
     case 'Full Marathon':
-      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance > 40000
+      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance > 42195;
     case 'Half Marathon':
-      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance < 40000 && run.distance > 20000
+      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance < 42195 && run.distance > 21097.5;
+    case '100 KM Ride':
+      return run.type === 'Ride' && run.distance >= 100000; // 100公里 = 100000米
     default:
-      return run.type === type
+      return run.type === type;
   }
 }
 

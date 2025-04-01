@@ -27,10 +27,9 @@ const LocationStat = ({
         className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-xl font-extrabold text-[#00AFAA]`}
       >
         {CHINESE_LOCATION_INFO_MESSAGE_FIRST}
-        .
+        <br />
         <br />
         {CHINESE_LOCATION_INFO_MESSAGE_SECOND}
-        .
         <br />
         <br />
         <QuoteOfTheDay /> {/* 在这里插入每日一言组件 */}
