@@ -238,8 +238,11 @@ const Index = () => {
             {state.showLocationStat ? '👉 年份统计' : '👉 地点统计'}
           </button>
 
-          <button className="cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white">
-            <a href="/log">📊 汇总分析</a>
+          <button
+            className="cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white"
+            onClick={() => (window.location.href = '/log')}
+          >
+            📊 汇总分析
           </button>
         </div>
 
