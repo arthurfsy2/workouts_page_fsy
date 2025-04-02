@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { IS_CHINESE } from '@/utils/const';
 
-const QuoteOfTheDay: React.FC<{ isChinese: boolean }> = ({ isChinese }) => {
+const QuoteOfTheDay: React.FC = () => {
   const [quote, setQuote] = useState<string | null>(null);
 
   const fetchChineseQuote = async () => {
@@ -31,12 +32,12 @@ const QuoteOfTheDay: React.FC<{ isChinese: boolean }> = ({ isChinese }) => {
   };
 
   useEffect(() => {
-    if (isChinese) {
+    if (IS_CHINESE) {
       fetchChineseQuote();
     } else {
       fetchEnglishQuote();
     }
-  }, [isChinese]);
+  }, []); // 只在组件挂载时运行
 
   if (!quote) return null;
 

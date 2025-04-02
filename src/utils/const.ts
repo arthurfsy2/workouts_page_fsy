@@ -48,7 +48,7 @@ const LIGHTS_ON =true;
 const RICH_TITLE = true;
 
 // IF you outside China please make sure IS_CHINESE = false
-const IS_CHINESE = false;
+const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength: number, year: string): string =>
   `运动 ${yearLength} 年 ` + ( year === 'Total' ? '' : `，右图为 ${year} 年的轨迹`);
