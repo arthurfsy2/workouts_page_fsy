@@ -10,6 +10,7 @@ import {
 } from 'recharts';
 import activities from '@/static/activities.json';
 import styles from './style.module.css';
+import { ACTIVITY_TOTAL, ACTIVITY_TYPES } from '@/utils/const';
 
 const ActivityCard = ({
   period,
@@ -33,7 +34,9 @@ const ActivityCard = ({
 
   const data = generateLabels().map((day) => ({
     day,
-    距离: (dailyDistances[day - 1] || 0).toFixed(1), // 保留两位小数
+    [ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE]: (
+      dailyDistances[day - 1] || 0
+    ).toFixed(1), // 保留两位小数
   }));
 
   const formatTime = (seconds) => {
@@ -53,7 +56,9 @@ const ActivityCard = ({
 
   // 计算 Y 轴的最大值和刻度
   const yAxisMax = Math.ceil(
-    Math.max(...data.map((d) => parseFloat(d.距离))) + 10
+    Math.max(
+      ...data.map((d) => parseFloat(d[ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE]))
+    ) + 10
   ); // 取整并增加缓冲
   const yAxisTicks = Array.from(
     { length: Math.ceil(yAxisMax / 5) + 1 },
@@ -65,27 +70,31 @@ const ActivityCard = ({
       <h2 className={styles.activityName}>{period}</h2>
       <div className={styles.activityDetails}>
         <p>
-          <strong>总距离:</strong> {summary.totalDistance.toFixed(1)} km
+          <strong>{ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}:</strong>{' '}
+          {summary.totalDistance.toFixed(1)} km
         </p>
         <p>
-          <strong>平均速度:</strong>{' '}
+          <strong>{ACTIVITY_TOTAL.AVERAGE_SPEED_TITLE}:</strong>{' '}
           {activityType === 'ride'
             ? `${summary.averageSpeed.toFixed(1)} km/h`
             : formatPace(summary.averageSpeed)}
         </p>
         <p>
-          <strong>总时间:</strong> {formatTime(summary.totalTime)}
+          <strong>{ACTIVITY_TOTAL.TOTAL_TIME_TITLE}:</strong>{' '}
+          {formatTime(summary.totalTime)}
         </p>
         {interval !== 'day' && (
           <>
             <p>
-              <strong>活动次数:</strong> {summary.count}
+              <strong>{ACTIVITY_TOTAL.ACTIVITY_COUNT_TITLE}:</strong>{' '}
+              {summary.count}
             </p>
             <p>
-              <strong>最远距离:</strong> {summary.maxDistance.toFixed(1)} km
+              <strong>{ACTIVITY_TOTAL.MAX_DISTANCE_TITLE}:</strong>{' '}
+              {summary.maxDistance.toFixed(1)} km
             </p>
             <p>
-              <strong>最快速度:</strong>{' '}
+              <strong>{ACTIVITY_TOTAL.MAX_SPEED_TITLE}:</strong>{' '}
               {activityType === 'ride'
                 ? `${summary.maxSpeed.toFixed(1)} km/h`
                 : formatPace(summary.maxSpeed)}
@@ -94,7 +103,8 @@ const ActivityCard = ({
         )}
         {interval === 'day' && (
           <p>
-            <strong>地址:</strong> {summary.location || '未知'}
+            <strong>{ACTIVITY_TOTAL.LOCATION_TITLE}:</strong>{' '}
+            {summary.location || ''}
           </p>
         )}
         {['month', 'week', 'year'].includes(interval) && (
@@ -117,7 +127,10 @@ const ActivityCard = ({
                 <Tooltip
                   formatter={(value) => `${value} km`} // 在 Tooltip 中添加 "km" 后缀
                 />
-                <Bar dataKey="距离" fill="#00AFAA" />
+                <Bar
+                  dataKey={ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}
+                  fill="#00AFAA"
+                />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -210,47 +223,38 @@ const ActivityList = () => {
       if (speedKmh > acc[key].maxSpeed) acc[key].maxSpeed = speedKmh;
 
       if (interval === 'day')
-        acc[key].location = cleanLocation(activity.location_country || '未知');
+        acc[key].location = activity.location_country || '';
 
       return acc;
     }, {});
   };
 
   const activitiesByInterval = groupActivities(interval);
-  const buttonStyle = {
-    backgroundColor: '#006CB8', // 背景色
-    color: 'white', // 文字颜色
-    border: '1px', // 去除边框
-    borderRadius: '15px', // 圆角
-    padding: '10px 20px', // 内边距
-    fontSize: '18px', // 字体大小
-    cursor: 'pointer', // 鼠标指针样式
-    // marginBottom: '20px', // 底部外边距
-  };
+
   return (
     <div className={styles.activityList}>
       <div className={styles.filterContainer}>
-        <button>
-          <a href="/" style={buttonStyle}>
-            返回首页
-          </a>
+        <button className="cursor-pointer rounded-2xl border border-transparent bg-[#006CB8] px-5 py-2.5 text-lg text-white">
+          <a href="/">{ACTIVITY_TOTAL.HOME_BUTTON}</a>
         </button>
         <select
+          className="cursor-pointer rounded-2xl border border-transparent px-5 py-2.5 text-lg"
           onChange={(e) => setActivityType(e.target.value)}
           value={activityType}
         >
-          <option value="run">跑步</option>
-          <option value="ride">骑行</option>
-          <option value="hike">徒步</option>
+          <option value="run">{ACTIVITY_TYPES.RUN_TITLE}</option>
+          <option value="ride">{ACTIVITY_TYPES.RIDE_TITLE}</option>
+          <option value="hike">{ACTIVITY_TYPES.HIKE_TITLE}</option>
         </select>
         <select
+          className="cursor-pointer rounded-2xl border border-transparent px-5 py-2.5 text-lg"
           onChange={(e) => toggleInterval(e.target.value)}
           value={interval}
         >
-          <option value="year">按年</option>
-          <option value="month">按月</option>
-          <option value="week">按周</option>
-          <option value="day">按天</option>
+          <option value="year">{ACTIVITY_TOTAL.YEARLY_TITLE}</option>
+          <option value="month">{ACTIVITY_TOTAL.MONTHLY_TITLE}</option>
+          <option value="week">{ACTIVITY_TOTAL.WEEKLY_TITLE}</option>
+          <option value="day">{ACTIVITY_TOTAL.DAILY_TITLE}</option>
         </select>
       </div>
       <div className={styles.summaryContainer}>

@@ -7,7 +7,7 @@ import {
   RunIds,
   formatPace,
 } from '@/utils/utils';
-import { RUN_COLOR, RIDE_COLOR } from '@/utils/const';
+import { RUN_COLOR, RIDE_COLOR, IS_CHINESE } from '@/utils/const';
 import RunRow from './RunRow';
 import styles from './style.module.css';
 
@@ -94,13 +94,13 @@ const RunTable = ({
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
-    ['🗂️ 类型', sortTypeFunc],
-    ['📏 距离', sortKMFunc],
-    ['⬆️ 总爬升', sortElevationGainFunc],
-    ['🏃 配速(时速)', sortPaceFunc],
-    ['❤️ BPM', sortBPMFunc],
-    ['⏳ 时长', sortRunTimeFunc],
-    ['📅 日期', sortDateFuncClick],
+    [IS_CHINESE ? '🗂️ 类型' : '🗂️ Type', sortTypeFunc],
+    [IS_CHINESE ? '📏 KM' : '📏 KM', sortKMFunc],
+    [IS_CHINESE ? '⬆️ 爬升' : '⬆️ Elevation Gain', sortElevationGainFunc],
+    [IS_CHINESE ? '🏃 配速(时速)' : '🏃 Pace (Speed)', sortPaceFunc],
+    [IS_CHINESE ? '❤️ BPM' : '❤️ BPM', sortBPMFunc],
+    [IS_CHINESE ? '⏳ 时长' : '⏳ Duration', sortRunTimeFunc],
+    [IS_CHINESE ? '📅 日期' : '📅 Date', sortDateFuncClick],
   ]);
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (e) => {
@@ -131,14 +131,14 @@ const RunTable = ({
         <div className="mt-4 flex justify-between rounded-lg bg-gray-100 p-4">
           {max_ride && (
             <p className="text-md font-semibold" style={{ color: RIDE_COLOR }}>
-              最佳配速（骑行）：📅 {max_ride.start_date_local} | 🚴‍♂️ {kmh} | 📏{' '}
-              {rrdistance} km
+              {IS_CHINESE ? '最佳配速（骑行）' : 'Best Pace (Cycling)'}：📅{' '}
+              {max_ride.start_date_local} | 🚴‍♂️ {kmh} | 📏 {rrdistance} km
             </p>
           )}
           {max_run && (
             <p className="text-md font-semibold" style={{ color: RUN_COLOR }}>
-              最佳配速（跑步）：📅 {max_run.start_date_local} | 🏃 {rpaceParts}{' '}
-              | 📏 {rdistance} km
+              {IS_CHINESE ? '最佳配速（跑步）' : 'Best Pace (Running)'}：📅{' '}
+              {max_run.start_date_local} | 🏃 {rpaceParts} | 📏 {rdistance} km
             </p>
           )}
         </div>

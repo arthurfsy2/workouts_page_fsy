@@ -2,6 +2,7 @@ import YearStat from '@/components/YearStat';
 import {
   CHINESE_LOCATION_INFO_MESSAGE_FIRST,
   CHINESE_LOCATION_INFO_MESSAGE_SECOND,
+  IS_CHINESE,
 } from '@/utils/const';
 import CitiesStat from './CitiesStat';
 import LocationSummary from './LocationSummary';
@@ -32,7 +33,7 @@ const LocationStat = ({
         {CHINESE_LOCATION_INFO_MESSAGE_SECOND}
         <br />
         <br />
-        <QuoteOfTheDay /> {/* 在这里插入每日一言组件 */}
+        <QuoteOfTheDay isChinese={IS_CHINESE} /> {/* 在这里插入每日一言组件 */}
       </p>
     </section>
     {/* <hr color="red" /> */}
