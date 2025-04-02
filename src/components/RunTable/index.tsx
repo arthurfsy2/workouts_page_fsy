@@ -7,6 +7,7 @@ import {
   RunIds,
   formatPace,
 } from '@/utils/utils';
+import { RUN_COLOR, RIDE_COLOR } from '@/utils/const';
 import RunRow from './RunRow';
 import styles from './style.module.css';
 
@@ -125,59 +126,54 @@ const RunTable = ({
   };
 
   return (
-    <div
-      className={`${styles.tableContainer} max-h-[400px] overflow-y-auto rounded-lg bg-gray-100 p-4 `}
-    >
-      {/* <h2 className="text-lg font-bold mb-2">本年最佳记录：</h2> */}
-      <div className="mb-2">
-        {max_ride ? (
-          <p className="text-md font-semibold text-[#00AFAA]">
-            {/* <span className="text-lg font-bold">骑行：</span> */}
-            {/* <br /> */}
-            最佳配速（骑行）：📅 {max_ride.start_date_local} | 🚴‍♂️ {kmh} | 📏{' '}
-            {rrdistance}
-            km
-          </p>
-        ) : (
-          <p className="text-md text-gray-500"></p>
-        )}
-        {max_run ? (
-          <p className="text-md font-semibold text-[#ED55DB]">
-            {/* <span className="text-lg font-bold">最佳跑步：</span> */}
-            最佳配速（跑步）：📅 {max_run.start_date_local} | 🏃 {rpaceParts} |{' '}
-            📏 {rdistance}km
-          </p>
-        ) : (
-          <p className="text-md text-gray-500"></p>
-        )}
-      </div>
-      <table className={styles.runTable} cellSpacing="0" cellPadding="0">
-        <thead>
-          <tr>
-            <th />
-            {Array.from(sortFuncMap.keys()).map((k) => (
-              <th key={k} onClick={handleClick}>
-                {k}
-              </th>
+    <div>
+      {(max_run || max_ride) && ( // 修改这里，添加条件判断
+        <div className="mt-4 flex justify-between rounded-lg bg-gray-100 p-4">
+          {max_ride && (
+            <p className="text-md font-semibold" style={{ color: RIDE_COLOR }}>
+              最佳配速（骑行）：📅 {max_ride.start_date_local} | 🚴‍♂️ {kmh} | 📏{' '}
+              {rrdistance} km
+            </p>
+          )}
+          {max_run && (
+            <p className="text-md font-semibold" style={{ color: RUN_COLOR }}>
+              最佳配速（跑步）：📅 {max_run.start_date_local} | 🏃 {rpaceParts}{' '}
+              | 📏 {rdistance} km
+            </p>
+          )}
+        </div>
+      )}
+      <div
+        className={`${styles.tableContainer} max-h-[500px] overflow-y-auto rounded-lg bg-gray-100 p-4 `}
+      >
+        <table className={styles.runTable} cellSpacing="0" cellPadding="0">
+          <thead>
+            <tr>
+              <th />
+              {Array.from(sortFuncMap.keys()).map((k) => (
+                <th key={k} onClick={handleClick}>
+                  {k}
+                </th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {runs.map((run, elementIndex) => (
+              <RunRow
+                key={run.run_id}
+                elementIndex={elementIndex}
+                locateActivity={locateActivity}
+                run={run}
+                runIndex={runIndex}
+                setRunIndex={setRunIndex}
+                maxRecord={
+                  max_run.run_id == run.run_id || max_ride.run_id == run.run_id
+                }
+              />
             ))}
-          </tr>
-        </thead>
-        <tbody>
-          {runs.map((run, elementIndex) => (
-            <RunRow
-              key={run.run_id}
-              elementIndex={elementIndex}
-              locateActivity={locateActivity}
-              run={run}
-              runIndex={runIndex}
-              setRunIndex={setRunIndex}
-              maxRecord={
-                max_run.run_id == run.run_id || max_ride.run_id == run.run_id
-              }
-            />
-          ))}
-        </tbody>
-      </table>
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

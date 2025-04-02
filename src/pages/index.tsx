@@ -9,7 +9,12 @@ import SVGStat from '@/components/SVGStat';
 import YearsStat from '@/components/YearsStat';
 import useActivities from '@/hooks/useActivities';
 import useSiteMetadata from '@/hooks/useSiteMetadata';
-import { IS_CHINESE } from '@/utils/const';
+import {
+  IS_CHINESE,
+  SWITCH_LOCATION_BUTTON,
+  SWITCH_YEAR_BUTTON,
+  SUMMARY_BUTTON,
+} from '@/utils/const';
 import {
   Activity,
   IViewState,
@@ -235,14 +240,16 @@ const Index = () => {
             onClick={handleToggle}
             className="cursor-pointer rounded-[15px] bg-[#00AFAA] p-2.5 text-lg font-extrabold text-white"
           >
-            {state.showLocationStat ? '👉 年份统计' : '👉 地点统计'}
+            {state.showLocationStat
+              ? SWITCH_YEAR_BUTTON
+              : SWITCH_LOCATION_BUTTON}
           </button>
 
           <button
             className="cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white"
             onClick={() => (window.location.href = '/log')}
           >
-            📊 汇总分析
+            {SUMMARY_BUTTON}
           </button>
         </div>
 

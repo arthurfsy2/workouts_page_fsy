@@ -35,7 +35,7 @@ const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
 const LINE_OPACITY = 0.6;
 // styling: map height
-const MAP_HEIGHT = 500;
+const MAP_HEIGHT = 450;
 //set to `false` if you want to hide the road label characters
 const ROAD_LABEL_DISPLAY = true;
 // update for now 2024/11/17 the privacy mode is true
@@ -59,7 +59,7 @@ const ENGLISH_INFO_MESSAGE = (yearLength: number, year: string): string =>
 // not support English for now
 const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
   '我一开始是一个极度讨厌运动的人，后来喜欢上跑步机，接着是路跑，到最近的骑行';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '只要动起来，就能日渐健康！';
+const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '运动这个事，想的时候会很痛苦，但是完成了会非常有成就感！';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松 🏃‍♂️' : 'Full Marathon 🏃‍♂️';
@@ -79,6 +79,9 @@ const SNOWBOARD_TITLE = IS_CHINESE ? '单板滑雪 🏂' : 'Snowboard 🏂';
 const SKI_TITLE = IS_CHINESE ? '双板滑雪 🎿' : 'Ski 🎿';
 const ROAD_TRIP_TITLE = IS_CHINESE ? '自驾 🚗' : 'Road Trip 🚗';
 const FLIGHT_TITLE = IS_CHINESE ? '飞行 ✈️' : 'Flight ✈️';
+const SWITCH_LOCATION_BUTTON = IS_CHINESE ? '👉 地点统计' : '👉 Location Stat.';
+const SWITCH_YEAR_BUTTON = IS_CHINESE ? '👉 年份统计' : '👉 Year Stat.';
+const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary Stat.';
 
 const RUN_TITLES = {
   FULL_MARATHON_RUN_TITLE,
@@ -121,7 +124,10 @@ export {
   PRIVACY_MODE,
   LIGHTS_ON,
   RICH_TITLE,
-  DEFAULT_LOCATION
+  DEFAULT_LOCATION,
+  SWITCH_LOCATION_BUTTON,
+  SWITCH_YEAR_BUTTON,
+  SUMMARY_BUTTON
 };
 
 const nike = 'rgb(224,237,94)';
