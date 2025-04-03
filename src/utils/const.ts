@@ -162,7 +162,7 @@ const PACE_TITLE = IS_CHINESE ? '配速(时速) 🏃' : 'Pace (Speed) 🏃';
 const DURATION_TITLE = IS_CHINESE ? '时长 ⏳' : 'Duration ⏳';
 const DATE_TITLE = IS_CHINESE ? '日期 📅' : 'Date 📅';
 const AVG_BPM_TITLE = IS_CHINESE ? '平均心率💓' : 'Avg Heart Rate 💓';
-const STREAK_TITLE = IS_CHINESE ? '天连续 🔁' : 'days Streak 🔁';
+const STREAK_TITLE = IS_CHINESE ? '天连续运动 🔁' : 'days Streak 🔁';
 const JOURNEY_TITLE = IS_CHINESE ? '旅程 🛣️' : 'Journey 🛣️';
 
 const RUNTABLE_TITLE = {

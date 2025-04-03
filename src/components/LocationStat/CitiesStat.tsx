@@ -10,15 +10,17 @@ const CitiesStat = ({ onClick }: { onClick: (_city: string) => void }) => {
   return (
     <div className="cursor-pointer">
       <section
-        className={`my-0 mb-8 mr-8 flex flex-wrap  rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
+        className={`my-0 mb-8 mr-8 flex flex-wrap rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
       >
         {citiesArr.map(([city, distance]) => (
           <Stat
             key={city}
             value={city}
             description={` ${(distance / 1000).toFixed(0)} KM`}
-            className={`w-${citiesArr.length > 5 ? '1/2' : 'full'} pb-2`} //适应城市数据较小时的展示
-            citySize={citiesArr.length > 5 ? 1 : 4}
+            style={{
+              width: citiesArr.length > 6 ? '50%' : '100%',
+            }}
+            citySize={citiesArr.length > 6 ? 1 : 4}
             onClick={() => onClick(city)}
           />
         ))}
