@@ -21,6 +21,7 @@ import {
   KAYAKING_COLOR,
   SNOWBOARD_COLOR,
   TRAIL_RUN_COLOR,
+  TREADMILL_RUN_COLOR,
   RICH_TITLE,
 } from './const';
 import { FeatureCollection, LineString } from 'geojson';
@@ -261,6 +262,8 @@ const titleForType = (type: string): string => {
       return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
     case 'Trail Run':
       return RUN_TITLES.TRAIL_RUN_TITLE;
+    case 'Treadmill Run':
+      return RUN_TITLES.TREADMILL_TITLE;
     case 'Ride':
       return RUN_TITLES.RIDE_TITLE;
     case '100 KM Ride':
@@ -354,6 +357,8 @@ const colorFromType = (workoutType: string): string => {
       return RUN_COLOR;
     case 'Trail Run':
       return TRAIL_RUN_COLOR;
+    case 'Treadmill Run':
+      return TREADMILL_RUN_COLOR;
     case 'Ride':
     case 'Indoor Ride':
       return RIDE_COLOR;

@@ -66,6 +66,7 @@ const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松 🏃‍♂️' : '
 const HALF_MARATHON_RUN_TITLE = IS_CHINESE ? '半程马拉松 🏃‍♀️' : 'Half Marathon 🏃‍♀️';
 const ONE_HUNDRED_KM_CYCLING_TITLE = IS_CHINESE ? '百公里骑行 🚴‍♂️' : '100 KM Ride 🚴‍♂️';
 const RUN_TITLE = IS_CHINESE ? '跑步 🏃' : 'Run 🏃';
+const TREADMILL_TITLE = IS_CHINESE ? '跑步机 🏃' : 'Treadmill Run🏃';
 const TRAIL_RUN_TITLE = IS_CHINESE ? '越野跑 🏞️' : 'Trail Run 🏞️';
 const SWIM_TITLE = IS_CHINESE ? '游泳 🏊‍♂️' : 'Swim 🏊‍♂️';
 
@@ -119,6 +120,7 @@ const RUN_TITLES = {
   ONE_HUNDRED_KM_CYCLING_TITLE,
   RUN_TITLE,
   TRAIL_RUN_TITLE,
+  TREADMILL_TITLE,
 
   RIDE_TITLE,
   INDOOR_RIDE_TITLE,
@@ -244,3 +246,4 @@ export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const KAYAKING_COLOR = red;
 export const SNOWBOARD_COLOR = dark_vanilla;
 export const TRAIL_RUN_COLOR = IKB;
+export const TREADMILL_RUN_COLOR = mgi_blue3;
