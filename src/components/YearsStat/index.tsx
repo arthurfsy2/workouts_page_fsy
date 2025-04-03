@@ -23,7 +23,7 @@ const YearsStat = ({
   return (
     <div>
       <section>
-        <p className="my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-xl font-extrabold text-[#00AFAA]">
+        <p className="my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-base font-extrabold text-[#00AFAA]">
           {INFO_MESSAGE(years.length, year)}
           <br />
           <br />

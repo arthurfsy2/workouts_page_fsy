@@ -19,20 +19,20 @@ const WorkoutStat = ({
   onClick: (_year: string) => void;
   color: string;
 }) => (
-  <div className={`${className || ' '} `} onClick={onClick}>
-    <span className={`text-3xl font-semibold italic text-[#00AFAA]`}>
+  <div className={`${className || 'pb-2'} `} onClick={onClick}>
+    <span className={`text-4xl font-semibold text-[#00AFAA]`}>
       {intComma(value)}
     </span>
     <span className="text-1xl font-semibold italic">{description}</span>
     {pace && (
-      <span className="text-3xl font-semibold italic text-[#00AFAA]">
+      <span className="text-4xl font-semibold text-[#00AFAA]">
         {' ' + pace}
       </span>
     )}
     {pace && <span className="text-1xl font-semibold italic"> Pace</span>}
 
     {distance && (
-      <span className="text-3xl font-semibold italic text-[#00AFAA]">
+      <span className="text-4xl font-semibold text-[#00AFAA]">
         {' ' + distance}
       </span>
     )}

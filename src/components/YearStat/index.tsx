@@ -6,7 +6,8 @@ import { formatPace, colorFromType } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
-import styles from './style.module.css'; // 引入样式模块
+import { titleForType } from '@/utils/utils';
+import { RUNTABLE_TITLE, BUTTON_TITLES } from '@/utils/const';
 
 const YearStat = ({
   year,
@@ -78,12 +79,18 @@ const YearStat = ({
       {...eventHandlers}
     >
       <section>
-        <Stat value={year} description=" Journey 🛣️" />
+        <Stat
+          value={year === 'Total' ? BUTTON_TITLES.SWITCH_TOTAL_BUTTON : year}
+          description={
+            year === 'Total' ? '✅' : `${RUNTABLE_TITLE.JOURNEY_TITLE}`
+          }
+          className="pb-5"
+        />
         {sumDistance > 0 && (
           <WorkoutStat
             key="total"
             value={runs.length}
-            description={' Total'}
+            description={BUTTON_TITLES.SWITCH_TOTAL_BUTTON}
             distance={(sumDistance / 1000.0).toFixed(0)}
           />
         )}
@@ -91,7 +98,7 @@ const YearStat = ({
           <WorkoutStat
             key={type}
             value={count[0]}
-            description={` ${type}` + 's'}
+            description={` ${titleForType(type)}`}
             // pace={formatPace(count[2] / count[1])}
             distance={(count[2] / 1000.0).toFixed(0)}
             // color={colorFromType(type)}
@@ -104,17 +111,20 @@ const YearStat = ({
         {sumElevationGain > 0 && (
           <Stat
             value={`${sumElevationGain.toFixed(0)} `}
-            description="M Elevation Gain 📈"
+            description={`M ${RUNTABLE_TITLE.ELEVATION_GAIN_TITLE} `}
             className="pb-2"
           />
         )}
         <Stat
-          value={`${streak} day`}
-          description=" Streak 🔁"
+          value={`${streak}`}
+          description={`${RUNTABLE_TITLE.STREAK_TITLE}`}
           className="pb-2"
         />
         {hasHeartRate && (
-          <Stat value={avgHeartRate} description=" Avg Heart Rate 💓" />
+          <Stat
+            value={avgHeartRate}
+            description={`${RUNTABLE_TITLE.AVG_BPM_TITLE}`}
+          />
         )}
       </section>
       {year !== 'Total' && hovered && (

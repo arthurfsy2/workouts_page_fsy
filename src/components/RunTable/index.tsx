@@ -7,7 +7,12 @@ import {
   RunIds,
   formatPace,
 } from '@/utils/utils';
-import { RUN_COLOR, RIDE_COLOR, IS_CHINESE } from '@/utils/const';
+import {
+  RUN_COLOR,
+  RIDE_COLOR,
+  IS_CHINESE,
+  RUNTABLE_TITLE,
+} from '@/utils/const';
 import RunRow from './RunRow';
 import styles from './style.module.css';
 
@@ -94,13 +99,13 @@ const RunTable = ({
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
-    [IS_CHINESE ? '🗂️ 类型' : '🗂️ Type', sortTypeFunc],
-    [IS_CHINESE ? '📏 KM' : '📏 KM', sortKMFunc],
-    [IS_CHINESE ? '⬆️ 爬升' : '⬆️ Elevation Gain', sortElevationGainFunc],
-    [IS_CHINESE ? '🏃 配速(时速)' : '🏃 Pace (Speed)', sortPaceFunc],
-    [IS_CHINESE ? '❤️ BPM' : '❤️ BPM', sortBPMFunc],
-    [IS_CHINESE ? '⏳ 时长' : '⏳ Duration', sortRunTimeFunc],
-    [IS_CHINESE ? '📅 日期' : '📅 Date', sortDateFuncClick],
+    [RUNTABLE_TITLE.TYPE_TITLE, sortTypeFunc],
+    ['KM 📏', sortKMFunc],
+    [RUNTABLE_TITLE.ELEVATION_GAIN_TITLE, sortElevationGainFunc],
+    [RUNTABLE_TITLE.PACE_TITLE, sortPaceFunc],
+    ['BPM ❤️', sortBPMFunc],
+    [RUNTABLE_TITLE.DURATION_TITLE, sortRunTimeFunc],
+    [RUNTABLE_TITLE.DATE_TITLE, sortDateFuncClick],
   ]);
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (e) => {

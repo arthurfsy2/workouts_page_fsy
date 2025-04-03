@@ -15,9 +15,10 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
         {periodArr.map(([type, times]) => (
           <Stat
             key={type}
-            value={`${IS_CHINESE && titleForType(type)}`}
-            description={`${times} ${type + (times > 1 ? 's' : '')}`}
-            citySize={3}
+            value={`${titleForType(type)}`}
+            description={`${times} ${IS_CHINESE ? '次' : 'times'}`}
+            // citySize={4}
+            className="w-full pb-2"
             onClick={() => onClick(type)}
           />
         ))}

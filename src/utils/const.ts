@@ -51,15 +51,15 @@ const RICH_TITLE = true;
 const IS_CHINESE = true;
 const USE_ANIMATION_FOR_GRID = false;
 const CHINESE_INFO_MESSAGE = (yearLength: number, year: string): string =>
-  `运动 ${yearLength} 年 ` + ( year === 'Total' ? '' : `，右图为 ${year} 年的轨迹`);
+  `锻炼 ${yearLength} 年了 ` + ( year === 'Total' ? '' : `，右图为 ${year} 年的活动轨迹`);
 
 const ENGLISH_INFO_MESSAGE = (yearLength: number, year: string): string =>
-  `Movement ${yearLength} years` + ( year === 'Total' ? '' : `, the right picture is the trajectory of ${year}`);
+  `Exercising for ${yearLength} years` + ( year === 'Total' ? '' : `, the right picture shows the activity trajectory in ${year}`);
 
-// not support English for now
-const CHINESE_LOCATION_INFO_MESSAGE_FIRST =
+
+const LOCATION_INFO_MESSAGE_FIRST =
   '我一开始是一个极度讨厌运动的人，后来喜欢上跑步机，接着是路跑，到最近的骑行';
-const CHINESE_LOCATION_INFO_MESSAGE_SECOND = '运动这个事，想的时候会很痛苦，但是完成了会非常有成就感！';
+const LOCATION_INFO_MESSAGE_SECOND = '运动这件事，想想就很痛苦，但是完成了的成就感就是会带来多巴胺！';
 
 const INFO_MESSAGE = IS_CHINESE ? CHINESE_INFO_MESSAGE : ENGLISH_INFO_MESSAGE;
 const FULL_MARATHON_RUN_TITLE = IS_CHINESE ? '全程马拉松 🏃‍♂️' : 'Full Marathon 🏃‍♂️';
@@ -79,9 +79,11 @@ const SNOWBOARD_TITLE = IS_CHINESE ? '单板滑雪 🏂' : 'Snowboard 🏂';
 const SKI_TITLE = IS_CHINESE ? '双板滑雪 🎿' : 'Ski 🎿';
 const ROAD_TRIP_TITLE = IS_CHINESE ? '自驾 🚗' : 'Road Trip 🚗';
 const FLIGHT_TITLE = IS_CHINESE ? '飞行 ✈️' : 'Flight ✈️';
-const SWITCH_LOCATION_BUTTON = IS_CHINESE ? '👉 地点统计' : '👉 Location Stat.';
-const SWITCH_YEAR_BUTTON = IS_CHINESE ? '👉 年份统计' : '👉 Year Stat.';
-const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary Stat.';
+
+
+//以下为汇总表翻译
+const HOME_BUTTON = IS_CHINESE ? '返回首页' : 'Home';
+
 const ACTIVITY_COUNT_TITLE = IS_CHINESE ? '活动次数' : 'Activity Count';
 const MAX_DISTANCE_TITLE = IS_CHINESE ? '最远距离' : 'Max Distance';
 const MAX_SPEED_TITLE = IS_CHINESE ? '最快速度' : 'Max Speed';
@@ -93,7 +95,23 @@ const MONTHLY_TITLE = IS_CHINESE ? '按月' : 'Monthly';
 const WEEKLY_TITLE = IS_CHINESE ? '按周' : 'Weekly';
 const DAILY_TITLE = IS_CHINESE ? '按天' : 'Daily';
 const LOCATION_TITLE = IS_CHINESE ? '位置' : 'Location';
-const HOME_BUTTON = IS_CHINESE ? '返回首页' : 'Home';
+
+
+
+//以下定义首页按钮翻译
+
+const SWITCH_LOCATION_BUTTON = IS_CHINESE ? '👉 地点统计' : '👉 Location Stat.';
+const SWITCH_YEAR_BUTTON = IS_CHINESE ? '👉 年份统计' : '👉 Year Stat.';
+const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary Stat.';
+const SWITCH_TOTAL_BUTTON = IS_CHINESE ? ' 汇总' : ' Total';
+
+const BUTTON_TITLES = {
+  SWITCH_LOCATION_BUTTON,
+  SWITCH_YEAR_BUTTON,
+  SUMMARY_BUTTON,
+  SWITCH_TOTAL_BUTTON,
+
+};
 
 const RUN_TITLES = {
   FULL_MARATHON_RUN_TITLE,
@@ -137,13 +155,36 @@ const ACTIVITY_TYPES = {
   HIKE_TITLE,
 }
 
+// 以下为runtable表头翻译
+const TYPE_TITLE = IS_CHINESE ? '类型 🗂️' : 'Type 🗂️';
+const ELEVATION_GAIN_TITLE = IS_CHINESE ? '爬升 📈' : 'Elevation Gain 📈';
+const PACE_TITLE = IS_CHINESE ? '配速(时速) 🏃' : 'Pace (Speed) 🏃';
+const DURATION_TITLE = IS_CHINESE ? '时长 ⏳' : 'Duration ⏳';
+const DATE_TITLE = IS_CHINESE ? '日期 📅' : 'Date 📅';
+const AVG_BPM_TITLE = IS_CHINESE ? '平均心率💓' : 'Avg Heart Rate 💓';
+const STREAK_TITLE = IS_CHINESE ? '天连续 🔁' : 'days Streak 🔁';
+const JOURNEY_TITLE = IS_CHINESE ? '旅程 🛣️' : 'Journey 🛣️';
+
+const RUNTABLE_TITLE = {
+  TYPE_TITLE,
+
+  ELEVATION_GAIN_TITLE,
+  PACE_TITLE,
+  DURATION_TITLE,
+  DATE_TITLE,
+  AVG_BPM_TITLE,
+  STREAK_TITLE,
+  JOURNEY_TITLE,
+
+}
+
 const DEFAULT_LOCATION = { longitude: 113.9353, latitude: 22.5431, zoom: 9 }  //当某个活动的坐标数据为空时，定义到的城市
 
 export {
   USE_GOOGLE_ANALYTICS,
   GOOGLE_ANALYTICS_TRACKING_ID,
-  CHINESE_LOCATION_INFO_MESSAGE_FIRST,
-  CHINESE_LOCATION_INFO_MESSAGE_SECOND,
+  LOCATION_INFO_MESSAGE_FIRST,
+  LOCATION_INFO_MESSAGE_SECOND,
   MAPBOX_TOKEN,
   MUNICIPALITY_CITIES_ARR,
   MAP_LAYER_LIST,
@@ -160,10 +201,13 @@ export {
   RICH_TITLE,
   DEFAULT_LOCATION,
   SWITCH_LOCATION_BUTTON,
+  SWITCH_TOTAL_BUTTON,
   SWITCH_YEAR_BUTTON,
   SUMMARY_BUTTON,
   ACTIVITY_TOTAL,
-  ACTIVITY_TYPES
+  ACTIVITY_TYPES,
+  RUNTABLE_TITLE,
+  BUTTON_TITLES
 };
 
 const nike = 'rgb(224,237,94)';
