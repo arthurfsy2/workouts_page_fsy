@@ -18,13 +18,13 @@ const data: ISiteMetadataResult = {
   keywords: 'workouts, running, cycling, riding, roadtrip, hiking, swimming',
   navLinks: [
     {
-      name: '家庭博客',
+      name: '📝 Blog',
       url: 'https://fengsy.cn',
     },
     {
-      name: '关于我们',
-      url: 'https://fengsy.cn/%E5%AE%B6%E5%BA%AD/intro.html',
-    },
+      name: '⭐ Repo',
+      url: 'https://github.com/arthurfsy2/workouts_page_fsy',
+    }
   ],
 };
 

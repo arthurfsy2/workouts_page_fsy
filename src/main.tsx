@@ -24,7 +24,7 @@ const routes = createBrowserRouter(
       element: withOptionalGAPageTracking(<Index />),
     },
     {
-      path: 'log',
+      path: 'summary',
       element: withOptionalGAPageTracking(<HomePage />),
     },
     {

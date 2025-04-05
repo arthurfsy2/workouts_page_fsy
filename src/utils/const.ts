@@ -166,6 +166,9 @@ const DATE_TITLE = IS_CHINESE ? '日期 📅' : 'Date 📅';
 const AVG_BPM_TITLE = IS_CHINESE ? '平均心率💓' : 'Avg Heart Rate 💓';
 const STREAK_TITLE = IS_CHINESE ? '天连续运动 🔁' : 'days Streak 🔁';
 const JOURNEY_TITLE = IS_CHINESE ? '旅程 🛣️' : 'Journey 🛣️';
+const EARLIEST_START_TIME_TITLE = IS_CHINESE ? '最早出发时间' : 'Earliest start time';
+const LATEST_START_TIME_TITLE = IS_CHINESE ? '最晚出发时间' : 'Latest start time';
+const NEW_CHECK_IN_LOCATION = IS_CHINESE ? '新打卡地点' : 'New check-in location';
 
 const RUNTABLE_TITLE = {
   TYPE_TITLE,
@@ -177,10 +180,14 @@ const RUNTABLE_TITLE = {
   AVG_BPM_TITLE,
   STREAK_TITLE,
   JOURNEY_TITLE,
+  EARLIEST_START_TIME_TITLE,
+  LATEST_START_TIME_TITLE,
+  NEW_CHECK_IN_LOCATION,
 
 }
 
-const DEFAULT_LOCATION = { longitude: 113.9353, latitude: 22.5431, zoom: 9 }  //当某个活动的坐标数据为空时，定义到的城市
+//当某个活动的坐标数据为空时，定义到的城市
+const DEFAULT_LOCATION = { longitude: 113.9353, latitude: 22.5431, zoom: 9 }  
 
 export {
   USE_GOOGLE_ANALYTICS,

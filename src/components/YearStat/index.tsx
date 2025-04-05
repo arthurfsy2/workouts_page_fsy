@@ -2,6 +2,7 @@ import { lazy, Suspense } from 'react';
 import Stat from '@/components/Stat';
 import WorkoutStat from '@/components/WorkoutStat';
 import useActivities from '@/hooks/useActivities';
+import getSeenCities from '@/hooks/getSeenCities';
 import { formatPace, colorFromType } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
@@ -9,7 +10,7 @@ import { loadSvgComponent } from '@/utils/svgUtils';
 import { titleForType } from '@/utils/utils';
 import { RUNTABLE_TITLE, BUTTON_TITLES } from '@/utils/const';
 import activities from '@/static/activities.json';
-
+const { seenCities } = getSeenCities();
 const YearStat = ({
   year,
   onClick,
@@ -24,7 +25,6 @@ const YearStat = ({
   const [hovered, eventHandlers] = useHover();
   // lazy Component
   const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
-  const { seenCities } = useActivities();
 
   const yearData = seenCities[year] || []; // 获取对应年份的数据
   const reduce_length = 3; // 控制打卡城市展示个数
@@ -180,13 +180,13 @@ const YearStat = ({
           <Stat
             value={`${sumElevationGain.toFixed(0)} `}
             description={`M ${RUNTABLE_TITLE.ELEVATION_GAIN_TITLE} `}
-            className="pb-2"
+            className="pb-1"
           />
         )}
         <Stat
           value={`${streak}`}
           description={`${RUNTABLE_TITLE.STREAK_TITLE}`}
-          className="pb-2"
+          className="pb-1"
         />
         {hasHeartRate && (
           <Stat
@@ -194,27 +194,27 @@ const YearStat = ({
             description={`${RUNTABLE_TITLE.AVG_BPM_TITLE}`}
           />
         )}
-        {yearData.length > 0 && (
+        {year !== 'Total' && yearData.length > 0 && (
           <Stat
-            value={`${year === 'Total' ? '' : citiesList}`}
+            value={`${citiesList}`}
             citySize={4}
             // 根据 yearData.length 设置不同的描述
-            description={`${year === 'Total' ? '' : yearData.length > reduce_length ? `新打卡${yearData.length}个城区` : `新打卡城区`}`}
-            className="pb-2"
+            description={`${yearData.length} ${RUNTABLE_TITLE.NEW_CHECK_IN_LOCATION}`}
+            className="pb-1"
           />
         )}
 
         <Stat
           value={`${earliestActivity}`}
           citySize={2}
-          description={`${year === 'Total' ? '历史最早出发' : '今年最早出发'}`}
-          className="pb-2"
+          description={`${RUNTABLE_TITLE.EARLIEST_START_TIME_TITLE}`}
+          className="pb-1"
         />
         <Stat
           value={`${latestActivity}`}
           citySize={2}
-          description={`${year === 'Total' ? '历史最晚出发' : '今年最晚出发'}`}
-          className="pb-2"
+          description={`${RUNTABLE_TITLE.LATEST_START_TIME_TITLE}`}
+          className="pb-1"
         />
       </section>
       {year !== 'Total' && hovered && (

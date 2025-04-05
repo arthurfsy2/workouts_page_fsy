@@ -235,10 +235,10 @@ const Index = () => {
           <a>{siteTitle}</a>
         </h1>
 
-        <div className="my-5 items-center justify-center space-x-4">
+        <div className="my-5 mr-8 flex items-center justify-between">
           <button
             onClick={handleToggle}
-            className="cursor-pointer rounded-[15px] bg-[#00AFAA] p-2.5 text-lg font-extrabold text-white"
+            className="w-2/5 cursor-pointer rounded-[15px] bg-[#00AFAA] p-2.5 text-lg font-extrabold text-white"
           >
             {state.showLocationStat
               ? SWITCH_YEAR_BUTTON
@@ -246,8 +246,8 @@ const Index = () => {
           </button>
 
           <button
-            className="cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white"
-            onClick={() => (window.location.href = '/log')}
+            className="w-2/5 cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white"
+            onClick={() => (window.location.href = '/summary')}
           >
             {SUMMARY_BUTTON}
           </button>

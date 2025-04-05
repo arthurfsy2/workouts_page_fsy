@@ -12,7 +12,7 @@ interface IStatProperties {
 const Stat = ({
   value,
   description,
-  className = 'pb-2 w-full',
+  className = 'pb-1',
   citySize,
   onClick,
   style, // 新增：解构出 style 属性
