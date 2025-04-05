@@ -8,6 +8,7 @@ import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
 import { titleForType } from '@/utils/utils';
 import { RUNTABLE_TITLE, BUTTON_TITLES } from '@/utils/const';
+import activities from '@/static/activities.json';
 
 const YearStat = ({
   year,
@@ -23,6 +24,72 @@ const YearStat = ({
   const [hovered, eventHandlers] = useHover();
   // lazy Component
   const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
+  const { seenCities } = useActivities();
+
+  const yearData = seenCities[year] || []; // 获取对应年份的数据
+  const reduce_length = 3; // 控制打卡城市展示个数
+
+  let citiesList;
+
+  // 检查城市数量，如果不超过reduce_length个就直接添加
+  if (yearData.length <= reduce_length) {
+    citiesList = yearData.map((city) => city.replace(/市/g, '')).join('/');
+  } else {
+    citiesList = yearData
+      .map((city) => city.replace(/市/g, ''))
+      .reduce((acc, city, index) => {
+        if (index < reduce_length) {
+          return acc ? `${acc}/${city}` : city;
+        } else if (index === reduce_length) {
+          return `${acc}...`;
+        }
+        return acc;
+      }, '');
+  }
+
+  const findEarliestAndLatest = (activities, year) => {
+    const yearStr = String(year);
+    let earliestTime = null;
+    let latestTime = null;
+    let earliestActivity = null;
+    let latestActivity = null;
+
+    activities.forEach((activity) => {
+      const startDate = new Date(activity.start_date_local);
+
+      // 判断年份，只有在 Total 时才比较所有活动
+      const isYearMatched =
+        yearStr === 'Total' || startDate.getFullYear().toString() === yearStr;
+
+      if (isYearMatched) {
+        // 获取时分秒字符串内容
+        const timeString = activity.start_date_local.split(' ')[1];
+        const [hours, minutes, seconds] = timeString.split(':').map(Number);
+        const timeInSeconds = hours * 3600 + minutes * 60 + seconds;
+
+        // 初始化 earliestTime 和 latestTime
+        if (earliestTime === null || timeInSeconds < earliestTime) {
+          earliestTime = timeInSeconds;
+          earliestActivity = activity.start_date_local;
+        }
+
+        if (latestTime === null || timeInSeconds > latestTime) {
+          latestTime = timeInSeconds;
+          latestActivity = activity.start_date_local;
+        }
+      }
+    });
+
+    return {
+      earliest: earliestActivity,
+      latest: latestActivity,
+    };
+  };
+
+  // 调用示例
+  const result = findEarliestAndLatest(activities, year);
+  const earliestActivity = result.earliest;
+  const latestActivity = result.latest;
 
   if (years.includes(year)) {
     runs = runs.filter((run) => run.start_date_local.slice(0, 4) === year);
@@ -72,6 +139,7 @@ const YearStat = ({
   workoutsArr.sort((a, b) => {
     return b[1][0] - a[1][0];
   });
+
   return (
     <div
       className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
@@ -126,6 +194,28 @@ const YearStat = ({
             description={`${RUNTABLE_TITLE.AVG_BPM_TITLE}`}
           />
         )}
+        {yearData.length > 0 && (
+          <Stat
+            value={`${year === 'Total' ? '' : citiesList}`}
+            citySize={4}
+            // 根据 yearData.length 设置不同的描述
+            description={`${year === 'Total' ? '' : yearData.length > reduce_length ? `新打卡${yearData.length}个城区` : `新打卡城区`}`}
+            className="pb-2"
+          />
+        )}
+
+        <Stat
+          value={`${earliestActivity}`}
+          citySize={2}
+          description={`${year === 'Total' ? '历史最早出发' : '今年最早出发'}`}
+          className="pb-2"
+        />
+        <Stat
+          value={`${latestActivity}`}
+          citySize={2}
+          description={`${year === 'Total' ? '历史最晚出发' : '今年最晚出发'}`}
+          className="pb-2"
+        />
       </section>
       {year !== 'Total' && hovered && (
         <Suspense fallback="loading...">
