@@ -24,7 +24,7 @@ const LocationStat = ({
   <div className="">
     <section>
       <p
-        className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-base font-extrabold text-[#00AFAA]`}
+        className={`my-0 mb-8 mr-2 rounded-xl bg-[#F5F5F5] px-2 py-4 text-base font-extrabold text-[#00AFAA] lg:mr-8`}
       >
         {LOCATION_INFO_MESSAGE_FIRST}
         <br />

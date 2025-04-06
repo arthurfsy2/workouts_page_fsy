@@ -101,9 +101,9 @@ const LOCATION_TITLE = IS_CHINESE ? '位置' : 'Location';
 
 //以下定义首页按钮翻译
 
-const SWITCH_LOCATION_BUTTON = IS_CHINESE ? '👉 地点统计' : '👉 Location Stat.';
+const SWITCH_LOCATION_BUTTON = IS_CHINESE ? '👉 地点统计' : '👉 Loc. Stat.';
 const SWITCH_YEAR_BUTTON = IS_CHINESE ? '👉 年份统计' : '👉 Year Stat.';
-const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary Stat.';
+const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary';
 const SWITCH_TOTAL_BUTTON = IS_CHINESE ? ' 汇总' : ' Total';
 
 const BUTTON_TITLES = {
@@ -166,8 +166,8 @@ const DATE_TITLE = IS_CHINESE ? '日期 📅' : 'Date 📅';
 const AVG_BPM_TITLE = IS_CHINESE ? '平均心率💓' : 'Avg Heart Rate 💓';
 const STREAK_TITLE = IS_CHINESE ? '天连续运动 🔁' : 'days Streak 🔁';
 const JOURNEY_TITLE = IS_CHINESE ? '旅程 🛣️' : 'Journey 🛣️';
-const EARLIEST_START_TIME_TITLE = IS_CHINESE ? '最早出发时间' : 'Earliest start time';
-const LATEST_START_TIME_TITLE = IS_CHINESE ? '最晚出发时间' : 'Latest start time';
+const EARLIEST_START_TIME_TITLE = IS_CHINESE ? '最早开始时间' : 'Earliest start time';
+const LATEST_START_TIME_TITLE = IS_CHINESE ? '最晚开始时间' : 'Latest start time';
 const NEW_CHECK_IN_LOCATION = IS_CHINESE ? '新打卡地点' : 'New check-in location';
 
 const RUNTABLE_TITLE = {

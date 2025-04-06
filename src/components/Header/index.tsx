@@ -6,7 +6,7 @@ const Header = () => {
 
   return (
     <>
-      <nav className="mt-4 flex w-full items-center justify-between pl-6 lg:px-16">
+      <nav className="mt-4 flex w-full items-center justify-between pb-1 pl-6 lg:px-16">
         <div className="w-1/4">
           <Link to={siteUrl}>
             <picture>
@@ -19,7 +19,7 @@ const Header = () => {
             <a
               key={i}
               href={n.url}
-              className="mr-3 text-lg lg:mr-4 lg:text-base"
+              className="mr-8 text-2xl font-semibold lg:mr-4 lg:text-base"
             >
               {n.name}
             </a>

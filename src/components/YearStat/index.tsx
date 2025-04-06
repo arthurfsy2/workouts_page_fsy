@@ -27,20 +27,20 @@ const YearStat = ({
   const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
 
   const yearData = seenCities[year] || []; // 获取对应年份的数据
-  const reduce_length = 3; // 控制打卡城市展示个数
+  const reduceLength = 3; // 控制打卡城市展示个数
 
   let citiesList;
 
-  // 检查城市数量，如果不超过reduce_length个就直接添加
-  if (yearData.length <= reduce_length) {
+  // 检查城市数量，如果不超过reduceLength个就直接添加
+  if (yearData.length <= reduceLength) {
     citiesList = yearData.map((city) => city.replace(/市/g, '')).join('/');
   } else {
     citiesList = yearData
       .map((city) => city.replace(/市/g, ''))
       .reduce((acc, city, index) => {
-        if (index < reduce_length) {
+        if (index < reduceLength) {
           return acc ? `${acc}/${city}` : city;
-        } else if (index === reduce_length) {
+        } else if (index === reduceLength) {
           return `${acc}...`;
         }
         return acc;
@@ -142,7 +142,7 @@ const YearStat = ({
 
   return (
     <div
-      className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
+      className={`my-0 mb-8 mr-2 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]  lg:mr-8`}
       onClick={() => onClick(year)}
       {...eventHandlers}
     >
@@ -152,7 +152,7 @@ const YearStat = ({
           description={
             year === 'Total' ? '✅' : `${RUNTABLE_TITLE.JOURNEY_TITLE}`
           }
-          className="pb-5"
+          className="flex w-full items-center pb-1"
         />
         {sumDistance > 0 && (
           <WorkoutStat
@@ -180,13 +180,13 @@ const YearStat = ({
           <Stat
             value={`${sumElevationGain.toFixed(0)} `}
             description={`M ${RUNTABLE_TITLE.ELEVATION_GAIN_TITLE} `}
-            className="pb-1"
+            className="flex w-full items-center justify-between pb-1"
           />
         )}
         <Stat
           value={`${streak}`}
           description={`${RUNTABLE_TITLE.STREAK_TITLE}`}
-          className="pb-1"
+          className="flex w-full items-center justify-between pb-1"
         />
         {hasHeartRate && (
           <Stat
@@ -197,29 +197,29 @@ const YearStat = ({
         {year !== 'Total' && yearData.length > 0 && (
           <Stat
             value={`${citiesList}`}
-            citySize={4}
+            citySize={2}
             // 根据 yearData.length 设置不同的描述
             description={`${yearData.length} ${RUNTABLE_TITLE.NEW_CHECK_IN_LOCATION}`}
-            className="pb-1"
+            className="flex w-full items-center justify-between pb-1"
           />
         )}
 
         <Stat
           value={`${earliestActivity}`}
-          citySize={2}
+          citySize={1}
           description={`${RUNTABLE_TITLE.EARLIEST_START_TIME_TITLE}`}
-          className="pb-1"
+          className="flex w-full items-center justify-between pb-1"
         />
         <Stat
           value={`${latestActivity}`}
-          citySize={2}
+          citySize={1}
           description={`${RUNTABLE_TITLE.LATEST_START_TIME_TITLE}`}
-          className="pb-1"
+          className="flex w-full items-center justify-between pb-1"
         />
       </section>
       {year !== 'Total' && hovered && (
         <Suspense fallback="loading...">
-          <YearSVG className="my-4 h-4/6 w-4/6 border-0 p-0" />
+          <YearSVG className="my-4 h-full w-full border-0 p-0" />
         </Suspense>
       )}
       {/* <hr color="red" /> */}

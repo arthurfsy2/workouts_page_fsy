@@ -10,15 +10,15 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
   return (
     <div className="cursor-pointer">
       <section
-        className={`my-0 mb-8 mr-8 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
+        className={`my-0 mb-8 mr-2 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB] lg:mr-8`}
       >
         {periodArr.map(([type, times]) => (
           <Stat
             key={type}
             value={`${titleForType(type)}`}
             description={`${times} ${IS_CHINESE ? '次' : 'times'}`}
-            // citySize={4}
-            className="w-full pb-2"
+            citySize={2}
+            className="flex w-full items-center pb-1"
             onClick={() => onClick(type)}
           />
         ))}

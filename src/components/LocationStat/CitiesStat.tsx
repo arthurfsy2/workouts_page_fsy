@@ -10,7 +10,7 @@ const CitiesStat = ({ onClick }: { onClick: (_city: string) => void }) => {
   return (
     <div className="cursor-pointer">
       <section
-        className={`my-0 mb-8 mr-8 flex flex-wrap rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]`}
+        className={`my-0 mb-8 mr-2 flex flex-wrap rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB] lg:mr-8`}
       >
         {citiesArr.map(([city, distance]) => (
           <Stat

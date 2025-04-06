@@ -12,7 +12,7 @@ interface IStatProperties {
 const Stat = ({
   value,
   description,
-  className = 'pb-1',
+  className = 'pb-1 flex w-full items-center justify-between',
   citySize,
   onClick,
   style, // 新增：解构出 style 属性
@@ -20,10 +20,12 @@ const Stat = ({
   <div className={`${className}`} onClick={onClick} style={style}>
     {' '}
     {/* 新增：应用传入的样式 */}
-    <span className={`text-${citySize || 4}xl font-semibold text-[#00AFAA]`}>
+    <span
+      className={`w-1/2 text-${citySize || 5}xl mr-2 text-right font-semibold text-[#00AFAA]`}
+    >
       {intComma(value.toString())}
     </span>
-    <span className="text-1xl font-semibold italic"> {description}</span>
+    <span className="text-1xl w-1/2 font-semibold italic"> {description}</span>
   </div>
 );
 
