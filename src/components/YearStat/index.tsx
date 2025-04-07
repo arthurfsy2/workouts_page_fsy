@@ -11,6 +11,7 @@ import { titleForType } from '@/utils/utils';
 import { RUNTABLE_TITLE, BUTTON_TITLES } from '@/utils/const';
 import activities from '@/static/activities.json';
 const { seenCities } = getSeenCities();
+import { intComma } from '@/utils/utils';
 const YearStat = ({
   year,
   onClick,
@@ -178,7 +179,7 @@ const YearStat = ({
         ))}
         {sumElevationGain > 0 && (
           <Stat
-            value={`${sumElevationGain.toFixed(0)} `}
+            value={`${intComma(sumElevationGain.toFixed(0))} `}
             description={`M ${RUNTABLE_TITLE.ELEVATION_GAIN_TITLE} `}
             className="flex w-full items-center justify-between pb-1"
           />

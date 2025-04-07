@@ -23,7 +23,7 @@ const Stat = ({
     <span
       className={`w-1/2 text-${citySize || 5}xl mr-2 text-right font-semibold text-[#00AFAA]`}
     >
-      {intComma(value.toString())}
+      {value.toString()}
     </span>
     <span className="text-1xl w-1/2 font-semibold italic"> {description}</span>
   </div>
