@@ -8,26 +8,75 @@ import {
   ResponsiveContainer,
   CartesianGrid,
 } from 'recharts';
+import { useNavigate } from 'react-router-dom';
 import activities from '@/static/activities.json';
 import styles from './style.module.css';
 import { ACTIVITY_TOTAL, ACTIVITY_TYPES } from '@/utils/const';
 
-const ActivityCard = ({
+// Define interfaces for our data structures
+interface Activity {
+  start_date_local: string;
+  distance: number;
+  moving_time: string;
+  type: string;
+  location_country?: string;
+}
+
+interface ActivitySummary {
+  totalDistance: number;
+  totalTime: number;
+  count: number;
+  dailyDistances: number[];
+  maxDistance: number;
+  maxSpeed: number;
+  location: string;
+}
+
+interface DisplaySummary {
+  totalDistance: number;
+  averageSpeed: number;
+  totalTime: number;
+  count: number;
+  maxDistance: number;
+  maxSpeed: number;
+  location: string;
+}
+
+interface ChartData {
+  day: number;
+  distance: string;
+}
+
+interface ActivityCardProps {
+  period: string;
+  summary: DisplaySummary;
+  dailyDistances: number[];
+  interval: string;
+  activityType: string;
+}
+
+interface ActivityGroups {
+  [key: string]: ActivitySummary;
+}
+
+type IntervalType = 'year' | 'month' | 'week' | 'day';
+
+const ActivityCard: React.FC<ActivityCardProps> = ({
   period,
   summary,
   dailyDistances,
   interval,
   activityType,
 }) => {
-  const generateLabels = () => {
+  const generateLabels = (): number[] => {
     if (interval === 'month') {
       const [year, month] = period.split('-').map(Number);
-      const daysInMonth = new Date(year, month, 0).getDate(); // 获取该月的天数
+      const daysInMonth = new Date(year, month, 0).getDate(); // Get the number of days in the month
       return Array.from({ length: daysInMonth }, (_, i) => i + 1);
     } else if (interval === 'week') {
       return Array.from({ length: 7 }, (_, i) => i + 1);
     } else if (interval === 'year') {
-      return Array.from({ length: 12 }, (_, i) => i + 1); // 生成1到12的月份
+      return Array.from({ length: 12 }, (_, i) => i + 1); // Generate months 1 to 12
     }
     return [];
   };
@@ -36,17 +85,17 @@ const ActivityCard = ({
     day,
     [ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE]: (
       dailyDistances[day - 1] || 0
-    ).toFixed(1), // 保留两位小数
+    ).toFixed(2), // Keep two decimal places
   }));
 
-  const formatTime = (seconds) => {
+  const formatTime = (seconds: number): string => {
     const h = Math.floor(seconds / 3600);
     const m = Math.floor((seconds % 3600) / 60);
-    const s = seconds % 60;
-    return `${h}h ${m}m ${s.toFixed(0)}s`;
+    const s = Math.floor(seconds % 60);
+    return `${h}h ${m}m ${s}s`;
   };
 
-  const formatPace = (speed) => {
+  const formatPace = (speed: number): string => {
     if (speed === 0) return '0:00';
     const pace = 60 / speed; // min/km
     const minutes = Math.floor(pace);
@@ -54,16 +103,16 @@ const ActivityCard = ({
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds} min/km`;
   };
 
-  // 计算 Y 轴的最大值和刻度
+  // Calculate Y-axis maximum value and ticks
   const yAxisMax = Math.ceil(
     Math.max(
       ...data.map((d) => parseFloat(d[ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE]))
     ) + 10
-  ); // 取整并增加缓冲
+  ); // Round up and add buffer
   const yAxisTicks = Array.from(
     { length: Math.ceil(yAxisMax / 5) + 1 },
     (_, i) => i * 5
-  ); // 生成等差数列
+  ); // Generate arithmetic sequence
 
   return (
     <div className={styles.activityCard}>
@@ -71,12 +120,12 @@ const ActivityCard = ({
       <div className={styles.activityDetails}>
         <p>
           <strong>{ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}:</strong>{' '}
-          {summary.totalDistance.toFixed(1)} km
+          {summary.totalDistance.toFixed(2)} km
         </p>
         <p>
           <strong>{ACTIVITY_TOTAL.AVERAGE_SPEED_TITLE}:</strong>{' '}
           {activityType === 'ride'
-            ? `${summary.averageSpeed.toFixed(1)} km/h`
+            ? `${summary.averageSpeed.toFixed(2)} km/h`
             : formatPace(summary.averageSpeed)}
         </p>
         <p>
@@ -91,12 +140,12 @@ const ActivityCard = ({
             </p>
             <p>
               <strong>{ACTIVITY_TOTAL.MAX_DISTANCE_TITLE}:</strong>{' '}
-              {summary.maxDistance.toFixed(1)} km
+              {summary.maxDistance.toFixed(2)} km
             </p>
             <p>
               <strong>{ACTIVITY_TOTAL.MAX_SPEED_TITLE}:</strong>{' '}
               {activityType === 'ride'
-                ? `${summary.maxSpeed.toFixed(1)} km/h`
+                ? `${summary.maxSpeed.toFixed(2)} km/h`
                 : formatPace(summary.maxSpeed)}
             </p>
           </>
@@ -115,17 +164,29 @@ const ActivityCard = ({
             <ResponsiveContainer>
               <BarChart
                 data={data}
-                margin={{ top: 20, right: 20, left: 0, bottom: 5 }}
+                margin={{ top: 20, right: 20, left: -20, bottom: 5 }}
               >
                 <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="day" />
+                <XAxis dataKey="day" tick={{ fill: 'rgb(204, 204, 204)' }} />
                 <YAxis
-                  label={{ value: 'km', angle: -90, position: 'insideLeft' }}
+                  label={{
+                    value: 'km',
+                    angle: -90,
+                    position: 'insideLeft',
+                    fill: 'rgb(204, 204, 204)',
+                  }}
                   domain={[0, yAxisMax]}
-                  ticks={yAxisTicks} // 设置 Y 轴的刻度
+                  ticks={yAxisTicks}
+                  tick={{ fill: 'rgb(204, 204, 204)' }}
                 />
                 <Tooltip
-                  formatter={(value) => `${value} km`} // 在 Tooltip 中添加 "km" 后缀
+                  formatter={(value) => `${value} km`}
+                  contentStyle={{
+                    backgroundColor: 'rgb(36, 36, 36)',
+                    border: '1px solid #444',
+                    color: 'rgb(204, 204, 204)',
+                  }}
+                  labelStyle={{ color: '#00AFAA' }}
                 />
                 <Bar
                   dataKey={ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}
@@ -140,93 +201,94 @@ const ActivityCard = ({
   );
 };
 
-const ActivityList = () => {
-  const [interval, setInterval] = useState('month');
-  const [activityType, setActivityType] = useState('ride');
+const ActivityList: React.FC = () => {
+  const [interval, setInterval] = useState<IntervalType>('month');
+  const [activityType, setActivityType] = useState<string>('ride');
+  const navigate = useNavigate();
 
-  const toggleInterval = (newInterval) => {
+  const toggleInterval = (newInterval: IntervalType): void => {
     setInterval(newInterval);
   };
 
-  const filterActivities = (activity) => {
+  const filterActivities = (activity: Activity): boolean => {
     return activity.type.toLowerCase() === activityType;
   };
 
-  const convertTimeToSeconds = (time) => {
+  const convertTimeToSeconds = (time: string): number => {
     const [hours, minutes, seconds] = time.split(':').map(Number);
     return hours * 3600 + minutes * 60 + seconds;
   };
 
-  const cleanLocation = (location) => {
-    return location
-      .replace(/\b\d{5,}\b/g, '') // 移除邮编
-      .replace(/,?\s*(?:\w+省|中国)/g, '') // 移除省份和中国
-      .replace(/,+/g, ',') // 替换多个逗号为一个
-      .replace(/^,|,$/g, '') // 移除开头和结尾的逗号
-      .trim();
-  };
+  const groupActivities = (interval: IntervalType): ActivityGroups => {
+    return (activities as Activity[])
+      .filter(filterActivities)
+      .reduce((acc: ActivityGroups, activity) => {
+        const date = new Date(activity.start_date_local);
+        let key: string;
+        let index: number;
+        switch (interval) {
+          case 'year':
+            key = date.getFullYear().toString();
+            index = date.getMonth(); // Return current month (0-11)
+            break;
+          case 'month':
+            key = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`; // Zero padding
+            index = date.getDate() - 1; // Return current day (0-30)
+            break;
+          case 'week':
+            const currentDate = new Date(date.valueOf());
+            currentDate.setDate(
+              currentDate.getDate() + 4 - (currentDate.getDay() || 7)
+            ); // Set to nearest Thursday (ISO weeks defined by Thursday)
+            const yearStart = new Date(currentDate.getFullYear(), 0, 1);
+            const weekNum = Math.ceil(
+              ((currentDate.getTime() - yearStart.getTime()) / 86400000 + 1) / 7
+            );
+            key = `${currentDate.getFullYear()}-W${weekNum.toString().padStart(2, '0')}`;
+            index = (date.getDay() + 6) % 7; // Return current day (0-6, Monday-Sunday)
+            break;
+          case 'day':
+            key = date.toLocaleDateString('zh').replaceAll('/', '-'); // Format date as YYYY-MM-DD
+            index = 0; // Return 0
+            break;
+          default:
+            key = date.getFullYear().toString();
+            index = 0; // Default return 0
+        }
 
-  const groupActivities = (interval) => {
-    return activities.filter(filterActivities).reduce((acc, activity) => {
-      const date = new Date(activity.start_date);
-      let key;
-      let index;
-      switch (interval) {
-        case 'year':
-          key = date.getFullYear();
-          index = date.getMonth(); // 返回当前月份（0-11）
-          break;
-        case 'month':
-          key = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`; // 补零
-          index = date.getDate() - 1; // 返回当前天数（0-30）
-          break;
-        case 'week':
-          const startOfYear = new Date(date.getFullYear(), 0, 1);
-          const weekNumber = Math.ceil(
-            ((date - startOfYear) / 86400000 + startOfYear.getDay() + 1) / 7
-          );
-          key = `${date.getFullYear()}-W${weekNumber.toString().padStart(2, '0')}`; // 补零
-          index = date.getDay(); // 返回本周的第几天（0-6）
-          break;
-        case 'day':
-          key = date.toISOString().split('T')[0];
-          index = 0; // 返回0
-          break;
-        default:
-          key = date.getFullYear();
-          index = 0; // 默认返回0
-      }
+        if (!acc[key])
+          acc[key] = {
+            totalDistance: 0,
+            totalTime: 0,
+            count: 0,
+            dailyDistances: [],
+            maxDistance: 0,
+            maxSpeed: 0,
+            location: '',
+          };
 
-      if (!acc[key])
-        acc[key] = {
-          totalDistance: 0,
-          totalTime: 0,
-          count: 0,
-          dailyDistances: [],
-          maxDistance: 0,
-          maxSpeed: 0,
-          location: '',
-        };
-      const distanceKm = activity.distance / 1000; // 转换为公里
-      const speedKmh =
-        distanceKm / (convertTimeToSeconds(activity.moving_time) / 3600);
+        const distanceKm = activity.distance / 1000; // Convert to kilometers
+        const timeInSeconds = convertTimeToSeconds(activity.moving_time);
+        const speedKmh =
+          timeInSeconds > 0 ? distanceKm / (timeInSeconds / 3600) : 0;
 
-      acc[key].totalDistance += distanceKm;
-      acc[key].totalTime += convertTimeToSeconds(activity.moving_time);
-      acc[key].count += 1;
+        acc[key].totalDistance += distanceKm;
+        acc[key].totalTime += timeInSeconds;
+        acc[key].count += 1;
 
-      // 累加每天的距离
-      acc[key].dailyDistances[index] =
-        (acc[key].dailyDistances[index] || 0) + distanceKm;
+        // Accumulate daily distances
+        acc[key].dailyDistances[index] =
+          (acc[key].dailyDistances[index] || 0) + distanceKm;
 
-      if (distanceKm > acc[key].maxDistance) acc[key].maxDistance = distanceKm;
-      if (speedKmh > acc[key].maxSpeed) acc[key].maxSpeed = speedKmh;
+        if (distanceKm > acc[key].maxDistance)
+          acc[key].maxDistance = distanceKm;
+        if (speedKmh > acc[key].maxSpeed) acc[key].maxSpeed = speedKmh;
 
-      if (interval === 'day')
-        acc[key].location = activity.location_country || '';
+        if (interval === 'day')
+          acc[key].location = activity.location_country || '';
 
-      return acc;
-    }, {});
+        return acc;
+      }, {});
   };
 
   const activitiesByInterval = groupActivities(interval);
@@ -234,11 +296,13 @@ const ActivityList = () => {
   return (
     <div className={styles.activityList}>
       <div className={styles.filterContainer}>
-        <button className="cursor-pointer rounded-2xl border border-transparent bg-[#006CB8] px-5 py-2.5 text-lg text-white">
-          <a href="/">{ACTIVITY_TOTAL.HOME_BUTTON}</a>
+        <button
+          className="cursor-pointer rounded-2xl border border-transparent bg-[#006CB8] px-5 py-2.5 text-lg text-white"
+          onClick={() => navigate('/')}
+        >
+          {ACTIVITY_TOTAL.HOME_BUTTON}
         </button>
         <select
-          className="cursor-pointer rounded-2xl border border-transparent px-5 py-2.5 text-lg"
           onChange={(e) => setActivityType(e.target.value)}
           value={activityType}
         >
@@ -247,8 +311,7 @@ const ActivityList = () => {
           <option value="hike">{ACTIVITY_TYPES.HIKE_TITLE}</option>
         </select>
         <select
-          className="cursor-pointer rounded-2xl border border-transparent px-5 py-2.5 text-lg"
-          onChange={(e) => toggleInterval(e.target.value)}
+          onChange={(e) => toggleInterval(e.target.value as IntervalType)}
           value={interval}
         >
           <option value="year">{ACTIVITY_TOTAL.YEARLY_TITLE}</option>
@@ -261,15 +324,15 @@ const ActivityList = () => {
         {Object.entries(activitiesByInterval)
           .sort(([a], [b]) => {
             if (interval === 'day') {
-              return new Date(b) - new Date(a); // 按日期排序
+              return new Date(b).getTime() - new Date(a).getTime(); // Sort by date
             } else if (interval === 'week') {
               const [yearA, weekA] = a.split('-W').map(Number);
               const [yearB, weekB] = b.split('-W').map(Number);
-              return yearB - yearA || weekB - weekA; // 按年份和周数排序
+              return yearB - yearA || weekB - weekA; // Sort by year and week number
             } else {
-              const [yearA, monthA] = a.split('-').map(Number);
-              const [yearB, monthB] = b.split('-').map(Number);
-              return yearB - yearA || monthB - monthA; // 按年份和月份排序
+              const [yearA, monthA = 0] = a.split('-').map(Number);
+              const [yearB, monthB = 0] = b.split('-').map(Number);
+              return yearB - yearA || monthB - monthA; // Sort by year and month
             }
           })
           .map(([period, summary]) => (

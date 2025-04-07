@@ -1,6 +1,7 @@
 .activityList {
   padding: 20px;
   background-color: rgb(245, 245, 245);
+  color: "#00AFAA";
 }
 
 .filterContainer {
@@ -51,7 +52,7 @@
 }
 
 .activityDetails strong {
-  color: #000;
+  color: rgb(67, 91, 163);
 }
 
 .chart {
