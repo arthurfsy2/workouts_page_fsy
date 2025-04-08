@@ -35,11 +35,11 @@ const getSeenCities = () => {
   Object.values(seenCities).forEach((cities) => {
     cities.forEach((city) => totalCities.add(city));
   });
-  
+
   // 将 totalCities 的值赋给 seenCities['Total']，并明确其类型
   seenCities['Total'] = [...totalCities] as string[]; // 确保类型为 string[]
 
-  return {seenCities};
+  return { seenCities };
 };
 
 export default getSeenCities;

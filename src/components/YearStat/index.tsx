@@ -28,7 +28,7 @@ const YearStat = ({
   const YearSVG = lazy(() => loadSvgComponent(yearStats, `./year_${year}.svg`));
 
   const yearData = seenCities[year] || []; // 获取对应年份的数据
-  const reduceLength = 3; // 控制打卡城市展示个数
+  const reduceLength = 5; // 控制打卡城市展示个数
 
   let citiesList;
 
