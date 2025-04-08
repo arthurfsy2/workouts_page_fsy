@@ -119,7 +119,7 @@ class GithubDrawer(TracksDrawer):
                 )
 
             rect_x = 10.0
-            dom = (2.6, 2.6)
+            dom = (3, 3)
 
             # add every day of this year for 53 weeks and per week has 7 days
             for i in range(54):
@@ -154,7 +154,7 @@ class GithubDrawer(TracksDrawer):
                         str_length = format_float(self.poster.m2u(length))
                         date_title = f"{date_title} {str_length} {km_or_mi}"
 
-                    rect = dr.rect((rect_x, rect_y), dom, fill=color)
+                    rect = dr.rect((rect_x, rect_y), dom, fill=color, rx=1, ry=1)
                     rect.set_desc(title=date_title)
                     dr.add(rect)
                     github_rect_day += datetime.timedelta(1)

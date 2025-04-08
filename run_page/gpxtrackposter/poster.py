@@ -117,7 +117,9 @@ class Poster:
             self.colors["text"] = "#006cb8"
         d = svgwrite.Drawing(output, (f"{width}mm", f"{height}mm"))
         d.viewbox(0, 0, self.width, height)
-        d.add(d.rect((0, 0), (width, height), fill=self.colors["background"]))
+        d.add(
+            d.rect((0, 0), (width, height), fill=self.colors["background"], rx=1, ry=1)
+        )
         if not self.drawer_type == "plain":
             self.__draw_header(d)
             self.__draw_footer(d)
@@ -193,7 +195,15 @@ class Poster:
             )
         )
 
-        d.add(d.rect((65, self.height - 17), (2.6, 2.6), fill=self.colors["special"]))
+        d.add(
+            d.rect(
+                (65, self.height - 17),
+                (2.6, 2.6),
+                fill=self.colors["special"],
+                rx=1,
+                ry=1,
+            )
+        )
 
         d.add(
             d.text(
@@ -204,7 +214,15 @@ class Poster:
             )
         )
 
-        d.add(d.rect((65, self.height - 13), (2.6, 2.6), fill=self.colors["special2"]))
+        d.add(
+            d.rect(
+                (65, self.height - 13),
+                (2.6, 2.6),
+                fill=self.colors["special2"],
+                rx=1,
+                ry=1,
+            )
+        )
 
         d.add(
             d.text(
