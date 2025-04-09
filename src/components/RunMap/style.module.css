@@ -24,12 +24,12 @@
   margin-top: 0.1rem;
   font-size: 1rem;
   text-align: center;
-  color: rgb(0,175,170);
+  color: rgb(0, 175, 170);
   font-family: $global-font-family;
 }
 
 .selected {
-  color: rgb(0,108,184);
+  color: rgb(0, 108, 184);
 }
 
 .runTitle {
@@ -50,7 +50,6 @@
   width: 29px;
   height: 38px;
 }
-
 
 .lightsOn {
   height: 38px !important;

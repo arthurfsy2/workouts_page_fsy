@@ -24,7 +24,7 @@ const data: ISiteMetadataResult = {
     {
       name: '⭐ Repo',
       url: 'https://github.com/arthurfsy2/workouts_page_fsy',
-    }
+    },
   ],
 };
 
