@@ -1,2 +1,4 @@
 @use './fontface.scss' as *;
-$global-font-family: 'MGI-Light', ibm-plex-sans,'Microsoft YaHei', 'Helvetica Neue', Arial, sans-serif;
+$global-font-family:
+  'MGI-Regular', ibm-plex-sans, 'Microsoft YaHei', 'Helvetica Neue', Arial,
+  sans-serif;

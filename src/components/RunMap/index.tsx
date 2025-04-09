@@ -126,7 +126,7 @@ const RunMap = ({
   const style: React.CSSProperties = {
     width: '100%',
     height: MAP_HEIGHT,
-    borderRadius: '0.75rem', //为mpbox地图添加圆角
+    borderRadius: '0.75rem', //为mapbox地图添加圆角
   };
   const fullscreenButton: React.CSSProperties = {
     position: 'absolute',

@@ -112,12 +112,16 @@ const SWITCH_LOCATION_BUTTON = IS_CHINESE ? '👉 地点统计' : '👉 Loc. Sta
 const SWITCH_YEAR_BUTTON = IS_CHINESE ? '👉 年份统计' : '👉 Year Stat.';
 const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary';
 const SWITCH_TOTAL_BUTTON = IS_CHINESE ? ' 汇总' : ' Total';
+const SWITCH_GRID_BUTTON = IS_CHINESE ? '查看轨迹 🗺️' : 'Grid View 🗺️';
+const SWITCH_GITHUB_BUTTON = IS_CHINESE ? '查看日历 🗓️' : 'Calendar View 🗓️';
 
 const BUTTON_TITLES = {
   SWITCH_LOCATION_BUTTON,
   SWITCH_YEAR_BUTTON,
   SUMMARY_BUTTON,
   SWITCH_TOTAL_BUTTON,
+  SWITCH_GRID_BUTTON,
+  SWITCH_GITHUB_BUTTON,
 };
 
 const RUN_TITLES = {
