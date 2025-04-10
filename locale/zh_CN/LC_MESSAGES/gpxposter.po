@@ -1,0 +1,121 @@
+# Chinese translations for PACKAGE package
+# PACKAGE 软件包的简体中文翻译.
+# Copyright (C) 2019 ORGANIZATION
+# Hong Yi <zouzou0208@gmail.com>, 2019.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 08:18+0200\n"
+"PO-Revision-Date: 2020-10-27 23:28+0800\n"
+"Last-Translator: Ferri <8397282+CodeFerriCode@users.noreply.github.com>\n"
+"Language-Team: Chinese (simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+#: gpxtrackposter/cli.py:211
+msgid "MY TRACKS"
+msgstr "我的足迹"
+
+#: gpxtrackposter/poster.py:98
+msgid "January"
+msgstr "一月"
+
+#: gpxtrackposter/poster.py:99
+msgid "February"
+msgstr "二月"
+
+#: gpxtrackposter/poster.py:100
+msgid "March"
+msgstr "三月"
+
+#: gpxtrackposter/poster.py:101
+msgid "April"
+msgstr "四月"
+
+#: gpxtrackposter/poster.py:102
+msgid "May"
+msgstr "五月"
+
+#: gpxtrackposter/poster.py:103
+msgid "June"
+msgstr "六月"
+
+#: gpxtrackposter/poster.py:104
+msgid "July"
+msgstr "七月"
+
+#: gpxtrackposter/poster.py:105
+msgid "August"
+msgstr "八月"
+
+#: gpxtrackposter/poster.py:106
+msgid "September"
+msgstr "九月"
+
+#: gpxtrackposter/poster.py:107
+msgid "October"
+msgstr "十月"
+
+#: gpxtrackposter/poster.py:108
+msgid "November"
+msgstr "十一月"
+
+#: gpxtrackposter/poster.py:109
+msgid "December"
+msgstr "十二月"
+
+#: gpxtrackposter/poster.py:161
+msgid "km"
+msgstr "公里"
+
+#: gpxtrackposter/poster.py:162
+msgid "mi"
+msgstr "英里"
+
+#: gpxtrackposter/poster.py:193
+msgid "ATHLETE"
+msgstr "运动员"
+
+#: gpxtrackposter/poster.py:191
+msgid "SPECIAL TRACKS"
+msgstr "特殊的活动"
+
+#: gpxtrackposter/poster.py:208
+msgid "Over"
+msgstr "大于"
+
+#: gpxtrackposter/poster.py:209
+msgid "STATISTICS"
+msgstr "数据"
+
+#: gpxtrackposter/poster.py:217
+msgid "Number"
+msgstr "次数"
+
+#: gpxtrackposter/poster.py:225
+msgid "Weekly"
+msgstr "周均次"
+
+#: gpxtrackposter/poster.py:233
+msgid "Total"
+msgstr "所有"
+
+#: gpxtrackposter/poster.py:241
+msgid "Avg"
+msgstr "平均"
+
+#: gpxtrackposter/poster.py:257
+msgid "Min"
+msgstr "最少"
+
+#: gpxtrackposter/poster.py:265
+msgid "Max"
+msgstr "最多"
+
+#~ msgid "YEAR"
+#~ msgstr "YEAR"

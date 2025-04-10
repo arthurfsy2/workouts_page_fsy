@@ -149,14 +149,14 @@ class Poster:
 
     def __draw_header(self, d):
         text_color = self.colors["text"]
-        title_style = "font-size:12px; font-family:Arial; font-weight:bold;"
+        title_style = "font-size:12px; font-family:MGI-Regular; font-weight:bold;"
         d.add(d.text(self.title, insert=(10, 20), fill=text_color, style=title_style))
 
     def __draw_footer(self, d):
         text_color = self.colors["text"]
-        header_style = "font-size:4px; font-family:Arial"
+        header_style = "font-size:4px; font-family:MGI-Regular"
         value_style = "font-size:9px; font-family:Arial"
-        small_value_style = "font-size:3px; font-family:Arial"
+        small_value_style = "font-size:3px; font-family:MGI-Regular"
 
         special_distance1 = self.special_distance["special_distance"]
         special_distance2 = self.special_distance["special_distance2"]
@@ -207,7 +207,8 @@ class Poster:
 
         d.add(
             d.text(
-                f"Over {special_distance1:.1f} km",
+                # self.trans("Number") + f": {len(self.tracks)}",
+                self.trans("Over") + f" {special_distance1:.1f} km",
                 insert=(70, self.height - 14.5),
                 fill=text_color,
                 style=small_value_style,
@@ -226,7 +227,7 @@ class Poster:
 
         d.add(
             d.text(
-                f"Over {special_distance2:.1f} km",
+                self.trans("Over") + f" {special_distance2:.1f} km",
                 insert=(70, self.height - 10.5),
                 fill=text_color,
                 style=small_value_style,

@@ -164,3 +164,4 @@ node_modules
 .mvmrc
 run.sh
 modify.py
+.python-version
