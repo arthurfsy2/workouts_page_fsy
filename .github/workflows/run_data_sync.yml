@@ -71,6 +71,17 @@ jobs:
         run: |
           pip install -r requirements.txt
 
+      # 新增：设置中文语言环境
+      - name: Set up zh_CN locale
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y locales
+          sudo locale-gen zh_CN.UTF-8
+          echo "LANG=zh_CN.UTF-8" | sudo tee /etc/default/locale
+          echo "LC_ALL=zh_CN.UTF-8" | sudo tee -a /etc/default/locale
+          export LANG=zh_CN.UTF-8
+          export LC_ALL=zh_CN.UTF-8
+
       - name: Cache Data Files
         if: env.SAVE_DATA_IN_GITHUB_CACHE == 'true'
         uses: actions/cache@v4
