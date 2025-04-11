@@ -266,6 +266,6 @@ export const FLIGHT_COLOR = dark_vanilla;
 export const PROVINCE_FILL_COLOR = mgi_blue;
 export const COUNTRY_FILL_COLOR = dark_vanilla;
 export const KAYAKING_COLOR = red;
-export const SNOWBOARD_COLOR = dark_vanilla;
+export const SNOWBOARD_COLOR = veryPeri;
 export const TRAIL_RUN_COLOR = IKB;
 export const TREADMILL_RUN_COLOR = mgi_blue3;
