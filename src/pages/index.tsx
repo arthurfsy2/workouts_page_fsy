@@ -227,7 +227,10 @@ const Index = () => {
       dispatch({ type: SHOW_LOCATION_STAT });
     }
   };
-
+  const getBasePath = () => {
+    const baseUrl = import.meta.env.BASE_URL;
+    return baseUrl === '/' ? '' : baseUrl;
+  };
   return (
     <Layout>
       <div className="w-full items-center lg:w-1/4">
@@ -247,7 +250,7 @@ const Index = () => {
 
           <button
             className="w-2/5 cursor-pointer rounded-[15px] bg-[#006CB8] p-2.5 text-lg font-extrabold text-white"
-            onClick={() => (window.location.href = '/summary')}
+            onClick={() => (window.location.href = `${getBasePath()}/summary`)}
           >
             {SUMMARY_BUTTON}
           </button>
