@@ -16,7 +16,7 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
           <Stat
             key={type}
             value={`${titleForType(type)}`}
-            description={`${times} ${IS_CHINESE ? '次' : 'times'}`}
+            description={`× ${times} ${IS_CHINESE ? '次' : 'times'}`}
             citySize={2}
             className="flex w-full items-center pb-1"
             onClick={() => onClick(type)}

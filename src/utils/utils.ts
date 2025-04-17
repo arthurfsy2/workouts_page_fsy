@@ -53,8 +53,9 @@ const titleForShow = (run: Activity): string => {
   if (run.name) {
     name = run.name;
   }
-  return `${name} ${date} ${distance} KM ${!run.summary_polyline ? '(No map data for this workout)' : ''
-    }`;
+  return `${name} ${date} ${distance} KM ${
+    !run.summary_polyline ? '(No map data for this workout)' : ''
+  }`;
 };
 
 const formatPace = (d: number): string => {
@@ -62,7 +63,7 @@ const formatPace = (d: number): string => {
   const pace = (1000.0 / 60.0) * (1.0 / d);
   const minutes = Math.floor(pace);
   const seconds = Math.floor((pace - minutes) * 60.0);
-  const kmh = d*3.6
+  const kmh = d * 3.6;
   return `${minutes}'${seconds.toFixed(0).toString().padStart(2, '0')}"(${kmh.toFixed(1)}km/h)`;
 };
 
@@ -118,7 +119,7 @@ const extractDistricts = (str: string): string[] => {
   }
 
   return locations;
-}
+};
 
 const extractCoordinate = (str: string): [number, number] | null => {
   const pattern = /'latitude': ([-]?\d+\.\d+).*?'longitude': ([-]?\d+\.\d+)/;
@@ -235,7 +236,7 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
     return {
       type: 'Feature',
       properties: {
-        'color': colorFromType(run.type),
+        color: colorFromType(run.type),
       },
       geometry: {
         type: 'LineString',
@@ -250,12 +251,12 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
 const geoJsonForMap = (): FeatureCollection<RPGeometry> => ({
   type: 'FeatureCollection',
   features: worldGeoJson.features.concat(chinaGeojson.features),
-})
+});
 
 const titleForType = (type: string): string => {
   switch (type) {
-    case 'Run':
-      return RUN_TITLES.RUN_TITLE;
+    // case 'Run':
+    //   return RUN_TITLES.RUN_TITLE;
     case 'Full Marathon':
       return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
     case 'Half Marathon':
@@ -291,19 +292,20 @@ const titleForType = (type: string): string => {
     default:
       return RUN_TITLES.RUN_TITLE;
   }
-}
+};
 
 const typeForRun = (run: Activity): string => {
-  const type = run.type
-  var distance = run.distance / 1000;
+  const type = run.type;
+  const distance = run.distance / 1000;
   switch (type) {
     case 'Run':
       if (distance >= 42.195) {
         return 'Full Marathon';
-      } else if (distance > 21.0975) {
+      } else if (distance >= 21.0975) {
         return 'Half Marathon';
       }
-      return 'Run';
+      return '';
+
     case 'Trail Run':
       if (distance >= 42.195) {
         return 'Full Marathon';
@@ -315,11 +317,11 @@ const typeForRun = (run: Activity): string => {
       if (distance >= 100) {
         return '100 KM Ride';
       }
-      return 'Ride';
+      return '';
     default:
-      return type;
+      return '';
   }
-}
+};
 
 const titleForRun = (run: Activity): string => {
   const type = run.type;
@@ -336,16 +338,15 @@ const titleForRun = (run: Activity): string => {
     }
   }
   // 3. use time+length if location or type is not available
-  if (type == 'Run' || type == 'Trail Run'){
-      const runDistance = run.distance / 1000;
-      if (runDistance >= 40) {
-        return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
-      }
-      else if (runDistance > 20) {
-        return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
-      }
+  if (type == 'Run' || type == 'Trail Run') {
+    const runDistance = run.distance / 1000;
+    if (runDistance >= 42.195) {
+      return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
+    } else if (runDistance > 21.0975) {
+      return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
+    }
   }
-  if (type === 'Ride' && (run.distance / 1000) >= 100) {
+  if (type === 'Ride' && run.distance / 1000 >= 100) {
     return RUN_TITLES.ONE_HUNDRED_KM_CYCLING_TITLE;
   }
   return titleForType(type);
@@ -445,15 +446,22 @@ const filterTitleRuns = (run: Activity, title: string) =>
 const filterTypeRuns = (run: Activity, type: string) => {
   switch (type) {
     case 'Full Marathon':
-      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance > 42195;
+      return (
+        (run.type === 'Run' || run.type === 'Trail Run') && run.distance > 42195
+      );
     case 'Half Marathon':
-      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance < 42195 && run.distance > 21097.5;
+      return (
+        (run.type === 'Run' || run.type === 'Trail Run') &&
+        run.distance < 42195 &&
+        run.distance > 21097.5
+      );
     case '100 KM Ride':
-      return run.type === 'Ride' && run.distance >= 100000; // 100公里 = 100000米
+      return run.type === 'Ride' && run.distance >= 100000;
+
     default:
-      return run.type === type;
+      return '';
   }
-}
+};
 
 const filterAndSortRuns = (
   activities: Activity[],
@@ -461,13 +469,13 @@ const filterAndSortRuns = (
   filterFunc: (_run: Activity, _bvalue: string) => boolean,
   sortFunc: (_a: Activity, _b: Activity) => number,
   item2: string | null,
-  filterFunc2: ((_run: Activity, _bvalue: string) => boolean) | null,
+  filterFunc2: ((_run: Activity, _bvalue: string) => boolean) | null
 ) => {
   let s = activities;
   if (item !== 'Total') {
     s = activities.filter((run) => filterFunc(run, item));
   }
-  if(filterFunc2 != null && item2 != null){
+  if (filterFunc2 != null && item2 != null) {
     s = s.filter((run) => filterFunc2(run, item2));
   }
   return s.sort(sortFunc);
