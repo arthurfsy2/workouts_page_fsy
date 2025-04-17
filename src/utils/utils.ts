@@ -255,8 +255,8 @@ const geoJsonForMap = (): FeatureCollection<RPGeometry> => ({
 
 const titleForType = (type: string): string => {
   switch (type) {
-    // case 'Run':
-    //   return RUN_TITLES.RUN_TITLE;
+    case 'Run':
+      return RUN_TITLES.RUN_TITLE;
     case 'Full Marathon':
       return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
     case 'Half Marathon':
@@ -296,16 +296,15 @@ const titleForType = (type: string): string => {
 
 const typeForRun = (run: Activity): string => {
   const type = run.type;
-  const distance = run.distance / 1000;
+  var distance = run.distance / 1000;
   switch (type) {
     case 'Run':
       if (distance >= 42.195) {
         return 'Full Marathon';
-      } else if (distance >= 21.0975) {
+      } else if (distance > 21.0975) {
         return 'Half Marathon';
       }
-      return '';
-
+      return 'Run';
     case 'Trail Run':
       if (distance >= 42.195) {
         return 'Full Marathon';
@@ -317,9 +316,9 @@ const typeForRun = (run: Activity): string => {
       if (distance >= 100) {
         return '100 KM Ride';
       }
-      return '';
+      return 'Ride';
     default:
-      return '';
+      return type;
   }
 };
 
@@ -457,9 +456,8 @@ const filterTypeRuns = (run: Activity, type: string) => {
       );
     case '100 KM Ride':
       return run.type === 'Ride' && run.distance >= 100000;
-
     default:
-      return '';
+      return run.type === type;
   }
 };
 
