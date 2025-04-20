@@ -11358,5 +11358,21 @@
 "elevation_gain": 2.0,
 "source": "",
 "streak": 1
+},
+{
+"run_id": 1745147910000,
+"name": "\u6df1\u5733\u5e02 \u9a91\u884c",
+"distance": 1106.84,
+"moving_time": "0:04:52.654000",
+"type": "Ride",
+"start_date": "2025-04-20 11:18:30",
+"start_date_local": "2025-04-20 19:18:30",
+"location_country": "\u4e1c\u6d77\u9053, \u76d0\u7530\u8857\u9053, \u76d0\u7530\u533a, \u6df1\u5733\u5e02, \u5e7f\u4e1c\u7701, 518000, \u4e2d\u56fd",
+"summary_polyline": "qv{hCweixTB?DCBC@ABABCBABC@EBC?C?CAA?E@E@EDGDIDIBIBGBG@E@I@G@G@G@G@G?I@G@I@G@I@I?E@G@I@I@I@GBKBIBIBI@I@IBI?I@GBG@GBI@I@I@I@G@IBGDEBI@G@I?E@G@G@I?G?G@GBEBE?G@I?G?G?G@G@I?I@I?I?I@G@G@GBI@E@I@G@I@G?G@G@G@G@G@G@I@GBE@IFGBG@GAG@I?G@G?E@G?G@G@G@GBG@G@GBEBE@E@GBG?G@E@GBGBEDEBG?G?GAEBE@E@E?G@E@E@G@G@G@EBG@EBE@GBG@E@GBG@GBG@E@GBG@E@GBGBGBE@IBGBGBEBE@G@GBE@GBGBI@GBEDGBGBCBA@A?????AFM@C@E@C@CBE@C@CCEAA?E@C@E?E@E@C@E@E?EBE@E@G@E@G@E@G@G@G@EBG@GBEBG@GBG@E@GBEBG@GBE@EBG@C?E@E@C@E?E@EBC@G@EBE@E@G@G@E?GBE@GBG@GBG@EBGBEBEBGBGFEFADC@E@EAG?G?E@A@C??????DK@C@C@E?CBEBABC?A@E?C?E@EAE?E@E?E@EBCDABAD?B??@??",
+"average_heartrate": 120.0,
+"average_speed": 3.782,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 1
 }
 ]
