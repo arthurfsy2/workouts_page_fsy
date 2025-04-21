@@ -7,6 +7,7 @@ import { formatPace, colorFromType } from '@/utils/utils';
 import useHover from '@/hooks/useHover';
 import { yearStats } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
+import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 import { titleForType } from '@/utils/utils';
 import { RUNTABLE_TITLE, BUTTON_TITLES } from '@/utils/const';
 import activities from '@/static/activities.json';
@@ -177,7 +178,7 @@ const YearStat = ({
             }}
           />
         ))}
-        {sumElevationGain > 0 && (
+        {SHOW_ELEVATION_GAIN && sumElevationGain > 0 && (
           <Stat
             value={`${intComma(sumElevationGain.toFixed(0))} `}
             description={`M ${RUNTABLE_TITLE.ELEVATION_GAIN_TITLE} `}

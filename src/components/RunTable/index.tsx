@@ -12,6 +12,7 @@ import {
   RIDE_COLOR,
   IS_CHINESE,
   RUNTABLE_TITLE,
+  SHOW_ELEVATION_GAIN,
 } from '@/utils/const';
 import RunRow from './RunRow';
 import styles from './style.module.css';
@@ -107,6 +108,9 @@ const RunTable = ({
     [RUNTABLE_TITLE.DURATION_TITLE, sortRunTimeFunc],
     [RUNTABLE_TITLE.DATE_TITLE, sortDateFuncClick],
   ]);
+  if (!SHOW_ELEVATION_GAIN) {
+    sortFuncMap.delete('Elevation Gain');
+  }
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (e) => {
     const funcName = (e.target as HTMLElement).innerHTML;
