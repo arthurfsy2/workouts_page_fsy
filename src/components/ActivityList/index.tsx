@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { lazy, useState, Suspense } from 'react';
 import {
   BarChart,
   Bar,
@@ -11,7 +11,10 @@ import {
 import { useNavigate } from 'react-router-dom';
 import activities from '@/static/activities.json';
 import styles from './style.module.css';
-import { ACTIVITY_TOTAL, ACTIVITY_TYPES } from '@/utils/const';
+import { ACTIVITY_TOTAL, TYPES_MAPPING } from '@/utils/const';
+import { formatPace } from '@/utils/utils';
+import { totalStat } from '@assets/index';
+import { loadSvgComponent } from '@/utils/svgUtils';
 
 // Define interfaces for our data structures
 interface Activity {
@@ -81,11 +84,9 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
     return [];
   };
 
-  const data = generateLabels().map((day) => ({
+  const data: ChartData[] = generateLabels().map((day) => ({
     day,
-    [ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE]: (
-      dailyDistances[day - 1] || 0
-    ).toFixed(2), // Keep two decimal places
+    distance: (dailyDistances[day - 1] || 0).toFixed(2), // Keep two decimal places
   }));
 
   const formatTime = (seconds: number): string => {
@@ -96,18 +97,29 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   };
 
   const formatPace = (speed: number): string => {
-    if (speed === 0) return '0:00';
+    if (speed === 0) return '0:00 min/km';
     const pace = 60 / speed; // min/km
-    const minutes = Math.floor(pace);
-    const seconds = Math.round((pace - minutes) * 60);
+    const totalSeconds = Math.round(pace * 60); // Total seconds per km
+    const minutes = Math.floor(totalSeconds / 60);
+    const seconds = totalSeconds % 60;
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds} min/km`;
+  };
+
+  const isFastType = (activityType: string): boolean => {
+    console.log('activityType:', activityType);
+    switch (activityType) {
+      case 'virtualride':
+      case 'ride':
+      case 'roadtrip':
+        return true;
+      default:
+        return false;
+    }
   };
 
   // Calculate Y-axis maximum value and ticks
   const yAxisMax = Math.ceil(
-    Math.max(
-      ...data.map((d) => parseFloat(d[ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE]))
-    ) + 10
+    Math.max(...data.map((d) => parseFloat(d.distance))) + 10
   ); // Round up and add buffer
   const yAxisTicks = Array.from(
     { length: Math.ceil(yAxisMax / 5) + 1 },
@@ -144,7 +156,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
             </p>
             <p>
               <strong>{ACTIVITY_TOTAL.MAX_SPEED_TITLE}:</strong>{' '}
-              {activityType === 'ride'
+              {isFastType(activityType)
                 ? `${summary.maxSpeed.toFixed(2)} km/h`
                 : formatPace(summary.maxSpeed)}
             </p>
@@ -188,10 +200,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
                   }}
                   labelStyle={{ color: '#00AFAA' }}
                 />
-                <Bar
-                  dataKey={ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}
-                  fill="#00AFAA"
-                />
+                <Bar dataKey="distance" fill="#00AFAA" />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -205,6 +214,10 @@ const ActivityList: React.FC = () => {
   const [interval, setInterval] = useState<IntervalType>('month');
   const [activityType, setActivityType] = useState<string>('ride');
   const navigate = useNavigate();
+  const playTypes = new Set(
+    (activities as Activity[]).map((activity) => activity.type.toLowerCase())
+  );
+  const showTypes = [...playTypes].filter((type) => type in TYPES_MAPPING);
 
   const toggleInterval = (newInterval: IntervalType): void => {
     setInterval(newInterval);
@@ -306,9 +319,9 @@ const ActivityList: React.FC = () => {
           onChange={(e) => setActivityType(e.target.value)}
           value={activityType}
         >
-          <option value="run">{ACTIVITY_TYPES.RUN_TITLE}</option>
-          <option value="ride">{ACTIVITY_TYPES.RIDE_TITLE}</option>
-          <option value="hike">{ACTIVITY_TYPES.HIKE_TITLE}</option>
+          {showTypes.map((type) => (
+            <option value={type}>{TYPES_MAPPING[type]}</option>
+          ))}
         </select>
         <select
           onChange={(e) => toggleInterval(e.target.value as IntervalType)}
@@ -320,6 +333,7 @@ const ActivityList: React.FC = () => {
           <option value="day">{ACTIVITY_TOTAL.DAILY_TITLE}</option>
         </select>
       </div>
+
       <div className={styles.summaryContainer}>
         {Object.entries(activitiesByInterval)
           .sort(([a], [b]) => {

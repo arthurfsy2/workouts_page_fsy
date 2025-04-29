@@ -7,6 +7,7 @@ import { BUTTON_TITLES } from '@/utils/const';
 // Lazy load both github.svg and grid.svg
 const GithubSvg = lazy(() => loadSvgComponent(totalStat, './github.svg'));
 const GridSvg = lazy(() => loadSvgComponent(totalStat, './grid.svg'));
+const MonthofLife = lazy(() => loadSvgComponent(totalStat, './mol.svg'));
 
 const { TabPane } = Tabs; // 获取 Tabs 的子组件 TabPane
 
@@ -45,6 +46,19 @@ const SVGStat = () => {
         >
           <Suspense fallback={<div className="text-center">Loading...</div>}>
             <GithubSvg className="mt-4 h-auto w-full rounded-xl shadow-md" />
+          </Suspense>
+        </TabPane>
+        {/* Tab 3: monthoflife */}
+        <TabPane
+          tab={
+            <span className="tab-title text-2xl">
+              {BUTTON_TITLES.SWITCH_MOL_BUTTON}
+            </span>
+          }
+          key="MonthofLife"
+        >
+          <Suspense fallback={<div className="text-center">Loading...</div>}>
+            <MonthofLife className="mt-4 h-auto w-full rounded-xl shadow-md" />
           </Suspense>
         </TabPane>
       </Tabs>

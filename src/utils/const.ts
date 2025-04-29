@@ -116,6 +116,7 @@ const SUMMARY_BUTTON = IS_CHINESE ? '📊 汇总分析' : '📊 Summary';
 const SWITCH_TOTAL_BUTTON = IS_CHINESE ? ' 汇总' : ' Total';
 const SWITCH_GRID_BUTTON = IS_CHINESE ? '查看轨迹 🗺️' : 'Grid View 🗺️';
 const SWITCH_GITHUB_BUTTON = IS_CHINESE ? '查看日历 🗓️' : 'Calendar View 🗓️';
+const SWITCH_MOL_BUTTON = IS_CHINESE ? '历年汇总 ⏳' : 'Month of Life ⏳';
 
 const BUTTON_TITLES = {
   SWITCH_LOCATION_BUTTON,
@@ -124,6 +125,7 @@ const BUTTON_TITLES = {
   SWITCH_TOTAL_BUTTON,
   SWITCH_GRID_BUTTON,
   SWITCH_GITHUB_BUTTON,
+  SWITCH_MOL_BUTTON,
 };
 
 const RUN_TITLES = {
@@ -146,6 +148,20 @@ const RUN_TITLES = {
   SNOWBOARD_TITLE,
   SKI_TITLE,
 };
+
+const TYPES_MAPPING = {
+  'run': RUN_TITLES.RUN_TITLE,
+  'trail run': RUN_TITLES.TRAIL_RUN_TITLE,
+  'swim': RUN_TITLES.SWIM_TITLE,
+  'ride': RUN_TITLES.RIDE_TITLE,
+  'virtualride': RUN_TITLES.VIRTUAL_RIDE_TITLE,
+  'hike': RUN_TITLES.HIKE_TITLE,
+  'rowing': RUN_TITLES.ROWING_TITLE,
+  'kayaking': RUN_TITLES.KAYAKING_TITLE,
+  'snowboard': RUN_TITLES.SNOWBOARD_TITLE,
+  'ski': RUN_TITLES.SKI_TITLE,
+  'roadtrip': RUN_TITLES.ROAD_TRIP_TITLE,
+}
 
 const ACTIVITY_TOTAL = {
   ACTIVITY_COUNT_TITLE,
@@ -235,6 +251,7 @@ export {
   ACTIVITY_TYPES,
   RUNTABLE_TITLE,
   BUTTON_TITLES,
+  TYPES_MAPPING,
 };
 
 const nike = 'rgb(224,237,94)';

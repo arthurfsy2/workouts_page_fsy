@@ -63,3 +63,8 @@
   justify-content: center;
   margin-top: 10px;
 }
+
+.lifeContainer {
+  display: flex;
+  justify-content: center;
+}
