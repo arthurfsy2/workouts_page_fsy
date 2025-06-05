@@ -23,3 +23,5 @@ config.yaml
 .pdm-python
 modify.py
 run.sh
+route.png
+route.svg
