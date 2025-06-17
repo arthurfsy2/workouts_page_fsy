@@ -291,3 +291,41 @@ export const KAYAKING_COLOR = red;
 export const SNOWBOARD_COLOR = veryPeri;
 export const TRAIL_RUN_COLOR = IKB;
 export const TREADMILL_RUN_COLOR = mgi_blue3;
+
+// map tiles vendor, maptiler or mapbox or stadiamaps
+// if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
+export const MAP_TILE_VENDOR = "mapbox";
+
+// map tiles style name, see MAP_TILE_STYLES for more details
+export const MAP_TILE_STYLE = "light-v11";
+
+// access token. you can apply a new one, it's free.
+// maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
+// stadiamaps: 8a769c5a-9125-4936-bdcf-a6b90cb5d0a4 |sign up at https://client.stadiamaps.com/signup/
+export const MAP_TILE_ACCESS_TOKEN = "8a769c5a-9125-4936-bdcf-a6b90cb5d0a4"
+//"akuvQTIUaPG5sbtkpwvc";
+
+export const MAP_TILE_STYLES = {
+  maptiler: {
+    "dataviz": "https://api.maptiler.com/maps/dataviz/style.json?key=",
+    "basic": "https://api.maptiler.com/maps/basic-v2/style.json?key=",
+    "streets": "https://api.maptiler.com/maps/streets-v2/style.json?key=",
+    "outdoor": "https://api.maptiler.com/maps/outdoor-v2/style.json?key=",
+    "bright": "https://api.maptiler.com/maps/bright-v2/style.json?key=",
+    "topo": "https://api.maptiler.com/maps/topo-v2/style.json?key=",
+    "winter": "https://api.maptiler.com/maps/winter-v2/style.json?key=",
+    "hybrid": "https://api.maptiler.com/maps/hybrid/style.json?key="
+  },
+  stadiamaps: {
+    "alidade_smooth": "https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=",
+    "alidade_satellite": "https://tiles.stadiamaps.com/styles/alidade_satellite.json?api_key=",
+  },
+  mapbox: {
+    "light-v11": "mapbox://styles/mapbox/light-v11",
+    "dark-v10": "mapbox://styles/mapbox/dark-v10",
+    "dark-v11": "mapbox://styles/mapbox/dark-v11",
+    "navigation-night": "mapbox://styles/mapbox/navigation-night-v1",
+    "navigation-day": "mapbox://styles/mapbox/navigation-day-v1"
+  },
+  default: "mapbox://styles/mapbox/light-v10"
+}
