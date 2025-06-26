@@ -14,7 +14,7 @@ const PeriodStat = ({ onClick }: { onClick: (_period: string) => void }) => {
           <Stat
             key={type}
             value={`${IS_CHINESE && titleForType(type)} ${times} `}
-            description={type + (times>1 ? "s" : "") }
+            description={type + (times > 1 ? 's' : '')}
             citySize={5}
             onClick={() => onClick(type)}
           />

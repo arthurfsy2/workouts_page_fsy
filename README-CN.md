@@ -3,7 +3,8 @@
 ## note2: 2023.09.26 garmin need secret_string(and in Actions) get `python run_page/garmin_sync.py ${secret_string}` if cn `python run_page/garmin_sync.py ${secret_string} --is-cn`
 
 ## note3: 2024.08.19: Added `Elevation Gain` field
-  - For old data: To include `Elevation Gain` for past activities, perform a full reimport
+
+- For old data: To include `Elevation Gain` for past activities, perform a full reimport
 
 # [打造个人户外运动主页](http://workouts.ben29.xyz)
 
@@ -31,9 +32,10 @@
 
 - 修改 `scripts/config.py`, `TYPE_DICT` 增加类型映射关系, `MAPPING_TYPE` 里增加运动类型
 - 修改 `src/utils/const.js`, 增加类型标题，并加入到 `RUN_TITLES`
-- 修改 `src/utils/util.js` 里的 `colorFromType`, 增加 case 指定颜色; `titleForRun`  增加 case 指定类型标题
+- 修改 `src/utils/util.js` 里的 `colorFromType`, 增加 case 指定颜色; `titleForRun` 增加 case 指定类型标题
 - 参考这个 [commit](https://github.com/ben-29/workouts_page/commit/f3a35884d626009d33e05adc76bbc8372498f317)
 - 或 [留言](https://github.com/ben-29/workouts_page/issues/20)
+
 ---
 
 ### Codoon（咕咚）

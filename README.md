@@ -3,7 +3,8 @@
 ## note2: 2023.09.26 garmin need secret_string(and in Actions) get `python run_page/garmin_sync.py ${secret_string}` if cn `python run_page/garmin_sync.py ${secret_string} --is-cn`
 
 ## note3: 2024.08.19: Added `Elevation Gain` field
-  - For old data: To include `Elevation Gain` for past activities, perform a full reimport. 
+
+- For old data: To include `Elevation Gain` for past activities, perform a full reimport.
 
 # [Create a personal workouts home page](http://workouts.ben29.xyz)
 

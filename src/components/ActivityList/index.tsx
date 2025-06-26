@@ -110,16 +110,16 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
     return `${minutes}:${seconds < 10 ? '0' : ''}${seconds} min/km`;
   };
 
-    const isFastType = (activityType: string): boolean => {
-        switch (activityType) {
-          case 'virtualride':
-          case 'ride':
-          case 'roadtrip':
-            return true;
-          default:
-            return false;
-        }
-    };
+  const isFastType = (activityType: string): boolean => {
+    switch (activityType) {
+      case 'virtualride':
+      case 'ride':
+      case 'roadtrip':
+        return true;
+      default:
+        return false;
+    }
+  };
   // Calculate Y-axis maximum value and ticks
   const yAxisMax = Math.ceil(
     Math.max(...data.map((d) => parseFloat(d.distance))) + 10
@@ -145,7 +145,9 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
         )}
         <p>
           <strong>{ACTIVITY_TOTAL.AVERAGE_SPEED_TITLE}:</strong>{' '}
-          {isFastType(activityType) ? `${summary.averageSpeed.toFixed(2)} km/h` : formatPace(summary.averageSpeed)}
+          {isFastType(activityType)
+            ? `${summary.averageSpeed.toFixed(2)} km/h`
+            : formatPace(summary.averageSpeed)}
         </p>
         <p>
           <strong>{ACTIVITY_TOTAL.TOTAL_TIME_TITLE}:</strong>{' '}
@@ -163,7 +165,9 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
             </p>
             <p>
               <strong>{ACTIVITY_TOTAL.MAX_SPEED_TITLE}:</strong>{' '}
-              {isFastType(activityType) ? `${summary.maxSpeed.toFixed(2)} km/h` : formatPace(summary.maxSpeed)}
+              {isFastType(activityType)
+                ? `${summary.maxSpeed.toFixed(2)} km/h`
+                : formatPace(summary.maxSpeed)}
             </p>
           </>
         )}
@@ -213,16 +217,18 @@ const ActivityList: React.FC = () => {
   const [interval, setInterval] = useState<IntervalType>('month');
   const [activityType, setActivityType] = useState<string>('run');
   const navigate = useNavigate();
-  const playTypes = new Set((activities as Activity[]).map(activity => activity.type.toLowerCase()));
-  const showTypes =[...playTypes].filter(type => type in TYPES_MAPPING);
+  const playTypes = new Set(
+    (activities as Activity[]).map((activity) => activity.type.toLowerCase())
+  );
+  const showTypes = [...playTypes].filter((type) => type in TYPES_MAPPING);
 
   const toggleInterval = (newInterval: IntervalType): void => {
     setInterval(newInterval);
   };
 
-    const filterActivities = (activity: Activity): boolean => {
-        return activity.type.toLowerCase() === activityType;
-    };
+  const filterActivities = (activity: Activity): boolean => {
+    return activity.type.toLowerCase() === activityType;
+  };
 
   const convertTimeToSeconds = (time: string): number => {
     const [hours, minutes, seconds] = time.split(':').map(Number);
@@ -230,8 +236,9 @@ const ActivityList: React.FC = () => {
   };
 
   const groupActivities = (interval: IntervalType): ActivityGroups => {
-    return (activities as Activity[]).filter(filterActivities).reduce(
-      (acc: ActivityGroups, activity) => {
+    return (activities as Activity[])
+      .filter(filterActivities)
+      .reduce((acc: ActivityGroups, activity) => {
         const date = new Date(activity.start_date_local);
         let key: string;
         let index: number;
@@ -304,9 +311,7 @@ const ActivityList: React.FC = () => {
           acc[key].location = activity.location_country || '';
 
         return acc;
-      },
-      {}
-    );
+      }, {});
   };
 
   const activitiesByInterval = groupActivities(interval);
@@ -320,12 +325,15 @@ const ActivityList: React.FC = () => {
         >
           Home
         </button>
-        <select onChange={(e) => setActivityType(e.target.value)} value={activityType}>
-                    { showTypes.map((type) => (
-                      <option value={type}>{TYPES_MAPPING[type]}</option>
-                    ))}
-                </select>
-                <select
+        <select
+          onChange={(e) => setActivityType(e.target.value)}
+          value={activityType}
+        >
+          {showTypes.map((type) => (
+            <option value={type}>{TYPES_MAPPING[type]}</option>
+          ))}
+        </select>
+        <select
           onChange={(e) => toggleInterval(e.target.value as IntervalType)}
           value={interval}
         >

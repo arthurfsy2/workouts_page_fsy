@@ -29,12 +29,22 @@ const YearsStat = ({
       </section>
       <hr color="red" />
       {yearsArrayUpdate.map((year) => (
-        <YearStat key={year} year={year} onClick={onClick} onClickTypeInYear={onClickTypeInYear}/>
+        <YearStat
+          key={year}
+          year={year}
+          onClick={onClick}
+          onClickTypeInYear={onClickTypeInYear}
+        />
       ))}
       {
         // eslint-disable-next-line no-prototype-builtins
         yearsArrayUpdate.hasOwnProperty('Total') ? (
-          <YearStat key="Total" year="Total" onClick={onClick} onClickTypeInYear={onClickTypeInYear}/>
+          <YearStat
+            key="Total"
+            year="Total"
+            onClick={onClick}
+            onClickTypeInYear={onClickTypeInYear}
+          />
         ) : (
           <div />
         )

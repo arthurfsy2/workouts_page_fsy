@@ -240,7 +240,7 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
     return {
       type: 'Feature',
       properties: {
-        'color': colorFromType(run.type),
+        color: colorFromType(run.type),
       },
       geometry: {
         type: 'LineString',
@@ -295,32 +295,30 @@ const titleForType = (type: string): string => {
     default:
       return RUN_TITLES.RUN_TITLE;
   }
-}
+};
 
 const typeForRun = (run: Activity): string => {
-  const type = run.type
+  const type = run.type;
   var distance = run.distance / 1000;
   switch (type) {
     case 'Run':
       if (distance >= 40) {
         return 'Full Marathon';
-      }
-      else if (distance > 20) {
+      } else if (distance > 20) {
         return 'Half Marathon';
       }
       return 'Run';
     case 'Trail Run':
       if (distance >= 40) {
         return 'Full Marathon';
-      }
-      else if (distance > 20) {
+      } else if (distance > 20) {
         return 'Half Marathon';
       }
       return 'Trail Run';
     default:
       return type;
   }
-}
+};
 
 const titleForRun = (run: Activity): string => {
   const type = run.type;
@@ -337,14 +335,13 @@ const titleForRun = (run: Activity): string => {
     }
   }
   // 3. use time+length if location or type is not available
-  if (type == 'Run' || type == 'Trail Run'){
-      const runDistance = run.distance / 1000;
-      if (runDistance >= 40) {
-        return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
-      }
-      else if (runDistance > 20) {
-        return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
-      }
+  if (type == 'Run' || type == 'Trail Run') {
+    const runDistance = run.distance / 1000;
+    if (runDistance >= 40) {
+      return RUN_TITLES.FULL_MARATHON_RUN_TITLE;
+    } else if (runDistance > 20) {
+      return RUN_TITLES.HALF_MARATHON_RUN_TITLE;
+    }
   }
   return titleForType(type);
 };
@@ -439,15 +436,21 @@ const filterTitleRuns = (run: Activity, title: string) =>
   titleForRun(run) === title;
 
 const filterTypeRuns = (run: Activity, type: string) => {
-  switch (type){
+  switch (type) {
     case 'Full Marathon':
-      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance > 40000
+      return (
+        (run.type === 'Run' || run.type === 'Trail Run') && run.distance > 40000
+      );
     case 'Half Marathon':
-      return (run.type === 'Run' || run.type === 'Trail Run') && run.distance < 40000 && run.distance > 20000
+      return (
+        (run.type === 'Run' || run.type === 'Trail Run') &&
+        run.distance < 40000 &&
+        run.distance > 20000
+      );
     default:
-      return run.type === type
+      return run.type === type;
   }
-}
+};
 
 const filterAndSortRuns = (
   activities: Activity[],
@@ -455,13 +458,13 @@ const filterAndSortRuns = (
   filterFunc: (_run: Activity, _bvalue: string) => boolean,
   sortFunc: (_a: Activity, _b: Activity) => number,
   item2: string | null,
-  filterFunc2: ((_run: Activity, _bvalue: string) => boolean) | null,
+  filterFunc2: ((_run: Activity, _bvalue: string) => boolean) | null
 ) => {
   let s = activities;
   if (item !== 'Total') {
     s = activities.filter((run) => filterFunc(run, item));
   }
-  if(filterFunc2 != null && item2 != null){
+  if (filterFunc2 != null && item2 != null) {
     s = s.filter((run) => filterFunc2(run, item2));
   }
   return s.sort(sortFunc);

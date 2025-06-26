@@ -45,7 +45,7 @@ const RunRow = ({
       className={`${styles.runRow} ${runIndex === elementIndex ? styles.selected : ''}`}
       key={run.start_date_local}
       onClick={handleClick}
-      style={{color: colorFromType(type)}}
+      style={{ color: colorFromType(type) }}
     >
       <td>{titleForRun(run)}</td>
       <td>{type}</td>

@@ -1,4 +1,4 @@
-import {locationForRun, typeForRun} from '@/utils/utils';
+import { locationForRun, typeForRun } from '@/utils/utils';
 import activities from '@/static/activities.json';
 
 // standardize country names for consistency between mapbox and activities data
@@ -30,7 +30,6 @@ const useActivities = () => {
         ? runPeriod[periodName] + 1
         : 1;
     }
-
 
     const { city, province, country } = location;
     // drop only one char city
