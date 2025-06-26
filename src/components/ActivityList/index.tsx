@@ -330,7 +330,9 @@ const ActivityList: React.FC = () => {
           value={activityType}
         >
           {showTypes.map((type) => (
-            <option value={type}>{TYPES_MAPPING[type]}</option>
+            <option value={type} key={type}>
+              {TYPES_MAPPING[type]}
+            </option>
           ))}
         </select>
         <select

@@ -171,6 +171,7 @@ export {
   TYPES_MAPPING,
 };
 
+// eslint-disable-next-line no-unused-vars
 const nike = 'rgb(224,237,94)';
 const yellow = 'rgb(224,237,94)';
 const green = 'rgb(0,237,94)';
