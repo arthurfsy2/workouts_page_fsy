@@ -26,13 +26,6 @@ logger = logging.getLogger("nike_sync")
 
 BASE_URL = "https://api.nike.com/plus/v3"
 TOKEN_REFRESH_URL = "https://api.nike.com/idn/shim/oauth/2.0/token"
-NIKE_CLIENT_ID = "VmhBZWFmRUdKNkc4ZTlEeFJVejhpRTUwQ1o5TWlKTUc="
-NIKE_UX_ID = "Y29tLm5pa2Uuc3BvcnQucnVubmluZy5pb3MuNS4xNQ=="
-NIKE_HEADERS = {
-    "Host": "api.nike.com",
-    "Accept": "application/json",
-    "Content-Type": "application/json",
-}
 
 
 class Nike:
@@ -40,13 +33,6 @@ class Nike:
         self.client = httpx.Client()
 
         self.client.headers.update({"Authorization": f"Bearer {access_token}"})
-
-    def get_activities_since_timestamp(self, timestamp):
-        # return self.request("activities/before_id/v3/*?limit=30&types=run%2Cjogging&include_deleted=false", timestamp)
-        return self.request(
-            "activities/before_id/v3/*?limit=30&types=run%2Cjogging&include_deleted=false",
-            timestamp,
-        )
 
     def get_activities_before_id(self, activity_id):
         if not activity_id:
@@ -393,7 +379,7 @@ def make_new_gpxs(files):
                 track = parse_no_gpx_data(json_data)
                 if track:
                     tracks_list.append(track)
-            # just ignore some unexcepted run
+            # just ignore some unexpected run
             except Exception as e:
                 print(str(e))
                 continue
