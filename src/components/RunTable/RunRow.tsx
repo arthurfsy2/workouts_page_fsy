@@ -50,7 +50,7 @@ const RunRow = ({
       <td>{titleForRun(run)}</td>
       <td>{type}</td>
       <td>{distance}</td>
-      {SHOW_ELEVATION_GAIN && <td>{(elevation_gain ?? 0.0).toFixed(1)}</td>}
+      {SHOW_ELEVATION_GAIN && <td>{elevation_gain ?? 0.0}</td>}
       <td>{paceParts}</td>
       <td>{heartRate && heartRate.toFixed(0)}</td>
       <td>{runTime}</td>
