@@ -24,7 +24,7 @@ startYear = 2012
 XINGZHE_URL_DICT = {
     "BASE_URL": "https://www.imxingzhe.com/user/login",
     "ACTIVITY_LIST_URL": "https://www.imxingzhe.com/api/v4/user_month_info/?",
-    "DOWNLOAD_GPX_URL": "https://www.imxingzhe.com/xing",
+    "DOWNLOAD_GPX_URL": "https://www.imxingzhe.com/api/v1/pgworkout",
     "SSO_URL_ORIGIN": "https://www.imxingzhe.com/portal/",
 }
 
