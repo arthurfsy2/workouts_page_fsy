@@ -10,7 +10,6 @@ import Map, {
 import { MapInstance } from 'react-map-gl/src/types/lib';
 import useActivities from '@/hooks/useActivities';
 import {
-  MAP_LAYER_LIST,
   IS_CHINESE,
   ROAD_LABEL_DISPLAY,
   MAPBOX_TOKEN,
@@ -165,6 +164,7 @@ const RunMap = ({
       style={style}
       mapStyle={mapStyle}
       ref={mapRefCallback}
+      cooperativeGestures={isTouchDevice()}
       mapboxAccessToken={MAPBOX_TOKEN}
     >
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />

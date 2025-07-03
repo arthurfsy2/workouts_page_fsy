@@ -171,7 +171,7 @@ class Poster:
 
         d.add(
             d.text(
-                self.trans("ATHLETE"),
+                self.trans("Runner"),
                 insert=(10, self.height - 20),
                 fill=text_color,
                 style=header_style,

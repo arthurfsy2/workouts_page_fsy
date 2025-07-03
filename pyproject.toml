@@ -2,9 +2,7 @@
 name = "running_page"
 version = "2.5.1"
 description = "Default template for PDM package"
-authors = [
-    {name = "yihong0618", email = "zouzou0208@gmail.com"},
-]
+authors = [{ name = "yihong0618", email = "zouzou0208@gmail.com" }]
 dependencies = [
     "httpx",
     "gpxpy==1.6.2",
@@ -42,7 +40,7 @@ dependencies = [
 ]
 requires-python = ">=3.12"
 readme = "README.md"
-license = {text = "MIT"}
+license = { text = "MIT" }
 
 [build-system]
 requires = ["pdm-backend"]

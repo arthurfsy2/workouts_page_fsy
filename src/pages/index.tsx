@@ -93,6 +93,7 @@ const Index = () => {
     changeByItem(city, 'City', filterCityRuns);
   };
 
+  // eslint-disable-next-line no-unused-vars
   const changeTitle = (title: string) => {
     changeByItem(title, 'Title', filterTitleRuns);
   };

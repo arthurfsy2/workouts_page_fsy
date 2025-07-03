@@ -20,9 +20,10 @@
 1. 新增每日一言
 
    > 中文：[Hitokoto - 一言](https://hitokoto.cn/)
+   >
 
    > 英文：[lukePeavey/quotable: Random Quotes API](https://github.com/lukePeavey/quotable?tab=readme-ov-file#get-random-quotes)）
-
+   >
 2. 新增“DEFAULT_LOCATION”（`src\utils\const.ts`）：当某个活动的坐标数据为空时，定义到的城市。默认为深圳的经纬度
 3. 新增汇总表功能
 4. 新增年份统计/地点统计切换

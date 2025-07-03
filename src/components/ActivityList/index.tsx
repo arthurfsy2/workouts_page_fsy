@@ -15,6 +15,7 @@ import { ACTIVITY_TOTAL, TYPES_MAPPING ,SHOW_ELEVATION_GAIN} from '@/utils/const
 import { formatPace } from '@/utils/utils';
 import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
+import { SHOW_ELEVATION_GAIN } from '@/utils/const';
 
 // Define interfaces for our data structures
 interface Activity {

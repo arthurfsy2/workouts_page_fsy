@@ -151,18 +151,18 @@ const RUN_TITLES = {
 };
 
 const TYPES_MAPPING = {
-  'run': RUN_TITLES.RUN_TITLE,
+  run: RUN_TITLES.RUN_TITLE,
   'trail run': RUN_TITLES.TRAIL_RUN_TITLE,
-  'swim': RUN_TITLES.SWIM_TITLE,
-  'ride': RUN_TITLES.RIDE_TITLE,
-  'virtualride': RUN_TITLES.VIRTUAL_RIDE_TITLE,
-  'hike': RUN_TITLES.HIKE_TITLE,
-  'rowing': RUN_TITLES.ROWING_TITLE,
-  'kayaking': RUN_TITLES.KAYAKING_TITLE,
-  'snowboard': RUN_TITLES.SNOWBOARD_TITLE,
-  'ski': RUN_TITLES.SKI_TITLE,
-  'roadtrip': RUN_TITLES.ROAD_TRIP_TITLE,
-}
+  swim: RUN_TITLES.SWIM_TITLE,
+  ride: RUN_TITLES.RIDE_TITLE,
+  virtualride: RUN_TITLES.VIRTUAL_RIDE_TITLE,
+  hike: RUN_TITLES.HIKE_TITLE,
+  rowing: RUN_TITLES.ROWING_TITLE,
+  kayaking: RUN_TITLES.KAYAKING_TITLE,
+  snowboard: RUN_TITLES.SNOWBOARD_TITLE,
+  ski: RUN_TITLES.SKI_TITLE,
+  roadtrip: RUN_TITLES.ROAD_TRIP_TITLE,
+};
 
 const ACTIVITY_TOTAL = {
   ACTIVITY_COUNT_TITLE,
@@ -256,6 +256,7 @@ export {
   TYPES_MAPPING,
 };
 
+// eslint-disable-next-line no-unused-vars
 const nike = 'rgb(224,237,94)';
 const yellow = 'rgb(224,237,94)';
 const mgi_green = 'rgb(0,175,170)';

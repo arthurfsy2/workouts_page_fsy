@@ -1,6 +1,6 @@
 import * as mapboxPolyline from '@mapbox/polyline';
 import gcoord from 'gcoord';
-import { WebMercatorViewport } from 'viewport-mercator-project';
+import { WebMercatorViewport } from '@math.gl/web-mercator';
 import { chinaGeojson, RPGeometry } from '@/static/run_countries';
 import worldGeoJson from '@surbowl/world-geo-json-zh/world.zh.json';
 import { chinaCities } from '@/static/city';
@@ -25,7 +25,12 @@ import {
   RICH_TITLE,
   MAP_TILE_STYLES,
 } from './const';
-import { FeatureCollection, LineString } from 'geojson';
+import {
+  FeatureCollection,
+  LineString,
+  Feature,
+  GeoJsonProperties,
+} from 'geojson';
 
 export type Coordinate = [number, number];
 
@@ -37,6 +42,7 @@ export interface Activity {
   distance: number;
   moving_time: string;
   type: string;
+  subtype: string;
   start_date: string;
   start_date_local: string;
   location_country?: string | null;
@@ -331,7 +337,7 @@ const titleForRun = (run: Activity): string => {
       return run.name;
     }
     // 2. try to use location+type if the location is available, eg. 'Shanghai Run'
-    const { city, province } = locationForRun(run);
+    const { city } = locationForRun(run);
     const activity_sport = titleForType(typeForRun(run));
     if (city && city.length > 0 && activity_sport.length > 0) {
       return `${city} ${activity_sport}`;
