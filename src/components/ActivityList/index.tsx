@@ -113,7 +113,6 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   };
 
   const isFastType = (activityType: string): boolean => {
-    console.log('activityType:', activityType);
     switch (activityType) {
       case 'virtualride':
       case 'ride':
@@ -128,9 +127,15 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
     const currentDate = new Date();
     const currentYear = currentDate.getFullYear();
     const currentMonth = currentDate.getMonth() + 1; // 获取当前月份，0-based
+    const startOfYear = new Date(currentDate.getFullYear(), 0, 1);
+    const daysSinceStart = Math.floor(
+      (currentDate - startOfYear) / (1000 * 60 * 60 * 24)
+    );
+    const currentWeek = Math.ceil(
+      (daysSinceStart + startOfYear.getDay() + 1) / 7
+    );
+    const currentWeekDay = ((currentDate.getDay() + 6) % 7) + 1;
     const currentDay = currentDate.getDate();
-
-    console.log('currentYear:', currentYear); // 调试日志
 
     // 处理"YYYY"、"YYYY-MM"或"YYYY-WXX"格式的输入
     const year = parseInt(period.split('-')[0], 10); // 提取年份部分
@@ -146,7 +151,12 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
       if (period.includes('W')) {
         // 处理"YYYY-WXX"格式
         const weekNumber = parseInt(period.split('-W')[1], 10);
-        return 7; // 返回周的天数
+
+        if (year === currentYear && weekNumber === currentWeek) {
+          return currentWeekDay;
+        } else {
+          return 7; // 返回该月的天数
+        }
       } else {
         // 处理"YYYY-MM"格式
         const month = parseInt(period.split('-')[1], 10);
