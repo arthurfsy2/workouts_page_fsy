@@ -102,12 +102,15 @@ const MAX_SPEED_TITLE = IS_CHINESE ? '最快速度' : 'Max Speed';
 const TOTAL_TIME_TITLE = IS_CHINESE ? '总时间' : 'Total Time';
 const AVERAGE_SPEED_TITLE = IS_CHINESE ? '平均速度' : 'Average Speed';
 const TOTAL_DISTANCE_TITLE = IS_CHINESE ? '总距离' : 'Total Distance';
-const TOTAL_ELEVATION_GAIN_TITLE = IS_CHINESE ? '总海拔爬升' : 'Total Elevation Gain';
+const TOTAL_ELEVATION_GAIN_TITLE = IS_CHINESE
+  ? '总海拔爬升'
+  : 'Total Elevation Gain';
 const YEARLY_TITLE = IS_CHINESE ? '按年' : 'Yearly';
 const MONTHLY_TITLE = IS_CHINESE ? '按月' : 'Monthly';
 const WEEKLY_TITLE = IS_CHINESE ? '按周' : 'Weekly';
 const DAILY_TITLE = IS_CHINESE ? '按天' : 'Daily';
 const LOCATION_TITLE = IS_CHINESE ? '位置' : 'Location';
+const DAILY_AVERAGE = IS_CHINESE ? '日均' : 'Daily Average';
 
 //以下定义首页按钮翻译
 
@@ -178,6 +181,7 @@ const ACTIVITY_TOTAL = {
   DAILY_TITLE,
   LOCATION_TITLE,
   HOME_BUTTON,
+  DAILY_AVERAGE,
 };
 
 const ACTIVITY_TYPES = {
@@ -295,38 +299,40 @@ export const TREADMILL_RUN_COLOR = mgi_blue3;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = "mapbox";
+export const MAP_TILE_VENDOR = 'mapbox';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE = "light-v11";
+export const MAP_TILE_STYLE = 'light-v11';
 
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
 // stadiamaps: 8a769c5a-9125-4936-bdcf-a6b90cb5d0a4 |sign up at https://client.stadiamaps.com/signup/
-export const MAP_TILE_ACCESS_TOKEN = "8a769c5a-9125-4936-bdcf-a6b90cb5d0a4"
+export const MAP_TILE_ACCESS_TOKEN = '8a769c5a-9125-4936-bdcf-a6b90cb5d0a4';
 //"akuvQTIUaPG5sbtkpwvc";
 
 export const MAP_TILE_STYLES = {
   maptiler: {
-    "dataviz": "https://api.maptiler.com/maps/dataviz/style.json?key=",
-    "basic": "https://api.maptiler.com/maps/basic-v2/style.json?key=",
-    "streets": "https://api.maptiler.com/maps/streets-v2/style.json?key=",
-    "outdoor": "https://api.maptiler.com/maps/outdoor-v2/style.json?key=",
-    "bright": "https://api.maptiler.com/maps/bright-v2/style.json?key=",
-    "topo": "https://api.maptiler.com/maps/topo-v2/style.json?key=",
-    "winter": "https://api.maptiler.com/maps/winter-v2/style.json?key=",
-    "hybrid": "https://api.maptiler.com/maps/hybrid/style.json?key="
+    dataviz: 'https://api.maptiler.com/maps/dataviz/style.json?key=',
+    basic: 'https://api.maptiler.com/maps/basic-v2/style.json?key=',
+    streets: 'https://api.maptiler.com/maps/streets-v2/style.json?key=',
+    outdoor: 'https://api.maptiler.com/maps/outdoor-v2/style.json?key=',
+    bright: 'https://api.maptiler.com/maps/bright-v2/style.json?key=',
+    topo: 'https://api.maptiler.com/maps/topo-v2/style.json?key=',
+    winter: 'https://api.maptiler.com/maps/winter-v2/style.json?key=',
+    hybrid: 'https://api.maptiler.com/maps/hybrid/style.json?key=',
   },
   stadiamaps: {
-    "alidade_smooth": "https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=",
-    "alidade_satellite": "https://tiles.stadiamaps.com/styles/alidade_satellite.json?api_key=",
+    alidade_smooth:
+      'https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=',
+    alidade_satellite:
+      'https://tiles.stadiamaps.com/styles/alidade_satellite.json?api_key=',
   },
   mapbox: {
-    "light-v11": "mapbox://styles/mapbox/light-v11",
-    "dark-v10": "mapbox://styles/mapbox/dark-v10",
-    "dark-v11": "mapbox://styles/mapbox/dark-v11",
-    "navigation-night": "mapbox://styles/mapbox/navigation-night-v1",
-    "navigation-day": "mapbox://styles/mapbox/navigation-day-v1"
+    'light-v11': 'mapbox://styles/mapbox/light-v11',
+    'dark-v10': 'mapbox://styles/mapbox/dark-v10',
+    'dark-v11': 'mapbox://styles/mapbox/dark-v11',
+    'navigation-night': 'mapbox://styles/mapbox/navigation-night-v1',
+    'navigation-day': 'mapbox://styles/mapbox/navigation-day-v1',
   },
-  default: "mapbox://styles/mapbox/light-v10"
-}
+  default: 'mapbox://styles/mapbox/light-v10',
+};

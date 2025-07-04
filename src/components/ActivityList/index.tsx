@@ -11,7 +11,11 @@ import {
 import { useNavigate } from 'react-router-dom';
 import activities from '@/static/activities.json';
 import styles from './style.module.css';
-import { ACTIVITY_TOTAL, TYPES_MAPPING ,SHOW_ELEVATION_GAIN} from '@/utils/const';
+import {
+  ACTIVITY_TOTAL,
+  TYPES_MAPPING,
+  SHOW_ELEVATION_GAIN,
+} from '@/utils/const';
 import { formatPace } from '@/utils/utils';
 import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
@@ -120,6 +124,52 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
     }
   };
 
+  function getDayOfYear(period: string) {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth() + 1; // 获取当前月份，0-based
+    const currentDay = currentDate.getDate();
+
+    console.log('currentYear:', currentYear); // 调试日志
+
+    // 处理"YYYY"、"YYYY-MM"或"YYYY-WXX"格式的输入
+    const year = parseInt(period.split('-')[0], 10); // 提取年份部分
+    const isLeapYear = (year: number) =>
+      (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+
+    if (year > currentYear) {
+      console.error('Invalid period:', year); // 调试日志
+      throw new Error('Period should not be greater than the current year.');
+    }
+
+    if (period.includes('-')) {
+      if (period.includes('W')) {
+        // 处理"YYYY-WXX"格式
+        const weekNumber = parseInt(period.split('-W')[1], 10);
+        return 7; // 返回周的天数
+      } else {
+        // 处理"YYYY-MM"格式
+        const month = parseInt(period.split('-')[1], 10);
+
+        if (year === currentYear && month === currentMonth) {
+          return currentDay; // 返回当前日期在当年当月中的第几天
+        } else {
+          const daysInMonth = new Date(year, month, 0).getDate(); // 获取该月的天数
+          return daysInMonth; // 返回该月的天数
+        }
+      }
+    } else {
+      // 处理"YYYY"格式
+      if (year === currentYear) {
+        const startOfYear = new Date(currentYear, 0, 1);
+        const diff = currentDate - startOfYear;
+        return Math.ceil(diff / (1000 * 60 * 60 * 24)) + 1; // 返回当前日期是今年的第几天
+      } else {
+        return isLeapYear(year) ? 366 : 365; // 返回该年份的天数
+      }
+    }
+  }
+
   // Calculate Y-axis maximum value and ticks
   const yAxisMax = Math.ceil(
     Math.max(...data.map((d) => parseFloat(d.distance))) + 10
@@ -168,6 +218,10 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
               {isFastType(activityType)
                 ? `${summary.maxSpeed.toFixed(2)} km/h`
                 : formatPace(summary.maxSpeed)}
+            </p>
+            <p>
+              <strong>{ACTIVITY_TOTAL.DAILY_AVERAGE}:</strong>{' '}
+              {(summary.totalDistance / getDayOfYear(period)).toFixed(2)} km
             </p>
           </>
         )}
@@ -376,7 +430,9 @@ const ActivityList: React.FC = () => {
                 maxDistance: summary.maxDistance,
                 maxSpeed: summary.maxSpeed,
                 location: summary.location,
-                totalElevationGain: SHOW_ELEVATION_GAIN ? summary.totalElevationGain : undefined,
+                totalElevationGain: SHOW_ELEVATION_GAIN
+                  ? summary.totalElevationGain
+                  : undefined,
               }}
               dailyDistances={summary.dailyDistances}
               interval={interval}
