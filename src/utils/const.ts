@@ -299,24 +299,32 @@ export const TREADMILL_RUN_COLOR = mgi_blue3;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = 'mapbox';
+export const MAP_TILE_VENDOR = 'stadiamaps';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE = 'light-v11';
+export const MAP_TILE_STYLE = 'alidade_smooth';
 
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
-// stadiamaps: 8a769c5a-9125-4936-bdcf-a6b90cb5d0a4 |sign up at https://client.stadiamaps.com/signup/
-export const MAP_TILE_ACCESS_TOKEN = '8a769c5a-9125-4936-bdcf-a6b90cb5d0a4';
-//"akuvQTIUaPG5sbtkpwvc";
+// stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
+export const MAP_TILE_ACCESS_TOKEN = 'ea116919-7a5d-4def-96e0-490a92e0973f';
+//"export const MAP_TILE_ACCESS_TOKEN = 'akuvQTIUaPG5sbtkpwvc'; //maptiler
 
 export const MAP_TILE_STYLES = {
   maptiler: {
-    dataviz: 'https://api.maptiler.com/maps/dataviz/style.json?key=',
+    aquarelle: 'https://api.maptiler.com/maps/aquarelle/style.json?key=',
+    backdrop: 'https://api.maptiler.com/maps/backdrop/style.json?key=',
     basic: 'https://api.maptiler.com/maps/basic-v2/style.json?key=',
-    streets: 'https://api.maptiler.com/maps/streets-v2/style.json?key=',
-    outdoor: 'https://api.maptiler.com/maps/outdoor-v2/style.json?key=',
     bright: 'https://api.maptiler.com/maps/bright-v2/style.json?key=',
+    dataviz: 'https://api.maptiler.com/maps/dataviz/style.json?key=',
+    landscape: 'https://api.maptiler.com/maps/landscape/style.json?key=',
+    ocean: 'https://api.maptiler.com/maps/ocean/style.json?key=',
+    openstreetmap:
+      'https://api.maptiler.com/maps/openstreetmap/style.json?key=',
+    outdoor: 'https://api.maptiler.com/maps/outdoor-v2/style.json?key=',
+    // satellite: 'https://api.maptiler.com/maps/satellite/?key=',
+    streets: 'https://api.maptiler.com/maps/streets-v2/style.json?key=',
+    toner: 'https://api.maptiler.com/maps/toner-v2/style.json?key=',
     topo: 'https://api.maptiler.com/maps/topo-v2/style.json?key=',
     winter: 'https://api.maptiler.com/maps/winter-v2/style.json?key=',
     hybrid: 'https://api.maptiler.com/maps/hybrid/style.json?key=',
