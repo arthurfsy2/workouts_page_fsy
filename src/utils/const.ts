@@ -105,6 +105,7 @@ const TOTAL_DISTANCE_TITLE = IS_CHINESE ? '总距离' : 'Total Distance';
 const TOTAL_ELEVATION_GAIN_TITLE = IS_CHINESE
   ? '总海拔爬升'
   : 'Total Elevation Gain';
+const AVERAGE_HEART_RATE_TITLE = IS_CHINESE ? '平均心率' : 'Average Heart Rate';
 const YEARLY_TITLE = IS_CHINESE ? '按年' : 'Yearly';
 const MONTHLY_TITLE = IS_CHINESE ? '按月' : 'Monthly';
 const WEEKLY_TITLE = IS_CHINESE ? '按周' : 'Weekly';
@@ -175,6 +176,7 @@ const ACTIVITY_TOTAL = {
   AVERAGE_SPEED_TITLE,
   TOTAL_DISTANCE_TITLE,
   TOTAL_ELEVATION_GAIN_TITLE,
+  AVERAGE_HEART_RATE_TITLE,
   YEARLY_TITLE,
   MONTHLY_TITLE,
   WEEKLY_TITLE,

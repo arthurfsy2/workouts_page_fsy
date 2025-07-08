@@ -28,6 +28,7 @@ interface Activity {
   type: string;
   location_country?: string;
   elevation_gain?: number;
+  average_heartrate?: number;
 }
 
 interface ActivitySummary {
@@ -39,6 +40,8 @@ interface ActivitySummary {
   maxDistance: number;
   maxSpeed: number;
   location: string;
+  totalHeartRate: number; // Add heart rate statistics
+  heartRateCount: number;
 }
 
 interface DisplaySummary {
@@ -50,6 +53,7 @@ interface DisplaySummary {
   maxSpeed: number;
   location: string;
   totalElevationGain?: number;
+  averageHeartRate?: number; // Add heart rate display
 }
 
 interface ChartData {
@@ -213,6 +217,12 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
           <strong>{ACTIVITY_TOTAL.TOTAL_TIME_TITLE}:</strong>{' '}
           {formatTime(summary.totalTime)}
         </p>
+        {summary.averageHeartRate !== undefined && (
+          <p>
+            <strong>{ACTIVITY_TOTAL.AVERAGE_HEART_RATE_TITLE}:</strong>{' '}
+            {summary.averageHeartRate.toFixed(0)} bpm
+          </p>
+        )}
         {interval !== 'day' && (
           <>
             <p>
@@ -352,6 +362,8 @@ const ActivityList: React.FC = () => {
             maxDistance: 0,
             maxSpeed: 0,
             location: '',
+            totalHeartRate: 0,
+            heartRateCount: 0,
           };
 
         const distanceKm = activity.distance / 1000; // Convert to kilometers
@@ -364,6 +376,11 @@ const ActivityList: React.FC = () => {
         acc[key].count += 1;
         if (SHOW_ELEVATION_GAIN && activity.elevation_gain) {
           acc[key].totalElevationGain += activity.elevation_gain;
+        }
+        // Heart rate statistics
+        if (activity.average_heartrate) {
+          acc[key].totalHeartRate += activity.average_heartrate;
+          acc[key].heartRateCount += 1;
         }
 
         // Accumulate daily distances
@@ -443,6 +460,10 @@ const ActivityList: React.FC = () => {
                 totalElevationGain: SHOW_ELEVATION_GAIN
                   ? summary.totalElevationGain
                   : undefined,
+                averageHeartRate:
+                  summary.heartRateCount > 0
+                    ? summary.totalHeartRate / summary.heartRateCount
+                    : undefined,
               }}
               dailyDistances={summary.dailyDistances}
               interval={interval}
