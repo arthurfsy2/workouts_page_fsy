@@ -10,16 +10,17 @@ import {
 } from 'recharts';
 import { useNavigate } from 'react-router-dom';
 import activities from '@/static/activities.json';
+import evaluateMileageChance from './evaluateMileageChance'; // 确保路径正确
 import styles from './style.module.css';
 import {
   ACTIVITY_TOTAL,
   TYPES_MAPPING,
   SHOW_ELEVATION_GAIN,
+  MAX_SINGLE_DAY,
 } from '@/utils/const';
 import { formatPace } from '@/utils/utils';
 import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
-
 // Define interfaces for our data structures
 interface Activity {
   start_date_local: string;
@@ -400,6 +401,15 @@ const ActivityList: React.FC = () => {
 
   const activitiesByInterval = groupActivities(interval);
 
+  // const reservedDistance = 0; // 根据需要确定保留距离
+  // const maxSingleDay = 100; // 假设最大单日骑行距离
+
+  const { content } = evaluateMileageChance(
+    activities as Activity[],
+    undefined,
+    MAX_SINGLE_DAY[activityType],
+    activityType
+  );
   return (
     <div className={styles.activityList}>
       <div className={styles.filterContainer}>
@@ -427,6 +437,7 @@ const ActivityList: React.FC = () => {
           <option value="day">{ACTIVITY_TOTAL.DAILY_TITLE}</option>
         </select>
       </div>
+      {content}
 
       <div className={styles.summaryContainer}>
         {Object.entries(activitiesByInterval)

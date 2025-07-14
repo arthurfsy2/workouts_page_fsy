@@ -168,6 +168,21 @@ const TYPES_MAPPING = {
   roadtrip: RUN_TITLES.ROAD_TRIP_TITLE,
 };
 
+// 设置各项运动的最大单日公里数
+const MAX_SINGLE_DAY = {
+  run: 21.0975,
+  'trail run': 100,
+  swim: 100,
+  ride: 100,
+  virtualride: 100,
+  hike: 10,
+  rowing: 100,
+  kayaking: 100,
+  snowboard: 100,
+  ski: 100,
+  roadtrip: 100,
+};
+
 const ACTIVITY_TOTAL = {
   ACTIVITY_COUNT_TITLE,
   MAX_DISTANCE_TITLE,
@@ -260,6 +275,7 @@ export {
   RUNTABLE_TITLE,
   BUTTON_TITLES,
   TYPES_MAPPING,
+  MAX_SINGLE_DAY,
 };
 
 // eslint-disable-next-line no-unused-vars
@@ -310,7 +326,8 @@ export const MAP_TILE_STYLE = 'alidade_smooth';
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
 // stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
 export const MAP_TILE_ACCESS_TOKEN = 'ea116919-7a5d-4def-96e0-490a92e0973f';
-//"export const MAP_TILE_ACCESS_TOKEN = 'akuvQTIUaPG5sbtkpwvc'; //maptiler
+
+// export const MAP_TILE_ACCESS_TOKEN = 'akuvQTIUaPG5sbtkpwvc'; //maptiler
 
 export const MAP_TILE_STYLES = {
   maptiler: {
