@@ -1,4 +1,4 @@
-import { TYPES_MAPPING } from '@/utils/const';
+import { TYPES_MAPPING, IS_CHINESE } from '@/utils/const';
 
 interface Activity {
   start_date_local: string;
@@ -75,7 +75,9 @@ const evaluateMileageChance = (
   const shortfall = lastYearTotalDistance - projectedDistance;
 
   if (projectedDistance >= lastYearTotalDistance) {
-    text = `问题不大！虽然${currentYear}年当前日均公里数（${currentYearAvg} km）＜ ${secondLatestYearInRecord}年日均（${lastYearAvg} km），但按日均预计总里程（${projectedDistance} km）＞${secondLatestYearInRecord}年（${lastYearTotalDistance} km），完成挑战概率很大！`;
+    text = IS_CHINESE
+      ? `问题不大！虽然${currentYear}年当前日均公里数（${currentYearAvg} km）＜ ${secondLatestYearInRecord}年日均（${lastYearAvg} km），但按日均预计总里程（${projectedDistance} km）＞${secondLatestYearInRecord}年（${lastYearTotalDistance} km），完成挑战概率很大！`
+      : `No problem! Although the current average daily distance in ${currentYear} is less than the average in ${secondLatestYearInRecord} (current average: ${currentYearAvg} km < ${lastYearAvg} km), the projected total distance based on the average daily distance (${projectedDistance} km) is greater than that of ${secondLatestYearInRecord} (${lastYearTotalDistance} km), so the chance of completing the challenge is quite high!`;
   } else {
     const [x, maxPossibleKm] = minDaysWithMaxEffort(
       maxSingleDay,
@@ -86,17 +88,26 @@ const evaluateMileageChance = (
     );
 
     if (x > remainingDays) {
-      text = `罢了！即使在未来 ${remainingDays} 天内均极限骑行 ${maxSingleDay} 公里，也无法超越${secondLatestYearInRecord}年（${lastYearTotalDistance} km）的总里程！`;
-      remarks = `预计今年极限总里程（ ${maxPossibleKm} km）`;
+      text = IS_CHINESE
+        ? `罢了！即使在未来 ${remainingDays} 天内均极限骑行 ${maxSingleDay} 公里，也无法超越${secondLatestYearInRecord}年（${lastYearTotalDistance} km）的总里程！`
+        : `Forget it! Even if you ride the maximum distance of ${maxSingleDay} km every day for the next ${remainingDays} days, it will not be possible to surpass the total distance of ${secondLatestYearInRecord} (${lastYearTotalDistance} km)!`;
+      remarks = IS_CHINESE
+        ? `预计今年极限总里程（ ${maxPossibleKm} km）`
+        : `Projected maximum total distance for this year: ${maxPossibleKm} km.`;
     }
 
     const maxDaysPercentage = roundToPercentage((x / remainingDays) * 100);
     const hardLevel = getChallengeLevel(maxDaysPercentage);
 
-    text = `${hardLevel}
-${currentYear}年当前日均公里数（${currentYearAvg} km）＜ ${secondLatestYearInRecord}年（${lastYearAvg} km），且按日均预计总里程（${projectedDistance} km）＜ ${secondLatestYearInRecord}年（${lastYearTotalDistance} km）`;
+    text = IS_CHINESE
+      ? `${hardLevel}
+${currentYear}年当前日均公里数（${currentYearAvg} km）＜ ${secondLatestYearInRecord}年（${lastYearAvg} km），且按日均预计总里程（${projectedDistance} km）＜ ${secondLatestYearInRecord}年（${lastYearTotalDistance} km）`
+      : `${hardLevel}
+The current average daily distance in ${currentYear} (${currentYearAvg} km) < ${secondLatestYearInRecord} (${lastYearAvg} km), and the projected total distance based on the average daily distance (${projectedDistance} km) < ${secondLatestYearInRecord} (${lastYearTotalDistance} km).`;
 
-    remarks = `PS: 如果在未来的 ${remainingDays} 天内，至少有 ${x} 天 ( ${maxDaysPercentage}% ) 极限${TYPES_MAPPING[activityType.toLowerCase()]} ${maxSingleDay} 公里，可以超越${secondLatestYearInRecord}年`;
+    remarks = IS_CHINESE
+      ? `PS: 如果在今年剩下的 ${remainingDays} 天里，至少有 ${x} 天 ( ${maxDaysPercentage}% ) 极限${TYPES_MAPPING[activityType.toLowerCase()]} ${maxSingleDay} 公里，可以超越${secondLatestYearInRecord}年`
+      : `PS: If in the remaining ${remainingDays} days of this year, at least ${x} days (${maxDaysPercentage}%) of maximum ${TYPES_MAPPING[activityType.toLowerCase()]} ${maxSingleDay} km can be achieved, it's possible to surpass ${secondLatestYearInRecord}.`;
   }
 
   // 构建返回的内容结构
@@ -150,9 +161,11 @@ const roundToPercentage = (value: number): number => {
 };
 
 const getChallengeLevel = (percentage: number): string => {
-  if (percentage > 0 && percentage <= 20) return '有点困难！';
-  if (percentage > 20 && percentage <= 50) return '巨大挑战！';
-  return '要拼命了！';
+  if (percentage > 0 && percentage <= 20)
+    return IS_CHINESE ? '有点困难！' : 'A bit difficult!';
+  if (percentage > 20 && percentage <= 50)
+    return IS_CHINESE ? '巨大挑战！' : 'Huge challenge!';
+  return IS_CHINESE ? '要拼命了！' : 'You need to give it your all!';
 };
 
 const readYearsList = (
