@@ -63,7 +63,6 @@ const YearStat = ({
       streak = Math.max(streak, run.streak);
     }
   });
-  sumDistance = parseFloat((sumDistance / 1000.0).toFixed(1));
   const sumElevationGainStr = sumElevationGain.toFixed(0);
   const hasHeartRate = !(heartRate === 0);
   const avgHeartRate = (heartRate / (runs.length - heartRateNullCount)).toFixed(
