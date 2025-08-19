@@ -63,6 +63,8 @@ const YearStat = ({
       streak = Math.max(streak, run.streak);
     }
   });
+  sumDistance = parseFloat((sumDistance / 1000.0).toFixed(1));
+  const sumElevationGainStr = sumElevationGain.toFixed(0);
   const hasHeartRate = !(heartRate === 0);
   const avgHeartRate = (heartRate / (runs.length - heartRateNullCount)).toFixed(
     0
@@ -73,12 +75,8 @@ const YearStat = ({
     return b[1][0] - a[1][0];
   });
   return (
-    <div
-      className="cursor-pointer"
-      onClick={() => onClick(year)}
-      {...eventHandlers}
-    >
-      <section>
+    <div className="cursor-pointer" onClick={() => onClick(year)}>
+      <section {...eventHandlers}>
         <Stat value={year} description=" Journey" />
         {sumDistance > 0 && (
           <WorkoutStat
@@ -104,7 +102,7 @@ const YearStat = ({
         ))}
         {SHOW_ELEVATION_GAIN && sumElevationGain > 0 && (
           <Stat
-            value={`${sumElevationGain.toFixed(0)} `}
+            value={`${sumElevationGainStr} `}
             description="M Elevation Gain"
             className="pb-2"
           />
@@ -119,7 +117,7 @@ const YearStat = ({
           <YearSVG className="my-4 h-4/6 w-4/6 border-0 p-0" />
         </Suspense>
       )}
-      <hr color="red" />
+      <hr />
     </div>
   );
 };

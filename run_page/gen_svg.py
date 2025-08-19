@@ -190,6 +190,15 @@ def main():
         help='github svg style; "align-firstday", "align-monday" (default: "align-firstday").',
     )
 
+    args_parser.add_argument(
+        "--sport-type",
+        dest="sport_type",
+        metavar="SPORT_TYPE",
+        type=str,
+        default="all",
+        help="Sport type",
+    )
+
     for _, drawer in drawers.items():
         drawer.create_args(args_parser)
 
@@ -221,6 +230,10 @@ def main():
         )
     else:
         tracks = loader.load_tracks(args.gpx_dir)
+
+    if args.sport_type != "all":
+        tracks = [track for track in tracks if track.type == args.sport_type]
+
     if not tracks:
         return
 
@@ -260,14 +273,26 @@ def main():
     if args.type == "github":
         p.height = 55 + p.years.real_year * 43
     p.github_style = args.github_style
+
+    if args.type == "circular":
+        if args.background_color == "#222222":
+            p.colors["background"] = "#1a1a1a"
+        if args.track_color == "#4DD2FF":
+            p.colors["track"] = "red"
+        if args.special_color == "#FFFF00":
+            p.colors["special"] = "yellow"
+        if args.text_color == "#FFFFFF":
+            p.colors["text"] = "#e1ed5e"
+
     # for special circular
     if is_circular:
         years = p.years.all()[:]
+        output_dir = os.path.dirname(args.output) or "assets"
         for y in years:
             p.years.from_year, p.years.to_year = y, y
             # may be refactor
             p.set_tracks(tracks)
-            p.draw(drawers[args.type], os.path.join("assets", f"year_{str(y)}.svg"))
+            p.draw(drawers[args.type], os.path.join(output_dir, f"year_{str(y)}.svg"))
     else:
         p.draw(drawers[args.type], args.output)
 

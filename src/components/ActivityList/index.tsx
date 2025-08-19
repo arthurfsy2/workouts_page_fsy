@@ -1,4 +1,4 @@
-import React, { lazy, useState, Suspense } from 'react';
+import React, { lazy, useState, Suspense, useEffect } from 'react';
 import {
   BarChart,
   Bar,
@@ -14,19 +14,22 @@ import styles from './style.module.css';
 import { ACTIVITY_TOTAL, TYPES_MAPPING } from '@/utils/const';
 import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
-import { SHOW_ELEVATION_GAIN } from '@/utils/const';
+import { SHOW_ELEVATION_GAIN, HOME_PAGE_TITLE } from '@/utils/const';
+import RoutePreview from '@/components/RoutePreview';
+import { Activity } from '@/utils/utils';
 
-const MonthofLifeSvg = lazy(() => loadSvgComponent(totalStat, './mol.svg'));
+const MonthOfLifeSvg = (sportType: string) => {
+  const path = sportType === 'all' ? './mol.svg' : `./mol_${sportType}.svg`;
+  return lazy(() => loadSvgComponent(totalStat, path));
+};
 
-// Define interfaces for our data structures
-interface Activity {
-  start_date_local: string;
-  distance: number;
-  moving_time: string;
-  type: string;
-  location_country?: string;
-  elevation_gain?: number; // Optional if elevation gain is not used
-}
+const RunningSvg = MonthOfLifeSvg('running');
+const WalkingSvg = MonthOfLifeSvg('walking');
+const HikingSvg = MonthOfLifeSvg('hiking');
+const CyclingSvg = MonthOfLifeSvg('cycling');
+const SwimmingSvg = MonthOfLifeSvg('swimming');
+const SkiingSvg = MonthOfLifeSvg('skiing');
+const AllSvg = MonthOfLifeSvg('all');
 
 interface ActivitySummary {
   totalDistance: number;
@@ -37,6 +40,9 @@ interface ActivitySummary {
   maxDistance: number;
   maxSpeed: number;
   location: string;
+  totalHeartRate: number; // Add heart rate statistics
+  heartRateCount: number;
+  activities: Activity[]; // Add activities array for day interval
 }
 
 interface DisplaySummary {
@@ -48,6 +54,7 @@ interface DisplaySummary {
   maxSpeed: number;
   location: string;
   totalElevationGain?: number;
+  averageHeartRate?: number; // Add heart rate display
 }
 
 interface ChartData {
@@ -61,6 +68,7 @@ interface ActivityCardProps {
   dailyDistances: number[];
   interval: string;
   activityType: string;
+  activities?: Activity[]; // Add activities for day interval
 }
 
 interface ActivityGroups {
@@ -75,7 +83,15 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   dailyDistances,
   interval,
   activityType,
+  activities = [],
 }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  const handleCardClick = () => {
+    if (interval === 'day' && activities.length > 0) {
+      setIsFlipped(!isFlipped);
+    }
+  };
   const generateLabels = (): number[] => {
     if (interval === 'month') {
       const [year, month] = period.split('-').map(Number);
@@ -130,82 +146,115 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   ); // Generate arithmetic sequence
 
   return (
-    <div className={styles.activityCard}>
-      <h2 className={styles.activityName}>{period}</h2>
-      <div className={styles.activityDetails}>
-        <p>
-          <strong>{ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}:</strong>{' '}
-          {summary.totalDistance.toFixed(2)} km
-        </p>
-        {SHOW_ELEVATION_GAIN && summary.totalElevationGain !== undefined && (
-          <p>
-            <strong>{ACTIVITY_TOTAL.TOTAL_ELEVATION_GAIN_TITLE}:</strong>{' '}
-            {summary.totalElevationGain.toFixed(0)} m
-          </p>
-        )}
-        <p>
-          <strong>{ACTIVITY_TOTAL.AVERAGE_SPEED_TITLE}:</strong>{' '}
-          {isFastType(activityType)
-            ? `${summary.averageSpeed.toFixed(2)} km/h`
-            : formatPace(summary.averageSpeed)}
-        </p>
-        <p>
-          <strong>{ACTIVITY_TOTAL.TOTAL_TIME_TITLE}:</strong>{' '}
-          {formatTime(summary.totalTime)}
-        </p>
-        {interval !== 'day' && (
-          <>
+    <div
+      className={`${styles.activityCard} ${interval === 'day' ? styles.activityCardFlippable : ''}`}
+      onClick={handleCardClick}
+      style={{
+        cursor:
+          interval === 'day' && activities.length > 0 ? 'pointer' : 'default',
+      }}
+    >
+      <div className={`${styles.cardInner} ${isFlipped ? styles.flipped : ''}`}>
+        {/* Front side - Activity details */}
+        <div className={styles.cardFront}>
+          <h2 className={styles.activityName}>{period}</h2>
+          <div className={styles.activityDetails}>
             <p>
-              <strong>{ACTIVITY_TOTAL.ACTIVITY_COUNT_TITLE}:</strong>{' '}
-              {summary.count}
+              <strong>{ACTIVITY_TOTAL.TOTAL_DISTANCE_TITLE}:</strong>{' '}
+              {summary.totalDistance.toFixed(2)} km
             </p>
+            {SHOW_ELEVATION_GAIN &&
+              summary.totalElevationGain !== undefined && (
+                <p>
+                  <strong>{ACTIVITY_TOTAL.TOTAL_ELEVATION_GAIN_TITLE}:</strong>{' '}
+                  {summary.totalElevationGain.toFixed(0)} m
+                </p>
+              )}
             <p>
-              <strong>{ACTIVITY_TOTAL.MAX_DISTANCE_TITLE}:</strong>{' '}
-              {summary.maxDistance.toFixed(2)} km
-            </p>
-            <p>
-              <strong>{ACTIVITY_TOTAL.MAX_SPEED_TITLE}:</strong>{' '}
+              <strong>{ACTIVITY_TOTAL.AVERAGE_SPEED_TITLE}:</strong>{' '}
               {isFastType(activityType)
-                ? `${summary.maxSpeed.toFixed(2)} km/h`
-                : formatPace(summary.maxSpeed)}
+                ? `${summary.averageSpeed.toFixed(2)} km/h`
+                : formatPace(summary.averageSpeed)}
             </p>
-          </>
-        )}
-        {['month', 'week', 'year'].includes(interval) && (
-          <div
-            className={styles.chart}
-            style={{ height: '250px', width: '100%' }}
-          >
-            <ResponsiveContainer>
-              <BarChart
-                data={data}
-                margin={{ top: 20, right: 20, left: -20, bottom: 5 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" stroke="#444" />
-                <XAxis dataKey="day" tick={{ fill: 'rgb(204, 204, 204)' }} />
-                <YAxis
-                  label={{
-                    value: 'km',
-                    angle: -90,
-                    position: 'insideLeft',
-                    fill: 'rgb(204, 204, 204)',
-                  }}
-                  domain={[0, yAxisMax]}
-                  ticks={yAxisTicks}
-                  tick={{ fill: 'rgb(204, 204, 204)' }}
-                />
-                <Tooltip
-                  formatter={(value) => `${value} km`}
-                  contentStyle={{
-                    backgroundColor: 'rgb(36, 36, 36)',
-                    border: '1px solid #444',
-                    color: 'rgb(204, 204, 204)',
-                  }}
-                  labelStyle={{ color: 'rgb(0, 237, 94)' }}
-                />
-                <Bar dataKey="distance" fill="rgb(0, 237, 94)" />
-              </BarChart>
-            </ResponsiveContainer>
+            <p>
+              <strong>{ACTIVITY_TOTAL.TOTAL_TIME_TITLE}:</strong>{' '}
+              {formatTime(summary.totalTime)}
+            </p>
+            {summary.averageHeartRate !== undefined && (
+              <p>
+                <strong>{ACTIVITY_TOTAL.AVERAGE_HEART_RATE_TITLE}:</strong>{' '}
+                {summary.averageHeartRate.toFixed(0)} bpm
+              </p>
+            )}
+            {interval !== 'day' && (
+              <>
+                <p>
+                  <strong>{ACTIVITY_TOTAL.ACTIVITY_COUNT_TITLE}:</strong>{' '}
+                  {summary.count}
+                </p>
+                <p>
+                  <strong>{ACTIVITY_TOTAL.MAX_DISTANCE_TITLE}:</strong>{' '}
+                  {summary.maxDistance.toFixed(2)} km
+                </p>
+                <p>
+                  <strong>{ACTIVITY_TOTAL.MAX_SPEED_TITLE}:</strong>{' '}
+                  {isFastType(activityType)
+                    ? `${summary.maxSpeed.toFixed(2)} km/h`
+                    : formatPace(summary.maxSpeed)}
+                </p>
+              </>
+            )}
+            {['month', 'week', 'year'].includes(interval) && (
+              <div className={styles.chart}>
+                <ResponsiveContainer>
+                  <BarChart
+                    data={data}
+                    margin={{ top: 20, right: 20, left: -20, bottom: 5 }}
+                  >
+                    <CartesianGrid
+                      strokeDasharray="3 3"
+                      stroke="var(--color-run-row-hover-background)"
+                    />
+                    <XAxis
+                      dataKey="day"
+                      tick={{ fill: 'var(--color-run-table-thead)' }}
+                    />
+                    <YAxis
+                      label={{
+                        value: 'km',
+                        angle: -90,
+                        position: 'insideLeft',
+                        fill: 'var(--color-run-table-thead)',
+                      }}
+                      domain={[0, yAxisMax]}
+                      ticks={yAxisTicks}
+                      tick={{ fill: 'var(--color-run-table-thead)' }}
+                    />
+                    <Tooltip
+                      formatter={(value) => `${value} km`}
+                      contentStyle={{
+                        backgroundColor:
+                          'var(--color-run-row-hover-background)',
+                        border:
+                          '1px solid var(--color-run-row-hover-background)',
+                        color: 'var(--color-run-table-thead)',
+                      }}
+                      labelStyle={{ color: 'var(--color-primary)' }}
+                    />
+                    <Bar dataKey="distance" fill="var(--color-primary)" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+            )}
+          </div>
+        </div>
+
+        {/* Back side - Route preview */}
+        {interval === 'day' && activities.length > 0 && (
+          <div className={styles.cardBack}>
+            <div className={styles.routeContainer}>
+              <RoutePreview activities={activities} />
+            </div>
           </div>
         )}
       </div>
@@ -216,11 +265,19 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
 const ActivityList: React.FC = () => {
   const [interval, setInterval] = useState<IntervalType>('month');
   const [activityType, setActivityType] = useState<string>('run');
+  const [sportType, setSportType] = useState<string>('all');
+  const [sportTypeOptions, setSportTypeOptions] = useState<string[]>([]);
+
+  useEffect(() => {
+    const playTypes = new Set(
+      (activities as Activity[]).map((activity) => activity.type)
+    );
+    const uniqueSportTypes = [...playTypes];
+    uniqueSportTypes.unshift('all');
+    setSportTypeOptions(uniqueSportTypes);
+  }, []);
+
   const navigate = useNavigate();
-  const playTypes = new Set(
-    (activities as Activity[]).map((activity) => activity.type.toLowerCase())
-  );
-  const showTypes = [...playTypes].filter((type) => type in TYPES_MAPPING);
 
   const toggleInterval = (newInterval: IntervalType): void => {
     setInterval(newInterval);
@@ -235,9 +292,17 @@ const ActivityList: React.FC = () => {
     return hours * 3600 + minutes * 60 + seconds;
   };
 
-  const groupActivities = (interval: IntervalType): ActivityGroups => {
+  const groupActivities = (
+    interval: IntervalType,
+    sportType: string
+  ): ActivityGroups => {
     return (activities as Activity[])
-      .filter(filterActivities)
+      .filter((activity) => {
+        if (sportType === 'all') {
+          return true;
+        }
+        return activity.type === sportType;
+      })
       .reduce((acc: ActivityGroups, activity) => {
         const date = new Date(activity.start_date_local);
         let key: string;
@@ -283,6 +348,9 @@ const ActivityList: React.FC = () => {
             maxDistance: 0,
             maxSpeed: 0,
             location: '',
+            totalHeartRate: 0,
+            heartRateCount: 0,
+            activities: [],
           };
 
         const distanceKm = activity.distance / 1000; // Convert to kilometers
@@ -297,7 +365,18 @@ const ActivityList: React.FC = () => {
           acc[key].totalElevationGain += activity.elevation_gain;
         }
 
+        // Heart rate statistics
+        if (activity.average_heartrate) {
+          acc[key].totalHeartRate += activity.average_heartrate;
+          acc[key].heartRateCount += 1;
+        }
+
         acc[key].count += 1;
+
+        // Store activity for day interval (for route display)
+        if (interval === 'day') {
+          acc[key].activities.push(activity);
+        }
 
         // Accumulate daily distances
         acc[key].dailyDistances[index] =
@@ -314,7 +393,7 @@ const ActivityList: React.FC = () => {
       }, {});
   };
 
-  const activitiesByInterval = groupActivities(interval);
+  const activitiesByInterval = groupActivities(interval, sportType);
 
   return (
     <div className={styles.activityList}>
@@ -323,14 +402,14 @@ const ActivityList: React.FC = () => {
           className={styles.smallHomeButton}
           onClick={() => navigate('/')}
         >
-          Home
+          {HOME_PAGE_TITLE}
         </button>
         <select
-          onChange={(e) => setActivityType(e.target.value)}
-          value={activityType}
+          onChange={(e) => setSportType(e.target.value)}
+          value={sportType}
         >
-          {showTypes.map((type) => (
-            <option value={type} key={type}>
+          {sportTypeOptions.map((type) => (
+            <option key={type} value={type}>
               {TYPES_MAPPING[type]}
             </option>
           ))}
@@ -350,7 +429,13 @@ const ActivityList: React.FC = () => {
       {interval === 'life' && (
         <div className={styles.lifeContainer}>
           <Suspense fallback={<div>Loading SVG...</div>}>
-            <MonthofLifeSvg />
+            {sportType === 'Run' && <RunningSvg />}
+            {sportType === 'Walk' && <WalkingSvg />}
+            {sportType === 'Hike' && <HikingSvg />}
+            {sportType === 'Ride' && <CyclingSvg />}
+            {sportType === 'Swim' && <SwimmingSvg />}
+            {sportType === 'Ski' && <SkiingSvg />}
+            {sportType === 'all' && <AllSvg />}
           </Suspense>
         </div>
       )}
@@ -388,9 +473,14 @@ const ActivityList: React.FC = () => {
                   totalElevationGain: SHOW_ELEVATION_GAIN
                     ? summary.totalElevationGain
                     : undefined,
+                  averageHeartRate:
+                    summary.heartRateCount > 0
+                      ? summary.totalHeartRate / summary.heartRateCount
+                      : undefined,
                 }}
                 dailyDistances={summary.dailyDistances}
                 interval={interval}
+                activities={interval === 'day' ? summary.activities : undefined}
               />
             ))}
         </div>

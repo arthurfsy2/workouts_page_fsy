@@ -8,7 +8,7 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 from collections import namedtuple
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from xml.dom import minidom
 
 import eviltransform
@@ -272,9 +272,8 @@ def tcx_job(run_data):
 
             fit_list.append((unix_time, hr, latitude, longitude, elevation))
 
-    fit_array = np.array(fit_list, dtype=FitType)
-
-    if fit_array is not None:
+    if fit_list:
+        fit_array = np.array(fit_list, dtype=FitType)
         # order array
         fit_array = np.sort(fit_array, order="time")
         # write to TCX file
@@ -439,7 +438,9 @@ class Codoon:
                 "latitude": point["latitude"],
                 "longitude": point["longitude"],
                 "elevation": point["elevation"],
-                "time": adjust_time_to_utc(to_date(point["time_stamp"]), BASE_TIMEZONE),
+                "time": adjust_time_to_utc(
+                    to_date(point["time_stamp"]), BASE_TIMEZONE
+                ).replace(tzinfo=timezone.utc),
             }
             points_dict_list.append(points_dict)
         gpx = gpxpy.gpx.GPX()

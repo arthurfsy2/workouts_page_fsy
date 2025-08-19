@@ -57,7 +57,7 @@ class Garmin:
             else GARMIN_COM_URL_DICT
         )
         if auth_domain and str(auth_domain).upper() == "CN":
-            garth.configure(domain="garmin.cn")
+            garth.configure(domain="garmin.cn", ssl_verify=False)
         self.modern_url = self.URL_DICT.get("MODERN_URL")
         garth.client.loads(secret_string)
         if garth.client.oauth2_token.expired:
@@ -272,7 +272,7 @@ async def download_garmin_data(
     folder = FOLDER_DICT.get(file_type, "gpx")
     try:
         file_data = await client.download_activity(activity_id, file_type=file_type)
-        if summary_infos is not None:
+        if summary_infos is not None and file_type == "gpx":
             file_data = add_summary_info(file_data, summary_infos.get(activity_id))
         file_path = os.path.join(folder, f"{activity_id}.{file_type}")
         need_unzip = False
