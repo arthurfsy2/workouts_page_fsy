@@ -410,7 +410,7 @@ const ActivityList: React.FC = () => {
         >
           {sportTypeOptions.map((type) => (
             <option key={type} value={type}>
-              {TYPES_MAPPING[type]}
+              {type in TYPES_MAPPING ? TYPES_MAPPING[type] : type}
             </option>
           ))}
         </select>
