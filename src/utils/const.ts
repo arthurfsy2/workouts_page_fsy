@@ -184,6 +184,7 @@ export {
 // eslint-disable-next-line no-unused-vars
 const nike = 'rgb(224,237,94)'; // if you want to change the main color, modify this value in src/styles/variables.scss
 const yellow = 'rgb(224,237,94)';
+const yellow_compl = 'rgb(106, 94, 237)';
 const green = 'rgb(0,237,94)';
 const pink = 'rgb(237,85,219)';
 const cyan = 'rgb(112,243,255)';
@@ -191,6 +192,7 @@ const IKB = 'rgb(0,47,167)';
 const dark_vanilla = 'rgb(228,212,220)';
 const gold = 'rgb(242,190,69)';
 const purple = 'rgb(154,118,252)';
+const purple2 = 'rgb(127, 34, 254)';
 const veryPeri = 'rgb(105,106,173)'; //长春花蓝
 const red = 'rgb(255,0,0)'; //大红色
 
@@ -198,26 +200,56 @@ const red = 'rgb(255,0,0)'; //大红色
 // issues #92 and #198
 export const NEED_FIX_MAP = false;
 export const MAIN_COLOR = green;
-export const RUN_COLOR = yellow;
-export const RIDE_COLOR = green;
-export const VIRTUAL_RIDE_COLOR = veryPeri;
-export const HIKE_COLOR = pink;
-export const SWIM_COLOR = gold;
-export const ROWING_COLOR = cyan;
-export const ROAD_TRIP_COLOR = purple;
-export const FLIGHT_COLOR = dark_vanilla;
+export const MAIN_COLOR_LIGHT = purple2;
+
+// Static color constants
+export const RUN_COLOR_LIGHT = '#47b8e0';
+export const RUN_COLOR_DARK = MAIN_COLOR;
+
+// Single run animation colors
+export const SINGLE_RUN_COLOR_LIGHT = '#52c41a'; // Green for light theme
+export const SINGLE_RUN_COLOR_DARK = '#ff4d4f'; // Red for dark theme
+
+// Helper function to get theme-aware SINGLE_RUN_COLOR
+export const getRuntimeSingleColor = (
+  typeColor: string[] = [MAIN_COLOR, MAIN_COLOR_LIGHT]
+): string => {
+  if (typeof window === 'undefined') return SINGLE_RUN_COLOR_DARK;
+
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Determine current theme (default to dark)
+  const isDark =
+    dataTheme === 'dark' ||
+    (!dataTheme && savedTheme === 'dark') ||
+    (!dataTheme && !savedTheme);
+
+  return isDark ? typeColor[0] : typeColor[1];
+};
+
+// Legacy export for backwards compatibility
+export const RUN_COLOR = [yellow, yellow_compl];
+export const RIDE_COLOR = [green, green];
+export const VIRTUAL_RIDE_COLOR = [veryPeri, veryPeri];
+export const HIKE_COLOR = [pink, pink];
+export const SWIM_COLOR = [gold, gold];
+export const ROWING_COLOR = [cyan, cyan];
+export const ROAD_TRIP_COLOR = [purple, purple];
+export const FLIGHT_COLOR = [dark_vanilla, dark_vanilla];
+export const KAYAKING_COLOR = [red, red];
+export const SNOWBOARD_COLOR = [dark_vanilla, dark_vanilla];
+export const TRAIL_RUN_COLOR = [IKB, IKB];
 export const PROVINCE_FILL_COLOR = '#47b8e0';
 export const COUNTRY_FILL_COLOR = dark_vanilla;
-export const KAYAKING_COLOR = red;
-export const SNOWBOARD_COLOR = dark_vanilla;
-export const TRAIL_RUN_COLOR = IKB;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
 export const MAP_TILE_VENDOR = 'mapbox';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE = 'dark-v10';
+export const MAP_TILE_STYLE_LIGHT = 'light-v10';
+export const MAP_TILE_STYLE_DARK = 'dark-v10';
 
 // access token. you can apply a new one, it's free.
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
@@ -226,29 +258,45 @@ export const MAP_TILE_ACCESS_TOKEN = 'Gt5R0jT8tuIYxW6sNrAg';
 
 export const MAP_TILE_STYLES = {
   maptiler: {
+    'dataviz-light': 'https://api.maptiler.com/maps/dataviz/style.json?key=',
     'dataviz-dark':
       'https://api.maptiler.com/maps/dataviz-dark/style.json?key=',
+    'basic-light': 'https://api.maptiler.com/maps/basic-v2/style.json?key=',
     'basic-dark': 'https://api.maptiler.com/maps/basic-v2-dark/style.json?key=',
+    'streets-light': 'https://api.maptiler.com/maps/streets-v2/style.json?key=',
     'streets-dark':
       'https://api.maptiler.com/maps/streets-v2-dark/style.json?key=',
+    'outdoor-light': 'https://api.maptiler.com/maps/outdoor-v2/style.json?key=',
     'outdoor-dark':
       'https://api.maptiler.com/maps/outdoor-v2-dark/style.json?key=',
+    'bright-light': 'https://api.maptiler.com/maps/bright-v2/style.json?key=',
     'bright-dark':
       'https://api.maptiler.com/maps/bright-v2-dark/style.json?key=',
+    'topo-light': 'https://api.maptiler.com/maps/topo-v2/style.json?key=',
     'topo-dark': 'https://api.maptiler.com/maps/topo-v2-dark/style.json?key=',
+    'winter-light': 'https://api.maptiler.com/maps/winter-v2/style.json?key=',
     'winter-dark':
       'https://api.maptiler.com/maps/winter-v2-dark/style.json?key=',
     hybrid: 'https://api.maptiler.com/maps/hybrid/style.json?key=',
   },
+
+  // https://docs.stadiamaps.com/themes/
   stadiamaps: {
+    // light
+    alidade_smooth:
+      'https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=',
     alidade_smooth_dark:
       'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json?api_key=',
     alidade_satellite:
       'https://tiles.stadiamaps.com/styles/alidade_satellite.json?api_key=',
   },
+
+  // https://docs.mapbox.com/api/maps/styles/
   mapbox: {
     'dark-v10': 'mapbox://styles/mapbox/dark-v10',
     'dark-v11': 'mapbox://styles/mapbox/dark-v11',
+    'light-v10': 'mapbox://styles/mapbox/light-v10',
+    'light-v11': 'mapbox://styles/mapbox/light-v11',
     'navigation-night': 'mapbox://styles/mapbox/navigation-night-v1',
     'satellite-streets-v12': 'mapbox://styles/mapbox/satellite-streets-v12',
   },

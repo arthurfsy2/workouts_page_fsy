@@ -21,6 +21,9 @@ import {
   TRAIL_RUN_COLOR,
   RICH_TITLE,
   MAP_TILE_STYLES,
+  MAP_TILE_STYLE_DARK,
+  getRuntimeSingleColor,
+  MAIN_COLOR_LIGHT,
 } from './const';
 import {
   FeatureCollection,
@@ -28,6 +31,7 @@ import {
   Feature,
   GeoJsonProperties,
 } from 'geojson';
+import { getMapThemeFromCurrentTheme } from '@/hooks/useTheme';
 
 export type Coordinate = [number, number];
 
@@ -234,11 +238,11 @@ const geoJsonForRuns = (runs: Activity[]): FeatureCollection<LineString> => ({
   type: 'FeatureCollection',
   features: runs.map((run) => {
     const points = pathForRun(run);
-
+    const color = colorFromType(run.type);
     return {
       type: 'Feature',
       properties: {
-        color: colorFromType(run.type),
+        color: color,
       },
       geometry: {
         type: 'LineString',
@@ -354,31 +358,31 @@ const titleForRun = (run: Activity): string => {
 const colorFromType = (workoutType: string): string => {
   switch (workoutType) {
     case 'Run':
-      return RUN_COLOR;
+      return getRuntimeSingleColor(RUN_COLOR);
     case 'Trail Run':
-      return TRAIL_RUN_COLOR;
+      return getRuntimeSingleColor(TRAIL_RUN_COLOR);
     case 'Ride':
     case 'Indoor Ride':
-      return RIDE_COLOR;
+      return getRuntimeSingleColor(RIDE_COLOR);
     case 'VirtualRide':
-      return VIRTUAL_RIDE_COLOR;
+      return getRuntimeSingleColor(VIRTUAL_RIDE_COLOR);
     case 'Hike':
-      return HIKE_COLOR;
+      return getRuntimeSingleColor(HIKE_COLOR);
     case 'Rowing':
-      return ROWING_COLOR;
+      return getRuntimeSingleColor(ROWING_COLOR);
     case 'Swim':
-      return SWIM_COLOR;
+      return getRuntimeSingleColor(SWIM_COLOR);
     case 'RoadTrip':
-      return ROAD_TRIP_COLOR;
+      return getRuntimeSingleColor(ROAD_TRIP_COLOR);
     case 'Flight':
-      return FLIGHT_COLOR;
+      return getRuntimeSingleColor(FLIGHT_COLOR);
     case 'Kayaking':
-      return KAYAKING_COLOR;
+      return getRuntimeSingleColor(KAYAKING_COLOR);
     case 'Snowboard':
     case 'Ski':
-      return SNOWBOARD_COLOR;
+      return getRuntimeSingleColor(SNOWBOARD_COLOR);
     default:
-      return MAIN_COLOR;
+      return getRuntimeSingleColor();
   }
 };
 
@@ -503,6 +507,35 @@ const isTouchDevice = () => {
   ); // Consider small screens as touch devices
 };
 
+/**
+ * Determines the appropriate map theme based on current settings
+ * @returns The map theme style to use
+ */
+const getMapTheme = (): string => {
+  if (typeof window === 'undefined') return MAP_TILE_STYLE_DARK;
+
+  // Check for explicit theme in DOM
+  const dataTheme = document.documentElement.getAttribute('data-theme') as
+    | 'light'
+    | 'dark'
+    | null;
+
+  // Check for saved theme in localStorage
+  const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+
+  // Determine theme based on priority:
+  // 1. DOM attribute
+  // 2. localStorage
+  // 3. Default to dark theme
+  if (dataTheme) {
+    return getMapThemeFromCurrentTheme(dataTheme);
+  } else if (savedTheme) {
+    return getMapThemeFromCurrentTheme(savedTheme);
+  } else {
+    return getMapThemeFromCurrentTheme('dark');
+  }
+};
+
 export {
   titleForShow,
   formatPace,
@@ -528,4 +561,5 @@ export {
   convertMovingTime2Sec,
   getMapStyle,
   isTouchDevice,
+  getMapTheme,
 };
