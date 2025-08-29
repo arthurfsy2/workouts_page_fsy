@@ -12,6 +12,15 @@ const standardizeCountryName = (country: string): string => {
   }
   if (country.includes('印度尼西亚')) {
     return '印度尼西亚';
+  }
+  if (country.includes('韩国')) {
+    return '韩国';
+  }
+  if (country.includes('斯里兰卡')) {
+    return '斯里兰卡';
+  }
+  if (country.includes('所罗门群岛')) {
+    return '所罗门群岛';
   } else {
     return country;
   }
