@@ -22,6 +22,12 @@ const standardizeCountryName = (country: string): string => {
   if (country.includes('所罗门群岛')) {
     return '所罗门群岛';
   }
+  if (country.includes('拉脱维亚')) {
+    return '拉脱维亚';
+  }
+  if (country.includes('爱沙尼亚')) {
+    return '爱沙尼亚';
+  }
   if (country.includes('奧地利')) {
     return '奥地利';
   } else {
