@@ -67,7 +67,7 @@ dependencies:
     version: 7.0.4
   vite:
     specifier: ^4.5.14
-    version: 4.5.14(@types/node@20.17.30)(sass@1.86.3)
+    version: 4.5.14(@types/node@20.17.30)(sass@1.91.0)
   vite-plugin-svgr:
     specifier: ^3.3.0
     version: 3.3.0(typescript@5.8.3)(vite@4.5.14)
@@ -128,8 +128,8 @@ devDependencies:
     specifier: ^0.5.14
     version: 0.5.14(prettier@3.5.3)
   sass:
-    specifier: ^1.86.1
-    version: 1.86.3
+    specifier: ^1.91.0
+    version: 1.91.0
   tailwindcss:
     specifier: ^4.1.8
     version: 4.1.8
@@ -850,7 +850,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -859,7 +858,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
-    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -868,7 +866,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -877,7 +874,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
-    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -886,7 +882,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -895,7 +890,6 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
-    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -1079,7 +1073,7 @@ packages:
     dependencies:
       '@types/estree': 1.0.7
       estree-walker: 2.0.2
-      picomatch: 4.0.2
+      picomatch: 4.0.3
     dev: false
 
   /@surbowl/world-geo-json-zh@2.1.5:
@@ -1600,7 +1594,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.25.9(@babel/core@7.26.10)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.2
-      vite: 4.5.14(@types/node@20.17.30)(sass@1.86.3)
+      vite: 4.5.14(@types/node@20.17.30)(sass@1.91.0)
     transitivePeerDependencies:
       - supports-color
     dev: false
@@ -3049,8 +3043,8 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
-  /immutable@5.1.1:
-    resolution: {integrity: sha512-3jatXi9ObIsPGr3N5hGw/vWWcTkq6hUYhpQz4k0wLC+owqWi/LiugIw9x0EdNZ2yGedKN/HzePiBvaJRXa0Ujg==}
+  /immutable@5.1.3:
+    resolution: {integrity: sha512-+chQdDfvscSF1SJqv2gn4SRO2ZyS3xL3r7IW/wWEEzrzLisnOlKiQu5ytC/BVNcS15C39WT2Hg/bjKjDMcu+zg==}
 
   /import-fresh@3.3.1:
     resolution: {integrity: sha512-TR3KfrTZTYLPB6jUjfx6MF9WcWrHL9su5TObK4ZkYgBdWKPOFoSoQIdEuTuR82pmtxH2spWG9h6etwfr1pLBqQ==}
@@ -3183,6 +3177,7 @@ packages:
   /is-extglob@2.1.1:
     resolution: {integrity: sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
 
   /is-finalizationregistry@1.1.1:
     resolution: {integrity: sha512-1pC6N8qWJbWoPtEjgcL2xyhQOP491EQjeUo3qTKcmV8YSDDJrOepfG8pcC7h/QgnQHYSv0mJ3Z/ZWxmatVrysg==}
@@ -3951,8 +3946,8 @@ packages:
     engines: {node: '>=8.6'}
     requiresBuild: true
 
-  /picomatch@4.0.2:
-    resolution: {integrity: sha512-M7BAV6Rlcy5u+m6oPhAPFgJTzAioX/6B0DxyvDlo9l8+T3nLKbrczg2WLUyzd45L8RqfUMyGPzekbMvX2Ldkwg==}
+  /picomatch@4.0.3:
+    resolution: {integrity: sha512-5gTmgEY/sqK6gFXLIsQNH19lWb4ebPDLA4SdLP7dsWkIXHWlG66oPuVvXSGFPppYZz8ZDZq0dYYrbHfBCVUb1Q==}
     engines: {node: '>=12'}
     dev: false
 
@@ -4895,13 +4890,13 @@ packages:
       is-regex: 1.2.1
     dev: true
 
-  /sass@1.86.3:
-    resolution: {integrity: sha512-iGtg8kus4GrsGLRDLRBRHY9dNVA78ZaS7xr01cWnS7PEMQyFtTqBiyCrfpTYTZXRWM94akzckYjh8oADfFNTzw==}
+  /sass@1.91.0:
+    resolution: {integrity: sha512-aFOZHGf+ur+bp1bCHZ+u8otKGh77ZtmFyXDo4tlYvT7PWql41Kwd8wdkPqhhT+h2879IVblcHFglIMofsFd1EA==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dependencies:
       chokidar: 4.0.3
-      immutable: 5.1.1
+      immutable: 5.1.3
       source-map-js: 1.2.1
     optionalDependencies:
       '@parcel/watcher': 2.5.1
@@ -5472,7 +5467,7 @@ packages:
       '@rollup/pluginutils': 5.1.4
       '@svgr/core': 8.1.0(typescript@5.8.3)
       '@svgr/plugin-jsx': 8.1.0(@svgr/core@8.1.0)
-      vite: 4.5.14(@types/node@20.17.30)(sass@1.86.3)
+      vite: 4.5.14(@types/node@20.17.30)(sass@1.91.0)
     transitivePeerDependencies:
       - rollup
       - supports-color
@@ -5490,13 +5485,13 @@ packages:
       debug: 4.4.1
       globrex: 0.1.2
       tsconfck: 3.1.6(typescript@5.8.3)
-      vite: 4.5.14(@types/node@20.17.30)(sass@1.86.3)
+      vite: 4.5.14(@types/node@20.17.30)(sass@1.91.0)
     transitivePeerDependencies:
       - supports-color
       - typescript
     dev: false
 
-  /vite@4.5.14(@types/node@20.17.30)(sass@1.86.3):
+  /vite@4.5.14(@types/node@20.17.30)(sass@1.91.0):
     resolution: {integrity: sha512-+v57oAaoYNnO3hIu5Z/tJRZjq5aHM2zDve9YZ8HngVHbhk66RStobhb1sqPMIPEleV6cNKYK4eGrAbE9Ulbl2g==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
@@ -5528,7 +5523,7 @@ packages:
       esbuild: 0.18.20
       postcss: 8.5.3
       rollup: 3.29.5
-      sass: 1.86.3
+      sass: 1.91.0
     optionalDependencies:
       fsevents: 2.3.3
     dev: false
