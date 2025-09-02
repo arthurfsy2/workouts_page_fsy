@@ -7073,7 +7073,7 @@
 },
 {
 "run_id": 1705451218000,
-"name": "上班骑行（爆胎，货拉拉）",
+"name": "\u4e0a\u73ed\u9a91\u884c\uff08\u7206\u80ce\uff0c\u8d27\u62c9\u62c9\uff09",
 "distance": 3253.25,
 "moving_time": "0:15:35.570000",
 "type": "Ride",
@@ -8801,7 +8801,7 @@
 },
 {
 "run_id": 1719188250000,
-"name": "上班骑行（被交警拦了一次）",
+"name": "\u4e0a\u73ed\u9a91\u884c\uff08\u88ab\u4ea4\u8b66\u62e6\u4e86\u4e00\u6b21\uff09",
 "distance": 8956.85,
 "moving_time": "0:28:05.592000",
 "type": "Ride",
@@ -12081,7 +12081,7 @@
 },
 {
 "run_id": 1754958314000,
-"name": "上班骑行（漏气）",
+"name": "\u4e0a\u73ed\u9a91\u884c\uff08\u6f0f\u6c14\uff09",
 "distance": 9295.44,
 "moving_time": "0:28:00.220000",
 "type": "Ride",
@@ -12225,7 +12225,7 @@
 },
 {
 "run_id": 1756686683000,
-"name": "上班骑行（被交警拦了一次）",
+"name": "\u4e0a\u73ed\u9a91\u884c\uff08\u88ab\u4ea4\u8b66\u62e6\u4e86\u4e00\u6b21\uff09",
 "distance": 9335.0,
 "moving_time": "0:28:01.303000",
 "type": "Ride",
