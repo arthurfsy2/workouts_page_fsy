@@ -19,7 +19,7 @@ const WorkoutStat = ({
   color: string;
 }) => (
   <div
-    className={`${className || ' '} w-100 pb-2`}
+    className={`${className || ' '} pb-2`}
     onClick={onClick}
     // style={{ color: color }}
   >

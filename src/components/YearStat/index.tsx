@@ -102,7 +102,7 @@ const YearStat = ({
         {SHOW_ELEVATION_GAIN && sumElevationGain > 0 && (
           <Stat
             value={`${sumElevationGainStr} `}
-            description="M Elevation Gain"
+            description="M Elev Gain"
             className="pb-2"
           />
         )}
