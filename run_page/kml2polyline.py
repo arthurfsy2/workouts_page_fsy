@@ -14,20 +14,17 @@ IN_CHINA = True
 
 def get_points_from_kml(k: kml):
     points = []
-    document = list(k.features())[0]
-    for folder in list(document.features()):
+    document = list(k.features)[0]
+    for folder in list(document.features):
         if folder.geometry.geom_type == "LineString":
             points.extend(folder.geometry.coords)
     return [(p[1], p[0]) for p in points]
 
 
-def load_kml_file(k: kml):
+def load_kml_file():
     file = "run_page/import.kml"
     try:
-        with open(file, "rb") as f:
-            kml_string = f.read()
-            # Read in the KML string
-            k.from_string(kml_string)
+        return kml.KML().parse(file)
     except Exception as err:
         print(err)
         raise "kml file not exist. please place import.kml into script/ folder"
@@ -75,8 +72,7 @@ if __name__ == "__main__":
     track.type = "RoadTrip"
     track.source = "Google Maps"
 
-    k = kml.KML()
-    load_kml_file(k)
+    k = load_kml_file()
     load_kml_data(track, k)
 
     # save
