@@ -28,7 +28,7 @@ haversine==2.9.0
 garth
 pycryptodome
 duckdb
-openai==1.93.0
+openai==1.102.0
 cairosvg
 
 
