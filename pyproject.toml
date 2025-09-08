@@ -49,3 +49,7 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+
+[[tool.uv.index]]
+url = "https://mirrors.aliyun.com/pypi/simple"
+default = true
