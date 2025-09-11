@@ -10,7 +10,7 @@ from .xy import XY
 
 
 class MonthOfLifeDrawer(TracksDrawer):
-    """Draw a Month of Life poster with 1000 months as circles"""
+    """Draw a Month of Life poster with 1000 months as rects"""
 
     def __init__(self, the_poster):
         super().__init__(the_poster)
@@ -77,9 +77,9 @@ class MonthOfLifeDrawer(TracksDrawer):
             month_date = datetime.datetime(y, m, 1)
             is_past = month_date < current_date
 
-            color = "gray" if is_past else "#444444"
+            color = "#dedede" if is_past else "#C0C0C0"
             age = (y - self.birth_year) + ((m - self.birth_month) / 12)
-            title = f"{y}-{m:02d} ({int(age)} years old)"
+            title = f"{y}-{m:02d} ({int(age)} 岁)"
             if dist > 0:
                 # Set color based on special distance ranges and generate gradients or use special colors
                 sd1 = self.poster.special_distance["special_distance"]

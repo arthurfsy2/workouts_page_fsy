@@ -38,9 +38,9 @@ class GithubDrawer(TracksDrawer):
         if self.poster.tracks is None:
             raise PosterError("No tracks to draw")
         year_size = 200 * 4.0 / 80.0
-        year_style = f"font-size:{year_size}px; font-family:Arial;"
-        year_length_style = f"font-size:{110 * 3.0 / 80.0}px; font-family:Arial;"
-        month_names_style = "font-size:2.5px; font-family:Arial"
+        year_style = f"font-size:{year_size}px; font-family:MGI-Regular;"
+        year_length_style = f"font-size:{110 * 3.0 / 80.0}px; font-family:MGI-Regular;"
+        month_names_style = "font-size:2.5px; font-family:MGI-Regular"
         total_length_year_dict = self.poster.total_length_year_dict
 
         is_align_monday = self.poster.github_style == "align-monday"
@@ -136,7 +136,7 @@ class GithubDrawer(TracksDrawer):
                 )
 
             rect_x = 10.0
-            dom = (2.6, 2.6)
+            dom = (2.8, 2.8)
 
             # add every day of this year for 53 weeks and per week has 7 days
             for i in range(54):
@@ -171,7 +171,7 @@ class GithubDrawer(TracksDrawer):
                         str_length = format_float(self.poster.m2u(length))
                         date_title = f"{date_title} {str_length} {km_or_mi}"
 
-                    rect = dr.rect((rect_x, rect_y), dom, fill=color)
+                    rect = dr.rect((rect_x, rect_y), dom, fill=color, rx=1, ry=1)
                     rect.set_desc(title=date_title)
                     dr.add(rect)
                     github_rect_day += datetime.timedelta(1)
