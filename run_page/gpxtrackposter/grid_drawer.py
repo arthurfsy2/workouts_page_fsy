@@ -50,12 +50,9 @@ class GridDrawer(TracksDrawer):
                 tr,
                 0.9 * XY(cell_size, cell_size),
                 offset + 0.05 * XY(cell_size, cell_size) + p,
-                tracks_num=len(self.poster.tracks),
             )
 
-    def _draw_track(
-        self, dr: svgwrite.Drawing, tr: Track, size: XY, offset: XY, tracks_num
-    ):
+    def _draw_track(self, dr: svgwrite.Drawing, tr: Track, size: XY, offset: XY):
         color = self.color(self.poster.length_range, tr.length, tr.special)
 
         str_length = format_float(self.poster.m2u(tr.length))
@@ -74,7 +71,7 @@ class GridDrawer(TracksDrawer):
                 points=line,
                 stroke=color,
                 fill="none",
-                stroke_width=0.5 if tracks_num > 100 else 1,
+                stroke_width=0.5,
                 stroke_linejoin="round",
                 stroke_linecap="round",
             )

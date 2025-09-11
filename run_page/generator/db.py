@@ -2,9 +2,8 @@ import datetime
 import random
 import string
 
-import geopy
 from config import TYPE_DICT
-from geopy.geocoders import Nominatim
+from geopy.geocoders import options, Nominatim
 from sqlalchemy import (
     Column,
     Float,
@@ -27,7 +26,7 @@ def randomword():
     return "".join(random.choice(letters) for i in range(4))
 
 
-geopy.geocoders.options.default_user_agent = "my-application"
+options.default_user_agent = "workouts_page"
 # reverse the location (lat, lon) -> location detail
 g = Nominatim(user_agent=randomword())
 
@@ -116,7 +115,7 @@ def update_or_create_activity(session, run_activity):
                 try:
                     location_country = str(
                         g.reverse(
-                            f"{start_point.lat}, {start_point.lon}", language="zh-CN"
+                            f"{start_point.lat}, {start_point.lon}", language="zh-CN"  # type: ignore
                         )
                     )
                 # limit (only for the first time)
@@ -125,7 +124,7 @@ def update_or_create_activity(session, run_activity):
                         location_country = str(
                             g.reverse(
                                 f"{start_point.lat}, {start_point.lon}",
-                                language="zh-CN",
+                                language="zh-CN",  # type: ignore
                             )
                         )
                     except Exception:
