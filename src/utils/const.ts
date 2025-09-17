@@ -33,7 +33,7 @@ const GOOGLE_ANALYTICS_TRACKING_ID = '';
 // styling: set to `true` if you want dash-line route
 const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
-const LINE_OPACITY = 0.6;
+const LINE_OPACITY = 1;
 // styling: map height
 const MAP_HEIGHT = 450;
 //set to `false` if you want to hide the road label characters
@@ -317,17 +317,19 @@ export const TREADMILL_RUN_COLOR = mgi_blue3;
 
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = 'stadiamaps';
+// export const MAP_TILE_VENDOR = 'stadiamaps';
+export const MAP_TILE_VENDOR = 'maptiler';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE = 'alidade_smooth';
+export const MAP_TILE_STYLE = 'aquarelle';
 
 // access token. you can apply a new one, it's free.
-// maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
-// stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
-export const MAP_TILE_ACCESS_TOKEN = 'ea116919-7a5d-4def-96e0-490a92e0973f';
 
-// export const MAP_TILE_ACCESS_TOKEN = 'akuvQTIUaPG5sbtkpwvc'; //maptiler
+// stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
+// export const MAP_TILE_ACCESS_TOKEN = 'ea116919-7a5d-4def-96e0-490a92e0973f';
+
+// maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
+export const MAP_TILE_ACCESS_TOKEN = 'akuvQTIUaPG5sbtkpwvc'; //maptiler
 
 export const MAP_TILE_STYLES = {
   maptiler: {
