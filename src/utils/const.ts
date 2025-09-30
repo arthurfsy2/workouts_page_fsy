@@ -296,10 +296,6 @@ const red = 'rgb(255,0,0)'; //大红色
 const mgi_black = 'rgb(27,43,56)';
 const mgi_purple = 'rgb(114, 69, 152)';
 
-// If your map has an offset please change this line
-// issues #92 and #198
-export const NEED_FIX_MAP = false;
-export const MAIN_COLOR = mgi_blue;
 export const RUN_COLOR = mgi_purple;
 export const RIDE_COLOR = mgi_green;
 export const VIRTUAL_RIDE_COLOR = veryPeri;
@@ -314,7 +310,36 @@ export const KAYAKING_COLOR = red;
 export const SNOWBOARD_COLOR = veryPeri;
 export const TRAIL_RUN_COLOR = IKB;
 export const TREADMILL_RUN_COLOR = mgi_blue3;
+// If your map has an offset please change this line
+// issues #92 and #198
+export const NEED_FIX_MAP = false;
+export const MAIN_COLOR = mgi_blue3;
+export const MAIN_COLOR_LIGHT = mgi_purple;
+// Static color constants
+export const RUN_COLOR_LIGHT = '#47b8e0';
+export const RUN_COLOR_DARK = MAIN_COLOR;
 
+// Single run animation colors
+export const SINGLE_RUN_COLOR_LIGHT = '#52c41a'; // Green for light theme
+export const SINGLE_RUN_COLOR_DARK = '#ff4d4f'; // Red for dark theme
+
+// Helper function to get theme-aware SINGLE_RUN_COLOR
+export const getRuntimeSingleColor = (
+  typeColor: string[] = [MAIN_COLOR, MAIN_COLOR_LIGHT]
+): string => {
+  if (typeof window === 'undefined') return SINGLE_RUN_COLOR_DARK;
+
+  const dataTheme = document.documentElement.getAttribute('data-theme');
+  const savedTheme = localStorage.getItem('theme');
+
+  // Determine current theme (default to dark)
+  const isDark =
+    dataTheme === 'dark' ||
+    (!dataTheme && savedTheme === 'dark') ||
+    (!dataTheme && !savedTheme);
+
+  return isDark ? typeColor[0] : typeColor[1];
+};
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
 // export const MAP_TILE_VENDOR = 'stadiamaps';
@@ -322,7 +347,9 @@ export const MAP_TILE_VENDOR = 'stadiamaps';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
 export const MAP_TILE_STYLE = 'alidade_smooth';
-
+// map tiles style name, see MAP_TILE_STYLES for more details
+export const MAP_TILE_STYLE_LIGHT = 'light-v10';
+export const MAP_TILE_STYLE_DARK = 'dark-v10';
 // access token. you can apply a new one, it's free.
 
 // stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
