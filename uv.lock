@@ -313,11 +313,11 @@ wheels = [
 
 [[package]]
 name = "garmin-fit-sdk"
-version = "21.171.0"
+version = "21.178.0"
 source = { registry = "https://mirrors.aliyun.com/pypi/simple" }
-sdist = { url = "https://mirrors.aliyun.com/pypi/packages/40/54/ae12d9f39a40ad2e9746362ec79ba7d0d6420b788859e185d5cb09384415/garmin_fit_sdk-21.171.0.tar.gz", hash = "sha256:c999c82ccd2e3011cc0977dbdf35ba89c63f84e06b332623692c53da4dd8e246" }
+sdist = { url = "https://mirrors.aliyun.com/pypi/packages/fb/80/c672ffa32372084211c008aeceadc1d96a0a6e24b4b2b3b5ac8bcd997eca/garmin_fit_sdk-21.178.0.tar.gz", hash = "sha256:1bf59685d4a2cbf990229efe2fbe34b7c02d9f5abad9b0da8ce57edf72163e43" }
 wheels = [
-    { url = "https://mirrors.aliyun.com/pypi/packages/60/25/a8546e884a5a0503d14b988b9fad04d0c590f2b10bc5711418f7259c6d12/garmin_fit_sdk-21.171.0-py2.py3-none-any.whl", hash = "sha256:0c7dd90f144e8a19964a6669d62c2c7260a2ad9446956fccf8538a23dba52f38" },
+    { url = "https://mirrors.aliyun.com/pypi/packages/e1/72/521344e44c82dc809f7fcc565b81237ac12a58097eca28c820ff7d114783/garmin_fit_sdk-21.178.0-py2.py3-none-any.whl", hash = "sha256:64f6968f067f73f0fd68332da49fc3c2cadce98bc0182c34f8a623dc5c50642c" },
 ]
 
 [[package]]
