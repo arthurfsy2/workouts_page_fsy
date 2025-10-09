@@ -72,9 +72,9 @@ jobs:
             ${{ inputs.data_cache_prefix }}-
 
       - name: Setup Node.js environment
-        uses: actions/setup-node@v5
+        uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20'
       - name: Enable corepack
         run: npm install -g corepack@latest && corepack enable pnpm
 
