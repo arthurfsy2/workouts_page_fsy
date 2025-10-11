@@ -35,7 +35,8 @@ const USE_DASH_LINE = false;
 // styling: route line opacity: [0, 1]
 const LINE_OPACITY = 1;
 // styling: map height
-const MAP_HEIGHT = 450;
+// Use smaller height on mobile devices for better user experience
+const MAP_HEIGHT = window.innerWidth <= 768 ? 250 : 450;
 //set to `false` if you want to hide the road label characters
 const ROAD_LABEL_DISPLAY = true;
 // update for now 2024/11/17 the privacy mode is true
@@ -342,14 +343,11 @@ export const getRuntimeSingleColor = (
 };
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-// export const MAP_TILE_VENDOR = 'stadiamaps';
-export const MAP_TILE_VENDOR = 'stadiamaps';
+export const MAP_TILE_VENDOR = 'mapbox';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE = 'alidade_smooth';
-// map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE_LIGHT = 'light-v10';
-export const MAP_TILE_STYLE_DARK = 'dark-v10';
+export const MAP_TILE_STYLE_LIGHT = 'light-v11';
+export const MAP_TILE_STYLE_DARK = 'light-v11';
 // access token. you can apply a new one, it's free.
 
 // stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
@@ -377,9 +375,12 @@ export const MAP_TILE_STYLES = {
     winter: 'https://api.maptiler.com/maps/winter-v2/style.json?key=',
     hybrid: 'https://api.maptiler.com/maps/hybrid/style.json?key=',
   },
+  // https://docs.stadiamaps.com/themes/
   stadiamaps: {
     alidade_smooth:
       'https://tiles.stadiamaps.com/styles/alidade_smooth.json?api_key=',
+    alidade_smooth_dark:
+      'https://tiles.stadiamaps.com/styles/alidade_smooth_dark.json?api_key=',
     alidade_satellite:
       'https://tiles.stadiamaps.com/styles/alidade_satellite.json?api_key=',
   },
