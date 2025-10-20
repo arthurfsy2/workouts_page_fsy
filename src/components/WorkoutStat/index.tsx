@@ -23,7 +23,7 @@ const WorkoutStat = ({
     onClick={onClick}
   >
     <span
-      className={`mr-2 w-1/2 text-right text-5xl font-semibold text-[#00AFAA]`}
+      className={`mr-2 w-1/2 text-right text-4xl font-semibold text-[#00AFAA]`}
     >
       {intComma(value)}
     </span>

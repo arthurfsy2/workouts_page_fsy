@@ -18,24 +18,24 @@ const LocationSummary = () => {
         ) : null}
         {countries ? (
           <Stat
-            className="w-1/3 pb-2"
-            citySize={4}
+            className="w-1/2 pb-2"
+            citySize={3}
             value={`${countries.length}`}
             description={`${IS_CHINESE ? '个国家' : countries.length > 1 ? 'countries' : 'country'}`}
           />
         ) : null}
         {provinces ? (
           <Stat
-            className="w-1/3 pb-2"
-            citySize={4}
+            className="w-1/2 pb-2"
+            citySize={3}
             value={provinces.length}
             description={`${IS_CHINESE ? '个省份' : provinces.length > 1 ? 'provinces' : 'province'}`}
           />
         ) : null}
         {cities ? (
           <Stat
-            className="w-1/3 pb-2"
-            citySize={4}
+            className="w-1/2 pb-2"
+            citySize={3}
             value={Object.keys(cities).length}
             description={`${IS_CHINESE ? ' 个城市' : Object.keys(cities).length > 1 ? 'cities' : 'city'}`}
           />

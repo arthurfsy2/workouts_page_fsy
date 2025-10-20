@@ -35,10 +35,12 @@ const YearStat = ({
 
   // 检查城市数量，如果不超过reduceLength个就直接添加
   if (yearData.length <= reduceLength) {
-    citiesList = yearData.map((city) => city.replace(/市/g, '')).join('/');
+    citiesList = yearData
+      .map((city) => city.replace(/(市|自治州|特别行政区)/g, ''))
+      .join('/');
   } else {
     citiesList = yearData
-      .map((city) => city.replace(/市/g, ''))
+      .map((city) => city.replace(/(市|自治州|特别行政区)/g, ''))
       .reduce((acc, city, index) => {
         if (index < reduceLength) {
           return acc ? `${acc}/${city}` : city;

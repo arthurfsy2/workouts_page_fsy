@@ -21,11 +21,11 @@ const Stat = ({
     {' '}
     {/* 新增：应用传入的样式 */}
     <span
-      className={`w-1/2 text-${citySize || 5}xl mr-2 text-right font-semibold text-[#00AFAA]`}
+      className={`w-1/2 text-${citySize || 4}xl mr-2 text-right font-semibold text-[#00AFAA]`}
     >
       {value.toString()}
     </span>
-    <span className="text-1xl w-1/2 font-semibold italic"> {description}</span>
+    <span className="w-1/2 text-sm font-semibold italic"> {description}</span>
   </div>
 );
 

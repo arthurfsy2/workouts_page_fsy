@@ -15,7 +15,7 @@ const CitiesStat = ({ onClick }: { onClick: (_city: string) => void }) => {
         {citiesArr.map(([city, distance]) => (
           <Stat
             key={city}
-            value={city}
+            value={city.replace(/(自治州|特别行政区)/g, '')}
             description={` ${(distance / 1000).toFixed(0)} KM`}
             style={{
               width: citiesArr.length > 6 ? '50%' : '100%',
