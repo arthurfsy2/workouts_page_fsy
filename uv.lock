@@ -704,11 +704,11 @@ wheels = [
 
 [[package]]
 name = "polyline"
-version = "2.0.2"
+version = "2.0.3"
 source = { registry = "https://mirrors.aliyun.com/pypi/simple" }
-sdist = { url = "https://mirrors.aliyun.com/pypi/packages/1d/2f/e6a437b785d951867882b9fba52a70b81fe8af778bbb4d96b6fb69630f72/polyline-2.0.2.tar.gz", hash = "sha256:10541e759c5fd51f746ee304e9af94744089a4055b6257b293b3afd1df64e369" }
+sdist = { url = "https://mirrors.aliyun.com/pypi/packages/65/1f/39ff0fb8b3aca867eac29c1480f78914a919c554c49ddd326b9fd16dff4d/polyline-2.0.3.tar.gz", hash = "sha256:abc786b9332e84f27e6e59fd4fcbcb0c4b9af6a7f7b4175e2eb6c2786278deae" }
 wheels = [
-    { url = "https://mirrors.aliyun.com/pypi/packages/d7/4f/fbf07370cbf98af0098de83a26625d29aaa0bf73ef7123b561459729f3e6/polyline-2.0.2-py3-none-any.whl", hash = "sha256:389655c893bdabf2863c6aaa49490cf83dcdcec86ae715f67044ee98be57bef5" },
+    { url = "https://mirrors.aliyun.com/pypi/packages/d5/72/7faa058dc6548e58cbdb7c6e8e0dbb56516ee941a7785fb74fb455fa28b2/polyline-2.0.3-py3-none-any.whl", hash = "sha256:95ce411d1307e46ad5dcd8f9c8070d8fa8d9efabf072932582f788dd8a6bd8da" },
 ]
 
 [[package]]
