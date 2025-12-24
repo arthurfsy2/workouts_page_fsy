@@ -543,3 +543,4 @@ if __name__ == "__main__":
         options.with_gpx,
         options.with_tcx,
     )
+    
