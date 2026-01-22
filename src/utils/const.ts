@@ -343,20 +343,38 @@ export const getRuntimeSingleColor = (
 };
 // map tiles vendor, maptiler or mapbox or stadiamaps
 // if you want to use maptiler, set the access token in MAP_TILE_ACCESS_TOKEN
-export const MAP_TILE_VENDOR = 'mapbox';
+export const MAP_TILE_VENDOR = 'mapcn';
 
 // map tiles style name, see MAP_TILE_STYLES for more details
-export const MAP_TILE_STYLE_LIGHT = 'light-v11';
-export const MAP_TILE_STYLE_DARK = 'light-v11';
+export const MAP_TILE_STYLE_LIGHT = 'osm-liberty';
+export const MAP_TILE_STYLE_DARK = 'osm-liberty';
 // access token. you can apply a new one, it's free.
 
 // stadiamaps: ea116919-7a5d-4def-96e0-490a92e0973f |sign up at https://client.stadiamaps.com/signup/
-export const MAP_TILE_ACCESS_TOKEN = 'ea116919-7a5d-4def-96e0-490a92e0973f';
+export const MAP_TILE_ACCESS_TOKEN = '';
 
 // maptiler: Gt5R0jT8tuIYxW6sNrAg | sign up at https://cloud.maptiler.com/auth/widget
 // export const MAP_TILE_ACCESS_TOKEN = 'akuvQTIUaPG5sbtkpwvc'; //maptiler
 
 export const MAP_TILE_STYLES = {
+  mapcn: {
+    'osm-bright':
+      'https://basemaps.cartocdn.com/gl/voyager-gl-style/style.json',
+    'osm-liberty':
+      'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+    'dark-matter':
+      'https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json',
+  },
+  // Alternative free tile providers for regions where Carto may be blocked
+  mapcn_openfreemap: {
+    'osm-bright': 'https://tiles.openfreemap.org/styles/bright',
+    'dark-matter': 'https://tiles.openfreemap.org/styles/dark',
+  },
+  mapcn_maptiler_free: {
+    // Use free, tokenless styles to avoid requiring an API key
+    'osm-bright': 'https://tiles.openfreemap.org/styles/bright',
+    'dark-matter': 'https://tiles.openfreemap.org/styles/dark',
+  },
   maptiler: {
     aquarelle: 'https://api.maptiler.com/maps/aquarelle/style.json?key=',
     backdrop: 'https://api.maptiler.com/maps/backdrop/style.json?key=',
@@ -393,3 +411,49 @@ export const MAP_TILE_STYLES = {
   },
   default: 'mapbox://styles/mapbox/light-v10',
 };
+// Configuration validation
+if (typeof window !== 'undefined') {
+  // Validate token requirements
+  if (MAP_TILE_VENDOR === 'mapcn' && MAP_TILE_ACCESS_TOKEN !== '') {
+    console.warn(
+      '⚠️ MapCN (Carto) does not require an access token.\n' +
+        '💡 You can set MAP_TILE_ACCESS_TOKEN = "" in src/utils/const.ts'
+    );
+  }
+
+  if (
+    ['mapbox', 'maptiler', 'stadiamaps'].includes(MAP_TILE_VENDOR) &&
+    MAP_TILE_ACCESS_TOKEN === ''
+  ) {
+    console.error(
+      `❌ ${MAP_TILE_VENDOR.toUpperCase()} requires an access token!\n` +
+        `💡 Please set MAP_TILE_ACCESS_TOKEN in src/utils/const.ts\n` +
+        `📚 See README.md for instructions on getting a token.\n` +
+        `\n` +
+        `💡 TIP: Use MAP_TILE_VENDOR = 'mapcn' for free (no token required)`
+    );
+  }
+
+  // Validate style matches vendor
+  const vendorStyles = (MAP_TILE_STYLES as any)[MAP_TILE_VENDOR];
+  if (vendorStyles && !vendorStyles[MAP_TILE_STYLE_LIGHT]) {
+    console.error(
+      `❌ Style "${MAP_TILE_STYLE_LIGHT}" is not valid for vendor "${MAP_TILE_VENDOR}"\n` +
+        `💡 Available styles: ${Object.keys(vendorStyles).join(', ')}\n` +
+        `📚 Check src/utils/const.ts MAP_TILE_STYLES for valid combinations`
+    );
+  }
+
+  // Success message for correct MapCN configuration
+  if (
+    MAP_TILE_VENDOR === 'mapcn' &&
+    MAP_TILE_ACCESS_TOKEN === '' &&
+    vendorStyles?.[MAP_TILE_STYLE_LIGHT]
+  ) {
+    console.info(
+      '✅ Using MapCN (Carto Basemaps) - Free, no token required!\n' +
+        '📖 Attribution: Map tiles © CARTO, Map data © OpenStreetMap contributors\n' +
+        '📚 See docs/CARTO_TERMS.md for usage terms'
+    );
+  }
+}
