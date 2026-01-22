@@ -192,9 +192,19 @@ const evaluateMileageChance = (
   const shortfall = lastYearTotalDistance - projectedDistance;
 
   if (projectedDistance >= lastYearTotalDistance) {
-    text = IS_CHINESE
-      ? `问题不大！虽然${currentYear}年当前日均公里数（${currentYearAvg} km）＜ ${secondLatestYearInRecord}年日均（${lastYearAvg} km），但按日均预计总里程（${projectedDistance} km）＞${secondLatestYearInRecord}年（${lastYearTotalDistance} km），完成挑战概率很大！`
-      : `No problem! Although the current average daily distance in ${currentYear} is less than the average in ${secondLatestYearInRecord} (current average: ${currentYearAvg} km < ${lastYearAvg} km), the projected total distance based on the average daily distance (${projectedDistance} km) is greater than that of ${secondLatestYearInRecord} (${lastYearTotalDistance} km), so the chance of completing the challenge is quite high!`;
+    if (currentYearAvg < lastYearAvg) {
+      text = IS_CHINESE
+        ? `问题不大！虽然${currentYear}年当前日均公里数（${currentYearAvg} km）＜ ${secondLatestYearInRecord}年日均（${lastYearAvg} km），但按日均预计总里程（${projectedDistance} km）＞${secondLatestYearInRecord}年（${lastYearTotalDistance} km），完成挑战概率很大！`
+        : `No problem! Although the current average daily distance in ${currentYear} is less than the average in ${secondLatestYearInRecord} (current average: ${currentYearAvg} km < ${lastYearAvg} km), the projected total distance based on the average daily distance (${projectedDistance} km) is greater than that of ${secondLatestYearInRecord} (${lastYearTotalDistance} km), so the chance of completing the challenge is quite high!`;
+    } else if (currentYearAvg > lastYearAvg) {
+      text = IS_CHINESE
+        ? `继续保持！${currentYear}年当前日均公里数（${currentYearAvg} km）＞ ${secondLatestYearInRecord}年日均（${lastYearAvg} km），且按日均预计总里程（${projectedDistance} km）＞${secondLatestYearInRecord}年（${lastYearTotalDistance} km）`
+        : `Keep it up!! The current average daily distance in ${currentYear} is greater than the average in ${secondLatestYearInRecord} (current average: ${currentYearAvg} km > ${lastYearAvg} km), and the projected total distance based on the average daily distance (${projectedDistance} km) is greater than that of ${secondLatestYearInRecord} (${lastYearTotalDistance} km)`;
+    } else {
+      text = IS_CHINESE
+        ? `${currentYear}年当前日均公里数（${currentYearAvg} km）＝ ${secondLatestYearInRecord}年日均（${lastYearAvg} km），且按日均预计总里程（${projectedDistance} km）＞${secondLatestYearInRecord}年（${lastYearTotalDistance} km），完成挑战概率很大！`
+        : `OK! The current average daily distance in ${currentYear} equals the average in ${secondLatestYearInRecord} (current average: ${currentYearAvg} km = ${lastYearAvg} km), and the projected total distance based on the average daily distance (${projectedDistance} km) is greater than that of ${secondLatestYearInRecord} (${lastYearTotalDistance} km), so the chance of completing the challenge is quite high!`;
+    }
   } else {
     const [x, maxPossibleKm] = minDaysWithMaxEffort(
       maxSingleDay,
