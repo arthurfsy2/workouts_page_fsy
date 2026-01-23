@@ -1,4 +1,3 @@
-import MapboxLanguage from '@mapbox/mapbox-gl-language';
 import React, {
   useRef,
   useCallback,
@@ -12,13 +11,13 @@ import Map, {
   FullscreenControl,
   NavigationControl,
   MapRef,
-} from 'react-map-gl';
-import { MapInstance } from 'react-map-gl/src/types/lib';
+} from 'react-map-gl/maplibre';
+import type { Map as MapLibreMap } from 'maplibre-gl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 import useActivities from '@/hooks/useActivities';
 import {
   IS_CHINESE,
   ROAD_LABEL_DISPLAY,
-  MAPBOX_TOKEN,
   PROVINCE_FILL_COLOR,
   COUNTRY_FILL_COLOR,
   USE_DASH_LINE,
@@ -43,7 +42,6 @@ import RunMapButtons from './RunMapButtons';
 import styles from './style.module.css';
 import { FeatureCollection } from 'geojson';
 import { RPGeometry } from '@/static/run_countries';
-import './mapbox.css';
 import LightsControl from '@/components/RunMap/LightsControl';
 import { useMapTheme, useThemeChangeCounter } from '@/hooks/useTheme';
 
@@ -74,7 +72,6 @@ const RunMap = ({
   const [mapGeoData, setMapGeoData] =
     useState<FeatureCollection<RPGeometry> | null>(null);
   const [isLoadingMapData, setIsLoadingMapData] = useState(false);
-  const [mapError, setMapError] = useState<string | null>(null);
 
   // Use the map theme hook to get the current map theme
   const currentMapTheme = useMapTheme();
@@ -93,94 +90,51 @@ const RunMap = ({
     [currentMapTheme]
   );
 
-  // Update map when theme changes
+  // Use ref to track current lights state for use in callbacks
+  const lightsRef = useRef(lights);
   useEffect(() => {
-    if (mapRef.current) {
-      const map = mapRef.current.getMap();
+    lightsRef.current = lights;
+  }, [lights]);
 
-      // Save current map state before changing style
-      const currentCenter = map.getCenter();
-      const currentZoom = map.getZoom();
-      const currentBearing = map.getBearing();
-      const currentPitch = map.getPitch();
-
-      // Apply new style
-      map.setStyle(mapStyle);
-
-      // Create a stable handler for style.load to ensure proper cleanup
-      const handleStyleLoad = () => {
-        // Add a small delay to ensure style is fully loaded
-        setTimeout(() => {
-          try {
-            // Restore map view state
-            map.setCenter(currentCenter);
-            map.setZoom(currentZoom);
-            map.setBearing(currentBearing);
-            map.setPitch(currentPitch);
-
-            // Reapply layer visibility settings with current lights state
-            switchLayerVisibility(map, lights);
-          } catch (error) {
-            console.warn('Error applying map style changes:', error);
-          }
-        }, 100);
-      };
-
-      // Use once to automatically remove the listener after it fires
-      map.once('style.load', handleStyleLoad);
-    }
-  }, [mapStyle]); // Keep only mapStyle in dependency to prevent excessive re-renders
-
+  // Update map when theme changes - reapply lights state after style reload
   useEffect(() => {
-    if (mapRef.current) {
-      const map = mapRef.current.getMap();
+    if (!mapRef.current) return;
 
-      // Track tile loading errors
-      let tileErrorCount = 0;
-      const MAX_TILE_ERRORS = 10;
+    const map = mapRef.current.getMap();
+    const container = map.getContainer();
+    const shouldHide = !lightsRef.current;
 
-      const handleStyleError = (e: any) => {
-        console.error('❌ Map style failed to load:', e);
-        setMapError(
-          'Map tiles failed to load. Please check your internet connection.'
-        );
-
-        if (MAP_TILE_VENDOR === 'mapcn') {
-          console.warn('⚠️ Carto Basemaps (MapCN) failed to load.');
-          console.info('💡 Possible solutions:');
-          console.info('   1. Check your internet connection');
-          console.info(
-            '   2. If in China, Carto may be blocked.  Try fallback:'
-          );
-          console.info('      - Change MAP_TILE_VENDOR to "mapcn_openfreemap"');
-          console.info(
-            '      - Or use MAP_TILE_VENDOR = "maptiler" with free token'
-          );
-        }
-      };
-
-      const handleTileError = () => {
-        tileErrorCount++;
-
-        if (tileErrorCount === MAX_TILE_ERRORS) {
-          console.error(`❌ ${MAX_TILE_ERRORS}+ tile loading errors detected`);
-          console.warn('⚠️ Map tiles are not loading properly.');
-          console.info(
-            '💡 Try switching to a different provider in src/utils/const.ts'
-          );
-        }
-      };
-
-      map.on('error', handleStyleError);
-      map.on('tileerror', handleTileError);
-
-      // Cleanup
-      return () => {
-        map.off('error', handleStyleError);
-        map.off('tileerror', handleTileError);
-      };
+    // Hide map during style transition only when lights are off
+    if (shouldHide) {
+      container.style.opacity = '0';
+      container.style.transition = 'opacity 0.1s ease-out';
     }
-  }, [mapRef]);
+
+    // Handler to restore map after style loads
+    const handleStyleData = () => {
+      // Reapply layer visibility
+      switchLayerVisibility(map, lightsRef.current);
+
+      // Restore visibility
+      if (shouldHide) {
+        container.style.opacity = '1';
+      }
+    };
+
+    // Listen for styledata event which fires when style is updated
+    map.once('styledata', handleStyleData);
+
+    // Shorter safety timeout
+    const timeoutId = setTimeout(() => {
+      map.off('styledata', handleStyleData);
+      handleStyleData();
+    }, 300);
+
+    return () => {
+      clearTimeout(timeoutId);
+      map.off('styledata', handleStyleData);
+    };
+  }, [mapStyle]); // Triggered when theme changes mapStyle
 
   // animation state (single run only)
   const [animatedPoints, setAnimatedPoints] = useState<Coordinate[]>([]);
@@ -202,11 +156,12 @@ const RunMap = ({
 
   /**
    * Toggle visibility of map layers based on lights setting
-   * @param map - The Mapbox map instance
+   * @param map - The MapLibre map instance
    * @param lights - Whether lights are on or off
    */
-  function switchLayerVisibility(map: MapInstance, lights: boolean) {
+  function switchLayerVisibility(map: MapLibreMap, lights: boolean) {
     const styleJson = map.getStyle();
+    if (!styleJson || !styleJson.layers) return;
     styleJson.layers.forEach((it: { id: string }) => {
       if (!keepWhenLightsOff.includes(it.id)) {
         if (lights) map.setLayoutProperty(it.id, 'visibility', 'visible');
@@ -234,40 +189,44 @@ const RunMap = ({
     (ref: MapRef) => {
       if (ref !== null) {
         const map = ref.getMap();
-        if (map && IS_CHINESE) {
-          map.addControl(new MapboxLanguage({ defaultLanguage: 'zh-Hans' }));
-        }
+        // MapTiler tiles already support Chinese labels based on browser language
+        // No need for additional language plugin
+
         // all style resources have been downloaded
         // and the first visually complete rendering of the base style has occurred.
-        // it's odd. when use style other than mapbox, the style.load event is not triggered.Add commentMore actions
+        // it's odd. when use style other than mapbox, the style.load event is not triggered.
         // so I use data event instead of style.load event and make sure we handle it only once.
         map.on('data', (event) => {
           if (event.dataType !== 'style' || mapRef.current) {
             return;
           }
           if (!ROAD_LABEL_DISPLAY) {
-            const layers = map.getStyle().layers;
-            const labelLayerNames = layers
-              .filter(
-                (layer: any) =>
-                  (layer.type === 'symbol' || layer.type === 'composite') &&
-                  layer.layout.text_field !== null
-              )
-              .map((layer: any) => layer.id);
-            labelLayerNames.forEach((layerId) => {
-              map.removeLayer(layerId);
-            });
+            const style = map.getStyle();
+            if (style && style.layers) {
+              const labelLayerNames = style.layers
+                .filter(
+                  (layer: any) =>
+                    (layer.type === 'symbol' || layer.type === 'composite') &&
+                    layer.layout?.['text-field'] !== null
+                )
+                .map((layer: any) => layer.id);
+              labelLayerNames.forEach((layerId) => {
+                map.removeLayer(layerId);
+              });
+            }
           }
           mapRef.current = ref;
-          switchLayerVisibility(map, lights);
+          // Use ref to get the latest lights value
+          switchLayerVisibility(map, lightsRef.current);
         });
       }
       if (mapRef.current) {
         const map = mapRef.current.getMap();
-        switchLayerVisibility(map, lights);
+        // Use ref to get the latest lights value
+        switchLayerVisibility(map, lightsRef.current);
       }
     },
-    [mapRef, lights]
+    [mapRef]
   );
 
   const initGeoDataLength = geoData.features.length;
@@ -422,21 +381,7 @@ const RunMap = ({
       mapStyle={mapStyle}
       ref={mapRefCallback}
       cooperativeGestures={isTouchDevice()}
-      mapboxAccessToken={MAPBOX_TOKEN}
     >
-      {mapError && (
-        <div className={styles.mapErrorNotification}>
-          <span>⚠️ {mapError}</span>
-          <button onClick={() => window.location.reload()}>Reload Page</button>
-          <a
-            href="https://github.com/yihong0618/running_page#map-tiles-customization"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Troubleshooting Guide
-          </a>
-        </div>
-      )}
       <RunMapButtons changeYear={changeYear} thisYear={thisYear} />
       <Source id="data" type="geojson" data={combinedGeoData}>
         <Layer
