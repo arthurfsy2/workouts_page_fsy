@@ -82,10 +82,9 @@ jobs:
       - name: 安装依赖
         run: |
           if [ -f "pyproject.toml" ]; then
-            # 通过环境变量设置使用官方PyPI源，避免镜像源包缺失问题
-            UV_INDEX_URL="https://pypi.org/simple/" uv sync --frozen
+            uv sync --frozen
           elif [ -f "requirements.txt" ]; then
-            UV_INDEX_URL="https://pypi.org/simple/" uv pip install -r requirements.txt
+            uv pip install -r requirements.txt
           else
             echo "未找到依赖文件"
           fi
