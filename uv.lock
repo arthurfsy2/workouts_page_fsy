@@ -70,6 +70,12 @@ wheels = [
 ]
 
 [[package]]
+name = "bitstruct"
+version = "8.11.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/95/33/9f094b5e32bc0927acf282199d35c384092dd73505c88fadb69292106eaf/bitstruct-8.11.1.tar.gz", hash = "sha256:4e7b8769c0f09fee403d0a5f637f8b575b191a79a92e140811aa109ce7461f0c", size = 34140, upload-time = "2020-11-19T09:30:04.021Z" }
+
+[[package]]
 name = "cairocffi"
 version = "1.7.1"
 source = { registry = "https://pypi.org/simple" }
@@ -260,10 +266,32 @@ wheels = [
 ]
 
 [[package]]
+name = "et-xmlfile"
+version = "2.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/d3/38/af70d7ab1ae9d4da450eeec1fa3918940a5fafb9055e934af8d6eb0c2313/et_xmlfile-2.0.0.tar.gz", hash = "sha256:dab3f4764309081ce75662649be815c4c9081e88f0837825f90fd28317d4da54", size = 17234, upload-time = "2024-10-25T17:25:40.039Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/c1/8b/5fe2cc11fee489817272089c4203e679c63b570a5aaeb18d852ae3cbba6a/et_xmlfile-2.0.0-py3-none-any.whl", hash = "sha256:7a91720bc756843502c3b7504c77b8fe44217c85c537d85037f0f536151b2caa", size = 18059, upload-time = "2024-10-25T17:25:39.051Z" },
+]
+
+[[package]]
 name = "eviltransform"
 version = "0.1.1"
 source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/e7/a2/d48e4513355c92a3207ff2a855d5eb840b15d9e8d93e7ead0f27be1df104/eviltransform-0.1.1.tar.gz", hash = "sha256:e49c287a7ce5f5d9244e9420627fe33d020666d632ad4aee0f5ab530f70e1306", size = 1758, upload-time = "2018-01-02T11:16:58.91Z" }
+
+[[package]]
+name = "fit-tool"
+version = "0.9.14"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "bitstruct" },
+    { name = "openpyxl" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e0/b1/d23a3b8121c522471807e78b26476c42ceefc54ae547eb697b6f5a93441d/fit_tool-0.9.14.tar.gz", hash = "sha256:ae4e9a414f42be5e4eb2addb6703fd4f48dec5e281b1acfca56509c9117a0071", size = 137210, upload-time = "2026-01-28T02:21:18.638Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/56/e0/f189bfd3af1327096beaac22dff7d1ecf10885da3b5fd84228ee31b81e28/fit_tool-0.9.14-py3-none-any.whl", hash = "sha256:490083406fb2af097b45377255ba3f7f4c0836cfba07ba48bb9002805cb72616", size = 224167, upload-time = "2026-01-28T02:21:16.523Z" },
+]
 
 [[package]]
 name = "flatbuffers"
@@ -429,6 +457,15 @@ source = { registry = "https://pypi.org/simple" }
 sdist = { url = "https://files.pythonhosted.org/packages/f1/70/7703c29685631f5a7590aa73f1f1d3fa9a380e654b86af429e0934a32f7d/idna-3.10.tar.gz", hash = "sha256:12f65c9b470abda6dc35cf8e63cc574b1c52b11df2c86030af0ac09b01b13ea9", size = 190490, upload-time = "2024-09-15T18:07:39.745Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl", hash = "sha256:946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3", size = 70442, upload-time = "2024-09-15T18:07:37.964Z" },
+]
+
+[[package]]
+name = "jdcal"
+version = "1.4.1"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/7b/b0/fa20fce23e9c3b55b640e629cb5edf32a85e6af3cf7af599940eb0c753fe/jdcal-1.4.1.tar.gz", hash = "sha256:472872e096eb8df219c23f2689fc336668bdb43d194094b5cc1707e1640acfc8", size = 7479, upload-time = "2019-04-24T10:22:15.079Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/f0/da/572cbc0bc582390480bbd7c4e93d14dc46079778ed915b505dc494b37c57/jdcal-1.4.1-py2.py3-none-any.whl", hash = "sha256:1abf1305fce18b4e8aa248cf8fe0c56ce2032392bc64bbd61b5dff2a19ec8bba", size = 9522, upload-time = "2019-04-24T10:22:13.201Z" },
 ]
 
 [[package]]
@@ -608,6 +645,16 @@ sdist = { url = "https://files.pythonhosted.org/packages/a6/57/1c471f6b3efb879d2
 wheels = [
     { url = "https://files.pythonhosted.org/packages/ee/35/412a0e9c3f0d37c94ed764b8ac7adae2d834dbd20e69f6aca582118e0f55/openai-1.97.1-py3-none-any.whl", hash = "sha256:4e96bbdf672ec3d44968c9ea39d2c375891db1acc1794668d8149d5fa6000606", size = 764380, upload-time = "2025-07-22T13:10:10.689Z" },
 ]
+
+[[package]]
+name = "openpyxl"
+version = "2.5.12"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "et-xmlfile" },
+    { name = "jdcal" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/08/8a/509eb6f58672288da9a5884e1cc7e90819bc8dbef501161c4b40a6a4e46b/openpyxl-2.5.12.tar.gz", hash = "sha256:7bcf019a0be528673a8aec1e60b5c863342c3231962dbf7922fd4da42a49a91a", size = 173659, upload-time = "2018-11-29T11:29:14.739Z" }
 
 [[package]]
 name = "pillow"
@@ -925,6 +972,7 @@ dependencies = [
     { name = "colour" },
     { name = "duckdb" },
     { name = "eviltransform" },
+    { name = "fit-tool" },
     { name = "garmin-fit-sdk" },
     { name = "garth" },
     { name = "geopy" },
@@ -962,6 +1010,7 @@ requires-dist = [
     { name = "colour", specifier = ">=0.1.5" },
     { name = "duckdb" },
     { name = "eviltransform" },
+    { name = "fit-tool" },
     { name = "garmin-fit-sdk" },
     { name = "garth" },
     { name = "geopy" },
