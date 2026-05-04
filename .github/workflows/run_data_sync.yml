@@ -186,7 +186,7 @@ jobs:
         if: env.RUN_TYPE == 'garmin_cn'
         run: |
           # make garmin secret string `uv run python run_page/get_garmin_secret.py ${email} ${password} --is-cn
-          uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }} --is-cn
+          uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }} --is-cn --fit
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
         # uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }}  --only-run --is-cn
 
