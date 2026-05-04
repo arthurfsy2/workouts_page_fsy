@@ -1,0 +1,22 @@
+<gpx xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3" creator="Garmin Connect" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd">
+  <extensions>
+<distance>5000.0</distance>
+<average_hr>156.0</average_hr>
+<average_speed>2.4777006937561943</average_speed>
+<start_time>2022-11-23T11:35:30+00:00</start_time>
+<end_time>2022-11-23T12:09:08+00:00</end_time>
+<moving_time>1991.408</moving_time>
+<elapsed_time>2021.287</elapsed_time>
+</extensions>
+<metadata>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2022-11-23T11:35:30.000Z</time>
+  </metadata>
+  <trk>
+    <name>跑步机上跑步</name>
+    <type>treadmill_running</type>
+    <trkseg/>
+  </trk>
+</gpx>

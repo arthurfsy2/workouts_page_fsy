@@ -1,0 +1,22 @@
+<gpx xmlns:ns3="http://www.garmin.com/xmlschemas/TrackPointExtension/v1" xmlns="http://www.topografix.com/GPX/1/1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ns2="http://www.garmin.com/xmlschemas/GpxExtensions/v3" creator="Garmin Connect" version="1.1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/11.xsd">
+  <extensions>
+<distance>10310.0</distance>
+<average_hr>165.0</average_hr>
+<average_speed>2.482542740187816</average_speed>
+<start_time>2021-10-16T09:43:00+00:00</start_time>
+<end_time>2021-10-16T10:52:13+00:00</end_time>
+<moving_time>3858.497</moving_time>
+<elapsed_time>4189.584</elapsed_time>
+</extensions>
+<metadata>
+    <link href="connect.garmin.com">
+      <text>Garmin Connect</text>
+    </link>
+    <time>2021-10-16T09:43:00.000Z</time>
+  </metadata>
+  <trk>
+    <name>跑步机上跑步 MOAB 10K RACE</name>
+    <type>treadmill_running</type>
+    <trkseg/>
+  </trk>
+</gpx>
