@@ -66,7 +66,8 @@ class Garmin:
         self.modern_url = self.URL_DICT.get("MODERN_URL")
         garth.client.loads(secret_string)
         if garth.client.oauth2_token.expired:
-            self._refresh_with_retry()
+            loop = asyncio.get_event_loop()
+            loop.run_until_complete(self._refresh_with_retry_async())
 
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.88 Safari/537.36",
@@ -78,7 +79,7 @@ class Garmin:
         self.upload_url = self.URL_DICT.get("UPLOAD_URL")
         self.activity_url = self.URL_DICT.get("ACTIVITY_URL")
 
-    def _refresh_with_retry(self, max_retries=5, base_delay=10):
+    async def _refresh_with_retry_async(self, max_retries=5, base_delay=10):
         for attempt in range(max_retries):
             try:
                 garth.client.refresh_oauth2()
@@ -90,9 +91,15 @@ class Garmin:
                         f"Garmin OAuth rate limited (429). "
                         f"Retrying in {delay}s (attempt {attempt + 1}/{max_retries})..."
                     )
-                    time.sleep(delay)
+                    await asyncio.sleep(delay)
                 else:
                     raise
+        print(
+            "ERROR: Garmin OAuth refresh failed after all retries. "
+            "Please regenerate your Garmin secret strings by running:\n"
+            "  uv run python run_page/get_garmin_secret.py <email> <password>\n"
+            "and update the GitHub Secrets."
+        )
         garth.client.refresh_oauth2()  # Last attempt, let it raise if it fails
 
     async def fetch_data(self, url, retrying=False):
