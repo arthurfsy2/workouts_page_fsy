@@ -145,7 +145,7 @@ const YearStat = ({
 
   return (
     <div
-      className={`my-0 mb-8 mr-2 rounded-xl bg-[#F5F5F5] px-2 py-4 text-[#579EFB]  lg:mr-8`}
+      className={`my-0 mb-8 mr-2 rounded-xl bg-muted px-4 py-5 text-primary lg:mr-8 shadow-warm cursor-pointer transition-all hover:shadow-warm-lg hover:-translate-y-0.5`}
       onClick={() => onClick(year)}
       {...eventHandlers}
     >

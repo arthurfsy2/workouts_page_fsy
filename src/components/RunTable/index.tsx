@@ -16,6 +16,7 @@ import {
 } from '@/utils/const';
 import RunRow from './RunRow';
 import styles from './style.module.css';
+import { Calendar, Bike, Footprints, Ruler, Heart, Clock, MapPin } from 'lucide-react';
 
 interface IRunTableProperties {
   runs: Activity[];
@@ -101,13 +102,24 @@ const RunTable = ({
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
   const sortFuncMap = new Map([
     [RUNTABLE_TITLE.TYPE_TITLE, sortTypeFunc],
-    ['KM 📏', sortKMFunc],
+    ['KM', sortKMFunc],
     [RUNTABLE_TITLE.ELEVATION_GAIN_TITLE, sortElevationGainFunc],
     [RUNTABLE_TITLE.PACE_TITLE, sortPaceFunc],
-    ['BPM ❤️', sortBPMFunc],
+    ['BPM', sortBPMFunc],
     [RUNTABLE_TITLE.DURATION_TITLE, sortRunTimeFunc],
     [RUNTABLE_TITLE.DATE_TITLE, sortDateFuncClick],
   ]);
+
+  // 表头图标映射
+  const headerIcons: Record<string, React.ReactNode> = {
+    [RUNTABLE_TITLE.TYPE_TITLE]: <Calendar className="h-4 w-4 inline-block me-1" />,
+    ['KM']: <Ruler className="h-4 w-4 inline-block me-1" />,
+    [RUNTABLE_TITLE.ELEVATION_GAIN_TITLE]: <MapPin className="h-4 w-4 inline-block me-1" />,
+    [RUNTABLE_TITLE.PACE_TITLE]: <Footprints className="h-4 w-4 inline-block me-1" />,
+    ['BPM']: <Heart className="h-4 w-4 inline-block me-1" />,
+    [RUNTABLE_TITLE.DURATION_TITLE]: <Clock className="h-4 w-4 inline-block me-1" />,
+    [RUNTABLE_TITLE.DATE_TITLE]: <Calendar className="h-4 w-4 inline-block me-1" />,
+  };
   if (!SHOW_ELEVATION_GAIN) {
     sortFuncMap.delete('Elevation Gain');
   }
@@ -136,24 +148,56 @@ const RunTable = ({
 
   return (
     <div>
-      {(max_run || max_ride) && ( // 修改这里，添加条件判断
-        <div className="mt-4 flex justify-between rounded-lg bg-gray-100 p-4">
+      {(max_run || max_ride) && (
+        <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {max_ride && (
-            <p className="text-md font-semibold" style={{ color: RIDE_COLOR }}>
-              {IS_CHINESE ? '最佳配速（骑行）' : 'Best Pace (Cycling)'}：📅{' '}
-              {max_ride.start_date_local} | 🚴‍♂️ {kmh} | 📏 {rrdistance} km
-            </p>
+            <div className="rounded-xl bg-card-warm p-4 shadow-warm">
+              <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+                <Bike className="h-4 w-4" />
+                {IS_CHINESE ? '最佳配速（骑行）' : 'Best Pace (Cycling)'}
+              </div>
+              <div className="space-y-2 text-sm" style={{ color: RIDE_COLOR }}>
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-3.5 w-3.5 opacity-60" />
+                  <span>{max_ride.start_date_local}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Ruler className="h-3.5 w-3.5 opacity-60" />
+                  <span>{kmh}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5 opacity-60" />
+                  <span>{rrdistance} km</span>
+                </div>
+              </div>
+            </div>
           )}
           {max_run && (
-            <p className="text-md font-semibold" style={{ color: RUN_COLOR }}>
-              {IS_CHINESE ? '最佳配速（跑步）' : 'Best Pace (Running)'}：📅{' '}
-              {max_run.start_date_local} | 🏃 {rpaceParts} | 📏 {rdistance} km
-            </p>
+            <div className="rounded-xl bg-card-warm p-4 shadow-warm">
+              <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
+                <Footprints className="h-4 w-4" />
+                {IS_CHINESE ? '最佳配速（跑步）' : 'Best Pace (Running)'}
+              </div>
+              <div className="space-y-2 text-sm" style={{ color: RUN_COLOR }}>
+                <div className="flex items-center gap-2">
+                  <Calendar className="h-3.5 w-3.5 opacity-60" />
+                  <span>{max_run.start_date_local}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Ruler className="h-3.5 w-3.5 opacity-60" />
+                  <span>{rpaceParts}</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <MapPin className="h-3.5 w-3.5 opacity-60" />
+                  <span>{rdistance} km</span>
+                </div>
+              </div>
+            </div>
           )}
         </div>
       )}
       <div
-        className={`${styles.tableContainer} max-h-[500px] overflow-y-auto rounded-lg bg-gray-100 p-4 `}
+        className={`${styles.tableContainer} max-h-[500px] overflow-y-auto`}
       >
         <table className={styles.runTable} cellSpacing="0" cellPadding="0">
           <thead>

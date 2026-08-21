@@ -208,23 +208,23 @@ const ACTIVITY_TYPES = {
 };
 
 // 以下为runtable表头翻译
-const TYPE_TITLE = IS_CHINESE ? '类型 🗂️' : 'Type 🗂️';
-const ELEVATION_GAIN_TITLE = IS_CHINESE ? '爬升 📈' : 'Elevation Gain 📈';
-const PACE_TITLE = IS_CHINESE ? '配速(时速) 🏃' : 'Pace (Speed) 🏃';
-const DURATION_TITLE = IS_CHINESE ? '时长 ⏳' : 'Duration ⏳';
-const DATE_TITLE = IS_CHINESE ? '日期 📅' : 'Date 📅';
-const AVG_BPM_TITLE = IS_CHINESE ? '平均心率💓' : 'Avg Heart Rate 💓';
-const STREAK_TITLE = IS_CHINESE ? '天连续运动 🔁' : 'days Streak 🔁';
-const JOURNEY_TITLE = IS_CHINESE ? '旅程 🛣️' : 'Journey 🛣️';
+const TYPE_TITLE = IS_CHINESE ? '类型' : 'Type';
+const ELEVATION_GAIN_TITLE = IS_CHINESE ? '爬升' : 'Elevation Gain';
+const PACE_TITLE = IS_CHINESE ? '配速(时速)' : 'Pace (Speed)';
+const DURATION_TITLE = IS_CHINESE ? '时长' : 'Duration';
+const DATE_TITLE = IS_CHINESE ? '日期' : 'Date';
+const AVG_BPM_TITLE = IS_CHINESE ? '平均心率' : 'Avg Heart Rate';
+const STREAK_TITLE = IS_CHINESE ? '天连续运动' : 'days Streak';
+const JOURNEY_TITLE = IS_CHINESE ? '旅程' : 'Journey';
 const EARLIEST_START_TIME_TITLE = IS_CHINESE
-  ? '最早开始时间 🌅'
-  : 'Earliest start time 🌅';
+  ? '最早开始时间'
+  : 'Earliest start time';
 const LATEST_START_TIME_TITLE = IS_CHINESE
-  ? '最晚开始时间 🌙'
-  : 'Latest start time 🌙';
+  ? '最晚开始时间'
+  : 'Latest start time';
 const NEW_CHECK_IN_LOCATION = IS_CHINESE
-  ? '新打卡地点 📍'
-  : 'New check-in location 📍';
+  ? '新打卡地点'
+  : 'New check-in location';
 
 const RUNTABLE_TITLE = {
   TYPE_TITLE,

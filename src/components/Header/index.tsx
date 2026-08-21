@@ -6,26 +6,29 @@ const Header = () => {
 
   return (
     <>
-      <nav className="mt-4 flex w-full items-center justify-between pb-1 pl-6 lg:px-16">
-        <div className="w-1/4">
-          <Link to={siteUrl}>
-            <picture>
-              <img className="h-16 w-16 rounded-full" alt="logo" src={logo} />
-            </picture>
-          </Link>
-        </div>
-        <div className="w-3/4 text-right">
-          {navLinks.map((n, i) => (
-            <a
-              key={i}
-              href={n.url}
-              className="mr-8 text-2xl font-semibold lg:mr-4 lg:text-base"
-            >
-              {n.name}
-            </a>
-          ))}
-        </div>
-      </nav>
+      <header className="sticky top-0 z-50 w-full border-b border-border/50 bg-background/80 backdrop-blur-lg supports-[backdrop-filter]:bg-background/60">
+        <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center gap-3">
+            <Link to={siteUrl} className="flex items-center gap-2 transition-opacity hover:opacity-80">
+              <picture>
+                <img className="h-10 w-10 rounded-full shadow-warm" alt="logo" src={logo} />
+              </picture>
+              <span className="hidden text-lg font-semibold text-primary sm:inline">Workouts</span>
+            </Link>
+          </div>
+          <div className="flex items-center gap-1">
+            {navLinks.map((n, i) => (
+              <a
+                key={i}
+                href={n.url}
+                className="rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-all hover:bg-muted hover:text-foreground"
+              >
+                {n.name}
+              </a>
+            ))}
+          </div>
+        </nav>
+      </header>
     </>
   );
 };
