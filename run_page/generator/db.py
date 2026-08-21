@@ -160,8 +160,8 @@ def update_or_create_activity(session, run_activity):
             activity.average_speed = float(run_activity.average_speed)
             activity.elevation_gain = current_elevation_gain
             activity.summary_polyline = (
-                (run_activity.map and run_activity.map.summary_polyline) or ""
-            )
+                run_activity.map and run_activity.map.summary_polyline
+            ) or ""
             activity.source = source
     except Exception as e:
         print(f"something wrong with {run_activity.id}")

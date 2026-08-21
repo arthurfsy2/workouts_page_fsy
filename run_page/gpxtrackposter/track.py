@@ -383,17 +383,11 @@ class Track:
             tz=datetime.UTC,
         )
         self.length = message["total_distance"]
-        self.average_heartrate = (
-            message.get("avg_heart_rate", None)
-        )
-        self.elevation_gain = (
-            message.get("total_ascent", None)
-        )
+        self.average_heartrate = message.get("avg_heart_rate", None)
+        self.elevation_gain = message.get("total_ascent", None)
         self.type = message["sport"].lower()
 
-        self.elevation_gain = (
-            message.get("total_ascent", None)
-        )
+        self.elevation_gain = message.get("total_ascent", None)
         # moving_dict
         self.moving_dict["distance"] = message["total_distance"]
         self.moving_dict["moving_time"] = datetime.timedelta(

@@ -87,7 +87,7 @@ class Garmin:
                 return
             except requests.exceptions.HTTPError as e:
                 if e.response is not None and e.response.status_code == 429:
-                    delay = base_delay * (2 ** attempt)
+                    delay = base_delay * (2**attempt)
                     print(
                         f"Garmin OAuth rate limited (429). "
                         f"Retrying in {delay}s (attempt {attempt + 1}/{max_retries})..."

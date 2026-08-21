@@ -278,7 +278,9 @@ class Joyrun:
                 parsed = ast.literal_eval(data_str)
                 if isinstance(parsed, list):
                     return parsed
-                warnings.warn(f'"data" evaluated to {type(parsed)}, want List', stacklevel=2)
+                warnings.warn(
+                    f'"data" evaluated to {type(parsed)}, want List', stacklevel=2
+                )
             except (ValueError, SyntaxError) as e:
                 warnings.warn(f'Failed to evaluate "data": {e}', stacklevel=2)
             return []

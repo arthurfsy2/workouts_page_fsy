@@ -509,9 +509,7 @@ def parse_points_to_tcx(sport_data, points_dict_list):
             break
 
         if idx + 1 != len(points_dict_list) and (
-            item["distance"]
-            < target_distance
-            <= points_dict_list[idx + 1]["distance"]
+            item["distance"] < target_distance <= points_dict_list[idx + 1]["distance"]
         ):
             lap_split_indexes.append(idx)
 

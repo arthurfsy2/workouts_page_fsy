@@ -361,7 +361,9 @@ def is_tour_in_date_range(tour, start_date, end_date):
         return False
 
     # If both dates are provided, ensure tour is within range
-    return not (start_date and end_date and (tour_date < start_date or tour_date > end_date))
+    return not (
+        start_date and end_date and (tour_date < start_date or tour_date > end_date)
+    )
 
 
 def date_filter(tours, start_date, end_date):
