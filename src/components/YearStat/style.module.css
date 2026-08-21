@@ -1,13 +1,17 @@
 /* Stat.module.css */
 .statContainer {
-  background-color: rgb(245, 245, 245);
-  border-radius: 8px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, .35);
-  color: rgb(67,91,163);
-  /* color: rgb(0,108,184); */
+  background: linear-gradient(135deg, #ffffff 0%, #fefcf8 100%);
+  border-radius: var(--radius-xl, 1.25rem);
+  box-shadow: 0 4px 24px -4px rgba(0, 108, 184, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+  color: var(--color-foreground);
   margin: 0rem 1rem 2rem;
   margin-right: 2rem;
-  /* overflow: hidden; */
-  padding: 1rem 1rem 2rem 0.5rem;
-  
+  padding: 1.25rem 1.25rem 2rem 1rem;
+  border: 1px solid var(--color-border);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.statContainer:hover {
+  box-shadow: 0 8px 32px -8px rgba(0, 108, 184, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.06);
+  transform: translateY(-2px);
 }

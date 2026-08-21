@@ -1,5 +1,20 @@
 @import 'tailwindcss';
 
+/* ── Arthur Brand: Color Variables ── */
+:root {
+  --color-primary: #006CB8;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f97316;
+  --color-muted: #f5f0eb;
+  --color-muted-foreground: #6b7280;
+  --color-accent: #f0f7ff;
+  --color-background: #fefcf8;
+  --color-foreground: #1a1a1a;
+  --color-border: #e5e0db;
+  --radius-xl: 1.25rem;
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+}
+
 img::selection {
   background: transparent;
 }
@@ -9,9 +24,12 @@ img::-moz-selection {
 }
 
 body {
+  font-family: var(--font-sans);
   text-rendering: optimizeLegibility;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
 
 iframe {
@@ -21,27 +39,76 @@ iframe {
 hr {
   border-top: none;
   border-bottom: 1px solid;
-  border-color: rgb(114, 69, 163);
+  border-color: var(--color-primary);
   margin: 2rem 0;
 }
-/* 整个滚动条 */
+
+/* ── Arthur Brand: Gradient Backgrounds ── */
+.bg-hero-gradient {
+  background: linear-gradient(135deg, #eff6ff 0%, #f0f7ff 50%, #fff1e0 100%);
+}
+
+.bg-card-warm {
+  background: linear-gradient(135deg, #ffffff 0%, #fefcf8 100%);
+}
+
+/* ── Arthur Brand: Warm Shadows ── */
+.shadow-warm {
+  box-shadow: 0 4px 24px -4px rgba(0, 108, 184, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04);
+}
+
+.shadow-warm-lg {
+  box-shadow: 0 8px 32px -8px rgba(0, 108, 184, 0.12), 0 4px 16px -4px rgba(0, 0, 0, 0.06);
+}
+
+/* ── Arthur Brand: Text Gradient ── */
+.text-gradient {
+  background: linear-gradient(135deg, #006CB8 0%, #3b82f6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Arthur Brand: Hover Bounce Animation ── */
+.hover-bounce {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.hover-bounce:hover {
+  transform: scale(1.03);
+}
+
+/* ── Arthur Brand: Fade In Animation ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* ── Scrollbar ── */
 ::-webkit-scrollbar {
-  width: 8px; /* 垂直滚动条的宽度 */
-  background-color: rgba(245, 245, 245, 0.7); /* 滚动条背景颜色，设置为70%不透明度 */
+  width: 8px;
+  background-color: rgba(245, 245, 245, 0.7);
 }
 
-/* 滚动条的滑块 */
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(87, 158, 251, 0.6); /* 滚动条滑块颜色，设置为60%不透明度 */
-  border-radius: 4px; /* 滚动条滑块的圆角 */
+  background-color: rgba(0, 108, 184, 0.6);
+  border-radius: 4px;
 }
 
-/* 滚动条滑块在 hover 时的样式 */
 ::-webkit-scrollbar-thumb:hover {
-  background-color: rgba(0, 122, 204, 1); /* 突出色，完全不透明 */
+  background-color: var(--color-primary);
 }
 
-/* 滚动条的底部 */
 ::-webkit-scrollbar-track {
-  background-color: rgba(245, 245, 245, 0.7); /* 滚动条底部背景颜色，设置为70%不透明度 */
+  background-color: rgba(245, 245, 245, 0.7);
 }

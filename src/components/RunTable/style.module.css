@@ -20,55 +20,70 @@
   width: 100%;
   font-variant: tabular-nums;
   margin: 1rem 0 5rem 0;
+  border-collapse: collapse;
 
   :is(thead) {
-    color: #ffffff; /* 设置表头字体颜色 */
+    color: var(--color-muted-foreground);
     text-align: center;
+    border-bottom: 2px solid var(--color-border);
 
     :is(th) {
-      padding: 0.5rem;
-      background-color: rgb(87, 158, 251); /* 设置表头背景颜色 */
+      padding: 0.75rem 0.75rem;
+      font-weight: 600;
+      font-size: 0.875rem;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.15s ease;
+
+      &:hover {
+        color: var(--color-primary);
+      }
     }
   }
 }
 
 .runRow {
   cursor: pointer;
+  border-bottom: 1px solid var(--color-border/50);
+  transition: background-color 0.15s ease;
+
   :is(td) {
-    padding: 0.5rem;
+    padding: 0.75rem 0.5rem;
     border: 0;
     text-align: center;
 
     &:first-child {
-      font-weight: 700;
+      font-weight: 600;
       text-align: left;
       min-width: 100px;
     }
   }
 
   &:hover {
-    background-color: lighten(rgb(26, 26, 26), 3%);
+    background-color: var(--color-accent);
   }
 }
 
 .runRow:nth-child(odd) {
-  background-color: rgba(240, 240, 240, 0.5); /* 设置奇数行的背景颜色 */
+  background-color: rgba(245, 240, 235, 0.3); /* 柔和的米色 */
 }
 
 .runRow:nth-child(even) {
-  background-color: rgba(255, 255, 255, 0.5); /* 设置偶数行的背景颜色 */
+  background-color: transparent;
 }
 
 .selected {
-  color: rgb(27, 43, 56) !important;
+  background-color: var(--color-accent) !important;
+  color: var(--color-foreground) !important;
 }
 
 .tableContainer {
   width: 100%;
   overflow-x: auto;
   margin-top: 1.5em;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--color-border);
+  background: var(--color-background);
+  box-shadow: var(--shadow-warm, 0 4px 24px -4px rgba(0, 108, 184, 0.08), 0 2px 8px -2px rgba(0, 0, 0, 0.04));
+  padding: 0 0.5rem;
 }
-
-/* .runDate {
-  color: rgb(0, 108, 184);
-} */
