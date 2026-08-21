@@ -12,6 +12,7 @@ on:
       - run_page/nike_sync.py
       - run_page/nike_to_strava_sync.py
       - run_page/strava_sync.py
+      - run_page/google_health_sync.py
       - run_page/gen_svg.py
       - run_page/garmin_sync.py
       - run_page/coros_sync.py
@@ -22,6 +23,7 @@ on:
       - run_page/garmin_to_strava_sync.py
       - run_page/keep_to_strava_sync.py
       - run_page/oppo_sync.py
+      - run_page/intervals_icu_sync.py
       - requirements.txt
 
 env:
@@ -162,6 +164,13 @@ jobs:
           uv run python run_page/strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
 
+      - name: Run sync Google Health script
+        if: env.RUN_TYPE == 'google_health'
+        run: |
+          uv run python run_page/google_health_sync.py ${{ secrets.GOOGLE_HEALTH_CLIENT_ID }} ${{ secrets.GOOGLE_HEALTH_CLIENT_SECRET }} ${{ secrets.GOOGLE_HEALTH_REFRESH_TOKEN }}
+        # If you only want to sync running exercises add args --only-run.
+        # Default export format is TCX. To save GPX files to GPX_OUT, add args --format gpx.
+
       - name: Run sync Codoon script
         if: env.RUN_TYPE == 'codoon'
         run: |
@@ -226,12 +235,12 @@ jobs:
       - name: Run sync Garmin-cn to Strava(Run with Garmin data backup in Strava)
         if: env.RUN_TYPE == 'garmin_to_strava_cn'
         run: |
-          uv run python run_page/garmin_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_SECRET_STRING_CN }}  --is-cn
+          uv run python run_page/garmin_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_SECRET_STRING_CN }}  --is-cn --fit
 
       - name: Run sync Garmin to Strava(Run with Garmin data backup in Strava)
         if: env.RUN_TYPE == 'garmin_to_strava'
         run: |
-          uv run python run_page/garmin_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_EMAIL }} ${{ secrets.GARMIN_PASSWORD }}
+          uv run python run_page/garmin_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_EMAIL }} ${{ secrets.GARMIN_PASSWORD }} --fit
 
       - name: Run sync Tulipsport script
         if: env.RUN_TYPE == 'tulipsport'
@@ -244,6 +253,13 @@ jobs:
           uv run python run_page/oppo_sync.py ${{ secrets.OPPO_ID }} ${{ secrets.OPPO_CLIENT_SECRET }} ${{ secrets.OPPO_CLIENT_REFRESH_TOKEN }} --with-tcx
         # If you want to sync fit activity in gpx format, please consider the following script:
         # uv run python run_page/oppo_sync.py ${{ secrets.OPPO_ID }} ${{ secrets.OPPO_CLIENT_SECRET }} ${{ secrets.OPPO_CLIENT_REFRESH_TOKEN }} --with-gpx
+
+      - name: Run sync Intervals.icu script
+        if: env.RUN_TYPE == 'intervals_icu'
+        run: |
+          uv run python run_page/intervals_icu_sync.py ${{ secrets.INTERVALS_ICU_ATHLETE_ID }} ${{ secrets.INTERVALS_ICU_API_KEY }}
+        # Default syncs running activities only. To sync all types add --all
+        # To change start date: --start-date 2020-01-01 (default: 2015-01-01)
 
       - name: Make svg GitHub profile
         if: env.RUN_TYPE != 'pass'
