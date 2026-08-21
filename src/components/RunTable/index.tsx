@@ -110,16 +110,6 @@ const RunTable = ({
     [RUNTABLE_TITLE.DATE_TITLE, sortDateFuncClick],
   ]);
 
-  // 表头图标映射
-  const headerIcons: Record<string, React.ReactNode> = {
-    [RUNTABLE_TITLE.TYPE_TITLE]: <Calendar className="h-4 w-4 inline-block me-1" />,
-    ['KM']: <Ruler className="h-4 w-4 inline-block me-1" />,
-    [RUNTABLE_TITLE.ELEVATION_GAIN_TITLE]: <MapPin className="h-4 w-4 inline-block me-1" />,
-    [RUNTABLE_TITLE.PACE_TITLE]: <Footprints className="h-4 w-4 inline-block me-1" />,
-    ['BPM']: <Heart className="h-4 w-4 inline-block me-1" />,
-    [RUNTABLE_TITLE.DURATION_TITLE]: <Clock className="h-4 w-4 inline-block me-1" />,
-    [RUNTABLE_TITLE.DATE_TITLE]: <Calendar className="h-4 w-4 inline-block me-1" />,
-  };
   if (!SHOW_ELEVATION_GAIN) {
     sortFuncMap.delete('Elevation Gain');
   }
