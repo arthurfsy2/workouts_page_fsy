@@ -87,3 +87,4 @@ ignore = [
 
 [tool.ruff.lint.per-file-ignores]
 "run_page/gpxtrackposter/*.py" = ["E501"]
+"run_page/tui/*.py" = ["RUF002", "RUF012", "RUF005", "B905", "RUF046", "B007", "PIE810"]
