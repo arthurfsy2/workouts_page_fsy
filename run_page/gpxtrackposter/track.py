@@ -6,7 +6,6 @@
 # license that can be found in the LICENSE file.
 
 import datetime
-from datetime import timezone
 import os
 from collections import namedtuple
 
@@ -67,14 +66,13 @@ class Track:
             # (for example, treadmill runs pulled via garmin-connect-export)
             if os.path.getsize(file_name) == 0:
                 raise TrackLoadError("Empty GPX file")
-            with open(file_name, "r", encoding="utf-8", errors="ignore") as file:
+            with open(file_name, encoding="utf-8", errors="ignore") as file:
                 self._load_gpx_data(mod_gpxpy.parse(file))
         except Exception as e:
             print(
                 f"Something went wrong when loading GPX. for file {self.file_names[0]}, we just ignore this file and continue"
             )
             print(str(e))
-            pass
 
     def load_tcx(self, file_name):
         try:
@@ -185,7 +183,6 @@ class Track:
                 self.start_latlng = start_point(*polyline_container[0])
             except Exception as e:
                 print(f"Error getting start point: {e}")
-                pass
             self.polyline_str = polyline.encode(polyline_container)
         self.elevation_gain = tcx.ascent
         self.moving_dict = {
@@ -300,7 +297,6 @@ class Track:
             self.start_latlng = start_point(*polyline_container[0])
         except Exception as e:
             print(f"Error getting start point: {e}")
-            pass
         if not self.start_time_local:
             self.start_time_local, self.end_time_local = parse_datetime_to_local(
                 self.start_time, self.end_time, polyline_container[0]
@@ -379,24 +375,24 @@ class Track:
         self.polyline_container = []
         message = fit["session_mesgs"][0]
         self.start_time = datetime.datetime.fromtimestamp(
-            (message["start_time"] + FIT_EPOCH_S), tz=timezone.utc
+            (message["start_time"] + FIT_EPOCH_S), tz=datetime.UTC
         )
         self.run_id = self.__make_run_id(self.start_time)
         self.end_time = datetime.datetime.fromtimestamp(
             (message["start_time"] + FIT_EPOCH_S + message["total_elapsed_time"]),
-            tz=timezone.utc,
+            tz=datetime.UTC,
         )
         self.length = message["total_distance"]
         self.average_heartrate = (
-            message["avg_heart_rate"] if "avg_heart_rate" in message else None
+            message.get("avg_heart_rate", None)
         )
         self.elevation_gain = (
-            message["total_ascent"] if "total_ascent" in message else None
+            message.get("total_ascent", None)
         )
         self.type = message["sport"].lower()
 
         self.elevation_gain = (
-            message["total_ascent"] if "total_ascent" in message else None
+            message.get("total_ascent", None)
         )
         # moving_dict
         self.moving_dict["distance"] = message["total_distance"]
@@ -456,9 +452,8 @@ class Track:
             ) + (other.elevation_gain if other.elevation_gain else 0)
         except Exception as e:
             print(
-                f"something wrong append this {self.end_time},in files {str(self.file_names)}: {e}"
+                f"something wrong append this {self.end_time},in files {self.file_names!s}: {e}"
             )
-            pass
 
     @staticmethod
     def _get_moving_data(gpx, moving_time):

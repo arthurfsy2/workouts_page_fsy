@@ -3,7 +3,7 @@ import random
 import string
 
 from config import TYPE_DICT
-from geopy.geocoders import options, Nominatim
+from geopy.geocoders import Nominatim, options
 from sqlalchemy import (
     Column,
     Float,
@@ -111,7 +111,7 @@ def update_or_create_activity(session, run_activity):
             start_point = run_activity.start_latlng
             location_country = getattr(run_activity, "location_country", "")
             # or China for #176 to fix
-            if not location_country and start_point or location_country == "China":
+            if (not location_country and start_point) or location_country == "China":
                 try:
                     location_country = str(
                         g.reverse(
@@ -144,7 +144,7 @@ def update_or_create_activity(session, run_activity):
                 average_speed=float(run_activity.average_speed),
                 elevation_gain=current_elevation_gain,
                 summary_polyline=(
-                    run_activity.map and run_activity.map.summary_polyline or ""
+                    (run_activity.map and run_activity.map.summary_polyline) or ""
                 ),
                 source=source,
             )
@@ -160,7 +160,7 @@ def update_or_create_activity(session, run_activity):
             activity.average_speed = float(run_activity.average_speed)
             activity.elevation_gain = current_elevation_gain
             activity.summary_polyline = (
-                run_activity.map and run_activity.map.summary_polyline or ""
+                (run_activity.map and run_activity.map.summary_polyline) or ""
             )
             activity.source = source
     except Exception as e:

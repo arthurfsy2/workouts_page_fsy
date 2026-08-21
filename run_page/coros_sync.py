@@ -6,8 +6,8 @@ import time
 
 import aiofiles
 import httpx
+from config import FOLDER_DICT, JSON_FILE, SQL_FILE
 
-from config import JSON_FILE, SQL_FILE, FOLDER_DICT
 from utils import make_activities_file
 
 COROS_URL_DICT = {
@@ -150,7 +150,7 @@ async def download_and_generate(account, password, only_run, file_type):
     activity_infos = await coros.fetch_activity_ids_types(only_run=only_run)
     activity_ids = [i[0] for i in activity_infos]
     activity_types = [i[1] for i in activity_infos]
-    activity_id_type_dict = dict(zip(activity_ids, activity_types))
+    activity_id_type_dict = dict(zip(activity_ids, activity_types, strict=False))
     print("activity_ids: ", len(activity_ids))
     print("downloaded_ids: ", len(downloaded_ids))
     to_generate_coros_ids = list(set(activity_ids) - set(downloaded_ids))

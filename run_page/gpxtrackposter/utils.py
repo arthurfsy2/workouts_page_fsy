@@ -8,7 +8,6 @@
 import locale
 import math
 from datetime import datetime
-from typing import List, Optional, Tuple
 
 import colour
 import pytz
@@ -42,8 +41,8 @@ def lat2y(lat_deg: float) -> float:
 
 
 def project(
-    bbox: s2.LatLngRect, size: XY, offset: XY, latlnglines: List[List[s2.LatLng]]
-) -> List[List[Tuple[float, float]]]:
+    bbox: s2.LatLngRect, size: XY, offset: XY, latlnglines: list[list[s2.LatLng]]
+) -> list[list[tuple[float, float]]]:
     min_x = lng2x(bbox.lng_lo().degrees)
     d_x = lng2x(bbox.lng_hi().degrees) - min_x
     while d_x >= 2:
@@ -68,10 +67,9 @@ def project(
             latlng = latlngline[i]
             if bbox.contains(latlng):
                 line.append((offset + scale * latlng2xy(latlng)).tuple())
-            else:
-                if len(line) > 0:
-                    lines.append(line)
-                    line = []
+            elif len(line) > 0:
+                lines.append(line)
+                line = []
         if len(line) > 0:
             lines.append(line)
     return lines
@@ -79,7 +77,7 @@ def project(
 
 def compute_grid(
     count: int, dimensions: XY
-) -> Tuple[Optional[float], Optional[Tuple[int, int]]]:
+) -> tuple[float | None, tuple[int, int] | None]:
     # this is somehow suboptimal O(count^2). I guess it's possible in O(count)
     min_waste = -1.0
     best_size = None
@@ -93,7 +91,7 @@ def compute_grid(
                 waste = dimensions.x * dimensions.y - count * size * size
                 if waste < 0:
                     continue
-                elif best_size is None or waste < min_waste:
+                if best_size is None or waste < min_waste:
                     best_size = size
                     best_counts = count_x, count_y
                     min_waste = waste

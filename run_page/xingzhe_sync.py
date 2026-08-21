@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 
 import argparse
 import asyncio
@@ -39,7 +38,7 @@ TYPE_DICT = {
 
 def encrypt_password(public_key, password, salt):
     enc = PKCS1_v1_5.new(RSA.importKey(public_key))
-    message = f"{password};{salt}".encode("utf8")
+    message = f"{password};{salt}".encode()
     ciphertext = enc.encrypt(message)
     return b64encode(ciphertext).decode("utf8")
 
@@ -98,7 +97,7 @@ class Xingzhe:
         self.session_id = r.cookies["sessionid"]
         self.user_id = login_data["data"]["userid"]
         print(
-            f"your refresh_token and user_id are {str(self.session_id)} {str(self.user_id)}"
+            f"your refresh_token and user_id are {self.session_id!s} {self.user_id!s}"
         )
 
     def get_activities_by_month(self, year, month):
@@ -142,8 +141,7 @@ class Xingzhe:
         try:
             file_path = os.path.join(GPX_FOLDER, f"{track['id']}.gpx")
             if os.path.exists(file_path):
-                print(f"activity {str(track['id'])}: downloaded already")
-                pass
+                print(f"activity {track['id']!s}: downloaded already")
             gpx_data = self.download_gpx(track["id"])
             gpx = mod_gpxpy.parse(gpx_data.decode("utf8"))
             tracks = gpx.tracks
@@ -154,7 +152,6 @@ class Xingzhe:
                 await fb.write(gpx.to_xml(version="1.1").encode("utf8"))
         except Exception as err:
             print(f"Failed to download activity {track}: " + str(err))
-            pass
 
 
 async def gather_with_concurrency(n, tasks):

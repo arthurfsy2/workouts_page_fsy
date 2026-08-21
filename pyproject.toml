@@ -50,3 +50,40 @@ build-backend = "pdm.backend"
 
 [tool.pdm]
 distribution = true
+
+[tool.ruff]
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM", "PIE", "RET", "PLR", "PLW", "C4", "RUF", "DTZ"]
+ignore = [
+    "BLE001",   # blind Exception catch — too noisy for this project
+    "TRY002",   # create your own exception — stylistic
+    "ASYNC230", # async open files — would need refactoring
+    "DTZ001",   # datetime.utcnow() — used extensively
+    "DTZ005",   # datetime.utcnow() — used extensively
+    "DTZ006",   # datetime.utcnow() — used extensively
+    "DTZ007",   # datetime.utcnow() — used extensively
+    "E501",     # line too long — too noisy, 79 occurrences
+    "PLR2004",  # magic values — stylistic, 15 occurrences
+    "RUF003",   # ambiguous fullwidth comma — 13 occurrences in comments
+    "RUF001",   # ambiguous unicode — 8 occurrences in comments
+    "PLR0915",  # too many statements — would need refactoring
+    "PLR0912",  # too many branches — would need refactoring
+    "PLR0917",  # too many positional arguments — would need refactoring
+    "PLR0913",  # too many arguments — would need refactoring
+    "PLR1704",  # redefining argument with local name
+    "PLW2901",  # outer loop variable overwritten
+    "PLW1508",  # invalid type for env var default
+    "PLW0127",  # self-assignment
+    "PLW0128",  # useless return
+    "SIM115",   # use context manager for opening files
+    "SIM102",   # use single if statement
+    "SIM105",   # use contextlib.suppress
+    "B904",     # raise from err
+    "B016",     # raise without value
+    "B018",     # useless expression
+]
+
+[tool.ruff.lint.per-file-ignores]
+"run_page/gpxtrackposter/*.py" = ["E501"]

@@ -1,13 +1,12 @@
+import contextlib
 import json
 import time
 from datetime import datetime
 
 import pytz
 
-try:
+with contextlib.suppress(Exception):
     from rich import print
-except Exception:
-    pass
 from generator import Generator
 from stravalib.client import Client
 from stravalib.exc import RateLimitExceeded
@@ -46,8 +45,10 @@ def to_date(ts):
 
 
 def make_activities_file(
-    sql_file, data_dir, json_file, file_suffix="gpx", activity_title_dict={}
+    sql_file, data_dir, json_file, file_suffix="gpx", activity_title_dict=None
 ):
+    if activity_title_dict is None:
+        activity_title_dict = {}
     generator = Generator(sql_file)
     generator.sync_from_data_dir(
         data_dir, file_suffix=file_suffix, activity_title_dict=activity_title_dict
@@ -58,8 +59,10 @@ def make_activities_file(
 
 
 def make_activities_file_only(
-    sql_file, data_dir, json_file, file_suffix="gpx", activity_title_dict={}
+    sql_file, data_dir, json_file, file_suffix="gpx", activity_title_dict=None
 ):
+    if activity_title_dict is None:
+        activity_title_dict = {}
     generator = Generator(sql_file)
     generator.sync_from_data_dir(
         data_dir, file_suffix=file_suffix, activity_title_dict=activity_title_dict
@@ -101,7 +104,7 @@ def get_strava_last_time(client, is_milliseconds=True):
             last_time = last_time * 1000
         return last_time
     except Exception as e:
-        print(f"Something wrong to get last time err: {str(e)}")
+        print(f"Something wrong to get last time err: {e!s}")
         return 0
 
 

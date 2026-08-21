@@ -3,10 +3,9 @@ import asyncio
 import os
 from datetime import datetime
 
-from tcxreader.tcxreader import TCXReader
-
 from config import TCX_FOLDER
 from garmin_sync import Garmin
+from tcxreader.tcxreader import TCXReader
 
 
 def get_to_generate_files(last_time):

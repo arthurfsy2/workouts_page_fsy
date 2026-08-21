@@ -4,7 +4,7 @@ import logging
 import os.path
 import time
 from collections import namedtuple
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from xml.etree import ElementTree
 
 import gpxpy.gpx
@@ -91,8 +91,7 @@ def run(refresh_token, is_continue_sync=False):
             app_id = activity["app_id"]
             activity_id = activity["id"]
             if (
-                app_id == "com.nike.ntc.brand.ios"
-                or app_id == "com.nike.ntc.brand.droid"
+                app_id in {"com.nike.ntc.brand.ios", "com.nike.ntc.brand.droid"}
             ):
                 logger.info(f"Ignore NTC record {activity_id}")
                 continue
@@ -153,10 +152,7 @@ def get_to_generate_files():
             else:
                 logger.info(f"Invalid timestamp: {t}")
 
-        if len(timestamps) > 0:
-            last_time = max(timestamps)
-        else:
-            last_time = 0
+        last_time = max(timestamps) if len(timestamps) > 0 else 0
     except Exception as e:
         print(f"Error getting last time: {e}")
         last_time = 0
@@ -209,7 +205,7 @@ def generate_gpx(title, latitude_data, longitude_data, elevation_data, heart_rat
                 p[update_name] = update_data[counter]["value"]
                 counter += 1
 
-    for lat, lon in zip(latitude_data, longitude_data):
+    for lat, lon in zip(latitude_data, longitude_data, strict=False):
         if lat["start_epoch_ms"] != lon["start_epoch_ms"]:
             raise Exception("\tThe latitude and longitude data is out of order")
 
@@ -219,7 +215,7 @@ def generate_gpx(title, latitude_data, longitude_data, elevation_data, heart_rat
                 "longitude": lon["value"],
                 "start_time": lat["start_epoch_ms"],
                 "time": datetime.fromtimestamp(
-                    lat["start_epoch_ms"] / 1000, tz=timezone.utc
+                    lat["start_epoch_ms"] / 1000, tz=UTC
                 ),
             }
         )
@@ -264,7 +260,7 @@ def parse_activity_data(activity):
     heart_rate_index = None
     if not activity.get("metrics"):
         print(f"The activity {activity['id']} doesn't contain metrics information")
-        return
+        return None
     for i, metric in enumerate(activity["metrics"]):
         if metric["type"] == "latitude":
             lat_index = i
@@ -289,10 +285,9 @@ def parse_activity_data(activity):
 
     title = activity["tags"].get("com.nike.name")
 
-    gpx_doc = generate_gpx(
+    return generate_gpx(
         title, latitude_data, longitude_data, elevation_data, heart_rate_data
     )
-    return gpx_doc
 
 
 def save_gpx(gpx_data, activity_id):
@@ -304,7 +299,7 @@ def save_gpx(gpx_data, activity_id):
 def parse_no_gpx_data(activity):
     if not activity.get("metrics"):
         print(f"The activity {activity['id']} doesn't contain metrics information")
-        return
+        return None
     average_heartrate = None
     summary_info = activity.get("summaries")
     distance = 0
@@ -316,7 +311,7 @@ def parse_no_gpx_data(activity):
             average_heartrate = s.get("value", None)
     # maybe training that no distance
     if not distance:
-        return
+        return None
     start_stamp = activity["start_epoch_ms"] / 1000
     end_stamp = activity["end_epoch_ms"] / 1000
     moving_time = timedelta(seconds=int(end_stamp - start_stamp))
@@ -324,10 +319,10 @@ def parse_no_gpx_data(activity):
 
     nike_id = activity["end_epoch_ms"]
     start_date = datetime.fromtimestamp(
-        activity["start_epoch_ms"] / 1000, tz=timezone.utc
+        activity["start_epoch_ms"] / 1000, tz=UTC
     )
     start_date_local = adjust_time(start_date, BASE_TIMEZONE)
-    end_date = datetime.fromtimestamp(activity["end_epoch_ms"] / 1000, tz=timezone.utc)
+    end_date = datetime.fromtimestamp(activity["end_epoch_ms"] / 1000, tz=UTC)
     end_date_local = adjust_time(end_date, BASE_TIMEZONE)
     d = {
         "id": int(nike_id),
@@ -356,7 +351,7 @@ def make_new_gpxs(files):
     # TODO refactor maybe we do not need to upload
     if not files:
         print("no files")
-        return
+        return None
     if not os.path.exists(GPX_FOLDER):
         os.mkdir(GPX_FOLDER)
     gpx_files = []
@@ -367,7 +362,7 @@ def make_new_gpxs(files):
                 json_data = json.loads(f.read())
             except Exception as e:
                 print(f"Error reading JSON file {file}: {e}")
-                return
+                return None
         # ALL save name using utc if you want local please offset
         activity_name = str(json_data["end_epoch_ms"])
         parsed_data = parse_activity_data(json_data)

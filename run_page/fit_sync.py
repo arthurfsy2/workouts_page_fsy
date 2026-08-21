@@ -3,7 +3,7 @@ If you do not want bind any account
 Only the gpx files in GPX_OUT sync
 """
 
-from config import JSON_FILE, SQL_FILE, FIT_FOLDER
+from config import FIT_FOLDER, JSON_FILE, SQL_FILE
 
 from utils import make_activities_file
 
