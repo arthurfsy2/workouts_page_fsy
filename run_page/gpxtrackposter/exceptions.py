@@ -8,12 +8,9 @@ class PosterError(Exception):
     "Base class for all errors"
 
 
-
 class TrackLoadError(PosterError):
     "Something went wrong when loading a track file, we just ignore this file and continue"
 
 
-
 class ParameterError(PosterError):
     "Something's wrong with user supplied parameters"
-

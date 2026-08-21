@@ -51,12 +51,13 @@ jobs:
           fetch-depth: 0
           persist-credentials: false
 
+      - name: Enable corepack
+        run: npm install -g corepack@latest && corepack enable
+
       - name: Setup Node.js environment
         uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node }}
-      - name: Enable corepack
-        run: npm install -g corepack@latest && corepack enable pnpm
 
       - name: Install dependencies
         run: pnpm install
