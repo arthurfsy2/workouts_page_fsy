@@ -16,7 +16,7 @@ import {
 } from '@/utils/const';
 import RunRow from './RunRow';
 import styles from './style.module.css';
-import { Calendar, Bike, Footprints, Ruler, Heart, Clock, MapPin } from 'lucide-react';
+import { Calendar, Bike, Footprints, Ruler, MapPin } from 'lucide-react';
 
 interface IRunTableProperties {
   runs: Activity[];
