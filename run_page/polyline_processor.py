@@ -1,7 +1,7 @@
-from typing import List, Tuple
-import polyline
 import os
 import warnings
+
+import polyline
 from haversine import haversine
 
 # Initialize IGNORE_POLYLINE with graceful error handling
@@ -15,6 +15,7 @@ if ignore_polyline_env:
             f"IGNORE_POLYLINE is not a valid polyline: {e}. "
             "Privacy filtering for specific polylines will be disabled.",
             UserWarning,
+            stacklevel=2,
         )
         IGNORE_POLYLINE = []
 
@@ -32,6 +33,7 @@ except ValueError:
         f"IGNORE_RANGE is not a valid number: '{ignore_range_env}'. "
         "Using default value of 0. Privacy filtering by range will be disabled.",
         UserWarning,
+        stacklevel=2,
     )
     IGNORE_RANGE = 0.0
 
@@ -42,26 +44,27 @@ except ValueError:
         f"IGNORE_START_END_RANGE is not a valid number: '{ignore_start_end_range_env}'. "
         "Using default value of 0. Start/end point filtering will be disabled.",
         UserWarning,
+        stacklevel=2,
     )
     IGNORE_START_END_RANGE = 0.0
 
 
 def point_distance_in_range(
-    point: Tuple[float], center_point: Tuple[float], distance: int
+    point: tuple[float], center_point: tuple[float], distance: int
 ) -> bool:
     return haversine(point, center_point) < distance
 
 
 def point_in_list_points_range(
-    point: Tuple[float], points: List[Tuple[float]], distance: int
+    point: tuple[float], points: list[tuple[float]], distance: int
 ) -> bool:
     # Use generator expression instead of list comprehension for better performance
     return any(point_distance_in_range(point, p, distance) for p in points)
 
 
 def range_hiding(
-    polyline: List[Tuple[float]], points: List[Tuple[float]], distance: int
-) -> List[Tuple[float]]:
+    polyline: list[tuple[float]], points: list[tuple[float]], distance: int
+) -> list[tuple[float]]:
     return [
         point
         for point in polyline
@@ -69,7 +72,7 @@ def range_hiding(
     ]
 
 
-def start_end_hiding(polyline: List[Tuple[float]], distance: int) -> List[Tuple[float]]:
+def start_end_hiding(polyline: list[tuple[float]], distance: int) -> list[tuple[float]]:
     start_index, end_index = 0, len(polyline) - 1
 
     starting_distance = 0
