@@ -7,7 +7,7 @@
 - 字体：Plus Jakarta Sans + Noto Sans SC
 
 ## Git
-- Commit 格式：**`[type] description`**（feat/fix/docs/test/refactor/chore），**必须方括号，禁止 conventional commits 的圆括号格式**（如 `feat(scope):` ❌）
+- Commit 格式：**`[type] 描述`**（feat/fix/docs/test/refactor/chore），**必须方括号，禁止 conventional commits 的圆括号格式**（如 `feat(scope):` ❌）
 - 默认不自动 push，等用户说「commit+push」或「提交」
 - Commit 按语义边界拆分（不按文件数）：每个 commit 独立可用，一个逻辑单元不切到两个 commit
 
