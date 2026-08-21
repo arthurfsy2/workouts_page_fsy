@@ -14,18 +14,19 @@ sys.path.append(os.path.join(os.path.dirname(__file__), ".."))
 import concurrent.futures
 
 from generator.db import Activity, init_db
+from synced_data_file_logger import load_synced_file_list
 
 from .exceptions import ParameterError, TrackLoadError
 from .track import Track
 from .year_range import YearRange
 
-from synced_data_file_logger import load_synced_file_list
-
 log = logging.getLogger(__name__)
 
 
-def load_gpx_file(file_name, activity_title_dict={}):
+def load_gpx_file(file_name, activity_title_dict=None):
     """Load an individual GPX file as a track by using Track.load_gpx()"""
+    if activity_title_dict is None:
+        activity_title_dict = {}
     t = Track()
     t.load_gpx(file_name)
     file_id = os.path.basename(file_name).split(".")[0]
@@ -34,8 +35,10 @@ def load_gpx_file(file_name, activity_title_dict={}):
     return t
 
 
-def load_tcx_file(file_name, activity_title_dict={}):
+def load_tcx_file(file_name, activity_title_dict=None):
     """Load an individual TCX file as a track by using Track.load_tcx()"""
+    if activity_title_dict is None:
+        activity_title_dict = {}
     t = Track()
     t.load_tcx(file_name)
     file_id = os.path.basename(file_name).split(".")[0]
@@ -44,8 +47,10 @@ def load_tcx_file(file_name, activity_title_dict={}):
     return t
 
 
-def load_fit_file(file_name, activity_title_dict={}):
+def load_fit_file(file_name, activity_title_dict=None):
     """Load an individual FIT file as a track by using Track.load_fit()"""
+    if activity_title_dict is None:
+        activity_title_dict = {}
     t = Track()
     t.load_fit(file_name)
     file_id = os.path.basename(file_name).split(".")[0]
@@ -75,9 +80,11 @@ class TrackLoader:
             "fit": load_fit_file,
         }
 
-    def load_tracks(self, data_dir, file_suffix="gpx", activity_title_dict={}):
+    def load_tracks(self, data_dir, file_suffix="gpx", activity_title_dict=None):
         """Load tracks data_dir and return as a List of tracks"""
-        file_names = [x for x in self._list_data_files(data_dir, file_suffix)]
+        if activity_title_dict is None:
+            activity_title_dict = {}
+        file_names = list(self._list_data_files(data_dir, file_suffix))
         print(f"{file_suffix.upper()} files: {len(file_names)}")
 
         tracks = []
@@ -144,10 +151,12 @@ class TrackLoader:
         return filtered_tracks
 
     @staticmethod
-    def _load_data_tracks(file_names, load_func=load_gpx_file, activity_title_dict={}):
+    def _load_data_tracks(file_names, load_func=load_gpx_file, activity_title_dict=None):
         """
         TODO refactor with _load_tcx_tracks
         """
+        if activity_title_dict is None:
+            activity_title_dict = {}
         tracks = {}
         with concurrent.futures.ProcessPoolExecutor() as executor:
             future_to_file_name = {

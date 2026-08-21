@@ -64,7 +64,7 @@ def do_process_garmin_data(file_content, use_fake_garmin_device):
         if use_fake_garmin_device and message.global_id == DeviceInfoMessage.ID:
             # ignore file device info, like WorkoutDoors APP
             continue
-        elif not isinstance(message, RecordMessage):
+        if not isinstance(message, RecordMessage):
             builder.add(message)
         else:
             record_messages.append(message)

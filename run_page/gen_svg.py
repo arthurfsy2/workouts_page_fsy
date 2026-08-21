@@ -8,9 +8,9 @@ from gpxtrackposter import (
     circular_drawer,
     github_drawer,
     grid_drawer,
+    month_of_life_drawer,
     poster,
     track_loader,
-    month_of_life_drawer,
 )
 from gpxtrackposter.exceptions import ParameterError, PosterError
 
@@ -292,7 +292,7 @@ def main():
             p.years.from_year, p.years.to_year = y, y
             # may be refactor
             p.set_tracks(tracks)
-            p.draw(drawers[args.type], os.path.join(output_dir, f"year_{str(y)}.svg"))
+            p.draw(drawers[args.type], os.path.join(output_dir, f"year_{y!s}.svg"))
     else:
         p.draw(drawers[args.type], args.output)
 

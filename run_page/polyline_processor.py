@@ -1,6 +1,7 @@
-from typing import List, Tuple
-import polyline
 import os
+import sys
+
+import polyline
 from haversine import haversine
 
 try:
@@ -11,31 +12,31 @@ try:
     )
 except Exception:
     print("IGNORE_POLYLINE is not a valid polyline")
-    exit(1)
+    sys.exit(1)
 
 try:
     IGNORE_RANGE = int(os.getenv("IGNORE_RANGE", "0")) / 1000
     IGNORE_START_END_RANGE = int(os.getenv("IGNORE_START_END_RANGE", "0")) / 1000
 except ValueError:
     print("IGNORE_RANGE or IGNORE_START_END_RANGE is not a number")
-    exit(1)
+    sys.exit(1)
 
 
 def point_distance_in_range(
-    point: Tuple[float], center_point: Tuple[float], distance: int
+    point: tuple[float], center_point: tuple[float], distance: int
 ) -> bool:
     return haversine(point, center_point) < distance
 
 
 def point_in_list_points_range(
-    point: Tuple[float], points: List[Tuple[float]], distance: int
+    point: tuple[float], points: list[tuple[float]], distance: int
 ) -> bool:
-    return any([point_distance_in_range(point, p, distance) for p in points])
+    return any(point_distance_in_range(point, p, distance) for p in points)
 
 
 def range_hiding(
-    polyline: List[Tuple[float]], points: List[Tuple[float]], distance: int
-) -> List[Tuple[float]]:
+    polyline: list[tuple[float]], points: list[tuple[float]], distance: int
+) -> list[tuple[float]]:
     return [
         point
         for point in polyline
@@ -43,7 +44,7 @@ def range_hiding(
     ]
 
 
-def start_end_hiding(polyline: List[Tuple[float]], distance: int) -> List[Tuple[float]]:
+def start_end_hiding(polyline: list[tuple[float]], distance: int) -> list[tuple[float]]:
     start_index, end_index = 0, len(polyline) - 1
 
     starting_distance = 0
@@ -68,7 +69,7 @@ def start_end_hiding(polyline: List[Tuple[float]], distance: int) -> List[Tuple[
 
 def filter_out(polyline_str):
     if not polyline_str:
-        return
+        return None
     pl = polyline.decode(polyline_str)
     if not pl:
         return polyline_str
@@ -77,5 +78,5 @@ def filter_out(polyline_str):
     new_pl = range_hiding(new_pl, IGNORE_POLYLINE, IGNORE_RANGE)
 
     if not new_pl:
-        return
+        return None
     return polyline.encode(new_pl)

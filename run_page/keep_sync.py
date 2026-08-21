@@ -3,10 +3,12 @@ import base64
 import json
 import os
 import time
+import xml.etree.ElementTree as ET
 import zlib
 from collections import namedtuple
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from xml.dom import minidom
+
 import eviltransform
 import gpxpy
 import polyline
@@ -21,8 +23,8 @@ from config import (
 )
 from Crypto.Cipher import AES
 from generator import Generator
+
 from utils import adjust_time
-import xml.etree.ElementTree as ET
 
 KEEP_SPORT_TYPES = ["running", "hiking", "cycling"]
 KEEP2STRAVA = {
@@ -64,6 +66,7 @@ def login(session, mobile, password):
         token = r.json()["data"]["token"]
         headers["Authorization"] = f"Bearer {token}"
         return session, headers
+    return None
 
 
 def get_to_download_runs_ids(session, headers, sport_type):
@@ -82,7 +85,7 @@ def get_to_download_runs_ids(session, headers, sport_type):
                 logs = [j["stats"] for j in i["logs"]]
                 result.extend(k["id"] for k in logs if not k["isDoubtful"])
             last_date = r.json()["data"]["lastTimestamp"]
-            since_time = datetime.fromtimestamp(last_date // 1000, tz=timezone.utc)
+            since_time = datetime.fromtimestamp(last_date // 1000, tz=UTC)
             print(f"pares keep ids data since {since_time}")
             time.sleep(1)  # spider rule
             if not last_date:
@@ -96,6 +99,7 @@ def get_single_run_data(session, headers, run_id, sport_type):
     )
     if r.ok:
         return r.json()
+    return None
 
 
 def decode_runmap_data(text, is_geo=False):
@@ -106,8 +110,7 @@ def decode_runmap_data(text, is_geo=False):
         cipher = AES.new(base64.b64decode(key), AES.MODE_CBC, base64.b64decode(iv))
         _bytes = cipher.decrypt(_bytes)
     run_points_data = zlib.decompress(_bytes, 16 + zlib.MAX_WBITS)
-    run_points_data = json.loads(run_points_data)
-    return run_points_data
+    return json.loads(run_points_data)
 
 
 def parse_raw_data_to_nametuple(
@@ -176,14 +179,14 @@ def parse_raw_data_to_nametuple(
         print(f"ID {keep_id} no gps data")
     polyline_str = polyline.encode(run_points_data) if run_points_data else ""
     start_latlng = start_point(*run_points_data[0]) if run_points_data else None
-    start_date = datetime.fromtimestamp(start_time // 1000, tz=timezone.utc)
+    start_date = datetime.fromtimestamp(start_time // 1000, tz=UTC)
     tz_name = run_data.get("timezone", "")
     start_date_local = adjust_time(start_date, tz_name)
-    end = datetime.fromtimestamp(run_data["endTime"] // 1000, tz=timezone.utc)
+    end = datetime.fromtimestamp(run_data["endTime"] // 1000, tz=UTC)
     end_local = adjust_time(end, tz_name)
     if not run_data["duration"]:
         print(f"ID {keep_id} has no total time just ignore please check")
-        return
+        return None
     d = {
         "id": int(keep_id),
         "name": f"{KEEP2STRAVA[run_data['dataType']]} from keep",
@@ -283,7 +286,7 @@ def parse_points_to_gpx(run_points_data, start_time, sport_type):
             # note that the timestamp of a point is decisecond(分秒)
             "time": datetime.fromtimestamp(
                 (start_time // 1000 + point["timestamp"] // 10),
-                tz=timezone.utc,
+                tz=UTC,
             ),
             "elevation": point.get("altitude"),
             "hr": point.get("hr"),
@@ -331,7 +334,7 @@ def parse_points_to_tcx(run_data, run_points_data, sport_type):
 
     # note that the timestamp of a point is decisecond(分秒)
     fit_start_time = datetime.fromtimestamp(
-        run_data.get("startTime") // 1000, tz=timezone.utc
+        run_data.get("startTime") // 1000, tz=UTC
     ).strftime("%Y-%m-%dT%H:%M:%SZ")
 
     # Root node
@@ -384,7 +387,7 @@ def parse_points_to_tcx(run_data, run_points_data, sport_type):
         # note that the timestamp of a point is decisecond(分秒)
         time_stamp = datetime.fromtimestamp(
             (run_data.get("startTime") // 1000 + point.get("timestamp") // 10),
-            tz=timezone.utc,
+            tz=UTC,
         ).strftime("%Y-%m-%dT%H:%M:%SZ")
         time_label = ET.Element("Time")
         time_label.text = time_stamp
@@ -417,8 +420,7 @@ def parse_points_to_tcx(run_data, run_points_data, sport_type):
         except KeyError:
             pass
     # write to TCX file
-    xml_str = minidom.parseString(ET.tostring(training_center_database))
-    return xml_str
+    return minidom.parseString(ET.tostring(training_center_database))
 
 
 def find_nearest_hr(
@@ -469,28 +471,26 @@ def find_nearest_hr(
 
 def download_keep_gpx(gpx_data, keep_id):
     try:
-        print(f"downloading keep_id {str(keep_id)} gpx")
+        print(f"downloading keep_id {keep_id!s} gpx")
         file_path = os.path.join(GPX_FOLDER, str(keep_id) + ".gpx")
         with open(file_path, "w") as fb:
             fb.write(gpx_data)
         return file_path
     except Exception as e:
-        print(f"Something wrong to download keep gpx {str(e)}")
+        print(f"Something wrong to download keep gpx {e!s}")
         print(f"wrong id {keep_id}")
-        pass
 
 
 def download_keep_tcx(tcx_data, keep_id):
     try:
-        print(f"downloading keep_id {str(keep_id)} tcx")
+        print(f"downloading keep_id {keep_id!s} tcx")
         file_path = os.path.join(TCX_FOLDER, str(keep_id) + ".tcx")
         with open(file_path, "w") as fb:
             fb.write(tcx_data)
         return file_path
     except Exception as e:
-        print(f"Something wrong to download keep tcx {str(e)}")
+        print(f"Something wrong to download keep tcx {e!s}")
         print(f"wrong id {keep_id}")
-        pass
 
 
 def run_keep_sync(
@@ -543,4 +543,4 @@ if __name__ == "__main__":
         options.with_gpx,
         options.with_tcx,
     )
-    
+

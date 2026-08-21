@@ -1,12 +1,12 @@
 import argparse
-from openai import OpenAI
-from config import SQL_FILE, PNG_FOLDER
-from generator import Generator
-import polyline
 import base64
 import os
-import cairosvg  # 替换 svglib.svglib 和 reportlab.graphics
 
+import cairosvg  # 替换 svglib.svglib 和 reportlab.graphics
+import polyline
+from config import PNG_FOLDER, SQL_FILE
+from generator import Generator
+from openai import OpenAI
 
 SVG_WIDTH = 800
 SVG_HEIGHT = 600
@@ -159,7 +159,7 @@ def generate_route_svg(
                 print(f"Error during PNG conversion: {e}")
         else:
             print(f"Route map generated: {svg_filename}")
-    except IOError as e:
+    except OSError as e:
         print(f"Error writing file: {e}")
     except Exception as e:
         print(f"Error during conversion: {e}")
@@ -186,7 +186,7 @@ def run_auto_sync(client, format="svg", date=None):
     else:
         activity = activities_list[-1]
 
-    if "summary_polyline" in activity and activity["summary_polyline"]:
+    if activity.get("summary_polyline"):
         generate_route_svg(activity["summary_polyline"], format=format)
 
         distance = round(activity.get("distance", 0) / 1000, 2)

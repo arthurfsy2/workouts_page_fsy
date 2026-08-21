@@ -7,13 +7,13 @@ import subprocess
 import sys
 import time
 import warnings
-from collections import namedtuple
-from datetime import datetime, timedelta, timezone
-from xml.dom import minidom
-from hashlib import md5
-from typing import List
-from urllib.parse import quote
 import xml.etree.ElementTree as ET
+from collections import namedtuple
+from datetime import UTC, datetime, timedelta
+from hashlib import md5
+from urllib.parse import quote
+from xml.dom import minidom
+
 import gpxpy
 import numpy as np
 import polyline
@@ -28,6 +28,7 @@ from config import (
     start_point,
 )
 from generator import Generator
+
 from utils import adjust_time
 
 # struct body
@@ -61,13 +62,12 @@ def get_md5_data(data):
 
 def download_joyrun_gpx(gpx_data, joyrun_id):
     try:
-        print(f"downloading joyrun_id {str(joyrun_id)} gpx")
+        print(f"downloading joyrun_id {joyrun_id!s} gpx")
         file_path = os.path.join(GPX_FOLDER, str(joyrun_id) + ".gpx")
         with open(file_path, "w") as fb:
             fb.write(gpx_data)
     except Exception as e:
         print(f"wrong id {joyrun_id}: {e}")
-        pass
 
 
 def download_joyrun_tcx(tcx_data, joyrun_id):
@@ -77,8 +77,7 @@ def download_joyrun_tcx(tcx_data, joyrun_id):
         with open(TCX_FOLDER + "/" + joyrun_id + ".tcx", "w") as f:
             f.write(str(xml_str))
     except Exception as e:
-        print(f"empty database error {str(e)}")
-        pass
+        print(f"empty database error {e!s}")
 
 
 def formated_input(
@@ -96,7 +95,9 @@ class JoyrunAuth:
         self.uid = uid
         self.sid = sid
 
-    def reload(self, params={}, uid=0, sid=""):
+    def reload(self, params=None, uid=0, sid=""):
+        if params is None:
+            params = {}
         self.params = params
         if uid and sid:
             self.uid = uid
@@ -186,7 +187,7 @@ class Joyrun:
 
     def __update_loginInfo(self):
         self.auth.reload(uid=self.uid, sid=self.sid)
-        loginCookie = "sid=%s&uid=%s" % (self.sid, self.uid)
+        loginCookie = f"sid={self.sid}&uid={self.uid}"
         self.session.headers.update({"ypcookie": loginCookie})
         self.session.cookies.clear()
         self.session.cookies.set("ypcookie", quote(loginCookie).lower())
@@ -209,7 +210,7 @@ class Joyrun:
             raise Exception(f'{login_data["ret"]}: {login_data["msg"]}')
         self.sid = login_data["data"]["sid"]
         self.uid = login_data["data"]["user"]["uid"]
-        print(f"your uid and sid are {str(self.uid)} {str(self.sid)}")
+        print(f"your uid and sid are {self.uid!s} {self.sid!s}")
         self.__update_loginInfo()
 
     def get_runs_records_ids(self):
@@ -238,7 +239,7 @@ class Joyrun:
                 points = eval(content.replace("]-[", "],["))
             except Exception as e:
                 print(str(e))
-                print(f"Points: {str(points)} can not eval")
+                print(f"Points: {points!s} can not eval")
             points = [[p[0] / 1000000, p[1] / 1000000] for p in points]
         except Exception as e:
             print(str(e))
@@ -246,7 +247,7 @@ class Joyrun:
         return points
 
     class Pause:
-        def __init__(self, pause_data_point: List[str]):
+        def __init__(self, pause_data_point: list[str]):
             self.index = int(pause_data_point[0])
             self.duration = int(pause_data_point[1])
 
@@ -254,7 +255,7 @@ class Joyrun:
             return f"Pause(index=${self.index}, duration=${self.duration})"
 
     class PauseList:
-        def __init__(self, pause_list: List[List[str]]):
+        def __init__(self, pause_list: list[list[str]]):
             self._list = []
             for pause in pause_list:
                 self._list.append(Joyrun.Pause(pause))
@@ -277,9 +278,9 @@ class Joyrun:
                 parsed = ast.literal_eval(data_str)
                 if isinstance(parsed, list):
                     return parsed
-                warnings.warn(f'"data" evaluated to {type(parsed)}, want List')
+                warnings.warn(f'"data" evaluated to {type(parsed)}, want List', stacklevel=2)
             except (ValueError, SyntaxError) as e:
-                warnings.warn(f'Failed to evaluate "data": {e}')
+                warnings.warn(f'Failed to evaluate "data": {e}', stacklevel=2)
             return []
 
     @staticmethod
@@ -290,7 +291,7 @@ class Joyrun:
             latitude=latitude,
             longitude=longitude,
             elevation=elevation,
-            time=datetime.fromtimestamp(time, tz=timezone.utc),
+            time=datetime.fromtimestamp(time, tz=UTC),
         )
 
         # Extension
@@ -536,8 +537,7 @@ class Joyrun:
             data=payload,
             auth=self.auth.reload(payload),
         )
-        data = r.json()
-        return data
+        return r.json()
 
     def parse_raw_data_to_nametuple(
         self, run_data, old_gpx_ids, with_gpx=False, with_tcx=False
@@ -583,9 +583,9 @@ class Joyrun:
 
         polyline_str = polyline.encode(run_points_data) if run_points_data else ""
         start_latlng = start_point(*run_points_data[0]) if run_points_data else None
-        start_date = datetime.fromtimestamp(start_time, tz=timezone.utc)
+        start_date = datetime.fromtimestamp(start_time, tz=UTC)
         start_date_local = adjust_time(start_date, BASE_TIMEZONE)
-        end = datetime.fromtimestamp(end_time, tz=timezone.utc)
+        end = datetime.fromtimestamp(end_time, tz=UTC)
         # only for China now
         end_local = adjust_time(end, BASE_TIMEZONE)
         location_country = None
@@ -611,7 +611,7 @@ class Joyrun:
             "distance": run_data["meter"],
             "moving_time": timedelta(seconds=run_data["second"]),
             "elapsed_time": timedelta(
-                seconds=int((run_data["endtime"] - run_data["starttime"]))
+                seconds=int(run_data["endtime"] - run_data["starttime"])
             ),
             "average_speed": run_data["meter"] / run_data["second"],
             "elevation_gain": elevation_gain,

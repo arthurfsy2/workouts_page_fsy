@@ -8,8 +8,9 @@ import time
 import urllib.parse
 import xml.etree.ElementTree as ET
 from collections import namedtuple
-from datetime import datetime, timedelta, timezone
+from datetime import UTC, datetime, timedelta
 from xml.dom import minidom
+
 import eviltransform
 import gpxpy
 import numpy as np
@@ -26,6 +27,7 @@ from config import (
 )
 from generator import Generator
 from tzlocal import get_localzone
+
 from utils import adjust_time_to_utc, adjust_timestamp_to_utc, to_date
 
 # struct body
@@ -100,13 +102,12 @@ def device_info_headers():
 
 def download_codoon_gpx(gpx_data, log_id):
     try:
-        print(f"downloading codoon {str(log_id)} gpx")
+        print(f"downloading codoon {log_id!s} gpx")
         file_path = os.path.join(GPX_FOLDER, str(log_id) + ".gpx")
         with open(file_path, "w") as fb:
             fb.write(gpx_data)
     except Exception as e:
-        print(f"wrong id {log_id} error {str(e)}")
-        pass
+        print(f"wrong id {log_id} error {e!s}")
 
 
 def formated_input(
@@ -202,7 +203,7 @@ def tcx_output(fit_array, run_data):
         # HeartRateBpm
         # None was converted to bytes by np.dtype, becoming a string "None" after decode...-_-
         # as well as LatitudeDegrees and LongitudeDegrees below
-        if not bytes.decode(i["bpm"]) == "None":
+        if bytes.decode(i["bpm"]) != "None":
             bpm = ET.Element("HeartRateBpm")
             bpm_value = ET.Element("Value")
             bpm.append(bpm_value)
@@ -211,12 +212,12 @@ def tcx_output(fit_array, run_data):
         # Cadence
         # The unit is step-per-minute in Garmin
         # but is stride-per-minute in Strava, Coros, and RQrun
-        if not bytes.decode(i["step"]) == "None":
+        if bytes.decode(i["step"]) != "None":
             step = ET.Element("Cadence")
             step.text = bytes.decode(i["step"])
             tp.append(step)
         # Position
-        if not bytes.decode(i["lati"]) == "None":
+        if bytes.decode(i["lati"]) != "None":
             position = ET.Element("Position")
             tp.append(position)
             #   LatitudeDegrees
@@ -251,8 +252,7 @@ def tcx_output(fit_array, run_data):
         with open(TCX_FOLDER + "/" + fit_id + ".tcx", "w") as f:
             f.write(str(xml_str))
     except Exception as e:
-        print(f"empty database error {str(e)}")
-        pass
+        print(f"empty database error {e!s}")
 
 
 def tcx_job(run_data):
@@ -321,10 +321,10 @@ def tcx_job(run_data):
                 continue
 
             # get heart rate at unix_time
-            hr = fit_hrs.get(unix_time, None)
+            hr = fit_hrs.get(unix_time)
 
             # get steps per minute at unix_time
-            step = fit_steps.get(unix_time, None)
+            step = fit_steps.get(unix_time)
 
             fit_list.append((unix_time, hr, step, latitude, longitude, elevation))
     elif fit_hrs:
@@ -334,7 +334,7 @@ def tcx_job(run_data):
         )
         for unix_time, hr in fit_hrs.items():
             # get heart rate at unix_time
-            step = fit_steps.get(unix_time, None)
+            step = fit_steps.get(unix_time)
             fit_list.append((unix_time, hr, step, None, None, None))
     elif fit_steps:
         # not trackpoints but steps
@@ -374,7 +374,9 @@ class CodoonAuth:
 
             self.token = r.json()["access_token"]
 
-    def reload(self, params={}, token=""):
+    def reload(self, params=None, token=""):
+        if params is None:
+            params = {}
         self.params = params
         if token:
             self.token = token
@@ -391,7 +393,7 @@ class CodoonAuth:
         if query != "":
             query = urllib.parse.unquote(query)
 
-        pre_string = f"Authorization={token}&Davinci={davinci}&Did={did}&Timestamp={str(timestamp)}|path={path}|body={body_str}|{query}"
+        pre_string = f"Authorization={token}&Davinci={davinci}&Did={did}&Timestamp={timestamp!s}|path={path}|body={body_str}|{query}"
         return make_signature(pre_string)
 
     def __call__(self, r):
@@ -468,7 +470,7 @@ class Codoon:
         self.user_id = login_data["user_id"]
         self.auth.reload(token=self.token)
         print(
-            f"your refresh_token and user_id are {str(self.refresh_token)} {str(self.user_id)}"
+            f"your refresh_token and user_id are {self.refresh_token!s} {self.user_id!s}"
         )
 
     def get_runs_records(self, page=1):
@@ -511,7 +513,7 @@ class Codoon:
                 "elevation": point["elevation"],
                 "time": adjust_time_to_utc(
                     to_date(point["time_stamp"]), BASE_TIMEZONE
-                ).replace(tzinfo=timezone.utc),
+                ).replace(tzinfo=UTC),
             }
             points_dict_list.append(points_dict)
         gpx = gpxpy.gpx.GPX()
@@ -542,8 +544,7 @@ class Codoon:
         if not r.ok:
             print(r)
             raise Exception("get runs records error")
-        data = r.json()
-        return data
+        return r.json()
 
     @staticmethod
     def _gt(dt_str):
@@ -561,9 +562,9 @@ class Codoon:
 
         start_time = run_data.get("start_time")
         if not start_time:
-            return
+            return None
         end_time = run_data["end_time"]
-        run_points_data = run_data["points"] if "points" in run_data else None
+        run_points_data = run_data.get("points", None)
 
         latlng_data = self.parse_latlng(run_points_data)
         if TRANS_GCJ02_TO_WGS84:
@@ -599,11 +600,11 @@ class Codoon:
         sport_type = run_data["sports_type"]
         # only support run now, if you want all type comments these two lines
         if IS_ONLY_RUN and sport_type != 1:
-            return
-        cast_type = TYPE_DICT[sport_type] if sport_type in TYPE_DICT else sport_type
+            return None
+        cast_type = TYPE_DICT.get(sport_type, sport_type)
         if not run_data["total_time"]:
             print(f"ID {log_id} has no total time just ignore please check")
-            return
+            return None
         d = {
             "id": log_id,
             "name": str(cast_type) + " from codoon",
@@ -620,7 +621,7 @@ class Codoon:
             "distance": run_data["total_length"],
             "moving_time": timedelta(seconds=run_data["total_time"]),
             "elapsed_time": timedelta(
-                seconds=int((end_date.timestamp() - start_date.timestamp()))
+                seconds=int(end_date.timestamp() - start_date.timestamp())
             ),
             "average_speed": run_data["total_length"] / run_data["total_time"],
             "elevation_gain": elevation_gain,

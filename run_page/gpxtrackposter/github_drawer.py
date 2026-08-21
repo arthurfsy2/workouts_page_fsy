@@ -1,7 +1,7 @@
+import argparse
 import calendar
 import datetime
 import locale
-import argparse
 
 import svgwrite
 
@@ -149,7 +149,7 @@ class GithubDrawer(TracksDrawer):
                     # so set first_day_weekday = 0
                     first_day_weekday = 0
                     rect_y = offset.y + year_size + 2
-                for j in range(7 - first_day_weekday):
+                for _j in range(7 - first_day_weekday):
                     if int(github_rect_day.year) > year:
                         break
                     rect_y += 3.5

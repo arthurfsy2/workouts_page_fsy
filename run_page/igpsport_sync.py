@@ -1,11 +1,12 @@
+import argparse
 import os
 import sys
-import argparse
+
 import requests
 from config import (
+    FIT_FOLDER,
     GPX_FOLDER,
     TCX_FOLDER,
-    FIT_FOLDER,
 )
 
 BASE_URL = "https://prod.zh.igpsport.com/service/"

@@ -6,14 +6,11 @@ import arrow
 import stravalib
 from config import MAPPING_TYPE
 from gpxtrackposter import track_loader
-from sqlalchemy import func
-
 from polyline_processor import filter_out
-
-from .db import Activity, init_db, update_or_create_activity
-
+from sqlalchemy import func
 from synced_data_file_logger import save_synced_data_file_list
 
+from .db import Activity, init_db, update_or_create_activity
 
 IGNORE_BEFORE_SAVING = os.getenv("IGNORE_BEFORE_SAVING", False)
 
@@ -55,7 +52,7 @@ class Generator:
 
         print("Start syncing")
         if force:
-            filters = {"before": datetime.datetime.now(datetime.timezone.utc)}
+            filters = {"before": datetime.datetime.now(datetime.UTC)}
         else:
             last_activity = self.session.query(func.max(Activity.start_date)).scalar()
             if last_activity:
@@ -63,7 +60,7 @@ class Generator:
                 last_activity_date = last_activity_date.shift(days=-7)
                 filters = {"after": last_activity_date.datetime}
             else:
-                filters = {"before": datetime.datetime.now(datetime.timezone.utc)}
+                filters = {"before": datetime.datetime.now(datetime.UTC)}
 
         for activity in self.client.get_activities(**filters):
             if self.only_run and activity.type != "Run":
@@ -85,7 +82,9 @@ class Generator:
             sys.stdout.flush()
         self.session.commit()
 
-    def sync_from_data_dir(self, data_dir, file_suffix="gpx", activity_title_dict={}):
+    def sync_from_data_dir(self, data_dir, file_suffix="gpx", activity_title_dict=None):
+        if activity_title_dict is None:
+            activity_title_dict = {}
         loader = track_loader.TrackLoader()
         tracks = loader.load_tracks(
             data_dir, file_suffix=file_suffix, activity_title_dict=activity_title_dict
@@ -208,7 +207,7 @@ class Generator:
             return [str(a.run_id) for a in activities]
         except Exception as e:
             # pass the error
-            print(f"something wrong with {str(e)}")
+            print(f"something wrong with {e!s}")
             return []
 
     def get_old_tracks_dates(self):
@@ -221,5 +220,5 @@ class Generator:
             return [str(a.start_date_local) for a in activities]
         except Exception as e:
             # pass the error
-            print(f"something wrong with {str(e)}")
+            print(f"something wrong with {e!s}")
             return []

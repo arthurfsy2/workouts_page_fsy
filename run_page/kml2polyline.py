@@ -1,4 +1,5 @@
 import json
+import sys
 from datetime import datetime, timedelta
 
 import eviltransform
@@ -14,7 +15,7 @@ IN_CHINA = True
 
 def get_points_from_kml(k: kml):
     points = []
-    document = list(k.features)[0]
+    document = next(iter(k.features))
     for folder in list(document.features):
         if folder.geometry.geom_type == "LineString":
             points.extend(folder.geometry.coords)
@@ -29,7 +30,7 @@ def load_kml_file():
         print(err)
         raise "kml file not exist. please place import.kml into script/ folder"
 
-        exit(1)
+        sys.exit(1)
 
 
 def load_kml_data(track, k):

@@ -101,7 +101,7 @@ if __name__ == "__main__":
                 upload_file_to_strava(client, track.gpx_file_path, "gpx", False)
                 uploaded_file_paths.append(track)
             except ActivityUploadFailed as e:
-                print(f"Upload failed error {str(e)}")
+                print(f"Upload failed error {e!s}")
             # spider rule
             time.sleep(1)
         else:
@@ -111,7 +111,7 @@ if __name__ == "__main__":
 
     # This file is used to record which logs have been uploaded to strava
     # to avoid intrusion into the data.db resulting in double counting of data.
-    with open(KEEP2STRAVA_BK_PATH, "r") as f:
+    with open(KEEP2STRAVA_BK_PATH) as f:
         try:
             content = json.loads(f.read())
         except Exception as e:
@@ -121,12 +121,12 @@ if __name__ == "__main__":
     # Extend and Save the successfully uploaded log to the backup file.
     content.extend(
         [
-            dict(
-                run_id=track.id,
-                name=track.name,
-                type=track.type,
-                gpx_file_path=track.gpx_file_path,
-            )
+            {
+                "run_id": track.id,
+                "name": track.name,
+                "type": track.type,
+                "gpx_file_path": track.gpx_file_path,
+            }
             for track in uploaded_file_paths
         ]
     )

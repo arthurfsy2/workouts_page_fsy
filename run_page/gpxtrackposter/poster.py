@@ -69,7 +69,6 @@ class Poster:
             except locale.Error as e:
                 print(f'Cannot set locale to "{language}": {e}')
                 language = None
-                pass
 
         # Fall-back to NullTranslations, if the specified language translation cannot be found.
         if language:
@@ -120,7 +119,7 @@ class Poster:
         d.add(
             d.rect((0, 0), (width, height), fill=self.colors["background"], rx=1, ry=1)
         )
-        if not self.drawer_type == "plain":
+        if self.drawer_type != "plain":
             self.__draw_header(d)
             self.__draw_footer(d)
             self.__draw_tracks(d, XY(width - 20, height - 30 - 30), XY(10, 30))
