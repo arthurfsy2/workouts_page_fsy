@@ -13,7 +13,6 @@ interface ILocationStatProps {
   changeType: (_type: string) => void;
   onClickTypeInYear: (_year: string, _type: string) => void;
 }
-import styles from './style.module.css';
 
 const LocationStat = ({
   changeYear,

@@ -278,13 +278,11 @@ export {
 };
 
 // eslint-disable-next-line no-unused-vars
-const nike = 'rgb(224,237,94)';
-const yellow = 'rgb(224,237,94)';
+const nike = 'rgb(224,237,94)'; // eslint-disable-line no-unused-vars
 const mgi_green = 'rgb(0,175,170)';
 const mgi_blue = 'rgb(0,108,184)';
 const mgi_blue2 = 'rgb(87,158,251)';
 const mgi_blue3 = 'rgb(67,91,163)';
-const pink = 'rgb(237,85,219)';
 const cyan = 'rgb(112,243,255)';
 const IKB = 'rgb(0,47,167)';
 const dark_vanilla = 'rgb(228,212,220)';
@@ -292,7 +290,6 @@ const gold = 'rgb(242,190,69)';
 const purple = 'rgb(114,69,152)';
 const veryPeri = 'rgb(105,106,173)'; //长春花蓝
 const red = 'rgb(255,0,0)'; //大红色
-const mgi_black = 'rgb(27,43,56)';
 const mgi_purple = 'rgb(114, 69, 152)';
 
 export const RUN_COLOR = mgi_purple;

@@ -1,4 +1,4 @@
-import React, { lazy, useState, Suspense } from 'react';
+import { useState, type FC } from 'react';
 import {
   BarChart,
   Bar,
@@ -18,9 +18,6 @@ import {
   SHOW_ELEVATION_GAIN,
   MAX_SINGLE_DAY,
 } from '@/utils/const';
-import { formatPace } from '@/utils/utils';
-import { totalStat } from '@assets/index';
-import { loadSvgComponent } from '@/utils/svgUtils';
 // Define interfaces for our data structures
 interface Activity {
   start_date_local: string;
@@ -76,7 +73,7 @@ interface ActivityGroups {
 
 type IntervalType = 'year' | 'month' | 'week' | 'day';
 
-const ActivityCard: React.FC<ActivityCardProps> = ({
+const ActivityCard: FC<ActivityCardProps> = ({
   period,
   summary,
   dailyDistances,
@@ -294,7 +291,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
   );
 };
 
-const ActivityList: React.FC = () => {
+const ActivityList: FC = () => {
   const [interval, setInterval] = useState<IntervalType>('month');
   const [activityType, setActivityType] = useState<string>('ride');
   const navigate = useNavigate();
@@ -332,7 +329,7 @@ const ActivityList: React.FC = () => {
             key = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}`; // Zero padding
             index = date.getDate() - 1; // Return current day (0-30)
             break;
-          case 'week':
+          case 'week': {
             const currentDate = new Date(date.valueOf());
             currentDate.setDate(
               currentDate.getDate() + 4 - (currentDate.getDay() || 7)
@@ -344,6 +341,7 @@ const ActivityList: React.FC = () => {
             key = `${currentDate.getFullYear()}-W${weekNum.toString().padStart(2, '0')}`;
             index = (date.getDay() + 6) % 7; // Return current day (0-6, Monday-Sunday)
             break;
+          }
           case 'day':
             key = date.toLocaleDateString('zh').replaceAll('/', '-'); // Format date as YYYY-MM-DD
             index = 0; // Return 0
@@ -424,7 +422,7 @@ const ActivityList: React.FC = () => {
           value={activityType}
         >
           {showTypes.map((type) => (
-            <option value={type}>{TYPES_MAPPING[type]}</option>
+            <option key={type} value={type}>{TYPES_MAPPING[type]}</option>
           ))}
         </select>
         <select

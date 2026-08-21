@@ -1,3 +1,4 @@
+import type { JSX } from 'react';
 import { TYPES_MAPPING, IS_CHINESE } from '@/utils/const';
 
 interface Activity {
@@ -189,7 +190,6 @@ const evaluateMileageChance = (
   const projectedDistance = roundToKm(
     currentYearAvg * totalDaysInYear(currentYear) + reservedDistance
   );
-  const shortfall = lastYearTotalDistance - projectedDistance;
 
   if (projectedDistance >= lastYearTotalDistance) {
     if (currentYearAvg < lastYearAvg) {

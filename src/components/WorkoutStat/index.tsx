@@ -8,7 +8,7 @@ const WorkoutStat = ({
   className,
   distance,
   onClick,
-  color = MAIN_COLOR,
+  color: _color = MAIN_COLOR,
 }: {
   value: string;
   description: string;
