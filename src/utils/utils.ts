@@ -28,8 +28,6 @@ import {
 import {
   FeatureCollection,
   LineString,
-  Feature,
-  GeoJsonProperties,
 } from 'geojson';
 
 export type Coordinate = [number, number];

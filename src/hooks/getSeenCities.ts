@@ -1,4 +1,4 @@
-import { locationForRun, typeForRun } from '@/utils/utils';
+import { locationForRun } from '@/utils/utils';
 import activities from '@/static/activities.json';
 
 const getSeenCities = () => {

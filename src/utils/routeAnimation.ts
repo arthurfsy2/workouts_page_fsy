@@ -142,8 +142,8 @@ export class RouteAnimator {
 
   constructor(
     points: Coordinate[],
-    private onUpdate: (points: Coordinate[]) => void,
-    private onComplete: () => void,
+    private _onUpdate: (_points: Coordinate[]) => void,
+    private _onComplete: () => void,
     config: RouteAnimationConfig = {}
   ) {
     this.config = {
@@ -183,13 +183,13 @@ export class RouteAnimator {
 
   start(): void {
     if (this.total <= 0) {
-      this.onUpdate([]);
-      this.onComplete();
+      this._onUpdate([]);
+      this._onComplete();
       return;
     }
 
     // Start with first point
-    this.onUpdate([this.simplified[0]]);
+    this._onUpdate([this.simplified[0]]);
     this.animationFrameId = requestAnimationFrame(this.step.bind(this));
   }
 
@@ -220,9 +220,9 @@ export class RouteAnimator {
 
     // Animation complete
     if (p >= 1) {
-      this.onUpdate(this.simplified);
+      this._onUpdate(this.simplified);
       this.animationFrameId = null;
-      this.onComplete();
+      this._onComplete();
       return;
     }
 
@@ -249,7 +249,7 @@ export class RouteAnimator {
       targetDist
     );
 
-    this.onUpdate(visiblePoints);
+    this._onUpdate(visiblePoints);
     this.animationFrameId = requestAnimationFrame(this.step.bind(this));
   }
 }

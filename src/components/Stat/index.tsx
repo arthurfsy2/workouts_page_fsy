@@ -1,4 +1,4 @@
-import { intComma } from '@/utils/utils';
+import type { CSSProperties } from 'react';
 
 interface IStatProperties {
   value: string | number;
@@ -6,7 +6,7 @@ interface IStatProperties {
   className?: string;
   citySize?: number;
   onClick?: () => void;
-  style?: React.CSSProperties; // 新增：用于接收动态样式的属性
+  style?: CSSProperties; // 新增：用于接收动态样式的属性
 }
 
 const Stat = ({

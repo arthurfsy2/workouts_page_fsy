@@ -1,5 +1,4 @@
-import { useEffect, useState } from 'react';
-import React, { useReducer } from 'react';
+import { useEffect, useState, useReducer } from 'react';
 import { Analytics } from '@vercel/analytics/react';
 import Layout from '@/components/Layout';
 import LocationStat from '@/components/LocationStat';
@@ -10,7 +9,6 @@ import YearsStat from '@/components/YearsStat';
 import useActivities from '@/hooks/useActivities';
 import useSiteMetadata from '@/hooks/useSiteMetadata';
 import {
-  IS_CHINESE,
   SWITCH_LOCATION_BUTTON,
   SWITCH_YEAR_BUTTON,
   SUMMARY_BUTTON,

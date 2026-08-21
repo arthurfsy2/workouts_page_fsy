@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import { lazy, Suspense } from 'react';
 import { Tabs } from 'antd'; // 引入 Ant Design 的 Tabs 组件
 import { totalStat } from '@assets/index';
 import { loadSvgComponent } from '@/utils/svgUtils';
