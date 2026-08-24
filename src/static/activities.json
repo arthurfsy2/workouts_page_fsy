@@ -13422,5 +13422,21 @@
 "elevation_gain": 551.0,
 "source": "",
 "streak": 1
+},
+{
+"run_id": 1787564117000,
+"name": "\u6cf3\u6c60\u6e38\u6cf3",
+"distance": 350.0,
+"moving_time": "0:13:59.629000",
+"type": "Swim",
+"start_date": "2026-08-24 09:35:17",
+"start_date_local": "2026-08-24 17:35:17",
+"location_country": "",
+"summary_polyline": "",
+"average_heartrate": 121.0,
+"average_speed": 0.82,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 2
 }
 ]
