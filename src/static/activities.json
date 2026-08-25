@@ -13438,5 +13438,21 @@
 "elevation_gain": 0.0,
 "source": "",
 "streak": 2
+},
+{
+"run_id": 1787644318000,
+"name": "\u6cf3\u6c60\u6e38\u6cf3",
+"distance": 425.0,
+"moving_time": "0:13:32.543000",
+"type": "Swim",
+"start_date": "2026-08-25 07:51:58",
+"start_date_local": "2026-08-25 15:51:58",
+"location_country": "",
+"summary_polyline": "",
+"average_heartrate": 138.0,
+"average_speed": 0.593,
+"elevation_gain": 0.0,
+"source": "",
+"streak": 3
 }
 ]
