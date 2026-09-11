@@ -400,11 +400,15 @@ class Track:
         self.moving_dict["elapsed_time"] = datetime.timedelta(
             seconds=message["total_elapsed_time"]
         )
-        self.moving_dict["average_speed"] = (
-            message["enhanced_avg_speed"]
-            if message["enhanced_avg_speed"]
-            else message["avg_speed"]
-        )
+        avg_speed = message.get("enhanced_avg_speed") or message.get("avg_speed")
+        if not avg_speed:
+            # some FIT files merged by third-party tools miss both avg_speed
+            # and enhanced_avg_speed, fall back to distance / time
+            moving_time = (
+                message.get("total_moving_time") or message.get("total_timer_time") or 0
+            )
+            avg_speed = message["total_distance"] / moving_time if moving_time else 0
+        self.moving_dict["average_speed"] = avg_speed
         for record in fit["record_mesgs"]:
             if "position_lat" in record and "position_long" in record:
                 lat = record["position_lat"] / SEMICIRCLE
