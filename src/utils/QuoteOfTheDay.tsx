@@ -41,7 +41,7 @@ const QuoteOfTheDay: React.FC = () => {
 
   if (!quote) return null;
 
-  return <div className="mr-6 text-base italic text-[#579EFB]">{quote}</div>;
+  return <span className="mr-6 block text-base italic text-[#579EFB]">{quote}</span>;
 };
 
 export default QuoteOfTheDay;
