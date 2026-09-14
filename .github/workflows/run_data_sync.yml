@@ -58,17 +58,17 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
         with:
           fetch-depth: 0
           persist-credentials: true
       - name: 安装 UV
-        uses: astral-sh/setup-uv@v3
+        uses: astral-sh/setup-uv@v10
         with:
           version: "latest"
           enable-cache: true
       - name: 缓存 UV 环境
-        uses: actions/cache@v3
+        uses: actions/cache@v6
         id: uv-cache
         with:
           path: |
@@ -113,7 +113,7 @@ jobs:
 
       - name: Cache Data Files
         if: env.SAVE_DATA_IN_GITHUB_CACHE == 'true'
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: |
             activities
