@@ -5,3 +5,26 @@ sync:
     authentication_domain: CN #  Global (default) | CN (Mainland China)
     email: user@email.com
     password: yourpassword
+
+  # 体重(体脂秤)数据源，可选。整段留空 = 关闭该功能：
+  # 不写库、不产出数据，前端不会渲染体重列与体重趋势图。
+  # 环境变量优先级高于这里（CI 里用仓库变量 / secret，
+  # 取数见 .github/workflows/weight_fetch.yml，匹配见 run_data_sync.yml）。
+  weight:
+    # 数据源类型，可选值：
+    #   ''       关闭（默认）
+    #   yunmai   好轻体脂秤，用账号密码直连（需配 YUNMAI_ACCOUNT / YUNMAI_PASSWORD）
+    #   url      从一个远端 JSON 地址取数
+    #   file     从一个本地 JSON 文件取数
+    # 留空时会自动判断：给了 source_file 用 file，给了 source_url 用 url，
+    # 配了账号密码则认为想用好轻直连。
+    source: ''
+    # 体重 JSON 的远端地址（source=url 时使用）
+    source_url: ''
+    # 本地 JSON 文件路径（优先于 source_url，便于离线运行 / 调试）
+    source_file: ''
+    # 活动当天没有称重记录时，向前后各取多少天内最近的一条
+    tolerance_days: 3
+    # 日期字段名。留空则按 createTime -> date -> dateNum 自动识别，
+    # 一般不需要改（数据源字段名不常规时才用得上）。
+    date_field: ''

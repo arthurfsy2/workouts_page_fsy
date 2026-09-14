@@ -1,0 +1,41 @@
+.weightSection {
+  padding: 20px;
+  background-color: rgb(245, 245, 245);
+}
+
+.weightCard {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 16px;
+  max-width: 1024px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.weightHeader {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-bottom: 10px;
+}
+
+.weightTitle {
+  font-size: 1.25em;
+  color: rgb(67, 91, 163);
+}
+
+.weightMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 0.875em;
+  color: #555;
+}
+
+.weightPlot {
+  height: 260px;
+  width: 100%;
+}

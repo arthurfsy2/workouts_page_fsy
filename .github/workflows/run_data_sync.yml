@@ -47,6 +47,12 @@ env:
   GENERATE_MONTH_OF_LIFE: true # If you want to generate the month of life, set it to `true`
   BIRTHDAY_MONTH: 1992-05 # If you want to generate the month of life, set it to your birthday month, format is YYYY-MM
 
+# 与 weight_fetch.yml 共用同一个并发组:两个 workflow 都会向仓库提交,
+# 串行执行避免 push 冲突,也避免同时操作 run_page/data.db(SQLite 二进制无法合并)。
+concurrency:
+  group: data-sync-write
+  cancel-in-progress: false
+
 jobs:
   sync:
     name: Sync
@@ -294,6 +300,15 @@ jobs:
         run: |
           pip install duckdb==1.1.0
           uv run python run_page/save_to_parqent.py
+
+      # 体重(体脂秤)数据,可选功能。
+      # 取数在独立的 weight_fetch.yml 里完成并提交 src/static/weights.json,
+      # 这里只用 `--local` 把那份数据匹配到活动上 —— 因此本步骤
+      # 不需要任何凭证,也不会和取数 workflow 抢数据库。
+      # weights.json 为空时(例如别人 fork 了本仓库)脚本会安全跳过并清空,
+      # 站点不会显示体重列与体重图。
+      - name: Run sync weight script
+        run: uv run python run_page/weight_sync.py --local
 
       - name: Push new runs
         if: env.SAVE_DATA_IN_GITHUB_CACHE != 'true'

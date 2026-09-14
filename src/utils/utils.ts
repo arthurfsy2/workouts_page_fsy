@@ -49,6 +49,11 @@ export interface Activity {
   elevation_gain: number | null;
   average_speed: number;
   streak: number;
+  // 体重(可选):由体脂秤数据按 ±N 天就近匹配写入(见 run_page/weight_sync.py),
+  // 没有配置数据源时这几个字段不存在,前端会整体隐藏体重列与体重图。
+  weight?: number | null;
+  weight_date?: string | null; // 实际称重日期 YYYY-MM-DD
+  fat?: number | null; // 体脂率 %
 }
 
 const titleForShow = (run: Activity): string => {
