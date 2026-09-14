@@ -45,7 +45,9 @@ jobs:
           persist-credentials: true
 
       - name: 安装 UV
-        uses: astral-sh/setup-uv@v10
+        # 同 run_data_sync.yml:setup-uv 没有裸大版本标签 v8/v9/v10,
+        # 必须写完整版本号,写 @v10 会让整个 job 在 3 秒内直接失败。
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           version: "latest"
           enable-cache: true
