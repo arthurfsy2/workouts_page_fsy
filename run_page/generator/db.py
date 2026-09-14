@@ -107,12 +107,52 @@ class Weight(Base):
     measured_at = Column(String)  # 原始测量时间,便于排查
 
 
+def find_duplicate_activity(session, run_activity, type):
+    """识别 run_id 不同但实为同一次活动的已有记录。
+
+    各同步管线用 开始时间戳(毫秒) 当 run_id，同一次活动从两个设备/平台导入时
+    开始时间差几秒，就会各自建行（历史上因此积累过大量重复）。这里按
+    类型 + 距离差 <500m + 开始时间差 <10分钟 模糊匹配，命中则更新已有记录。
+    """
+    start = run_activity.start_date_local
+    if isinstance(start, str):
+        start = datetime.datetime.strptime(start, "%Y-%m-%d %H:%M:%S")
+    fmt = "%Y-%m-%d %H:%M:%S"
+    lo = (start - datetime.timedelta(minutes=10)).strftime(fmt)
+    hi = (start + datetime.timedelta(minutes=10)).strftime(fmt)
+    distance = float(run_activity.distance)
+    return (
+        session.query(Activity)
+        .filter(
+            Activity.type == type,
+            Activity.start_date_local >= lo,
+            Activity.start_date_local <= hi,
+            Activity.distance >= distance - 500,
+            Activity.distance <= distance + 500,
+        )
+        .first()
+    )
+
+
 def update_or_create_activity(session, run_activity):
     created = False
     try:
         activity = (
             session.query(Activity).filter_by(run_id=int(run_activity.id)).first()
         )
+        type = run_activity.type
+        source = run_activity.source if hasattr(run_activity, "source") else "gpx"
+        if run_activity.type in TYPE_DICT:
+            type = TYPE_DICT[run_activity.type]
+
+        if activity is None:
+            dup = find_duplicate_activity(session, run_activity, type)
+            if dup is not None:
+                print(
+                    f"duplicate detected: {run_activity.id} matches existing "
+                    f"{dup.run_id}, merging"
+                )
+                activity = dup
         type = run_activity.type
         source = run_activity.source if hasattr(run_activity, "source") else "gpx"
         if run_activity.type in TYPE_DICT:
@@ -176,7 +216,9 @@ def update_or_create_activity(session, run_activity):
             session.add(activity)
             created = True
         else:
-            activity.name = run_activity.name
+            # 合并重复记录时,传入副本可能没有名字,避免把已有名字冲掉
+            if run_activity.name:
+                activity.name = run_activity.name
             activity.distance = float(run_activity.distance)
             activity.moving_time = run_activity.moving_time
             activity.elapsed_time = run_activity.elapsed_time
