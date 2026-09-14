@@ -333,7 +333,10 @@
 "average_speed": 2.37,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.56,
+"weight_date": "2015-08-24",
+"fat": 16.9
 },
 {
 "run_id": 1438702800000,
@@ -349,7 +352,10 @@
 "average_speed": 2.27,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.56,
+"weight_date": "2015-08-24",
+"fat": 16.9
 },
 {
 "run_id": 1438789200000,
@@ -365,7 +371,10 @@
 "average_speed": 2.27,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.98,
+"weight_date": "2015-08-26",
+"fat": 17.5
 },
 {
 "run_id": 1438875600000,
@@ -381,7 +390,10 @@
 "average_speed": 2.27,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.84,
+"weight_date": "2015-08-30",
+"fat": 19.1
 },
 {
 "run_id": 1439134800000,
@@ -397,7 +409,10 @@
 "average_speed": 2.2,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.92,
+"weight_date": "2015-09-10",
+"fat": 16.7
 },
 {
 "run_id": 1444599600000,
@@ -413,7 +428,10 @@
 "average_speed": 2.25,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 71.39,
+"weight_date": "2015-10-11",
+"fat": 17.7
 },
 {
 "run_id": 1444686000000,
@@ -429,7 +447,10 @@
 "average_speed": 2.25,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 71.33,
+"weight_date": "2015-10-13",
+"fat": 17.6
 },
 {
 "run_id": 1444772400000,
@@ -445,7 +466,10 @@
 "average_speed": 2.26,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.71,
+"weight_date": "2015-10-15",
+"fat": 18.1
 },
 {
 "run_id": 1444933200000,
@@ -461,7 +485,10 @@
 "average_speed": 2.47,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.69,
+"weight_date": "2015-10-20",
+"fat": 18.3
 },
 {
 "run_id": 1445019600000,
@@ -477,7 +504,10 @@
 "average_speed": 2.4,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.62,
+"weight_date": "2015-10-22",
+"fat": 17.8
 },
 {
 "run_id": 1445106000000,
@@ -493,7 +523,10 @@
 "average_speed": 2.48,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.7,
+"weight_date": "2015-10-25",
+"fat": 16.7
 },
 {
 "run_id": 1445192400000,
@@ -509,7 +542,10 @@
 "average_speed": 2.4,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.51,
+"weight_date": "2015-10-27",
+"fat": 17.8
 },
 {
 "run_id": 1445278800000,
@@ -525,7 +561,10 @@
 "average_speed": 2.41,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 71.27,
+"weight_date": "2015-10-29",
+"fat": 19.2
 },
 {
 "run_id": 1445365200000,
@@ -541,7 +580,10 @@
 "average_speed": 2.5,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 71.92,
+"weight_date": "2015-11-01",
+"fat": 17.2
 },
 {
 "run_id": 1445451600000,
@@ -557,7 +599,10 @@
 "average_speed": 2.49,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.11,
+"weight_date": "2015-11-03",
+"fat": 16.3
 },
 {
 "run_id": 1445538000000,
@@ -573,7 +618,10 @@
 "average_speed": 2.48,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 70.83,
+"weight_date": "2015-11-06",
+"fat": 18.5
 },
 {
 "run_id": 9223370490330669557,
@@ -589,7 +637,10 @@
 "average_speed": 1.8707154823801273,
 "elevation_gain": 343.6,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 80.03,
+"weight_date": "2019-01-03",
+"fat": 21.1
 },
 {
 "run_id": 9223370489989327105,
@@ -605,7 +656,10 @@
 "average_speed": 2.6984833333333333,
 "elevation_gain": 81.49600000000004,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 78.87,
+"weight_date": "2019-01-07",
+"fat": 19.6
 },
 {
 "run_id": 9223370489730401334,
@@ -621,7 +675,10 @@
 "average_speed": 2.671230646871686,
 "elevation_gain": 130.824,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 79.66,
+"weight_date": "2019-01-10",
+"fat": 20.1
 },
 {
 "run_id": 9223370489300363197,
@@ -637,7 +694,10 @@
 "average_speed": 2.835402247191011,
 "elevation_gain": 134.49399999999994,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 77.89,
+"weight_date": "2019-01-15",
+"fat": 19.8
 },
 {
 "run_id": 9223370489125525476,
@@ -653,7 +713,10 @@
 "average_speed": 2.8364342680874928,
 "elevation_gain": 130.28499999999994,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 78.91,
+"weight_date": "2019-01-17",
+"fat": 21.6
 },
 {
 "run_id": 9223370488175247765,
@@ -669,7 +732,10 @@
 "average_speed": 2.3337954755309327,
 "elevation_gain": 202.8590000000001,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 79.41,
+"weight_date": "2019-01-28",
+"fat": 20.0
 },
 {
 "run_id": 9223370487915988282,
@@ -685,7 +751,10 @@
 "average_speed": 2.5498531883341573,
 "elevation_gain": 166.04800000000003,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 79.7,
+"weight_date": "2019-01-31",
+"fat": 19.7
 },
 {
 "run_id": 9223370487348795343,
@@ -717,7 +786,10 @@
 "average_speed": 2.5907018558480797,
 "elevation_gain": 91.85299999999998,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 79.13,
+"weight_date": "2019-02-11",
+"fat": 21.5
 },
 {
 "run_id": 9223370487134073256,
@@ -733,7 +805,10 @@
 "average_speed": 1.0611378622197922,
 "elevation_gain": 91.21000000000002,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 79.13,
+"weight_date": "2019-02-11",
+"fat": 21.5
 },
 {
 "run_id": 9223370477059492564,
@@ -1053,7 +1128,10 @@
 "average_speed": 2.93,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.88,
+"weight_date": "2019-10-24",
+"fat": 20.1
 },
 {
 "run_id": 1572273580000,
@@ -1069,7 +1147,10 @@
 "average_speed": 2.81,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.88,
+"weight_date": "2019-10-24",
+"fat": 20.1
 },
 {
 "run_id": 1572274040000,
@@ -1085,7 +1166,10 @@
 "average_speed": 2.92,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.04,
+"weight_date": "2019-10-26",
+"fat": 20.5
 },
 {
 "run_id": 1572388096000,
@@ -1101,7 +1185,10 @@
 "average_speed": 2.88,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.46,
+"weight_date": "2019-10-28",
+"fat": 19.4
 },
 {
 "run_id": 1572399186000,
@@ -1117,7 +1204,10 @@
 "average_speed": 2.95,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.12,
+"weight_date": "2019-10-30",
+"fat": 19.7
 },
 {
 "run_id": 1572664869000,
@@ -1133,7 +1223,10 @@
 "average_speed": 3.01,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.91,
+"weight_date": "2019-11-02",
+"fat": 20.1
 },
 {
 "run_id": 1572881105000,
@@ -1149,7 +1242,10 @@
 "average_speed": 3.05,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.55,
+"weight_date": "2019-11-04",
+"fat": 19.9
 },
 {
 "run_id": 1572993364000,
@@ -1165,7 +1261,10 @@
 "average_speed": 2.52,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 78.09,
+"weight_date": "2019-11-05",
+"fat": 19.7
 },
 {
 "run_id": 1572993367000,
@@ -1181,7 +1280,10 @@
 "average_speed": 2.94,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 78.09,
+"weight_date": "2019-11-05",
+"fat": 19.7
 },
 {
 "run_id": 1573321366000,
@@ -1197,7 +1299,10 @@
 "average_speed": 2.56,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.56,
+"weight_date": "2019-11-09",
+"fat": 19.5
 },
 {
 "run_id": 1573326846000,
@@ -1213,7 +1318,10 @@
 "average_speed": 2.86,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.56,
+"weight_date": "2019-11-09",
+"fat": 19.5
 },
 {
 "run_id": 9223370462855333659,
@@ -1229,7 +1337,10 @@
 "average_speed": 1.1114351145038168,
 "elevation_gain": 131.03299999999996,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 77.35,
+"weight_date": "2019-11-17",
+"fat": 19.4
 },
 {
 "run_id": 1574200743000,
@@ -1245,7 +1356,10 @@
 "average_speed": 3.0,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.35,
+"weight_date": "2019-11-17",
+"fat": 19.4
 },
 {
 "run_id": 1574207889000,
@@ -1261,7 +1375,10 @@
 "average_speed": 3.39,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 78.16,
+"weight_date": "2019-11-19",
+"fat": 19.8
 },
 {
 "run_id": 1574418249000,
@@ -1277,7 +1394,10 @@
 "average_speed": 3.02,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.83,
+"weight_date": "2019-11-21",
+"fat": 19.6
 },
 {
 "run_id": 1574897349000,
@@ -1293,7 +1413,10 @@
 "average_speed": 2.28,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.24,
+"weight_date": "2019-11-27",
+"fat": 19.8
 },
 {
 "run_id": 1575115180000,
@@ -1309,7 +1432,10 @@
 "average_speed": 3.18,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.9,
+"weight_date": "2019-11-30",
+"fat": 19.6
 },
 {
 "run_id": 1575116224000,
@@ -1325,7 +1451,10 @@
 "average_speed": 3.09,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.9,
+"weight_date": "2019-11-30",
+"fat": 19.6
 },
 {
 "run_id": 1575395399000,
@@ -1341,7 +1470,10 @@
 "average_speed": 3.22,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.87,
+"weight_date": "2019-12-02",
+"fat": 20.1
 },
 {
 "run_id": 1575503707000,
@@ -1357,7 +1489,10 @@
 "average_speed": 3.23,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.72,
+"weight_date": "2019-12-04",
+"fat": 20.5
 },
 {
 "run_id": 1575646386000,
@@ -1373,7 +1508,10 @@
 "average_speed": 3.22,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.61,
+"weight_date": "2019-12-06",
+"fat": 20.0
 },
 {
 "run_id": 1575910746000,
@@ -1389,7 +1527,10 @@
 "average_speed": 3.19,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.85,
+"weight_date": "2019-12-10",
+"fat": 19.6
 },
 {
 "run_id": 1576330498000,
@@ -1405,7 +1546,10 @@
 "average_speed": 3.63,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.17,
+"weight_date": "2019-12-13",
+"fat": 19.8
 },
 {
 "run_id": 1576416736000,
@@ -1421,7 +1565,10 @@
 "average_speed": 3.23,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.53,
+"weight_date": "2019-12-15",
+"fat": 19.9
 },
 {
 "run_id": 1576697482000,
@@ -1437,7 +1584,10 @@
 "average_speed": 3.24,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.36,
+"weight_date": "2019-12-17",
+"fat": 19.4
 },
 {
 "run_id": 1576887304000,
@@ -1453,7 +1603,10 @@
 "average_speed": 3.08,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.19,
+"weight_date": "2019-12-21",
+"fat": 19.3
 },
 {
 "run_id": 9223370459880217737,
@@ -1469,7 +1622,10 @@
 "average_speed": 2.26372,
 "elevation_gain": 100.75600000000001,
 "source": "Keep",
-"streak": 2
+"streak": 2,
+"weight": 77.19,
+"weight_date": "2019-12-21",
+"fat": 19.3
 },
 {
 "run_id": 9223370459872826543,
@@ -1485,7 +1641,10 @@
 "average_speed": 1.288765037593985,
 "elevation_gain": 117.56299999999996,
 "source": "Keep",
-"streak": 2
+"streak": 2,
+"weight": 77.19,
+"weight_date": "2019-12-21",
+"fat": 19.3
 },
 {
 "run_id": 9223370459574904303,
@@ -1501,7 +1660,10 @@
 "average_speed": 2.5511761942051683,
 "elevation_gain": 420.7520000000001,
 "source": "Keep",
-"streak": 1
+"streak": 1,
+"weight": 77.68,
+"weight_date": "2019-12-24",
+"fat": 19.5
 },
 {
 "run_id": 1577583676000,
@@ -1517,7 +1679,10 @@
 "average_speed": 2.176,
 "elevation_gain": 58.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.87,
+"weight_date": "2019-12-29",
+"fat": 19.2
 },
 {
 "run_id": 1577584304000,
@@ -1533,7 +1698,10 @@
 "average_speed": 2.453,
 "elevation_gain": 310.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.87,
+"weight_date": "2019-12-29",
+"fat": 19.2
 },
 {
 "run_id": 1577707378000,
@@ -1549,7 +1717,10 @@
 "average_speed": 3.1059999465942383,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.15,
+"weight_date": "2019-12-30",
+"fat": null
 },
 {
 "run_id": 1577888447000,
@@ -1565,7 +1736,10 @@
 "average_speed": 2.589,
 "elevation_gain": 278.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.98,
+"weight_date": "2020-01-01",
+"fat": 19.7
 },
 {
 "run_id": 1578110556000,
@@ -1581,7 +1755,10 @@
 "average_speed": 2.799087704748082,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.88,
+"weight_date": "2020-01-04",
+"fat": 19.2
 },
 {
 "run_id": 1578194676000,
@@ -1597,7 +1774,10 @@
 "average_speed": 2.388,
 "elevation_gain": 168.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.71,
+"weight_date": "2020-01-05",
+"fat": 19.5
 },
 {
 "run_id": 1578400503000,
@@ -1613,7 +1793,10 @@
 "average_speed": 2.607,
 "elevation_gain": 603.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.79,
+"weight_date": "2020-01-07",
+"fat": 19.6
 },
 {
 "run_id": 1578486402000,
@@ -1629,7 +1812,10 @@
 "average_speed": 2.98799991607666,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.92,
+"weight_date": "2020-01-08",
+"fat": 19.2
 },
 {
 "run_id": 1578709988000,
@@ -1645,7 +1831,10 @@
 "average_speed": 3.158559696778269,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.3,
+"weight_date": "2020-01-11",
+"fat": 19.4
 },
 {
 "run_id": 1578814228000,
@@ -1661,7 +1850,10 @@
 "average_speed": 1.75,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.71,
+"weight_date": "2020-01-12",
+"fat": 19.1
 },
 {
 "run_id": 1578915080000,
@@ -1677,7 +1869,10 @@
 "average_speed": 2.643,
 "elevation_gain": 563.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 76.44,
+"weight_date": "2020-01-13",
+"fat": 19.0
 },
 {
 "run_id": 1579093294929,
@@ -1693,7 +1888,10 @@
 "average_speed": 2.4878425827856283,
 "elevation_gain": 0.0,
 "source": "gpx.py -- https://github.com/tkrajina/gpxpy",
-"streak": 1
+"streak": 1,
+"weight": 76.77,
+"weight_date": "2020-01-15",
+"fat": 19.1
 },
 {
 "run_id": 1579264428986,
@@ -1709,7 +1907,10 @@
 "average_speed": 2.751559008703326,
 "elevation_gain": 0.0,
 "source": "gpx.py -- https://github.com/tkrajina/gpxpy",
-"streak": 1
+"streak": 1,
+"weight": 77.27,
+"weight_date": "2020-01-17",
+"fat": 19.3
 },
 {
 "run_id": 1579492209000,
@@ -1725,7 +1926,10 @@
 "average_speed": 5.144717334477781,
 "elevation_gain": 132.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579492627000,
@@ -1741,7 +1945,10 @@
 "average_speed": 4.843,
 "elevation_gain": 125.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579494870000,
@@ -1757,7 +1964,10 @@
 "average_speed": 1.557,
 "elevation_gain": 99.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579498897000,
@@ -1773,7 +1983,10 @@
 "average_speed": 1.643,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579504434000,
@@ -1789,7 +2002,10 @@
 "average_speed": 3.1055135430731635,
 "elevation_gain": 318.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579521446000,
@@ -1805,7 +2021,10 @@
 "average_speed": 3.199,
 "elevation_gain": 34.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579522428000,
@@ -1821,7 +2040,10 @@
 "average_speed": 2.876,
 "elevation_gain": 263.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2020-01-19",
+"fat": 19.3
 },
 {
 "run_id": 1579741427000,
@@ -1837,7 +2059,10 @@
 "average_speed": 2.572,
 "elevation_gain": 676.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.38,
+"weight_date": "2020-01-23",
+"fat": 19.4
 },
 {
 "run_id": 1579913050691,
@@ -1853,7 +2078,10 @@
 "average_speed": 2.6171188834415426,
 "elevation_gain": 0.0,
 "source": "gpx.py -- https://github.com/tkrajina/gpxpy",
-"streak": 1
+"streak": 1,
+"weight": 77.38,
+"weight_date": "2020-01-23",
+"fat": 19.4
 },
 {
 "run_id": 1580197267940,
@@ -1901,7 +2129,10 @@
 "average_speed": 2.8062159942541376,
 "elevation_gain": 0.0,
 "source": "gpx.py -- https://github.com/tkrajina/gpxpy",
-"streak": 1
+"streak": 1,
+"weight": 76.76,
+"weight_date": "2020-02-03",
+"fat": 19.1
 },
 {
 "run_id": 1580612412000,
@@ -1917,7 +2148,10 @@
 "average_speed": 1.1704960577838277,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.76,
+"weight_date": "2020-02-03",
+"fat": 19.1
 },
 {
 "run_id": 1580628896000,
@@ -1933,7 +2167,10 @@
 "average_speed": 2.922,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.76,
+"weight_date": "2020-02-03",
+"fat": 19.1
 },
 {
 "run_id": 1580817002000,
@@ -1949,7 +2186,10 @@
 "average_speed": 3.33889816360601,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.48,
+"weight_date": "2020-02-04",
+"fat": 19.0
 },
 {
 "run_id": 1580975170000,
@@ -1965,7 +2205,10 @@
 "average_speed": 3.1997774067890927,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.8,
+"weight_date": "2020-02-06",
+"fat": 19.1
 },
 {
 "run_id": 1581160206000,
@@ -1981,7 +2224,10 @@
 "average_speed": 3.2239977572189513,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.05,
+"weight_date": "2020-02-07",
+"fat": 18.3
 },
 {
 "run_id": 1581337660000,
@@ -1997,7 +2243,10 @@
 "average_speed": 2.961111111111111,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.03,
+"weight_date": "2020-02-10",
+"fat": 18.3
 },
 {
 "run_id": 1581491242000,
@@ -2013,7 +2262,10 @@
 "average_speed": 3.0950170225936238,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.41,
+"weight_date": "2020-02-12",
+"fat": null
 },
 {
 "run_id": 1581683651000,
@@ -2029,7 +2281,10 @@
 "average_speed": 3.1080000400543217,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.72,
+"weight_date": "2020-02-14",
+"fat": null
 },
 {
 "run_id": 1581843695000,
@@ -2045,7 +2300,10 @@
 "average_speed": 3.381999969482422,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.85,
+"weight_date": "2020-02-16",
+"fat": 17.8
 },
 {
 "run_id": 1582120383000,
@@ -2061,7 +2319,10 @@
 "average_speed": 3.638000011444092,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.56,
+"weight_date": "2020-02-19",
+"fat": 18.1
 },
 {
 "run_id": 1582358376000,
@@ -2077,7 +2338,10 @@
 "average_speed": 2.8780000209808345,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.23,
+"weight_date": "2020-02-22",
+"fat": 18.4
 },
 {
 "run_id": 1582542790000,
@@ -2093,7 +2357,10 @@
 "average_speed": 3.164999961853028,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.76,
+"weight_date": "2020-02-24",
+"fat": 18.2
 },
 {
 "run_id": 1582896624000,
@@ -2109,7 +2376,10 @@
 "average_speed": 2.8980000019073486,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.64,
+"weight_date": "2020-02-28",
+"fat": 17.7
 },
 {
 "run_id": 1583054446000,
@@ -2125,7 +2395,10 @@
 "average_speed": 2.5950000286102295,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.92,
+"weight_date": "2020-03-01",
+"fat": 17.4
 },
 {
 "run_id": 1583239484000,
@@ -2141,7 +2414,10 @@
 "average_speed": 3.0857848179386957,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.37,
+"weight_date": "2020-03-03",
+"fat": 18.7
 },
 {
 "run_id": 1583498894000,
@@ -2157,7 +2433,10 @@
 "average_speed": 3.1480000019073486,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.32,
+"weight_date": "2020-03-06",
+"fat": 18.0
 },
 {
 "run_id": 1583842390000,
@@ -2173,7 +2452,10 @@
 "average_speed": 2.986999988555908,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.58,
+"weight_date": "2020-03-10",
+"fat": 17.7
 },
 {
 "run_id": 1584262548000,
@@ -2189,7 +2471,10 @@
 "average_speed": 2.872999906539917,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 71.44,
+"weight_date": "2020-03-15",
+"fat": 16.7
 },
 {
 "run_id": 1585226800000,
@@ -2205,7 +2490,10 @@
 "average_speed": 2.8210000991821285,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.32,
+"weight_date": "2020-03-26",
+"fat": 17.1
 },
 {
 "run_id": 1587459223000,
@@ -2221,7 +2509,10 @@
 "average_speed": 2.7179999351501465,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.24,
+"weight_date": "2020-04-21",
+"fat": 17.0
 },
 {
 "run_id": 1587461647000,
@@ -2237,7 +2528,10 @@
 "average_speed": 1.3386021339857896,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.24,
+"weight_date": "2020-04-21",
+"fat": 17.0
 },
 {
 "run_id": 1587544952000,
@@ -2253,7 +2547,10 @@
 "average_speed": 1.538,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 72.24,
+"weight_date": "2020-04-21",
+"fat": 17.0
 },
 {
 "run_id": 1587545386000,
@@ -2269,7 +2566,10 @@
 "average_speed": 2.769,
 "elevation_gain": 16.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 72.24,
+"weight_date": "2020-04-21",
+"fat": 17.0
 },
 {
 "run_id": 1587885474000,
@@ -2285,7 +2585,10 @@
 "average_speed": 2.504,
 "elevation_gain": 23.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.21,
+"weight_date": "2020-04-26",
+"fat": 17.0
 },
 {
 "run_id": 1588059584000,
@@ -2301,7 +2604,10 @@
 "average_speed": 3.0290791599353795,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.8,
+"weight_date": "2020-04-27",
+"fat": 17.7
 },
 {
 "run_id": 1588325852000,
@@ -2317,7 +2623,10 @@
 "average_speed": 2.8589999675750732,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.72,
+"weight_date": "2020-04-30",
+"fat": 17.3
 },
 {
 "run_id": 1588845098000,
@@ -2333,7 +2642,10 @@
 "average_speed": 3.0303030303030303,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.22,
+"weight_date": "2020-05-07",
+"fat": 17.6
 },
 {
 "run_id": 1589875868000,
@@ -2349,7 +2661,10 @@
 "average_speed": 2.78473962684489,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.7,
+"weight_date": "2020-05-19",
+"fat": 18.2
 },
 {
 "run_id": 1590143657000,
@@ -2365,7 +2680,10 @@
 "average_speed": 3.048,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.72,
+"weight_date": "2020-05-23",
+"fat": 17.3
 },
 {
 "run_id": 1590326285000,
@@ -2381,7 +2699,10 @@
 "average_speed": 2.998500749625187,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.72,
+"weight_date": "2020-05-23",
+"fat": 17.3
 },
 {
 "run_id": 1590366940000,
@@ -2397,7 +2718,10 @@
 "average_speed": 1.561,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 72.72,
+"weight_date": "2020-05-23",
+"fat": 17.3
 },
 {
 "run_id": 1590401903000,
@@ -2413,7 +2737,10 @@
 "average_speed": 3.47,
 "elevation_gain": 15.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 72.72,
+"weight_date": "2020-05-23",
+"fat": 17.3
 },
 {
 "run_id": 1590453248000,
@@ -2429,7 +2756,10 @@
 "average_speed": 1.558,
 "elevation_gain": 4.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 74.0,
+"weight_date": "2020-05-27",
+"fat": 17.9
 },
 {
 "run_id": 1590539881000,
@@ -2445,7 +2775,10 @@
 "average_speed": 1.637,
 "elevation_gain": 64.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 74.0,
+"weight_date": "2020-05-27",
+"fat": 17.9
 },
 {
 "run_id": 1590574669000,
@@ -2461,7 +2794,10 @@
 "average_speed": 3.537,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 74.0,
+"weight_date": "2020-05-27",
+"fat": 17.9
 },
 {
 "run_id": 1590582217000,
@@ -2477,7 +2813,10 @@
 "average_speed": 2.479,
 "elevation_gain": 26.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 74.0,
+"weight_date": "2020-05-27",
+"fat": 17.9
 },
 {
 "run_id": 1590626376000,
@@ -2493,7 +2832,10 @@
 "average_speed": 3.518,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 74.0,
+"weight_date": "2020-05-27",
+"fat": 17.9
 },
 {
 "run_id": 1590661446000,
@@ -2509,7 +2851,10 @@
 "average_speed": 3.533,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 74.0,
+"weight_date": "2020-05-27",
+"fat": 17.9
 },
 {
 "run_id": 1590712819000,
@@ -2525,7 +2870,10 @@
 "average_speed": 3.656,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 6
+"streak": 6,
+"weight": 73.04,
+"weight_date": "2020-05-30",
+"fat": 17.5
 },
 {
 "run_id": 1590747743000,
@@ -2541,7 +2889,10 @@
 "average_speed": 3.615,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 6
+"streak": 6,
+"weight": 73.04,
+"weight_date": "2020-05-30",
+"fat": 17.5
 },
 {
 "run_id": 1590830932000,
@@ -2557,7 +2908,10 @@
 "average_speed": 3.0627871362940273,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 7
+"streak": 7,
+"weight": 73.04,
+"weight_date": "2020-05-30",
+"fat": 17.5
 },
 {
 "run_id": 1591008777000,
@@ -2573,7 +2927,10 @@
 "average_speed": 3.043,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591015807000,
@@ -2589,7 +2946,10 @@
 "average_speed": 2.566,
 "elevation_gain": 15.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591058147000,
@@ -2605,7 +2965,10 @@
 "average_speed": 3.5,
 "elevation_gain": 0.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591095782000,
@@ -2621,7 +2984,10 @@
 "average_speed": 2.993652173913043,
 "elevation_gain": 0.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591100422000,
@@ -2637,7 +3003,10 @@
 "average_speed": 3.321000099182129,
 "elevation_gain": 1.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591144981000,
@@ -2653,7 +3022,10 @@
 "average_speed": 3.735,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591180747000,
@@ -2669,7 +3041,10 @@
 "average_speed": 3.069,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 73.44,
+"weight_date": "2020-05-31",
+"fat": 17.7
 },
 {
 "run_id": 1591231224000,
@@ -2685,7 +3060,10 @@
 "average_speed": 1.61,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591266688000,
@@ -2701,7 +3079,10 @@
 "average_speed": 1.76,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591317812000,
@@ -2717,7 +3098,10 @@
 "average_speed": 1.306,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591317992000,
@@ -2733,7 +3117,10 @@
 "average_speed": 3.608,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591351431000,
@@ -2749,7 +3136,10 @@
 "average_speed": 3.786,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591576780000,
@@ -2765,7 +3155,10 @@
 "average_speed": 1.441,
 "elevation_gain": 16.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591611639000,
@@ -2781,7 +3174,10 @@
 "average_speed": 1.212,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591663156000,
@@ -2797,7 +3193,10 @@
 "average_speed": 3.293,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591698572000,
@@ -2813,7 +3212,10 @@
 "average_speed": 3.016,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591749742000,
@@ -2829,7 +3231,10 @@
 "average_speed": 3.323,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591784883000,
@@ -2845,7 +3250,10 @@
 "average_speed": 2.765,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 73.08,
+"weight_date": "2020-06-07",
+"fat": 17.5
 },
 {
 "run_id": 1591835963000,
@@ -2861,7 +3269,10 @@
 "average_speed": 1.553,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1591872086000,
@@ -2877,7 +3288,10 @@
 "average_speed": 3.327,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1591922444000,
@@ -2893,7 +3307,10 @@
 "average_speed": 1.741,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1591957780000,
@@ -2909,7 +3326,10 @@
 "average_speed": 1.356,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1592038819000,
@@ -2925,7 +3345,10 @@
 "average_speed": 0.974,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 6
+"streak": 6,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1592181584000,
@@ -2941,7 +3364,10 @@
 "average_speed": 1.687,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1592217414000,
@@ -2957,7 +3383,10 @@
 "average_speed": 2.578,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1592267973000,
@@ -2973,7 +3402,10 @@
 "average_speed": 1.698,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1592305622000,
@@ -2989,7 +3421,10 @@
 "average_speed": 2.479,
 "elevation_gain": 39.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.4,
+"weight_date": "2020-06-14",
+"fat": 17.7
 },
 {
 "run_id": 1592441078000,
@@ -3005,7 +3440,10 @@
 "average_speed": 1.556,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592477278000,
@@ -3021,7 +3459,10 @@
 "average_speed": 2.792,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592527168000,
@@ -3037,7 +3478,10 @@
 "average_speed": 1.433,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592561855000,
@@ -3053,7 +3497,10 @@
 "average_speed": 3.243,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592786420000,
@@ -3069,7 +3516,10 @@
 "average_speed": 1.482,
 "elevation_gain": 80.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592821437000,
@@ -3085,7 +3535,10 @@
 "average_speed": 3.437,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592872774000,
@@ -3101,7 +3554,10 @@
 "average_speed": 1.437,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1592907701000,
@@ -3117,7 +3573,10 @@
 "average_speed": 3.289,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.77,
+"weight_date": "2020-06-21",
+"fat": 17.8
 },
 {
 "run_id": 1593075774000,
@@ -3133,7 +3592,10 @@
 "average_speed": 0.7267343923613866,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2020-06-28",
+"fat": 18.2
 },
 {
 "run_id": 1593341616000,
@@ -3149,7 +3611,10 @@
 "average_speed": 2.477,
 "elevation_gain": 89.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2020-06-28",
+"fat": 18.2
 },
 {
 "run_id": 1593391265000,
@@ -3165,7 +3630,10 @@
 "average_speed": 1.54,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 74.51,
+"weight_date": "2020-06-28",
+"fat": 18.2
 },
 {
 "run_id": 1593425637000,
@@ -3181,7 +3649,10 @@
 "average_speed": 1.452,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 74.51,
+"weight_date": "2020-06-28",
+"fat": 18.2
 },
 {
 "run_id": 1593564349000,
@@ -3197,7 +3668,10 @@
 "average_speed": 3.374,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2020-06-28",
+"fat": 18.2
 },
 {
 "run_id": 1593598486000,
@@ -3213,7 +3687,10 @@
 "average_speed": 2.529,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2020-06-28",
+"fat": 18.2
 },
 {
 "run_id": 1593685086000,
@@ -3229,7 +3706,10 @@
 "average_speed": 2.535,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 74.24,
+"weight_date": "2020-07-04",
+"fat": 18.0
 },
 {
 "run_id": 1593736687000,
@@ -3245,7 +3725,10 @@
 "average_speed": 1.5007331562338955,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 74.24,
+"weight_date": "2020-07-04",
+"fat": 18.0
 },
 {
 "run_id": 1594032072000,
@@ -3261,7 +3744,10 @@
 "average_speed": 2.764,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.24,
+"weight_date": "2020-07-04",
+"fat": 18.0
 },
 {
 "run_id": 1594082500000,
@@ -3277,7 +3763,10 @@
 "average_speed": 1.538,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 74.24,
+"weight_date": "2020-07-04",
+"fat": 18.0
 },
 {
 "run_id": 1594203474000,
@@ -3293,7 +3782,10 @@
 "average_speed": 3.212,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 74.59,
+"weight_date": "2020-07-10",
+"fat": 18.2
 },
 {
 "run_id": 1594255494000,
@@ -3309,7 +3801,10 @@
 "average_speed": 1.543,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 74.59,
+"weight_date": "2020-07-10",
+"fat": 18.2
 },
 {
 "run_id": 1594290779000,
@@ -3325,7 +3820,10 @@
 "average_speed": 2.693,
 "elevation_gain": 32.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 74.59,
+"weight_date": "2020-07-10",
+"fat": 18.2
 },
 {
 "run_id": 1594342037000,
@@ -3341,7 +3839,10 @@
 "average_speed": 2.095,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 74.59,
+"weight_date": "2020-07-10",
+"fat": 18.2
 },
 {
 "run_id": 1594636500000,
@@ -3357,7 +3858,10 @@
 "average_speed": 3.532,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.19,
+"weight_date": "2020-07-12",
+"fat": 18.5
 },
 {
 "run_id": 1594646778000,
@@ -3373,7 +3877,10 @@
 "average_speed": 2.199,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.19,
+"weight_date": "2020-07-12",
+"fat": 18.5
 },
 {
 "run_id": 1594687209000,
@@ -3389,7 +3896,10 @@
 "average_speed": 1.488,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 75.19,
+"weight_date": "2020-07-12",
+"fat": 18.5
 },
 {
 "run_id": 1594721828000,
@@ -3405,7 +3915,10 @@
 "average_speed": 3.329,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 75.19,
+"weight_date": "2020-07-12",
+"fat": 18.5
 },
 {
 "run_id": 1594773630000,
@@ -3421,7 +3934,10 @@
 "average_speed": 1.589,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 75.19,
+"weight_date": "2020-07-12",
+"fat": 18.5
 },
 {
 "run_id": 1594808309000,
@@ -3437,7 +3953,10 @@
 "average_speed": 0.324,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 75.19,
+"weight_date": "2020-07-12",
+"fat": 18.5
 },
 {
 "run_id": 1594860346000,
@@ -3453,7 +3972,10 @@
 "average_speed": 1.095,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 75.06,
+"weight_date": "2020-07-18",
+"fat": 18.4
 },
 {
 "run_id": 1594860525000,
@@ -3469,7 +3991,10 @@
 "average_speed": 3.671,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 75.06,
+"weight_date": "2020-07-18",
+"fat": 18.4
 },
 {
 "run_id": 1594894418000,
@@ -3485,7 +4010,10 @@
 "average_speed": 3.831,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 75.06,
+"weight_date": "2020-07-18",
+"fat": 18.4
 },
 {
 "run_id": 1594946111000,
@@ -3501,7 +4029,10 @@
 "average_speed": 1.331,
 "elevation_gain": 4.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 75.06,
+"weight_date": "2020-07-18",
+"fat": 18.4
 },
 {
 "run_id": 1594962688000,
@@ -3517,7 +4048,10 @@
 "average_speed": 2.742,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 75.06,
+"weight_date": "2020-07-18",
+"fat": 18.4
 },
 {
 "run_id": 1594980043000,
@@ -3533,7 +4067,10 @@
 "average_speed": 3.737,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 75.06,
+"weight_date": "2020-07-18",
+"fat": 18.4
 },
 {
 "run_id": 1595564556000,
@@ -3565,7 +4102,10 @@
 "average_speed": 2.815315315315315,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.31,
+"weight_date": "2020-08-01",
+"fat": 18.1
 },
 {
 "run_id": 1596521151000,
@@ -3581,7 +4121,10 @@
 "average_speed": 1.278,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.29,
+"weight_date": "2020-08-03",
+"fat": 18.5
 },
 {
 "run_id": 1596608365000,
@@ -3597,7 +4140,10 @@
 "average_speed": 1.34,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 75.29,
+"weight_date": "2020-08-03",
+"fat": 18.5
 },
 {
 "run_id": 1598935017000,
@@ -3661,7 +4207,10 @@
 "average_speed": 1.556,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.44,
+"weight_date": "2020-09-07",
+"fat": 19.5
 },
 {
 "run_id": 1599178009000,
@@ -3677,7 +4226,10 @@
 "average_speed": 1.555999994277954,
 "elevation_gain": 0.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 77.44,
+"weight_date": "2020-09-07",
+"fat": 19.5
 },
 {
 "run_id": 1599402283000,
@@ -3693,7 +4245,10 @@
 "average_speed": 1.35,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.44,
+"weight_date": "2020-09-07",
+"fat": 19.5
 },
 {
 "run_id": 1600174005000,
@@ -3709,7 +4264,10 @@
 "average_speed": 2.537,
 "elevation_gain": 24.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.04,
+"weight_date": "2020-09-16",
+"fat": 18.9
 },
 {
 "run_id": 1600780801000,
@@ -3725,7 +4283,10 @@
 "average_speed": 2.47,
 "elevation_gain": 13.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.34,
+"weight_date": "2020-09-24",
+"fat": 18.5
 },
 {
 "run_id": 1601212800000,
@@ -3741,7 +4302,10 @@
 "average_speed": 2.216,
 "elevation_gain": 7.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.9,
+"weight_date": "2020-09-27",
+"fat": 19.0
 },
 {
 "run_id": 1601384266000,
@@ -3757,7 +4321,10 @@
 "average_speed": 2.661,
 "elevation_gain": 30.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.37,
+"weight_date": "2020-09-29",
+"fat": 18.8
 },
 {
 "run_id": 1601456212000,
@@ -3773,7 +4340,10 @@
 "average_speed": 2.716,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 75.2,
+"weight_date": "2020-09-30",
+"fat": 18.7
 },
 {
 "run_id": 1602237526000,
@@ -3789,7 +4359,10 @@
 "average_speed": 2.663,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.13,
+"weight_date": "2020-10-09",
+"fat": 20.3
 },
 {
 "run_id": 1602505180000,
@@ -3805,7 +4378,10 @@
 "average_speed": 2.876,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.68,
+"weight_date": "2020-10-11",
+"fat": 20.5
 },
 {
 "run_id": 1602767629000,
@@ -3821,7 +4397,10 @@
 "average_speed": 2.834,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.28,
+"weight_date": "2020-10-16",
+"fat": 18.5
 },
 {
 "run_id": 1603021626000,
@@ -3837,7 +4416,10 @@
 "average_speed": 2.673,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.24,
+"weight_date": "2020-10-18",
+"fat": 19.0
 },
 {
 "run_id": 1603102444000,
@@ -3853,7 +4435,10 @@
 "average_speed": 3.0,
 "elevation_gain": 14.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 75.72,
+"weight_date": "2020-10-19",
+"fat": 18.9
 },
 {
 "run_id": 1603196576000,
@@ -3869,7 +4454,10 @@
 "average_speed": 2.898,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 76.23,
+"weight_date": "2020-10-20",
+"fat": 18.9
 },
 {
 "run_id": 1603275062000,
@@ -3885,7 +4473,10 @@
 "average_speed": 3.762,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 75.69,
+"weight_date": "2020-10-21",
+"fat": 18.7
 },
 {
 "run_id": 1603451041000,
@@ -3901,7 +4492,10 @@
 "average_speed": 2.865,
 "elevation_gain": 14.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.94,
+"weight_date": "2020-10-23",
+"fat": 18.8
 },
 {
 "run_id": 1603538501000,
@@ -3917,7 +4511,10 @@
 "average_speed": 2.975,
 "elevation_gain": 16.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.52,
+"weight_date": "2020-10-24",
+"fat": 19.1
 },
 {
 "run_id": 1603717152000,
@@ -3933,7 +4530,10 @@
 "average_speed": 3.063,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.32,
+"weight_date": "2020-10-26",
+"fat": 19.0
 },
 {
 "run_id": 1603968579000,
@@ -3949,7 +4549,10 @@
 "average_speed": 2.825,
 "elevation_gain": 19.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.32,
+"weight_date": "2020-10-29",
+"fat": 19.0
 },
 {
 "run_id": 1604409328000,
@@ -3965,7 +4568,10 @@
 "average_speed": 2.898,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.71,
+"weight_date": "2020-11-02",
+"fat": 19.2
 },
 {
 "run_id": 1604579239000,
@@ -3981,7 +4587,10 @@
 "average_speed": 2.611,
 "elevation_gain": 33.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.71,
+"weight_date": "2020-11-02",
+"fat": 19.2
 },
 {
 "run_id": 1605011195000,
@@ -3997,7 +4606,10 @@
 "average_speed": 3.015,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.27,
+"weight_date": "2020-11-11",
+"fat": 19.0
 },
 {
 "run_id": 1605099757000,
@@ -4013,7 +4625,10 @@
 "average_speed": 2.941,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.27,
+"weight_date": "2020-11-11",
+"fat": 19.0
 },
 {
 "run_id": 1605188129000,
@@ -4029,7 +4644,10 @@
 "average_speed": 2.693,
 "elevation_gain": 4.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 76.27,
+"weight_date": "2020-11-11",
+"fat": 19.0
 },
 {
 "run_id": 1605263317000,
@@ -4045,7 +4663,10 @@
 "average_speed": 3.696,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 75.83,
+"weight_date": "2020-11-13",
+"fat": 20.2
 },
 {
 "run_id": 1605354995000,
@@ -4061,7 +4682,10 @@
 "average_speed": 2.658,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 75.69,
+"weight_date": "2020-11-14",
+"fat": 18.9
 },
 {
 "run_id": 1605522700000,
@@ -4077,7 +4701,10 @@
 "average_speed": 3.883,
 "elevation_gain": 30.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.9,
+"weight_date": "2020-11-15",
+"fat": 19.4
 },
 {
 "run_id": 1605704976000,
@@ -4093,7 +4720,10 @@
 "average_speed": 3.343,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.9,
+"weight_date": "2020-11-15",
+"fat": 19.4
 },
 {
 "run_id": 1606310911000,
@@ -4109,7 +4739,10 @@
 "average_speed": 2.832,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.34,
+"weight_date": "2020-11-28",
+"fat": 19.5
 },
 {
 "run_id": 1606477235000,
@@ -4125,7 +4758,10 @@
 "average_speed": 2.983,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.34,
+"weight_date": "2020-11-28",
+"fat": 19.5
 },
 {
 "run_id": 1606731887000,
@@ -4141,7 +4777,10 @@
 "average_speed": 3.862,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.76,
+"weight_date": "2020-11-29",
+"fat": 18.7
 },
 {
 "run_id": 1606904021000,
@@ -4157,7 +4796,10 @@
 "average_speed": 4.187,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.42,
+"weight_date": "2020-12-02",
+"fat": 19.0
 },
 {
 "run_id": 1607426625000,
@@ -4173,7 +4815,10 @@
 "average_speed": 2.797,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.53,
+"weight_date": "2020-12-07",
+"fat": 19.1
 },
 {
 "run_id": 1610793378034,
@@ -4189,7 +4834,10 @@
 "average_speed": 0.7137982621108648,
 "elevation_gain": 0.0,
 "source": "gpx.py -- https://github.com/tkrajina/gpxpy",
-"streak": 1
+"streak": 1,
+"weight": 77.96,
+"weight_date": "2021-01-13",
+"fat": null
 },
 {
 "run_id": 1613651277000,
@@ -4205,7 +4853,10 @@
 "average_speed": 2.605,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.6,
+"weight_date": "2021-02-18",
+"fat": 18.6
 },
 {
 "run_id": 1613653783000,
@@ -4221,7 +4872,10 @@
 "average_speed": 2.221,
 "elevation_gain": 13.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.6,
+"weight_date": "2021-02-18",
+"fat": 18.6
 },
 {
 "run_id": 1613825232000,
@@ -4237,7 +4891,10 @@
 "average_speed": 2.567,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.6,
+"weight_date": "2021-02-18",
+"fat": 18.6
 },
 {
 "run_id": 1613828733000,
@@ -4253,7 +4910,10 @@
 "average_speed": 2.549,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.6,
+"weight_date": "2021-02-18",
+"fat": 18.6
 },
 {
 "run_id": 1613900700000,
@@ -4269,7 +4929,10 @@
 "average_speed": 4.075,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 78.6,
+"weight_date": "2021-02-18",
+"fat": 18.6
 },
 {
 "run_id": 1614252080000,
@@ -4301,7 +4964,10 @@
 "average_speed": 2.802,
 "elevation_gain": 7.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.67,
+"weight_date": "2021-03-06",
+"fat": 19.4
 },
 {
 "run_id": 1618317642000,
@@ -4317,7 +4983,10 @@
 "average_speed": 2.419,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.46,
+"weight_date": "2021-04-13",
+"fat": 19.9
 },
 {
 "run_id": 1618483833000,
@@ -4333,7 +5002,10 @@
 "average_speed": 2.718,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.0,
+"weight_date": "2021-04-16",
+"fat": 19.9
 },
 {
 "run_id": 1618626577000,
@@ -4349,7 +5021,10 @@
 "average_speed": 2.294,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.0,
+"weight_date": "2021-04-16",
+"fat": 19.9
 },
 {
 "run_id": 1618922634000,
@@ -4365,7 +5040,10 @@
 "average_speed": 2.555,
 "elevation_gain": 19.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.13,
+"weight_date": "2021-04-20",
+"fat": 19.6
 },
 {
 "run_id": 1619264039000,
@@ -4381,7 +5059,10 @@
 "average_speed": 2.461,
 "elevation_gain": 19.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.14,
+"weight_date": "2021-04-24",
+"fat": 21.2
 },
 {
 "run_id": 1619439950000,
@@ -4397,7 +5078,10 @@
 "average_speed": 2.502,
 "elevation_gain": 18.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.67,
+"weight_date": "2021-04-25",
+"fat": 21.0
 },
 {
 "run_id": 1619701891000,
@@ -4413,7 +5097,10 @@
 "average_speed": 2.796,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.28,
+"weight_date": "2021-04-29",
+"fat": 20.8
 },
 {
 "run_id": 1620045780000,
@@ -4429,7 +5116,10 @@
 "average_speed": 0.194444446,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.64,
+"weight_date": "2021-05-03",
+"fat": 20.6
 },
 {
 "run_id": 1620045817000,
@@ -4445,7 +5135,10 @@
 "average_speed": 0.2039,
 "elevation_gain": 31.0,
 "source": null,
-"streak": 1
+"streak": 1,
+"weight": 79.64,
+"weight_date": "2021-05-03",
+"fat": 20.6
 },
 {
 "run_id": 1620648999000,
@@ -4461,7 +5154,10 @@
 "average_speed": 3.272,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.71,
+"weight_date": "2021-05-09",
+"fat": 21.1
 },
 {
 "run_id": 1620650320000,
@@ -4477,7 +5173,10 @@
 "average_speed": 2.561,
 "elevation_gain": 146.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.71,
+"weight_date": "2021-05-09",
+"fat": 21.1
 },
 {
 "run_id": 1620652617000,
@@ -4493,7 +5192,10 @@
 "average_speed": 2.705,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.71,
+"weight_date": "2021-05-09",
+"fat": 21.1
 },
 {
 "run_id": 1620738442000,
@@ -4509,7 +5211,10 @@
 "average_speed": 2.381,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 80.71,
+"weight_date": "2021-05-09",
+"fat": 21.1
 },
 {
 "run_id": 1620908087000,
@@ -4525,7 +5230,10 @@
 "average_speed": 2.646,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.33,
+"weight_date": "2021-05-14",
+"fat": 20.9
 },
 {
 "run_id": 1621254419000,
@@ -4541,7 +5249,10 @@
 "average_speed": 2.429,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.33,
+"weight_date": "2021-05-18",
+"fat": 20.4
 },
 {
 "run_id": 1622120647000,
@@ -4557,7 +5268,10 @@
 "average_speed": 2.387,
 "elevation_gain": 24.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.83,
+"weight_date": "2021-05-28",
+"fat": 21.1
 },
 {
 "run_id": 1622374277000,
@@ -4573,7 +5287,10 @@
 "average_speed": 2.246,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.83,
+"weight_date": "2021-05-28",
+"fat": 21.1
 },
 {
 "run_id": 1622377926000,
@@ -4589,7 +5306,10 @@
 "average_speed": 2.63,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.83,
+"weight_date": "2021-05-28",
+"fat": 21.1
 },
 {
 "run_id": 1622813201000,
@@ -4605,7 +5325,10 @@
 "average_speed": 2.358,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.97,
+"weight_date": "2021-06-04",
+"fat": 21.2
 },
 {
 "run_id": 1623242418000,
@@ -4621,7 +5344,10 @@
 "average_speed": 2.358,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.42,
+"weight_date": "2021-06-06",
+"fat": 21.4
 },
 {
 "run_id": 1623406912000,
@@ -4637,7 +5363,10 @@
 "average_speed": 2.364,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.14,
+"weight_date": "2021-06-14",
+"fat": 21.3
 },
 {
 "run_id": 1623409876000,
@@ -4653,7 +5382,10 @@
 "average_speed": 2.998,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.14,
+"weight_date": "2021-06-14",
+"fat": 21.3
 },
 {
 "run_id": 1624969900000,
@@ -4797,7 +5529,10 @@
 "average_speed": 2.3310000896453857,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.1,
+"weight_date": "2021-08-14",
+"fat": 21.7
 },
 {
 "run_id": 1628936880000,
@@ -4813,7 +5548,10 @@
 "average_speed": 1.99037469920935,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.1,
+"weight_date": "2021-08-14",
+"fat": 21.7
 },
 {
 "run_id": 1628936925000,
@@ -4829,7 +5567,10 @@
 "average_speed": 2.071,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.1,
+"weight_date": "2021-08-14",
+"fat": 21.7
 },
 {
 "run_id": 1629118965000,
@@ -4845,7 +5586,10 @@
 "average_speed": 1.1100000143051147,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.76,
+"weight_date": "2021-08-15",
+"fat": 21.6
 },
 {
 "run_id": 1629119340000,
@@ -4861,7 +5605,10 @@
 "average_speed": 1.9385342789598108,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.76,
+"weight_date": "2021-08-15",
+"fat": 21.6
 },
 {
 "run_id": 1629119357000,
@@ -4877,7 +5624,10 @@
 "average_speed": 2.19,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.76,
+"weight_date": "2021-08-15",
+"fat": 21.6
 },
 {
 "run_id": 1629205500000,
@@ -4893,7 +5643,10 @@
 "average_speed": 2.18209179834462,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.76,
+"weight_date": "2021-08-15",
+"fat": 21.6
 },
 {
 "run_id": 1629205541000,
@@ -4909,7 +5662,10 @@
 "average_speed": 2.262,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.76,
+"weight_date": "2021-08-15",
+"fat": 21.6
 },
 {
 "run_id": 1629379380000,
@@ -4925,7 +5681,10 @@
 "average_speed": 2.138728323699422,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.92,
+"weight_date": "2021-08-20",
+"fat": 21.6
 },
 {
 "run_id": 1629379411000,
@@ -4941,7 +5700,10 @@
 "average_speed": 2.184,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.92,
+"weight_date": "2021-08-20",
+"fat": 21.6
 },
 {
 "run_id": 1629597060000,
@@ -4957,7 +5719,10 @@
 "average_speed": 2.3116089613034623,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.92,
+"weight_date": "2021-08-20",
+"fat": 21.6
 },
 {
 "run_id": 1629597088000,
@@ -4973,7 +5738,10 @@
 "average_speed": 2.327,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.92,
+"weight_date": "2021-08-20",
+"fat": 21.6
 },
 {
 "run_id": 1629981780000,
@@ -4989,7 +5757,10 @@
 "average_speed": 2.180673824509441,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.5,
+"weight_date": "2021-08-27",
+"fat": 21.0
 },
 {
 "run_id": 1629981838000,
@@ -5005,7 +5776,10 @@
 "average_speed": 2.23,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.5,
+"weight_date": "2021-08-27",
+"fat": 21.0
 },
 {
 "run_id": 1630116120000,
@@ -5021,7 +5795,10 @@
 "average_speed": 2.129151291512915,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.15,
+"weight_date": "2021-08-28",
+"fat": 21.3
 },
 {
 "run_id": 1630116121000,
@@ -5037,7 +5814,10 @@
 "average_speed": 2.152,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.15,
+"weight_date": "2021-08-28",
+"fat": 21.3
 },
 {
 "run_id": 1630224600000,
@@ -5053,7 +5833,10 @@
 "average_speed": 2.329123328380386,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.15,
+"weight_date": "2021-08-28",
+"fat": 21.3
 },
 {
 "run_id": 1630224659000,
@@ -5069,7 +5852,10 @@
 "average_speed": 2.373,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.15,
+"weight_date": "2021-08-28",
+"fat": 21.3
 },
 {
 "run_id": 1630413480000,
@@ -5085,7 +5871,10 @@
 "average_speed": 2.1202822951825713,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.12,
+"weight_date": "2021-08-30",
+"fat": 21.3
 },
 {
 "run_id": 1630413530000,
@@ -5101,7 +5890,10 @@
 "average_speed": 2.142,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.12,
+"weight_date": "2021-08-30",
+"fat": 21.3
 },
 {
 "run_id": 1630754640000,
@@ -5117,7 +5909,10 @@
 "average_speed": 2.3640552995391704,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.24,
+"weight_date": "2021-09-04",
+"fat": 21.3
 },
 {
 "run_id": 1630754698000,
@@ -5133,7 +5928,10 @@
 "average_speed": 2.359,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.24,
+"weight_date": "2021-09-04",
+"fat": 21.3
 },
 {
 "run_id": 1631019420000,
@@ -5149,7 +5947,10 @@
 "average_speed": 2.1503082029397818,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.72,
+"weight_date": "2021-09-07",
+"fat": 21.1
 },
 {
 "run_id": 1631019430000,
@@ -5165,7 +5966,10 @@
 "average_speed": 2.149,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.72,
+"weight_date": "2021-09-07",
+"fat": 21.1
 },
 {
 "run_id": 1631192400000,
@@ -5181,7 +5985,10 @@
 "average_speed": 2.302139037433155,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.72,
+"weight_date": "2021-09-09",
+"fat": 21.1
 },
 {
 "run_id": 1631192417000,
@@ -5197,7 +6004,10 @@
 "average_speed": 2.343,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.72,
+"weight_date": "2021-09-09",
+"fat": 21.1
 },
 {
 "run_id": 1631351940000,
@@ -5213,7 +6023,10 @@
 "average_speed": 2.4841521394611723,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.76,
+"weight_date": "2021-09-11",
+"fat": 21.1
 },
 {
 "run_id": 1631351943000,
@@ -5229,7 +6042,10 @@
 "average_speed": 2.575,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.76,
+"weight_date": "2021-09-11",
+"fat": 21.1
 },
 {
 "run_id": 1631625780000,
@@ -5245,7 +6061,10 @@
 "average_speed": 2.375820056232427,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.84,
+"weight_date": "2021-09-14",
+"fat": 20.7
 },
 {
 "run_id": 1631625820000,
@@ -5261,7 +6080,10 @@
 "average_speed": 2.369,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.84,
+"weight_date": "2021-09-14",
+"fat": 20.7
 },
 {
 "run_id": 1631797500000,
@@ -5277,7 +6099,10 @@
 "average_speed": 2.465524446301713,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.24,
+"weight_date": "2021-09-16",
+"fat": 20.9
 },
 {
 "run_id": 1631797513000,
@@ -5293,7 +6118,10 @@
 "average_speed": 2.499,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.24,
+"weight_date": "2021-09-16",
+"fat": 20.9
 },
 {
 "run_id": 1632128091000,
@@ -5309,7 +6137,10 @@
 "average_speed": 2.593,
 "elevation_gain": 7.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.89,
+"weight_date": "2021-09-19",
+"fat": 21.2
 },
 {
 "run_id": 1632314160000,
@@ -5325,7 +6156,10 @@
 "average_speed": 2.7552140504939624,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.71,
+"weight_date": "2021-09-22",
+"fat": 21.1
 },
 {
 "run_id": 1632314205000,
@@ -5341,7 +6175,10 @@
 "average_speed": 2.749,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.71,
+"weight_date": "2021-09-22",
+"fat": 21.1
 },
 {
 "run_id": 1632537000000,
@@ -5357,7 +6194,10 @@
 "average_speed": 2.4420590387899486,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.48,
+"weight_date": "2021-09-25",
+"fat": 20.5
 },
 {
 "run_id": 1632537056000,
@@ -5373,7 +6213,10 @@
 "average_speed": 2.447,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.48,
+"weight_date": "2021-09-25",
+"fat": 20.5
 },
 {
 "run_id": 1632749460000,
@@ -5389,7 +6232,10 @@
 "average_speed": 2.794279427942794,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.95,
+"weight_date": "2021-09-27",
+"fat": 21.2
 },
 {
 "run_id": 1632749469000,
@@ -5405,7 +6251,10 @@
 "average_speed": 2.802,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.95,
+"weight_date": "2021-09-27",
+"fat": 21.2
 },
 {
 "run_id": 1632922560000,
@@ -5421,7 +6270,10 @@
 "average_speed": 2.4706985466479137,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.44,
+"weight_date": "2021-09-29",
+"fat": 21.0
 },
 {
 "run_id": 1632922562000,
@@ -5437,7 +6289,10 @@
 "average_speed": 2.461,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.44,
+"weight_date": "2021-09-29",
+"fat": 21.0
 },
 {
 "run_id": 1633140620000,
@@ -5453,7 +6308,10 @@
 "average_speed": 0.658,
 "elevation_gain": 592.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.75,
+"weight_date": "2021-09-30",
+"fat": 20.6
 },
 {
 "run_id": 1633255428000,
@@ -5469,7 +6327,10 @@
 "average_speed": 1.376,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 79.75,
+"weight_date": "2021-09-30",
+"fat": 20.6
 },
 {
 "run_id": 1633308514000,
@@ -5517,7 +6378,10 @@
 "average_speed": 2.2447102115915363,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.33,
+"weight_date": "2021-10-12",
+"fat": 21.4
 },
 {
 "run_id": 1634043317000,
@@ -5533,7 +6397,10 @@
 "average_speed": 2.356,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.33,
+"weight_date": "2021-10-12",
+"fat": 21.4
 },
 {
 "run_id": 1634215260000,
@@ -5549,7 +6416,10 @@
 "average_speed": 2.4708236078692893,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.79,
+"weight_date": "2021-10-14",
+"fat": 21.1
 },
 {
 "run_id": 1634215265000,
@@ -5565,7 +6435,10 @@
 "average_speed": 2.463,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.79,
+"weight_date": "2021-10-14",
+"fat": 21.1
 },
 {
 "run_id": 1634377380000,
@@ -5581,7 +6454,10 @@
 "average_speed": 2.482542740187816,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.29,
+"weight_date": "2021-10-16",
+"fat": 20.9
 },
 {
 "run_id": 1634377395000,
@@ -5597,7 +6473,10 @@
 "average_speed": 2.536,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.29,
+"weight_date": "2021-10-16",
+"fat": 20.9
 },
 {
 "run_id": 1634732280000,
@@ -5613,7 +6492,10 @@
 "average_speed": 2.6319916361735496,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.16,
+"weight_date": "2021-10-20",
+"fat": 20.8
 },
 {
 "run_id": 1634732307000,
@@ -5629,7 +6511,10 @@
 "average_speed": 2.658,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.16,
+"weight_date": "2021-10-20",
+"fat": 20.8
 },
 {
 "run_id": 1634977429000,
@@ -5645,7 +6530,10 @@
 "average_speed": 2.721,
 "elevation_gain": 35.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.47,
+"weight_date": "2021-10-23",
+"fat": 21.0
 },
 {
 "run_id": 1635340380000,
@@ -5661,7 +6549,10 @@
 "average_speed": 2.6243523316062176,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.61,
+"weight_date": "2021-10-27",
+"fat": 22.6
 },
 {
 "run_id": 1635340433000,
@@ -5677,7 +6568,10 @@
 "average_speed": 2.661,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.61,
+"weight_date": "2021-10-27",
+"fat": 22.6
 },
 {
 "run_id": 1635596040000,
@@ -5693,7 +6587,10 @@
 "average_speed": 2.564102564102564,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.96,
+"weight_date": "2021-10-30",
+"fat": 20.7
 },
 {
 "run_id": 1635596084000,
@@ -5709,7 +6606,10 @@
 "average_speed": 2.776,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.96,
+"weight_date": "2021-10-30",
+"fat": 20.7
 },
 {
 "run_id": 1635766500000,
@@ -5725,7 +6625,10 @@
 "average_speed": 2.6997840172786174,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.43,
+"weight_date": "2021-11-01",
+"fat": 21.0
 },
 {
 "run_id": 1635766558000,
@@ -5741,7 +6644,10 @@
 "average_speed": 2.738,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.43,
+"weight_date": "2021-11-01",
+"fat": 21.0
 },
 {
 "run_id": 1636546560000,
@@ -5757,7 +6663,10 @@
 "average_speed": 2.606683804627249,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.45,
+"weight_date": "2021-11-10",
+"fat": 22.8
 },
 {
 "run_id": 1636546569000,
@@ -5773,7 +6682,10 @@
 "average_speed": 2.63,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.45,
+"weight_date": "2021-11-10",
+"fat": 22.8
 },
 {
 "run_id": 1637670900000,
@@ -5821,7 +6733,10 @@
 "average_speed": 2.8361581920903953,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.35,
+"weight_date": "2021-11-28",
+"fat": 20.9
 },
 {
 "run_id": 1638102410000,
@@ -5837,7 +6752,10 @@
 "average_speed": 2.846,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.35,
+"weight_date": "2021-11-28",
+"fat": 20.9
 },
 {
 "run_id": 1639652558000,
@@ -5853,7 +6771,10 @@
 "average_speed": 3.054,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.75,
+"weight_date": "2021-12-19",
+"fat": null
 },
 {
 "run_id": 1639912920000,
@@ -5869,7 +6790,10 @@
 "average_speed": 2.440447253281478,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.75,
+"weight_date": "2021-12-19",
+"fat": null
 },
 {
 "run_id": 1639912940000,
@@ -5885,7 +6809,10 @@
 "average_speed": 2.465,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.75,
+"weight_date": "2021-12-19",
+"fat": null
 },
 {
 "run_id": 1663933785000,
@@ -5901,7 +6828,10 @@
 "average_speed": 2.1954425942156,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.95,
+"weight_date": "2022-09-24",
+"fat": 22.6
 },
 {
 "run_id": 1664109905000,
@@ -5917,7 +6847,10 @@
 "average_speed": 2.09,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.95,
+"weight_date": "2022-09-24",
+"fat": 22.6
 },
 {
 "run_id": 1664365440000,
@@ -5933,7 +6866,10 @@
 "average_speed": 2.241835834068844,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.11,
+"weight_date": "2022-09-28",
+"fat": 22.7
 },
 {
 "run_id": 1664365499000,
@@ -5949,7 +6885,10 @@
 "average_speed": 2.262,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.11,
+"weight_date": "2022-09-28",
+"fat": 22.7
 },
 {
 "run_id": 1664616866000,
@@ -5965,7 +6904,10 @@
 "average_speed": 2.463,
 "elevation_gain": 16.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.98,
+"weight_date": "2022-10-01",
+"fat": null
 },
 {
 "run_id": 1664964624000,
@@ -5981,7 +6923,10 @@
 "average_speed": 2.196605827729747,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.42,
+"weight_date": "2022-10-05",
+"fat": 22.4
 },
 {
 "run_id": 1665398850000,
@@ -5997,7 +6942,10 @@
 "average_speed": 2.719,
 "elevation_gain": 24.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.16,
+"weight_date": "2022-10-10",
+"fat": 22.3
 },
 {
 "run_id": 1665923240000,
@@ -6013,7 +6961,10 @@
 "average_speed": 2.453,
 "elevation_gain": 18.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.5,
+"weight_date": "2022-10-16",
+"fat": 22.4
 },
 {
 "run_id": 1666353428000,
@@ -6029,7 +6980,10 @@
 "average_speed": 2.582,
 "elevation_gain": 15.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.54,
+"weight_date": "2022-10-21",
+"fat": 22.5
 },
 {
 "run_id": 1666609884000,
@@ -6045,7 +6999,10 @@
 "average_speed": 2.625,
 "elevation_gain": 29.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.11,
+"weight_date": "2022-10-24",
+"fat": 22.3
 },
 {
 "run_id": 1667122216000,
@@ -6061,7 +7018,10 @@
 "average_speed": 2.6421052631578945,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.64,
+"weight_date": "2022-10-30",
+"fat": 22.5
 },
 {
 "run_id": 1667394638000,
@@ -6077,7 +7037,10 @@
 "average_speed": 2.416918429003021,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.01,
+"weight_date": "2022-11-02",
+"fat": 21.8
 },
 {
 "run_id": 1667726077000,
@@ -6093,7 +7056,10 @@
 "average_speed": 2.581,
 "elevation_gain": 21.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.3,
+"weight_date": "2022-11-06",
+"fat": 21.9
 },
 {
 "run_id": 1668334200000,
@@ -6109,7 +7075,10 @@
 "average_speed": 2.63903462749213,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.95,
+"weight_date": "2022-11-13",
+"fat": 22.2
 },
 {
 "run_id": 1668334212000,
@@ -6125,7 +7094,10 @@
 "average_speed": 2.63,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.95,
+"weight_date": "2022-11-13",
+"fat": 22.2
 },
 {
 "run_id": 1668600392000,
@@ -6141,7 +7113,10 @@
 "average_speed": 2.643,
 "elevation_gain": 21.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.95,
+"weight_date": "2022-11-16",
+"fat": 22.2
 },
 {
 "run_id": 1669203330000,
@@ -6157,7 +7132,10 @@
 "average_speed": 2.4777006937561943,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.18,
+"weight_date": "2022-11-23",
+"fat": 22.3
 },
 {
 "run_id": 1669550260000,
@@ -6173,7 +7151,10 @@
 "average_speed": 2.309999942779541,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.81,
+"weight_date": "2022-11-27",
+"fat": 22.1
 },
 {
 "run_id": 1670501705000,
@@ -6205,7 +7186,10 @@
 "average_speed": 2.314,
 "elevation_gain": 18.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.28,
+"weight_date": "2022-12-21",
+"fat": 24.0
 },
 {
 "run_id": 1676979952000,
@@ -6221,7 +7205,10 @@
 "average_speed": 2.375,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.12,
+"weight_date": "2023-02-22",
+"fat": 21.8
 },
 {
 "run_id": 1677239790000,
@@ -6237,7 +7224,10 @@
 "average_speed": 2.303,
 "elevation_gain": 70.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.67,
+"weight_date": "2023-02-24",
+"fat": 22.1
 },
 {
 "run_id": 1677243446000,
@@ -6253,7 +7243,10 @@
 "average_speed": 2.91,
 "elevation_gain": 69.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.67,
+"weight_date": "2023-02-24",
+"fat": 22.1
 },
 {
 "run_id": 1677590638000,
@@ -6269,7 +7262,10 @@
 "average_speed": 2.379,
 "elevation_gain": 42.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.25,
+"weight_date": "2023-02-28",
+"fat": 22.3
 },
 {
 "run_id": 1677762066000,
@@ -6285,7 +7281,10 @@
 "average_speed": 2.532,
 "elevation_gain": 20.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.57,
+"weight_date": "2023-03-02",
+"fat": 22.5
 },
 {
 "run_id": 1677914580000,
@@ -6301,7 +7300,10 @@
 "average_speed": 2.4159998893737793,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.51,
+"weight_date": "2023-03-04",
+"fat": 22.4
 },
 {
 "run_id": 1678368528000,
@@ -6317,7 +7319,10 @@
 "average_speed": 2.168,
 "elevation_gain": 7.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.88,
+"weight_date": "2023-03-09",
+"fat": 22.6
 },
 {
 "run_id": 1678545557000,
@@ -6333,7 +7338,10 @@
 "average_speed": 2.456,
 "elevation_gain": 23.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.88,
+"weight_date": "2023-03-09",
+"fat": 22.6
 },
 {
 "run_id": 1678608117000,
@@ -6349,7 +7357,10 @@
 "average_speed": 0.991,
 "elevation_gain": 83.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 83.88,
+"weight_date": "2023-03-09",
+"fat": 22.6
 },
 {
 "run_id": 1679125560000,
@@ -6397,7 +7408,10 @@
 "average_speed": 2.325,
 "elevation_gain": 307.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.27,
+"weight_date": "2023-03-26",
+"fat": 22.3
 },
 {
 "run_id": 1680427258000,
@@ -6413,7 +7427,10 @@
 "average_speed": 2.692,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.85,
+"weight_date": "2023-04-02",
+"fat": 22.6
 },
 {
 "run_id": 1680697441000,
@@ -6429,7 +7446,10 @@
 "average_speed": 2.627,
 "elevation_gain": 10.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.68,
+"weight_date": "2023-04-07",
+"fat": 22.5
 },
 {
 "run_id": 1680940644000,
@@ -6445,7 +7465,10 @@
 "average_speed": 2.628,
 "elevation_gain": 26.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.68,
+"weight_date": "2023-04-08",
+"fat": 22.5
 },
 {
 "run_id": 1681012672000,
@@ -6461,7 +7484,10 @@
 "average_speed": 0.819,
 "elevation_gain": 25.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 83.68,
+"weight_date": "2023-04-08",
+"fat": 22.5
 },
 {
 "run_id": 1681217954000,
@@ -6477,7 +7503,10 @@
 "average_speed": 2.42,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.51,
+"weight_date": "2023-04-11",
+"fat": 22.4
 },
 {
 "run_id": 1681388663000,
@@ -6493,7 +7522,10 @@
 "average_speed": 2.384,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.11,
+"weight_date": "2023-04-13",
+"fat": null
 },
 {
 "run_id": 1681824242000,
@@ -6509,7 +7541,10 @@
 "average_speed": 2.6640000343322754,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.26,
+"weight_date": "2023-04-18",
+"fat": 22.8
 },
 {
 "run_id": 1681825122000,
@@ -6525,7 +7560,10 @@
 "average_speed": 2.3380000591278076,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.26,
+"weight_date": "2023-04-18",
+"fat": 22.8
 },
 {
 "run_id": 1681992952000,
@@ -6541,7 +7579,10 @@
 "average_speed": 2.585,
 "elevation_gain": 16.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.46,
+"weight_date": "2023-04-20",
+"fat": 22.9
 },
 {
 "run_id": 1682343970000,
@@ -6557,7 +7598,10 @@
 "average_speed": 2.41,
 "elevation_gain": 24.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.98,
+"weight_date": "2023-04-23",
+"fat": 22.7
 },
 {
 "run_id": 1682673572000,
@@ -6573,7 +7617,10 @@
 "average_speed": 0.835,
 "elevation_gain": 3.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.26,
+"weight_date": "2023-04-27",
+"fat": 22.3
 },
 {
 "run_id": 1682825491000,
@@ -6589,7 +7636,10 @@
 "average_speed": 0.906,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.26,
+"weight_date": "2023-04-27",
+"fat": 22.3
 },
 {
 "run_id": 1682847969000,
@@ -6605,7 +7655,10 @@
 "average_speed": 2.466,
 "elevation_gain": 1.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.26,
+"weight_date": "2023-04-27",
+"fat": 22.3
 },
 {
 "run_id": 1682916222000,
@@ -6669,7 +7722,10 @@
 "average_speed": 2.5239999294281006,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.81,
+"weight_date": "2023-05-07",
+"fat": 23.1
 },
 {
 "run_id": 1683641626000,
@@ -6685,7 +7741,10 @@
 "average_speed": 2.732,
 "elevation_gain": 26.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.44,
+"weight_date": "2023-05-09",
+"fat": 22.9
 },
 {
 "run_id": 1683811970000,
@@ -6701,7 +7760,10 @@
 "average_speed": 2.538,
 "elevation_gain": 82.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.62,
+"weight_date": "2023-05-11",
+"fat": 22.6
 },
 {
 "run_id": 1684158658000,
@@ -6717,7 +7779,10 @@
 "average_speed": 2.526,
 "elevation_gain": 18.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.69,
+"weight_date": "2023-05-15",
+"fat": 23.1
 },
 {
 "run_id": 1684329019000,
@@ -6733,7 +7798,10 @@
 "average_speed": 2.396,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 84.71,
+"weight_date": "2023-05-17",
+"fat": 23.1
 },
 {
 "run_id": 1684593931000,
@@ -6749,7 +7817,10 @@
 "average_speed": 2.692,
 "elevation_gain": 23.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.55,
+"weight_date": "2023-05-19",
+"fat": 22.5
 },
 {
 "run_id": 1684973348000,
@@ -6765,7 +7836,10 @@
 "average_speed": 2.5,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.87,
+"weight_date": "2023-05-25",
+"fat": 22.2
 },
 {
 "run_id": 1685059115000,
@@ -6781,7 +7855,10 @@
 "average_speed": 2.58,
 "elevation_gain": 12.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.87,
+"weight_date": "2023-05-25",
+"fat": 22.2
 },
 {
 "run_id": 1686571945000,
@@ -6797,7 +7874,10 @@
 "average_speed": 2.441999912261963,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.25,
+"weight_date": "2023-06-12",
+"fat": 22.4
 },
 {
 "run_id": 1687268155000,
@@ -6813,7 +7893,10 @@
 "average_speed": 2.447999954223633,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.01,
+"weight_date": "2023-06-20",
+"fat": 21.8
 },
 {
 "run_id": 1687528214000,
@@ -6829,7 +7912,10 @@
 "average_speed": 2.5230000019073486,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.46,
+"weight_date": "2023-06-23",
+"fat": 22.5
 },
 {
 "run_id": 1687783008000,
@@ -6845,7 +7931,10 @@
 "average_speed": 2.5339999198913574,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.85,
+"weight_date": "2023-06-26",
+"fat": 22.2
 },
 {
 "run_id": 1688206851000,
@@ -6861,7 +7950,10 @@
 "average_speed": 2.569999933242798,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.81,
+"weight_date": "2023-07-01",
+"fat": 22.2
 },
 {
 "run_id": 1688563295000,
@@ -6877,7 +7969,10 @@
 "average_speed": 2.596999883651733,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.9,
+"weight_date": "2023-07-05",
+"fat": 22.2
 },
 {
 "run_id": 1688703674000,
@@ -6893,7 +7988,10 @@
 "average_speed": 2.774,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.72,
+"weight_date": "2023-07-07",
+"fat": 22.2
 },
 {
 "run_id": 1688722830000,
@@ -6909,7 +8007,10 @@
 "average_speed": 3.102,
 "elevation_gain": 5.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.72,
+"weight_date": "2023-07-07",
+"fat": 22.2
 },
 {
 "run_id": 1689078773000,
@@ -6925,7 +8026,10 @@
 "average_speed": 2.3239998817443848,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.92,
+"weight_date": "2023-07-11",
+"fat": 22.3
 },
 {
 "run_id": 1689243370000,
@@ -6941,7 +8045,10 @@
 "average_speed": 2.305,
 "elevation_gain": 4.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.92,
+"weight_date": "2023-07-11",
+"fat": 22.3
 },
 {
 "run_id": 1689340131000,
@@ -6957,7 +8064,10 @@
 "average_speed": 2.422243166823751,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.92,
+"weight_date": "2023-07-16",
+"fat": 22.3
 },
 {
 "run_id": 1689514909000,
@@ -6973,7 +8083,10 @@
 "average_speed": 2.840909090909091,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.92,
+"weight_date": "2023-07-16",
+"fat": 22.3
 },
 {
 "run_id": 1689684840000,
@@ -6989,7 +8102,10 @@
 "average_speed": 2.3966666666666665,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.46,
+"weight_date": "2023-07-18",
+"fat": 22.0
 },
 {
 "run_id": 1689684894000,
@@ -7005,7 +8121,10 @@
 "average_speed": 2.396,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.46,
+"weight_date": "2023-07-18",
+"fat": 22.0
 },
 {
 "run_id": 9223370346477947707,
@@ -7053,7 +8172,10 @@
 "average_speed": 0.362,
 "elevation_gain": 27.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 84.57,
+"weight_date": "2023-07-31",
+"fat": 23.0
 },
 {
 "run_id": 1690611583000,
@@ -7069,7 +8191,10 @@
 "average_speed": 1.0188661745113126,
 "elevation_gain": 22.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 84.57,
+"weight_date": "2023-07-31",
+"fat": 23.0
 },
 {
 "run_id": 1690894180000,
@@ -7085,7 +8210,10 @@
 "average_speed": 2.513798294029102,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.59,
+"weight_date": "2023-08-01",
+"fat": 22.6
 },
 {
 "run_id": 1695616207000,
@@ -7101,7 +8229,10 @@
 "average_speed": 0.586,
 "elevation_gain": 16.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.51,
+"weight_date": "2023-09-24",
+"fat": 21.6
 },
 {
 "run_id": 1695703625000,
@@ -7117,7 +8248,10 @@
 "average_speed": 0.137,
 "elevation_gain": 26.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.51,
+"weight_date": "2023-09-24",
+"fat": 21.6
 },
 {
 "run_id": 1695780572000,
@@ -7133,7 +8267,10 @@
 "average_speed": 0.655,
 "elevation_gain": 99.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 81.51,
+"weight_date": "2023-09-24",
+"fat": 21.6
 },
 {
 "run_id": 1695868923000,
@@ -7197,7 +8334,10 @@
 "average_speed": 0.547,
 "elevation_gain": 31.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.11,
+"weight_date": "2023-10-04",
+"fat": 21.9
 },
 {
 "run_id": 1696234103000,
@@ -7213,7 +8353,10 @@
 "average_speed": 0.466,
 "elevation_gain": 6.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.11,
+"weight_date": "2023-10-04",
+"fat": 21.9
 },
 {
 "run_id": 1697461688000,
@@ -7229,7 +8372,10 @@
 "average_speed": 2.248,
 "elevation_gain": 17.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.05,
+"weight_date": "2023-10-16",
+"fat": 21.4
 },
 {
 "run_id": 1698559040000,
@@ -7245,7 +8391,10 @@
 "average_speed": 0.484,
 "elevation_gain": 13.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.3,
+"weight_date": "2023-10-30",
+"fat": 21.9
 },
 {
 "run_id": 1699149751000,
@@ -7261,7 +8410,10 @@
 "average_speed": 3.141,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.51,
+"weight_date": "2023-11-05",
+"fat": 21.6
 },
 {
 "run_id": 1699710017000,
@@ -7277,7 +8429,10 @@
 "average_speed": 2.108,
 "elevation_gain": 30.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.86,
+"weight_date": "2023-11-11",
+"fat": 21.3
 },
 {
 "run_id": 1700572408000,
@@ -7293,7 +8448,10 @@
 "average_speed": 2.46,
 "elevation_gain": 22.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 80.61,
+"weight_date": "2023-11-21",
+"fat": 22.7
 },
 {
 "run_id": 1703463376000,
@@ -7309,7 +8467,10 @@
 "average_speed": 3.348,
 "elevation_gain": 98.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.1,
+"weight_date": "2023-12-25",
+"fat": 21.4
 },
 {
 "run_id": 1703499027000,
@@ -7325,7 +8486,10 @@
 "average_speed": 3.933,
 "elevation_gain": 76.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.1,
+"weight_date": "2023-12-25",
+"fat": 21.4
 },
 {
 "run_id": 1703550219000,
@@ -7341,7 +8505,10 @@
 "average_speed": 3.528,
 "elevation_gain": 114.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.07,
+"weight_date": "2023-12-26",
+"fat": 21.7
 },
 {
 "run_id": 1703585593000,
@@ -7357,7 +8524,10 @@
 "average_speed": 3.669,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 81.07,
+"weight_date": "2023-12-26",
+"fat": 21.7
 },
 {
 "run_id": 1703723228000,
@@ -7373,7 +8543,10 @@
 "average_speed": 3.887,
 "elevation_gain": 111.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.49,
+"weight_date": "2023-12-28",
+"fat": 21.6
 },
 {
 "run_id": 1703758282000,
@@ -7389,7 +8562,10 @@
 "average_speed": 4.042,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.49,
+"weight_date": "2023-12-28",
+"fat": 21.6
 },
 {
 "run_id": 1704006953000,
@@ -7405,7 +8581,10 @@
 "average_speed": 0.793,
 "elevation_gain": 23.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.18,
+"weight_date": "2023-12-31",
+"fat": 21.9
 },
 {
 "run_id": 1704095890000,
@@ -7421,7 +8600,10 @@
 "average_speed": 0.467,
 "elevation_gain": 25.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.62,
+"weight_date": "2024-01-01",
+"fat": 22.1
 },
 {
 "run_id": 1704240919000,
@@ -7437,7 +8619,10 @@
 "average_speed": 3.8,
 "elevation_gain": 122.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.73,
+"weight_date": "2024-01-03",
+"fat": 21.7
 },
 {
 "run_id": 1704278018000,
@@ -7453,7 +8638,10 @@
 "average_speed": 4.05,
 "elevation_gain": 87.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.73,
+"weight_date": "2024-01-03",
+"fat": 21.7
 },
 {
 "run_id": 1704414165000,
@@ -7469,7 +8657,10 @@
 "average_speed": 4.237,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.86,
+"weight_date": "2024-01-05",
+"fat": 21.8
 },
 {
 "run_id": 1704449317000,
@@ -7485,7 +8676,10 @@
 "average_speed": 4.454,
 "elevation_gain": 88.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.86,
+"weight_date": "2024-01-05",
+"fat": 21.8
 },
 {
 "run_id": 1704596438000,
@@ -7501,7 +8695,10 @@
 "average_speed": 0.484,
 "elevation_gain": 37.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.49,
+"weight_date": "2024-01-07",
+"fat": 22.1
 },
 {
 "run_id": 1704673573000,
@@ -7517,7 +8714,10 @@
 "average_speed": 3.932,
 "elevation_gain": 116.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.77,
+"weight_date": "2024-01-08",
+"fat": 22.2
 },
 {
 "run_id": 1704708493000,
@@ -7533,7 +8733,10 @@
 "average_speed": 4.287,
 "elevation_gain": 84.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.77,
+"weight_date": "2024-01-08",
+"fat": 22.2
 },
 {
 "run_id": 1704846580000,
@@ -7549,7 +8752,10 @@
 "average_speed": 4.294,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.11,
+"weight_date": "2024-01-10",
+"fat": 21.9
 },
 {
 "run_id": 1704881556000,
@@ -7565,7 +8771,10 @@
 "average_speed": 4.337,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.11,
+"weight_date": "2024-01-10",
+"fat": 21.9
 },
 {
 "run_id": 1705019441000,
@@ -7581,7 +8790,10 @@
 "average_speed": 4.195,
 "elevation_gain": 98.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.16,
+"weight_date": "2024-01-12",
+"fat": 21.9
 },
 {
 "run_id": 1705055208000,
@@ -7597,7 +8809,10 @@
 "average_speed": 3.815,
 "elevation_gain": 88.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.16,
+"weight_date": "2024-01-12",
+"fat": 21.9
 },
 {
 "run_id": 1705202595000,
@@ -7613,7 +8828,10 @@
 "average_speed": 0.412,
 "elevation_gain": 119.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.95,
+"weight_date": "2024-01-14",
+"fat": 22.3
 },
 {
 "run_id": 1705364835000,
@@ -7629,7 +8847,10 @@
 "average_speed": 4.192,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.27,
+"weight_date": "2024-01-16",
+"fat": 22.0
 },
 {
 "run_id": 1705400847000,
@@ -7645,7 +8866,10 @@
 "average_speed": 3.948,
 "elevation_gain": 68.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.27,
+"weight_date": "2024-01-16",
+"fat": 22.0
 },
 {
 "run_id": 1705451218000,
@@ -7661,7 +8885,10 @@
 "average_speed": 3.477,
 "elevation_gain": 18.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.23,
+"weight_date": "2024-01-17",
+"fat": 21.9
 },
 {
 "run_id": 1705623841000,
@@ -7677,7 +8904,10 @@
 "average_speed": 3.839,
 "elevation_gain": 105.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.04,
+"weight_date": "2024-01-19",
+"fat": 21.8
 },
 {
 "run_id": 1705659466000,
@@ -7693,7 +8923,10 @@
 "average_speed": 4.043,
 "elevation_gain": 218.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.04,
+"weight_date": "2024-01-19",
+"fat": 21.8
 },
 {
 "run_id": 1705808497000,
@@ -7709,7 +8942,10 @@
 "average_speed": 0.56,
 "elevation_gain": 58.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.23,
+"weight_date": "2024-01-21",
+"fat": 21.9
 },
 {
 "run_id": 1705883515000,
@@ -7725,7 +8961,10 @@
 "average_speed": 4.307,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 83.46,
+"weight_date": "2024-01-22",
+"fat": 22.5
 },
 {
 "run_id": 1705918451000,
@@ -7741,7 +8980,10 @@
 "average_speed": 4.398,
 "elevation_gain": 113.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 83.46,
+"weight_date": "2024-01-22",
+"fat": 22.5
 },
 {
 "run_id": 1706229203000,
@@ -7757,7 +8999,10 @@
 "average_speed": 4.066,
 "elevation_gain": 101.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.64,
+"weight_date": "2024-01-26",
+"fat": 22.1
 },
 {
 "run_id": 1706265145000,
@@ -7773,7 +9018,10 @@
 "average_speed": 4.543,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.64,
+"weight_date": "2024-01-26",
+"fat": 22.1
 },
 {
 "run_id": 1706416323000,
@@ -7789,7 +9037,10 @@
 "average_speed": 4.491,
 "elevation_gain": 485.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 83.33,
+"weight_date": "2024-01-28",
+"fat": 22.4
 },
 {
 "run_id": 1706833774000,
@@ -7805,7 +9056,10 @@
 "average_speed": 4.454,
 "elevation_gain": 105.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.58,
+"weight_date": "2024-02-02",
+"fat": 22.1
 },
 {
 "run_id": 1706868412000,
@@ -7821,7 +9075,10 @@
 "average_speed": 4.97,
 "elevation_gain": 123.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.58,
+"weight_date": "2024-02-02",
+"fat": 22.1
 },
 {
 "run_id": 1706932109000,
@@ -7837,7 +9094,10 @@
 "average_speed": 0.623,
 "elevation_gain": 112.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.69,
+"weight_date": "2024-02-03",
+"fat": 23.7
 },
 {
 "run_id": 1707093379000,
@@ -7853,7 +9113,10 @@
 "average_speed": 4.473,
 "elevation_gain": 110.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.77,
+"weight_date": "2024-02-05",
+"fat": 22.2
 },
 {
 "run_id": 1707128723000,
@@ -7869,7 +9132,10 @@
 "average_speed": 4.763,
 "elevation_gain": 74.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 82.77,
+"weight_date": "2024-02-05",
+"fat": 22.2
 },
 {
 "run_id": 1707179692000,
@@ -7885,7 +9151,10 @@
 "average_speed": 4.592,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.33,
+"weight_date": "2024-02-06",
+"fat": 22.0
 },
 {
 "run_id": 1707214152000,
@@ -7901,7 +9170,10 @@
 "average_speed": 4.993,
 "elevation_gain": 84.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 82.33,
+"weight_date": "2024-02-06",
+"fat": 22.0
 },
 {
 "run_id": 1708649069000,
@@ -7917,7 +9189,10 @@
 "average_speed": 4.504,
 "elevation_gain": 113.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.46,
+"weight_date": "2024-02-23",
+"fat": 20.7
 },
 {
 "run_id": 1708682944000,
@@ -7933,7 +9208,10 @@
 "average_speed": 5.027,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.46,
+"weight_date": "2024-02-23",
+"fat": 20.7
 },
 {
 "run_id": 1708994142000,
@@ -7949,7 +9227,10 @@
 "average_speed": 4.434,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.67,
+"weight_date": "2024-02-27",
+"fat": 20.8
 },
 {
 "run_id": 1709028813000,
@@ -7965,7 +9246,10 @@
 "average_speed": 5.201,
 "elevation_gain": 82.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.67,
+"weight_date": "2024-02-27",
+"fat": 20.8
 },
 {
 "run_id": 1709513637000,
@@ -7981,7 +9265,10 @@
 "average_speed": 4.36,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.89,
+"weight_date": "2024-03-04",
+"fat": 20.4
 },
 {
 "run_id": 1709547469000,
@@ -7997,7 +9284,10 @@
 "average_speed": 4.919,
 "elevation_gain": 76.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.89,
+"weight_date": "2024-03-04",
+"fat": 20.4
 },
 {
 "run_id": 1709685686000,
@@ -8013,7 +9303,10 @@
 "average_speed": 4.56,
 "elevation_gain": 111.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.16,
+"weight_date": "2024-03-06",
+"fat": 20.5
 },
 {
 "run_id": 1709719638000,
@@ -8029,7 +9322,10 @@
 "average_speed": 5.513,
 "elevation_gain": 84.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.16,
+"weight_date": "2024-03-06",
+"fat": 20.5
 },
 {
 "run_id": 1710204499000,
@@ -8045,7 +9341,10 @@
 "average_speed": 4.867,
 "elevation_gain": 111.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.56,
+"weight_date": "2024-03-12",
+"fat": 20.3
 },
 {
 "run_id": 1710238800000,
@@ -8061,7 +9360,10 @@
 "average_speed": 5.331,
 "elevation_gain": 86.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.56,
+"weight_date": "2024-03-12",
+"fat": 20.3
 },
 {
 "run_id": 1710376277000,
@@ -8077,7 +9379,10 @@
 "average_speed": 4.669,
 "elevation_gain": 107.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.49,
+"weight_date": "2024-03-14",
+"fat": 21.4
 },
 {
 "run_id": 1710411039000,
@@ -8093,7 +9398,10 @@
 "average_speed": 5.184,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.49,
+"weight_date": "2024-03-14",
+"fat": 21.4
 },
 {
 "run_id": 1710722201000,
@@ -8109,7 +9417,10 @@
 "average_speed": 4.827,
 "elevation_gain": 107.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.51,
+"weight_date": "2024-03-18",
+"fat": 20.2
 },
 {
 "run_id": 1710757174000,
@@ -8125,7 +9436,10 @@
 "average_speed": 5.178,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.51,
+"weight_date": "2024-03-18",
+"fat": 20.2
 },
 {
 "run_id": 1710894425000,
@@ -8141,7 +9455,10 @@
 "average_speed": 4.743,
 "elevation_gain": 105.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.69,
+"weight_date": "2024-03-20",
+"fat": 20.3
 },
 {
 "run_id": 1710929674000,
@@ -8157,7 +9474,10 @@
 "average_speed": 5.62,
 "elevation_gain": 88.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.69,
+"weight_date": "2024-03-20",
+"fat": 20.3
 },
 {
 "run_id": 1711067738000,
@@ -8173,7 +9493,10 @@
 "average_speed": 4.793,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.77,
+"weight_date": "2024-03-22",
+"fat": 22.0
 },
 {
 "run_id": 1711103007000,
@@ -8189,7 +9512,10 @@
 "average_speed": 5.299,
 "elevation_gain": 230.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.77,
+"weight_date": "2024-03-22",
+"fat": 22.0
 },
 {
 "run_id": 1711411455000,
@@ -8205,7 +9531,10 @@
 "average_speed": 4.677,
 "elevation_gain": 97.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.69,
+"weight_date": "2024-03-26",
+"fat": 20.3
 },
 {
 "run_id": 1711448448000,
@@ -8221,7 +9550,10 @@
 "average_speed": 5.643,
 "elevation_gain": 82.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.69,
+"weight_date": "2024-03-26",
+"fat": 20.3
 },
 {
 "run_id": 1711584462000,
@@ -8237,7 +9569,10 @@
 "average_speed": 4.947,
 "elevation_gain": 100.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.09,
+"weight_date": "2024-03-28",
+"fat": 20.5
 },
 {
 "run_id": 1711620960000,
@@ -8253,7 +9588,10 @@
 "average_speed": 5.608,
 "elevation_gain": 81.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.09,
+"weight_date": "2024-03-28",
+"fat": 20.5
 },
 {
 "run_id": 1711758063000,
@@ -8269,7 +9607,10 @@
 "average_speed": 0.358,
 "elevation_gain": 2.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.41,
+"weight_date": "2024-03-29",
+"fat": 20.6
 },
 {
 "run_id": 1711766415000,
@@ -8285,7 +9626,10 @@
 "average_speed": 0.645,
 "elevation_gain": 14.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.41,
+"weight_date": "2024-03-29",
+"fat": 20.6
 },
 {
 "run_id": 1711930483000,
@@ -8301,7 +9645,10 @@
 "average_speed": 4.723,
 "elevation_gain": 113.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.97,
+"weight_date": "2024-04-01",
+"fat": 20.4
 },
 {
 "run_id": 1711966359000,
@@ -8317,7 +9664,10 @@
 "average_speed": 5.478,
 "elevation_gain": 81.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.97,
+"weight_date": "2024-04-01",
+"fat": 20.4
 },
 {
 "run_id": 1712102163000,
@@ -8333,7 +9683,10 @@
 "average_speed": 4.97,
 "elevation_gain": 102.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.34,
+"weight_date": "2024-04-03",
+"fat": 20.2
 },
 {
 "run_id": 1712139203000,
@@ -8349,7 +9702,10 @@
 "average_speed": 5.354,
 "elevation_gain": 85.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.34,
+"weight_date": "2024-04-03",
+"fat": 20.2
 },
 {
 "run_id": 1712534462000,
@@ -8365,7 +9721,10 @@
 "average_speed": 4.777,
 "elevation_gain": 159.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.78,
+"weight_date": "2024-04-08",
+"fat": 19.9
 },
 {
 "run_id": 1712571457000,
@@ -8381,7 +9740,10 @@
 "average_speed": 5.262,
 "elevation_gain": 76.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.78,
+"weight_date": "2024-04-08",
+"fat": 19.9
 },
 {
 "run_id": 1712707940000,
@@ -8397,7 +9759,10 @@
 "average_speed": 5.139,
 "elevation_gain": 154.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.51,
+"weight_date": "2024-04-10",
+"fat": 19.8
 },
 {
 "run_id": 1712744306000,
@@ -8413,7 +9778,10 @@
 "average_speed": 5.531,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.51,
+"weight_date": "2024-04-10",
+"fat": 19.8
 },
 {
 "run_id": 1712880557000,
@@ -8429,7 +9797,10 @@
 "average_speed": 4.614,
 "elevation_gain": 97.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.48,
+"weight_date": "2024-04-12",
+"fat": 19.8
 },
 {
 "run_id": 1712916899000,
@@ -8445,7 +9816,10 @@
 "average_speed": 5.375,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.48,
+"weight_date": "2024-04-12",
+"fat": 19.8
 },
 {
 "run_id": 1713139655000,
@@ -8461,7 +9835,10 @@
 "average_speed": 4.636,
 "elevation_gain": 103.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.25,
+"weight_date": "2024-04-15",
+"fat": 19.7
 },
 {
 "run_id": 1713176084000,
@@ -8477,7 +9854,10 @@
 "average_speed": 4.814,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.25,
+"weight_date": "2024-04-15",
+"fat": 19.7
 },
 {
 "run_id": 1713312695000,
@@ -8493,7 +9873,10 @@
 "average_speed": 5.073,
 "elevation_gain": 101.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.16,
+"weight_date": "2024-04-17",
+"fat": 19.6
 },
 {
 "run_id": 1713348586000,
@@ -8509,7 +9892,10 @@
 "average_speed": 5.092,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.16,
+"weight_date": "2024-04-17",
+"fat": 19.6
 },
 {
 "run_id": 1713589518000,
@@ -8525,7 +9911,10 @@
 "average_speed": 4.711,
 "elevation_gain": 727.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.26,
+"weight_date": "2024-04-20",
+"fat": 19.7
 },
 {
 "run_id": 1713917160000,
@@ -8541,7 +9930,10 @@
 "average_speed": 4.938,
 "elevation_gain": 192.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.48,
+"weight_date": "2024-04-24",
+"fat": 19.8
 },
 {
 "run_id": 1713953972000,
@@ -8557,7 +9949,10 @@
 "average_speed": 5.233,
 "elevation_gain": 80.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.48,
+"weight_date": "2024-04-24",
+"fat": 19.8
 },
 {
 "run_id": 1714263171000,
@@ -8573,7 +9968,10 @@
 "average_speed": 5.029,
 "elevation_gain": 115.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.4,
+"weight_date": "2024-04-28",
+"fat": 19.3
 },
 {
 "run_id": 1714299500000,
@@ -8589,7 +9987,10 @@
 "average_speed": 4.914,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.4,
+"weight_date": "2024-04-28",
+"fat": 19.3
 },
 {
 "run_id": 1714436119000,
@@ -8605,7 +10006,10 @@
 "average_speed": 4.664,
 "elevation_gain": 163.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.4,
+"weight_date": "2024-04-30",
+"fat": 20.2
 },
 {
 "run_id": 1714472339000,
@@ -8621,7 +10025,10 @@
 "average_speed": 5.329,
 "elevation_gain": 84.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 78.4,
+"weight_date": "2024-04-30",
+"fat": 20.2
 },
 {
 "run_id": 1714714042000,
@@ -8637,7 +10044,10 @@
 "average_speed": 4.428,
 "elevation_gain": 720.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.14,
+"weight_date": "2024-05-03",
+"fat": 19.7
 },
 {
 "run_id": 1714975114000,
@@ -8653,7 +10063,10 @@
 "average_speed": 0.873,
 "elevation_gain": 336.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.34,
+"weight_date": "2024-05-04",
+"fat": 19.8
 },
 {
 "run_id": 1715073494000,
@@ -8669,7 +10082,10 @@
 "average_speed": 0.491,
 "elevation_gain": 65.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.34,
+"weight_date": "2024-05-04",
+"fat": 19.8
 },
 {
 "run_id": 1715153017000,
@@ -8685,7 +10101,10 @@
 "average_speed": 0.553,
 "elevation_gain": 58.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 77.49,
+"weight_date": "2024-05-10",
+"fat": 19.8
 },
 {
 "run_id": 1715180518000,
@@ -8701,7 +10120,10 @@
 "average_speed": 2.531,
 "elevation_gain": 31.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 77.49,
+"weight_date": "2024-05-10",
+"fat": 19.8
 },
 {
 "run_id": 1715299811000,
@@ -8717,7 +10139,10 @@
 "average_speed": 4.313,
 "elevation_gain": 203.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.49,
+"weight_date": "2024-05-10",
+"fat": 19.8
 },
 {
 "run_id": 1715337380000,
@@ -8733,7 +10158,10 @@
 "average_speed": 5.586,
 "elevation_gain": 84.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.49,
+"weight_date": "2024-05-10",
+"fat": 19.8
 },
 {
 "run_id": 1715386470000,
@@ -8749,7 +10177,10 @@
 "average_speed": 5.145,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.59,
+"weight_date": "2024-05-11",
+"fat": 19.9
 },
 {
 "run_id": 1715422848000,
@@ -8765,7 +10196,10 @@
 "average_speed": 5.191,
 "elevation_gain": 80.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 77.59,
+"weight_date": "2024-05-11",
+"fat": 19.9
 },
 {
 "run_id": 1715645540000,
@@ -8781,7 +10215,10 @@
 "average_speed": 4.886,
 "elevation_gain": 201.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.81,
+"weight_date": "2024-05-14",
+"fat": 19.5
 },
 {
 "run_id": 1715684922000,
@@ -8797,7 +10234,10 @@
 "average_speed": 5.183,
 "elevation_gain": 86.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.81,
+"weight_date": "2024-05-14",
+"fat": 19.5
 },
 {
 "run_id": 1715818589000,
@@ -8813,7 +10253,10 @@
 "average_speed": 4.953,
 "elevation_gain": 191.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.62,
+"weight_date": "2024-05-16",
+"fat": 19.4
 },
 {
 "run_id": 1715854991000,
@@ -8829,7 +10272,10 @@
 "average_speed": 5.412,
 "elevation_gain": 82.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.62,
+"weight_date": "2024-05-16",
+"fat": 19.4
 },
 {
 "run_id": 1716250735000,
@@ -8845,7 +10291,10 @@
 "average_speed": 5.154,
 "elevation_gain": 107.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.56,
+"weight_date": "2024-05-21",
+"fat": 19.4
 },
 {
 "run_id": 1716287719000,
@@ -8861,7 +10310,10 @@
 "average_speed": 5.535,
 "elevation_gain": 74.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.56,
+"weight_date": "2024-05-21",
+"fat": 19.4
 },
 {
 "run_id": 1716372473000,
@@ -8877,7 +10329,10 @@
 "average_speed": 2.23,
 "elevation_gain": 73.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.36,
+"weight_date": "2024-05-22",
+"fat": 19.3
 },
 {
 "run_id": 1716510312000,
@@ -8893,7 +10348,10 @@
 "average_speed": 5.053,
 "elevation_gain": 170.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.15,
+"weight_date": "2024-05-24",
+"fat": 19.7
 },
 {
 "run_id": 1716545323000,
@@ -8909,7 +10367,10 @@
 "average_speed": 5.947,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.15,
+"weight_date": "2024-05-24",
+"fat": 19.7
 },
 {
 "run_id": 1716556634000,
@@ -8925,7 +10386,10 @@
 "average_speed": 5.117,
 "elevation_gain": 9.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.15,
+"weight_date": "2024-05-24",
+"fat": 19.7
 },
 {
 "run_id": 1716856341000,
@@ -8941,7 +10405,10 @@
 "average_speed": 5.304,
 "elevation_gain": 110.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.96,
+"weight_date": "2024-05-28",
+"fat": 19.1
 },
 {
 "run_id": 1716891386000,
@@ -8957,7 +10424,10 @@
 "average_speed": 5.528,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.96,
+"weight_date": "2024-05-28",
+"fat": 19.1
 },
 {
 "run_id": 1717115248000,
@@ -8973,7 +10443,10 @@
 "average_speed": 5.125,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.77,
+"weight_date": "2024-05-31",
+"fat": 19.5
 },
 {
 "run_id": 1717151433000,
@@ -8989,7 +10462,10 @@
 "average_speed": 5.14,
 "elevation_gain": 74.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.77,
+"weight_date": "2024-05-31",
+"fat": 19.5
 },
 {
 "run_id": 1717294682000,
@@ -9005,7 +10481,10 @@
 "average_speed": 4.908,
 "elevation_gain": 526.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.56,
+"weight_date": "2024-06-02",
+"fat": 19.4
 },
 {
 "run_id": 1717546978000,
@@ -9021,7 +10500,10 @@
 "average_speed": 5.245,
 "elevation_gain": 164.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.23,
+"weight_date": "2024-06-05",
+"fat": 19.3
 },
 {
 "run_id": 1717584003000,
@@ -9037,7 +10519,10 @@
 "average_speed": 5.576,
 "elevation_gain": 80.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.23,
+"weight_date": "2024-06-05",
+"fat": 19.3
 },
 {
 "run_id": 1717633683000,
@@ -9053,7 +10538,10 @@
 "average_speed": 4.925,
 "elevation_gain": 164.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.47,
+"weight_date": "2024-06-06",
+"fat": 19.4
 },
 {
 "run_id": 1717668912000,
@@ -9069,7 +10557,10 @@
 "average_speed": 5.279,
 "elevation_gain": 84.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.47,
+"weight_date": "2024-06-06",
+"fat": 19.4
 },
 {
 "run_id": 1718065280000,
@@ -9085,7 +10576,10 @@
 "average_speed": 4.857,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.16,
+"weight_date": "2024-06-11",
+"fat": 19.7
 },
 {
 "run_id": 1718100837000,
@@ -9101,7 +10595,10 @@
 "average_speed": 5.162,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.16,
+"weight_date": "2024-06-11",
+"fat": 19.7
 },
 {
 "run_id": 1718151466000,
@@ -9117,7 +10614,10 @@
 "average_speed": 5.033,
 "elevation_gain": 117.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.86,
+"weight_date": "2024-06-12",
+"fat": 19.6
 },
 {
 "run_id": 1718188187000,
@@ -9133,7 +10633,10 @@
 "average_speed": 5.158,
 "elevation_gain": 76.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.86,
+"weight_date": "2024-06-12",
+"fat": 19.6
 },
 {
 "run_id": 1718237923000,
@@ -9149,7 +10652,10 @@
 "average_speed": 4.806,
 "elevation_gain": 111.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 78.08,
+"weight_date": "2024-06-13",
+"fat": null
 },
 {
 "run_id": 1718273277000,
@@ -9165,7 +10671,10 @@
 "average_speed": 5.536,
 "elevation_gain": 221.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 78.08,
+"weight_date": "2024-06-13",
+"fat": null
 },
 {
 "run_id": 1718324676000,
@@ -9181,7 +10690,10 @@
 "average_speed": 5.076,
 "elevation_gain": 106.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 77.1,
+"weight_date": "2024-06-14",
+"fat": 19.7
 },
 {
 "run_id": 1718360296000,
@@ -9197,7 +10709,10 @@
 "average_speed": 5.442,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 77.1,
+"weight_date": "2024-06-14",
+"fat": 19.7
 },
 {
 "run_id": 1718583643000,
@@ -9213,7 +10728,10 @@
 "average_speed": 5.167,
 "elevation_gain": 106.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.02,
+"weight_date": "2024-06-17",
+"fat": 19.6
 },
 {
 "run_id": 1718619911000,
@@ -9229,7 +10747,10 @@
 "average_speed": 5.479,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.02,
+"weight_date": "2024-06-17",
+"fat": 19.6
 },
 {
 "run_id": 1718669792000,
@@ -9245,7 +10766,10 @@
 "average_speed": 4.988,
 "elevation_gain": 110.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.93,
+"weight_date": "2024-06-18",
+"fat": 19.6
 },
 {
 "run_id": 1718710705000,
@@ -9261,7 +10785,10 @@
 "average_speed": 5.506,
 "elevation_gain": 80.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.93,
+"weight_date": "2024-06-18",
+"fat": 19.6
 },
 {
 "run_id": 1718756188000,
@@ -9277,7 +10804,10 @@
 "average_speed": 5.061,
 "elevation_gain": 205.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 76.84,
+"weight_date": "2024-06-19",
+"fat": 19.5
 },
 {
 "run_id": 1718792959000,
@@ -9293,7 +10823,10 @@
 "average_speed": 5.464,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 76.84,
+"weight_date": "2024-06-19",
+"fat": 19.5
 },
 {
 "run_id": 1718842512000,
@@ -9309,7 +10842,10 @@
 "average_speed": 4.717,
 "elevation_gain": 112.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 77.03,
+"weight_date": "2024-06-20",
+"fat": 19.6
 },
 {
 "run_id": 1718880090000,
@@ -9325,7 +10861,10 @@
 "average_speed": 4.837,
 "elevation_gain": 75.0,
 "source": "",
-"streak": 4
+"streak": 4,
+"weight": 77.03,
+"weight_date": "2024-06-20",
+"fat": 19.6
 },
 {
 "run_id": 1718928767000,
@@ -9341,7 +10880,10 @@
 "average_speed": 5.29,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 76.48,
+"weight_date": "2024-06-21",
+"fat": 19.4
 },
 {
 "run_id": 1718964632000,
@@ -9357,7 +10899,10 @@
 "average_speed": 5.345,
 "elevation_gain": 77.0,
 "source": "",
-"streak": 5
+"streak": 5,
+"weight": 76.48,
+"weight_date": "2024-06-21",
+"fat": 19.4
 },
 {
 "run_id": 1719023484000,
@@ -9373,7 +10918,10 @@
 "average_speed": 5.209,
 "elevation_gain": 493.0,
 "source": "",
-"streak": 6
+"streak": 6,
+"weight": 76.53,
+"weight_date": "2024-06-22",
+"fat": 19.4
 },
 {
 "run_id": 1719188250000,
@@ -9389,7 +10937,10 @@
 "average_speed": 5.314,
 "elevation_gain": 108.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.41,
+"weight_date": "2024-06-24",
+"fat": 19.4
 },
 {
 "run_id": 1719224381000,
@@ -9405,7 +10956,10 @@
 "average_speed": 5.575,
 "elevation_gain": 113.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.41,
+"weight_date": "2024-06-24",
+"fat": 19.4
 },
 {
 "run_id": 1719361026000,
@@ -9421,7 +10975,10 @@
 "average_speed": 5.235,
 "elevation_gain": 110.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.86,
+"weight_date": "2024-06-26",
+"fat": 19.1
 },
 {
 "run_id": 1719398123000,
@@ -9437,7 +10994,10 @@
 "average_speed": 5.438,
 "elevation_gain": 76.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.86,
+"weight_date": "2024-06-26",
+"fat": 19.1
 },
 {
 "run_id": 1719533770000,
@@ -9453,7 +11013,10 @@
 "average_speed": 5.267,
 "elevation_gain": 166.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.89,
+"weight_date": "2024-06-28",
+"fat": 19.1
 },
 {
 "run_id": 1719569479000,
@@ -9469,7 +11032,10 @@
 "average_speed": 5.362,
 "elevation_gain": 58.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.89,
+"weight_date": "2024-06-28",
+"fat": 19.1
 },
 {
 "run_id": 1719709523000,
@@ -9485,7 +11051,10 @@
 "average_speed": 4.874,
 "elevation_gain": 1493.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.54,
+"weight_date": "2024-06-30",
+"fat": 19.0
 },
 {
 "run_id": 1720052038000,
@@ -9501,7 +11070,10 @@
 "average_speed": 4.851,
 "elevation_gain": 109.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.62,
+"weight_date": "2024-07-04",
+"fat": 19.0
 },
 {
 "run_id": 1720087836000,
@@ -9517,7 +11089,10 @@
 "average_speed": 5.085000038146973,
 "elevation_gain": 54.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.62,
+"weight_date": "2024-07-04",
+"fat": 19.0
 },
 {
 "run_id": 1720258108000,
@@ -9533,7 +11108,10 @@
 "average_speed": 4.988999843597412,
 "elevation_gain": 487.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.78,
+"weight_date": "2024-07-05",
+"fat": 19.1
 },
 {
 "run_id": 1720398122000,
@@ -9549,7 +11127,10 @@
 "average_speed": 5.210000038146972,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.55,
+"weight_date": "2024-07-08",
+"fat": 19.4
 },
 {
 "run_id": 1720433478000,
@@ -9565,7 +11146,10 @@
 "average_speed": 4.751999855041504,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.55,
+"weight_date": "2024-07-08",
+"fat": 19.4
 },
 {
 "run_id": 1720570001000,
@@ -9581,7 +11165,10 @@
 "average_speed": 4.898293887867647,
 "elevation_gain": 95.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.03,
+"weight_date": "2024-07-10",
+"fat": 19.2
 },
 {
 "run_id": 1720606097000,
@@ -9597,7 +11184,10 @@
 "average_speed": 5.243000030517578,
 "elevation_gain": 56.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.03,
+"weight_date": "2024-07-10",
+"fat": 19.2
 },
 {
 "run_id": 1720743454000,
@@ -9613,7 +11203,10 @@
 "average_speed": 5.01800012588501,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.04,
+"weight_date": "2024-07-12",
+"fat": 18.7
 },
 {
 "run_id": 1720779483000,
@@ -9629,7 +11222,10 @@
 "average_speed": 4.97599983215332,
 "elevation_gain": 37.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.04,
+"weight_date": "2024-07-12",
+"fat": 18.7
 },
 {
 "run_id": 1722507596000,
@@ -9645,7 +11241,10 @@
 "average_speed": 2.1740000247955322,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.83,
+"weight_date": "2024-08-01",
+"fat": 18.6
 },
 {
 "run_id": 1722989459000,
@@ -9661,7 +11260,10 @@
 "average_speed": 5.409,
 "elevation_gain": 115.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.22,
+"weight_date": "2024-08-07",
+"fat": 18.3
 },
 {
 "run_id": 1722989467000,
@@ -9677,7 +11279,10 @@
 "average_speed": 5.408999919891357,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.22,
+"weight_date": "2024-08-07",
+"fat": 18.3
 },
 {
 "run_id": 1723025198000,
@@ -9693,7 +11298,10 @@
 "average_speed": 5.256,
 "elevation_gain": 88.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.22,
+"weight_date": "2024-08-07",
+"fat": 18.3
 },
 {
 "run_id": 1723025204000,
@@ -9709,7 +11317,10 @@
 "average_speed": 5.25600004196167,
 "elevation_gain": 53.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.22,
+"weight_date": "2024-08-07",
+"fat": 18.3
 },
 {
 "run_id": 1723076694000,
@@ -9725,7 +11336,10 @@
 "average_speed": 5.626,
 "elevation_gain": 116.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.82,
+"weight_date": "2024-08-08",
+"fat": 18.2
 },
 {
 "run_id": 1723076699000,
@@ -9741,7 +11355,10 @@
 "average_speed": 5.625999927520751,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.82,
+"weight_date": "2024-08-08",
+"fat": 18.2
 },
 {
 "run_id": 1723111776000,
@@ -9757,7 +11374,10 @@
 "average_speed": 5.607999801635742,
 "elevation_gain": 55.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.82,
+"weight_date": "2024-08-08",
+"fat": 18.2
 },
 {
 "run_id": 1723162711000,
@@ -9773,7 +11393,10 @@
 "average_speed": 5.675000190734863,
 "elevation_gain": 93.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 73.72,
+"weight_date": "2024-08-09",
+"fat": 18.6
 },
 {
 "run_id": 1723199326000,
@@ -9789,7 +11412,10 @@
 "average_speed": 5.829,
 "elevation_gain": 79.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 73.72,
+"weight_date": "2024-08-09",
+"fat": 18.6
 },
 {
 "run_id": 1723199327000,
@@ -9805,7 +11431,10 @@
 "average_speed": 5.828999996185303,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 73.72,
+"weight_date": "2024-08-09",
+"fat": 18.6
 },
 {
 "run_id": 1723422136000,
@@ -9821,7 +11450,10 @@
 "average_speed": 5.8379998207092285,
 "elevation_gain": 93.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.54,
+"weight_date": "2024-08-12",
+"fat": 19.0
 },
 {
 "run_id": 1723458567000,
@@ -9837,7 +11469,10 @@
 "average_speed": 5.381999969482421,
 "elevation_gain": 58.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.54,
+"weight_date": "2024-08-12",
+"fat": 19.0
 },
 {
 "run_id": 1723595011000,
@@ -9853,7 +11488,10 @@
 "average_speed": 5.272,
 "elevation_gain": 106.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 75.05,
+"weight_date": "2024-08-14",
+"fat": 18.7
 },
 {
 "run_id": 1723595012000,
@@ -9869,7 +11507,10 @@
 "average_speed": 5.271999835968018,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.05,
+"weight_date": "2024-08-14",
+"fat": 18.7
 },
 {
 "run_id": 1723630890000,
@@ -9885,7 +11526,10 @@
 "average_speed": 5.375999927520752,
 "elevation_gain": 54.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.05,
+"weight_date": "2024-08-14",
+"fat": 18.7
 },
 {
 "run_id": 1723767371000,
@@ -9901,7 +11545,10 @@
 "average_speed": 5.480000019073486,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2024-08-16",
+"fat": 18.5
 },
 {
 "run_id": 1723803363000,
@@ -9917,7 +11564,10 @@
 "average_speed": 5.354,
 "elevation_gain": 78.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2024-08-16",
+"fat": 18.5
 },
 {
 "run_id": 1723803369000,
@@ -9933,7 +11583,10 @@
 "average_speed": 5.3540000915527335,
 "elevation_gain": 58.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.51,
+"weight_date": "2024-08-16",
+"fat": 18.5
 },
 {
 "run_id": 1723960331000,
@@ -9949,7 +11602,10 @@
 "average_speed": 5.553941087992281,
 "elevation_gain": 221.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.31,
+"weight_date": "2024-08-18",
+"fat": 18.4
 },
 {
 "run_id": 1724113845000,
@@ -9965,7 +11621,10 @@
 "average_speed": 5.440000057220458,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.81,
+"weight_date": "2024-08-20",
+"fat": 18.2
 },
 {
 "run_id": 1724235161000,
@@ -9981,7 +11640,10 @@
 "average_speed": 5.265999794006347,
 "elevation_gain": 53.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.61,
+"weight_date": "2024-08-21",
+"fat": 18.1
 },
 {
 "run_id": 1724372565000,
@@ -9997,7 +11659,10 @@
 "average_speed": 5.431278106508875,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.5,
+"weight_date": "2024-08-23",
+"fat": 18.0
 },
 {
 "run_id": 1724408474000,
@@ -10013,7 +11678,10 @@
 "average_speed": 5.275000095367431,
 "elevation_gain": 60.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.5,
+"weight_date": "2024-08-23",
+"fat": 18.0
 },
 {
 "run_id": 1724553362000,
@@ -10029,7 +11697,10 @@
 "average_speed": 6.195000171661378,
 "elevation_gain": 487.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 72.71,
+"weight_date": "2024-08-25",
+"fat": 17.7
 },
 {
 "run_id": 1724891107000,
@@ -10045,7 +11716,10 @@
 "average_speed": 5.89900016784668,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.05,
+"weight_date": "2024-08-29",
+"fat": 17.8
 },
 {
 "run_id": 1724929159000,
@@ -10061,7 +11735,10 @@
 "average_speed": 5.800000190734862,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.05,
+"weight_date": "2024-08-29",
+"fat": 17.8
 },
 {
 "run_id": 1725074677000,
@@ -10077,7 +11754,10 @@
 "average_speed": 5.638999938964844,
 "elevation_gain": 228.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.21,
+"weight_date": "2024-08-31",
+"fat": 17.9
 },
 {
 "run_id": 1725409026000,
@@ -10093,7 +11773,10 @@
 "average_speed": 5.803999900817871,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.35,
+"weight_date": "2024-09-04",
+"fat": 17.9
 },
 {
 "run_id": 1725445779000,
@@ -10109,7 +11792,10 @@
 "average_speed": 6.051000118255616,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.35,
+"weight_date": "2024-09-04",
+"fat": 17.9
 },
 {
 "run_id": 1725770127000,
@@ -10125,7 +11811,10 @@
 "average_speed": 6.400000095367432,
 "elevation_gain": 440.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.05,
+"weight_date": "2024-09-08",
+"fat": 17.8
 },
 {
 "run_id": 1726384805000,
@@ -10141,7 +11830,10 @@
 "average_speed": 5.315,
 "elevation_gain": 136.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 72.6,
+"weight_date": "2024-09-15",
+"fat": 17.6
 },
 {
 "run_id": 1726384813000,
@@ -10157,7 +11849,10 @@
 "average_speed": 5.315000057220459,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 72.6,
+"weight_date": "2024-09-15",
+"fat": 17.6
 },
 {
 "run_id": 1726534331000,
@@ -10173,7 +11868,10 @@
 "average_speed": 5.925,
 "elevation_gain": 391.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 73.0,
+"weight_date": "2024-09-17",
+"fat": 17.8
 },
 {
 "run_id": 1726534340000,
@@ -10189,7 +11887,10 @@
 "average_speed": 5.925000190734863,
 "elevation_gain": 323.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.0,
+"weight_date": "2024-09-17",
+"fat": 17.8
 },
 {
 "run_id": 1726705192000,
@@ -10205,7 +11906,10 @@
 "average_speed": 5.754000186920166,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.01,
+"weight_date": "2024-09-19",
+"fat": 17.8
 },
 {
 "run_id": 1726740750000,
@@ -10221,7 +11925,10 @@
 "average_speed": 5.830999851226807,
 "elevation_gain": 52.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.01,
+"weight_date": "2024-09-19",
+"fat": 17.8
 },
 {
 "run_id": 1727396385000,
@@ -10237,7 +11944,10 @@
 "average_speed": 6.01200008392334,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.81,
+"weight_date": "2024-09-27",
+"fat": 18.2
 },
 {
 "run_id": 1727434129000,
@@ -10253,7 +11963,10 @@
 "average_speed": 5.742000102996825,
 "elevation_gain": 55.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.81,
+"weight_date": "2024-09-27",
+"fat": 18.2
 },
 {
 "run_id": 1727490649000,
@@ -10269,7 +11982,10 @@
 "average_speed": 5.361000061035155,
 "elevation_gain": 765.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.81,
+"weight_date": "2024-09-27",
+"fat": 18.2
 },
 {
 "run_id": 1727490650000,
@@ -10285,7 +12001,10 @@
 "average_speed": 5.361,
 "elevation_gain": 566.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 73.81,
+"weight_date": "2024-09-27",
+"fat": 18.2
 },
 {
 "run_id": 1728378021000,
@@ -10301,7 +12020,10 @@
 "average_speed": 2.4639999866485596,
 "elevation_gain": 12.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.73,
+"weight_date": "2024-10-10",
+"fat": 19.0
 },
 {
 "run_id": 1728519914000,
@@ -10317,7 +12039,10 @@
 "average_speed": 5.85099983215332,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.73,
+"weight_date": "2024-10-10",
+"fat": 19.0
 },
 {
 "run_id": 1728555282000,
@@ -10333,7 +12058,10 @@
 "average_speed": 5.802999973297119,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.73,
+"weight_date": "2024-10-10",
+"fat": 19.0
 },
 {
 "run_id": 1728692771000,
@@ -10349,7 +12077,10 @@
 "average_speed": 5.63100004196167,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.71,
+"weight_date": "2024-10-12",
+"fat": 18.6
 },
 {
 "run_id": 1728730612000,
@@ -10365,7 +12096,10 @@
 "average_speed": 5.853000164031982,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.71,
+"weight_date": "2024-10-12",
+"fat": 18.6
 },
 {
 "run_id": 1728865630000,
@@ -10381,7 +12115,10 @@
 "average_speed": 5.565000057220459,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.46,
+"weight_date": "2024-10-14",
+"fat": 18.5
 },
 {
 "run_id": 1728900779000,
@@ -10397,7 +12134,10 @@
 "average_speed": 5.656000137329101,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.46,
+"weight_date": "2024-10-14",
+"fat": 18.5
 },
 {
 "run_id": 1729038812000,
@@ -10413,7 +12153,10 @@
 "average_speed": 5.646999835968017,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.29,
+"weight_date": "2024-10-16",
+"fat": 18.4
 },
 {
 "run_id": 1729073696000,
@@ -10429,7 +12172,10 @@
 "average_speed": 5.577000141143798,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.29,
+"weight_date": "2024-10-16",
+"fat": 18.4
 },
 {
 "run_id": 1729211253000,
@@ -10445,7 +12191,10 @@
 "average_speed": 5.738999843597412,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.93,
+"weight_date": "2024-10-18",
+"fat": 18.2
 },
 {
 "run_id": 1729227005000,
@@ -10461,7 +12210,10 @@
 "average_speed": 5.855000019073486,
 "elevation_gain": 62.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.93,
+"weight_date": "2024-10-18",
+"fat": 18.2
 },
 {
 "run_id": 1729642800000,
@@ -10477,7 +12229,10 @@
 "average_speed": 5.486000061035156,
 "elevation_gain": 95.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.93,
+"weight_date": "2024-10-23",
+"fat": 18.7
 },
 {
 "run_id": 1729678104000,
@@ -10493,7 +12248,10 @@
 "average_speed": 5.756999969482422,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.93,
+"weight_date": "2024-10-23",
+"fat": 18.7
 },
 {
 "run_id": 1729729628000,
@@ -10509,7 +12267,10 @@
 "average_speed": 5.486999988555908,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 74.1,
+"weight_date": "2024-10-24",
+"fat": 18.3
 },
 {
 "run_id": 1729764949000,
@@ -10525,7 +12286,10 @@
 "average_speed": 5.781000137329102,
 "elevation_gain": 56.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 74.1,
+"weight_date": "2024-10-24",
+"fat": 18.3
 },
 {
 "run_id": 1729907724000,
@@ -10541,7 +12305,10 @@
 "average_speed": 6.20509191951265,
 "elevation_gain": 469.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.53,
+"weight_date": "2024-10-26",
+"fat": 18.0
 },
 {
 "run_id": 1730161676000,
@@ -10557,7 +12324,10 @@
 "average_speed": 5.769999980926513,
 "elevation_gain": 87.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.55,
+"weight_date": "2024-10-29",
+"fat": 18.0
 },
 {
 "run_id": 1730197117000,
@@ -10573,7 +12343,10 @@
 "average_speed": 5.284999847412109,
 "elevation_gain": 52.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.55,
+"weight_date": "2024-10-29",
+"fat": 18.0
 },
 {
 "run_id": 1730247795000,
@@ -10589,7 +12362,10 @@
 "average_speed": 5.500999927520752,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.92,
+"weight_date": "2024-10-30",
+"fat": 18.2
 },
 {
 "run_id": 1730283059000,
@@ -10605,7 +12381,10 @@
 "average_speed": 5.480999946594238,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.92,
+"weight_date": "2024-10-30",
+"fat": 18.2
 },
 {
 "run_id": 1730334453000,
@@ -10621,7 +12400,10 @@
 "average_speed": 5.210999965667725,
 "elevation_gain": 95.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 73.61,
+"weight_date": "2024-10-31",
+"fat": 18.1
 },
 {
 "run_id": 1730370236000,
@@ -10637,7 +12419,10 @@
 "average_speed": 5.7870001792907715,
 "elevation_gain": 55.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 73.61,
+"weight_date": "2024-10-31",
+"fat": 18.1
 },
 {
 "run_id": 1730602895000,
@@ -10653,7 +12438,10 @@
 "average_speed": 5.834479829524198,
 "elevation_gain": 375.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.87,
+"weight_date": "2024-11-03",
+"fat": 18.2
 },
 {
 "run_id": 1731371433000,
@@ -10669,7 +12457,10 @@
 "average_speed": 5.525000095367432,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.06,
+"weight_date": "2024-11-12",
+"fat": 18.3
 },
 {
 "run_id": 1731407355000,
@@ -10685,7 +12476,10 @@
 "average_speed": 5.341000080108643,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.06,
+"weight_date": "2024-11-12",
+"fat": 18.3
 },
 {
 "run_id": 1732235331000,
@@ -10701,7 +12495,10 @@
 "average_speed": 5.421999931335449,
 "elevation_gain": 97.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.36,
+"weight_date": "2024-11-22",
+"fat": 18.0
 },
 {
 "run_id": 1732270068000,
@@ -10717,7 +12514,10 @@
 "average_speed": 5.318999767303467,
 "elevation_gain": 54.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.36,
+"weight_date": "2024-11-22",
+"fat": 18.0
 },
 {
 "run_id": 1732494421000,
@@ -10733,7 +12533,10 @@
 "average_speed": 5.63100004196167,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.99,
+"weight_date": "2024-11-25",
+"fat": 18.2
 },
 {
 "run_id": 1732529205000,
@@ -10749,7 +12552,10 @@
 "average_speed": 5.706999778747559,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.99,
+"weight_date": "2024-11-25",
+"fat": 18.2
 },
 {
 "run_id": 1732667187000,
@@ -10765,7 +12571,10 @@
 "average_speed": 5.242000102996826,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.44,
+"weight_date": "2024-11-27",
+"fat": 18.0
 },
 {
 "run_id": 1732702386000,
@@ -10781,7 +12590,10 @@
 "average_speed": 5.189000129699706,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.44,
+"weight_date": "2024-11-27",
+"fat": 18.0
 },
 {
 "run_id": 1732839787000,
@@ -10797,7 +12609,10 @@
 "average_speed": 5.257999897003174,
 "elevation_gain": 103.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.3,
+"weight_date": "2024-11-29",
+"fat": 17.9
 },
 {
 "run_id": 1732875469000,
@@ -10813,7 +12628,10 @@
 "average_speed": 5.1620001792907715,
 "elevation_gain": 53.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 73.3,
+"weight_date": "2024-11-29",
+"fat": 17.9
 },
 {
 "run_id": 1732955761000,
@@ -10829,7 +12647,10 @@
 "average_speed": 0.5839999914169312,
 "elevation_gain": 21.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 73.96,
+"weight_date": "2024-11-30",
+"fat": 18.2
 },
 {
 "run_id": 1733098835000,
@@ -10845,7 +12666,10 @@
 "average_speed": 5.610000133514404,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.77,
+"weight_date": "2024-12-02",
+"fat": 18.6
 },
 {
 "run_id": 1733136716000,
@@ -10861,7 +12685,10 @@
 "average_speed": 5.610000133514404,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.77,
+"weight_date": "2024-12-02",
+"fat": 18.6
 },
 {
 "run_id": 1733271519000,
@@ -10877,7 +12704,10 @@
 "average_speed": 5.978000164031982,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.95,
+"weight_date": "2024-12-04",
+"fat": 18.7
 },
 {
 "run_id": 1733308644000,
@@ -10893,7 +12723,10 @@
 "average_speed": 6.130000114440919,
 "elevation_gain": 47.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.95,
+"weight_date": "2024-12-04",
+"fat": 18.7
 },
 {
 "run_id": 1733358170000,
@@ -10909,7 +12742,10 @@
 "average_speed": 5.5970001220703125,
 "elevation_gain": 87.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 74.24,
+"weight_date": "2024-12-05",
+"fat": 18.4
 },
 {
 "run_id": 1733394699000,
@@ -10925,7 +12761,10 @@
 "average_speed": 5.730999946594238,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 74.24,
+"weight_date": "2024-12-05",
+"fat": 18.4
 },
 {
 "run_id": 1733444462000,
@@ -10941,7 +12780,10 @@
 "average_speed": 5.453000068664551,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 74.45,
+"weight_date": "2024-12-06",
+"fat": 18.5
 },
 {
 "run_id": 1733460852000,
@@ -10957,7 +12799,10 @@
 "average_speed": 6.2210001945495605,
 "elevation_gain": 55.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 74.45,
+"weight_date": "2024-12-06",
+"fat": 18.5
 },
 {
 "run_id": 1733643909000,
@@ -10973,7 +12818,10 @@
 "average_speed": 0.9020000100135803,
 "elevation_gain": 9.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.13,
+"weight_date": "2024-12-08",
+"fat": 19.2
 },
 {
 "run_id": 1733730511000,
@@ -10989,7 +12837,10 @@
 "average_speed": 0.4869999885559082,
 "elevation_gain": 27.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 76.13,
+"weight_date": "2024-12-08",
+"fat": 19.2
 },
 {
 "run_id": 1733790282000,
@@ -11005,7 +12856,10 @@
 "average_speed": 5.7789998054504395,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 76.01,
+"weight_date": "2024-12-10",
+"fat": 19.2
 },
 {
 "run_id": 1733825569000,
@@ -11021,7 +12875,10 @@
 "average_speed": 5.664000034332275,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 76.01,
+"weight_date": "2024-12-10",
+"fat": 19.2
 },
 {
 "run_id": 1733918570000,
@@ -11037,7 +12894,10 @@
 "average_speed": 2.802000045776367,
 "elevation_gain": 17.0,
 "source": "Garmin Connect",
-"streak": 4
+"streak": 4,
+"weight": 75.61,
+"weight_date": "2024-12-11",
+"fat": 19.0
 },
 {
 "run_id": 1733962872000,
@@ -11053,7 +12913,10 @@
 "average_speed": 5.677000045776366,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 5
+"streak": 5,
+"weight": 74.64,
+"weight_date": "2024-12-12",
+"fat": 18.5
 },
 {
 "run_id": 1733999102000,
@@ -11069,7 +12932,10 @@
 "average_speed": 5.750999927520752,
 "elevation_gain": 40.0,
 "source": "Garmin Connect",
-"streak": 5
+"streak": 5,
+"weight": 74.64,
+"weight_date": "2024-12-12",
+"fat": 18.5
 },
 {
 "run_id": 1734220776000,
@@ -11085,7 +12951,10 @@
 "average_speed": 2.630000114440918,
 "elevation_gain": 44.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.75,
+"weight_date": "2024-12-15",
+"fat": 19.5
 },
 {
 "run_id": 1734481511000,
@@ -11101,7 +12970,10 @@
 "average_speed": 5.513999938964844,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.69,
+"weight_date": "2024-12-18",
+"fat": 19.0
 },
 {
 "run_id": 1734517179000,
@@ -11117,7 +12989,10 @@
 "average_speed": 5.7979998588562,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.69,
+"weight_date": "2024-12-18",
+"fat": 19.0
 },
 {
 "run_id": 1734654409000,
@@ -11133,7 +13008,10 @@
 "average_speed": 5.347000122070312,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.2,
+"weight_date": "2024-12-20",
+"fat": 18.3
 },
 {
 "run_id": 1734690105000,
@@ -11149,7 +13027,10 @@
 "average_speed": 5.676000118255615,
 "elevation_gain": 52.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 74.2,
+"weight_date": "2024-12-20",
+"fat": 18.3
 },
 {
 "run_id": 1735086297000,
@@ -11165,7 +13046,10 @@
 "average_speed": 5.624000072479248,
 "elevation_gain": 25.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.43,
+"weight_date": "2024-12-25",
+"fat": 18.9
 },
 {
 "run_id": 1735086941000,
@@ -11181,7 +13065,10 @@
 "average_speed": 5.745999813079834,
 "elevation_gain": 65.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.43,
+"weight_date": "2024-12-25",
+"fat": 18.9
 },
 {
 "run_id": 1735121730000,
@@ -11197,7 +13084,10 @@
 "average_speed": 6.0920000076293945,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.43,
+"weight_date": "2024-12-25",
+"fat": 18.9
 },
 {
 "run_id": 1735259763000,
@@ -11213,7 +13103,10 @@
 "average_speed": 5.831999778747559,
 "elevation_gain": 581.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.24,
+"weight_date": "2024-12-27",
+"fat": 18.8
 },
 {
 "run_id": 1735353567000,
@@ -11229,7 +13122,10 @@
 "average_speed": 6.756999969482422,
 "elevation_gain": 206.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 75.24,
+"weight_date": "2024-12-27",
+"fat": 18.8
 },
 {
 "run_id": 1735440524000,
@@ -11245,7 +13141,10 @@
 "average_speed": 5.649000167846679,
 "elevation_gain": 334.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 74.7,
+"weight_date": "2024-12-29",
+"fat": 18.6
 },
 {
 "run_id": 1735864036000,
@@ -11261,7 +13160,10 @@
 "average_speed": 5.120999813079834,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.41,
+"weight_date": "2025-01-03",
+"fat": 18.9
 },
 {
 "run_id": 1735898941000,
@@ -11277,7 +13179,10 @@
 "average_speed": 5.506999969482422,
 "elevation_gain": 48.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.41,
+"weight_date": "2025-01-03",
+"fat": 18.9
 },
 {
 "run_id": 1736122703000,
@@ -11293,7 +13198,10 @@
 "average_speed": 5.385000228881836,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.32,
+"weight_date": "2025-01-06",
+"fat": 19.3
 },
 {
 "run_id": 1736158465000,
@@ -11309,7 +13217,10 @@
 "average_speed": 5.5879998207092285,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.32,
+"weight_date": "2025-01-06",
+"fat": 19.3
 },
 {
 "run_id": 1736382018000,
@@ -11325,7 +13236,10 @@
 "average_speed": 5.44700002670288,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.85,
+"weight_date": "2025-01-09",
+"fat": 19.1
 },
 {
 "run_id": 1736418298000,
@@ -11341,7 +13255,10 @@
 "average_speed": 5.806000232696533,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.85,
+"weight_date": "2025-01-09",
+"fat": 19.1
 },
 {
 "run_id": 1736663307000,
@@ -11357,7 +13274,10 @@
 "average_speed": 5.625,
 "elevation_gain": 838.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.41,
+"weight_date": "2025-01-12",
+"fat": 19.4
 },
 {
 "run_id": 1736663380000,
@@ -11373,7 +13293,10 @@
 "average_speed": 5.585862466384941,
 "elevation_gain": 708.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.41,
+"weight_date": "2025-01-12",
+"fat": 19.4
 },
 {
 "run_id": 1737850936000,
@@ -11389,7 +13312,10 @@
 "average_speed": 5.377999782562256,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.46,
+"weight_date": "2025-01-26",
+"fat": 19.8
 },
 {
 "run_id": 1737877092000,
@@ -11405,7 +13331,10 @@
 "average_speed": 5.680689123494324,
 "elevation_gain": 155.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.46,
+"weight_date": "2025-01-26",
+"fat": 19.8
 },
 {
 "run_id": 1739233503000,
@@ -11421,7 +13350,10 @@
 "average_speed": 5.564000129699707,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.29,
+"weight_date": "2025-02-11",
+"fat": 18.8
 },
 {
 "run_id": 1739270920000,
@@ -11437,7 +13369,10 @@
 "average_speed": 5.863999843597412,
 "elevation_gain": 47.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.29,
+"weight_date": "2025-02-11",
+"fat": 18.8
 },
 {
 "run_id": 1739406309000,
@@ -11453,7 +13388,10 @@
 "average_speed": 5.451000213623047,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.1,
+"weight_date": "2025-02-13",
+"fat": 18.8
 },
 {
 "run_id": 1739528989000,
@@ -11469,7 +13407,10 @@
 "average_speed": 5.318999767303467,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 75.33,
+"weight_date": "2025-02-14",
+"fat": 18.9
 },
 {
 "run_id": 1739838501000,
@@ -11485,7 +13426,10 @@
 "average_speed": 5.598999977111816,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.7,
+"weight_date": "2025-02-18",
+"fat": 19.5
 },
 {
 "run_id": 1739877383000,
@@ -11501,7 +13445,10 @@
 "average_speed": 5.7220001220703125,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.7,
+"weight_date": "2025-02-18",
+"fat": 19.5
 },
 {
 "run_id": 1740010993000,
@@ -11517,7 +13464,10 @@
 "average_speed": 5.638000011444092,
 "elevation_gain": 86.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.85,
+"weight_date": "2025-02-20",
+"fat": 19.6
 },
 {
 "run_id": 1740049563000,
@@ -11533,7 +13483,10 @@
 "average_speed": 6.015999794006348,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.85,
+"weight_date": "2025-02-20",
+"fat": 19.6
 },
 {
 "run_id": 1740190324000,
@@ -11549,7 +13502,10 @@
 "average_speed": 5.64300012588501,
 "elevation_gain": 789.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.38,
+"weight_date": "2025-02-22",
+"fat": 19.5
 },
 {
 "run_id": 1741652662000,
@@ -11565,7 +13521,10 @@
 "average_speed": 5.567999839782714,
 "elevation_gain": 86.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.93,
+"weight_date": "2025-03-11",
+"fat": 19.6
 },
 {
 "run_id": 1741689032000,
@@ -11581,7 +13540,10 @@
 "average_speed": 5.919000148773193,
 "elevation_gain": 47.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.93,
+"weight_date": "2025-03-11",
+"fat": 19.6
 },
 {
 "run_id": 1741825609000,
@@ -11597,7 +13559,10 @@
 "average_speed": 5.8470001220703125,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.49,
+"weight_date": "2025-03-13",
+"fat": 19.4
 },
 {
 "run_id": 1741862270000,
@@ -11613,7 +13578,10 @@
 "average_speed": 5.952000141143799,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.49,
+"weight_date": "2025-03-13",
+"fat": 19.4
 },
 {
 "run_id": 1742171099000,
@@ -11629,7 +13597,10 @@
 "average_speed": 5.6020002365112305,
 "elevation_gain": 95.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.02,
+"weight_date": "2025-03-17",
+"fat": 19.6
 },
 {
 "run_id": 1742206500000,
@@ -11645,7 +13616,10 @@
 "average_speed": 6.235000133514404,
 "elevation_gain": 47.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.02,
+"weight_date": "2025-03-17",
+"fat": 19.6
 },
 {
 "run_id": 1742344050000,
@@ -11661,7 +13635,10 @@
 "average_speed": 5.589000225067139,
 "elevation_gain": 87.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.66,
+"weight_date": "2025-03-19",
+"fat": 19.9
 },
 {
 "run_id": 1742383227000,
@@ -11677,7 +13654,10 @@
 "average_speed": 5.961999893188477,
 "elevation_gain": 46.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.66,
+"weight_date": "2025-03-19",
+"fat": 19.9
 },
 {
 "run_id": 1742517437000,
@@ -11693,7 +13673,10 @@
 "average_speed": 5.513999938964844,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.11,
+"weight_date": "2025-03-21",
+"fat": 19.7
 },
 {
 "run_id": 1742552967000,
@@ -11709,7 +13692,10 @@
 "average_speed": 6.6479997634887695,
 "elevation_gain": 373.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.11,
+"weight_date": "2025-03-21",
+"fat": 19.7
 },
 {
 "run_id": 1742613020000,
@@ -11725,7 +13711,10 @@
 "average_speed": 6.205999851226807,
 "elevation_gain": 34.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 77.11,
+"weight_date": "2025-03-21",
+"fat": 19.7
 },
 {
 "run_id": 1742627022000,
@@ -11741,7 +13730,10 @@
 "average_speed": 5.708000183105469,
 "elevation_gain": 33.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 77.11,
+"weight_date": "2025-03-21",
+"fat": 19.7
 },
 {
 "run_id": 1742739059000,
@@ -11757,7 +13749,10 @@
 "average_speed": 6.785999774932861,
 "elevation_gain": 43.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 77.11,
+"weight_date": "2025-03-21",
+"fat": 19.7
 },
 {
 "run_id": 1742769232000,
@@ -11773,7 +13768,10 @@
 "average_speed": 5.426000118255614,
 "elevation_gain": 287.0,
 "source": "Garmin Connect",
-"streak": 4
+"streak": 4,
+"weight": 77.47,
+"weight_date": "2025-03-25",
+"fat": 19.8
 },
 {
 "run_id": 1743065780000,
@@ -11789,7 +13787,10 @@
 "average_speed": 0.27079222323747487,
 "elevation_gain": 11.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.83,
+"weight_date": "2025-03-26",
+"fat": 19.5
 },
 {
 "run_id": 1743300819000,
@@ -11805,7 +13806,10 @@
 "average_speed": 1.0770000219345093,
 "elevation_gain": 2.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.01,
+"weight_date": "2025-04-01",
+"fat": 19.6
 },
 {
 "run_id": 1743301224000,
@@ -11821,7 +13825,10 @@
 "average_speed": 0.6769999861717224,
 "elevation_gain": 13.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.01,
+"weight_date": "2025-04-01",
+"fat": 19.6
 },
 {
 "run_id": 1743467016000,
@@ -11837,7 +13844,10 @@
 "average_speed": 5.341000080108643,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.01,
+"weight_date": "2025-04-01",
+"fat": 19.6
 },
 {
 "run_id": 1743503228000,
@@ -11853,7 +13863,10 @@
 "average_speed": 5.875,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.01,
+"weight_date": "2025-04-01",
+"fat": 19.6
 },
 {
 "run_id": 1743639273000,
@@ -11869,7 +13882,10 @@
 "average_speed": 5.603000164031982,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.72,
+"weight_date": "2025-04-03",
+"fat": 19.5
 },
 {
 "run_id": 1743675710000,
@@ -11885,7 +13901,10 @@
 "average_speed": 6.113999843597413,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.72,
+"weight_date": "2025-04-03",
+"fat": 19.5
 },
 {
 "run_id": 1743836905000,
@@ -11901,7 +13920,10 @@
 "average_speed": 2.79200005531311,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.48,
+"weight_date": "2025-04-05",
+"fat": 19.4
 },
 {
 "run_id": 1744071702000,
@@ -11917,7 +13939,10 @@
 "average_speed": 5.71999979019165,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.69,
+"weight_date": "2025-04-08",
+"fat": 19.5
 },
 {
 "run_id": 1744109165000,
@@ -11933,7 +13958,10 @@
 "average_speed": 6.22,
 "elevation_gain": 75.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.69,
+"weight_date": "2025-04-08",
+"fat": 19.5
 },
 {
 "run_id": 1744109182000,
@@ -11949,7 +13977,10 @@
 "average_speed": 6.21999979019165,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.69,
+"weight_date": "2025-04-08",
+"fat": 19.5
 },
 {
 "run_id": 1744244902000,
@@ -11965,7 +13996,10 @@
 "average_speed": 5.401000022888184,
 "elevation_gain": 87.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.87,
+"weight_date": "2025-04-10",
+"fat": 19.6
 },
 {
 "run_id": 1744281506000,
@@ -11981,7 +14015,10 @@
 "average_speed": 5.843999862670898,
 "elevation_gain": 47.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.87,
+"weight_date": "2025-04-10",
+"fat": 19.6
 },
 {
 "run_id": 1744505581000,
@@ -11997,7 +14034,10 @@
 "average_speed": 5.578999996185303,
 "elevation_gain": 644.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.59,
+"weight_date": "2025-04-13",
+"fat": 19.4
 },
 {
 "run_id": 1744763043000,
@@ -12013,7 +14053,10 @@
 "average_speed": 5.452,
 "elevation_gain": 104.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.37,
+"weight_date": "2025-04-16",
+"fat": 19.3
 },
 {
 "run_id": 1744763053000,
@@ -12029,7 +14072,10 @@
 "average_speed": 5.452000141143799,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.37,
+"weight_date": "2025-04-16",
+"fat": 19.3
 },
 {
 "run_id": 1744800127000,
@@ -12045,7 +14091,10 @@
 "average_speed": 6.111000061035156,
 "elevation_gain": 54.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.37,
+"weight_date": "2025-04-16",
+"fat": 19.3
 },
 {
 "run_id": 1745143693000,
@@ -12061,7 +14110,10 @@
 "average_speed": 3.884,
 "elevation_gain": 8.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.52,
+"weight_date": "2025-04-20",
+"fat": 19.4
 },
 {
 "run_id": 1745143696000,
@@ -12077,7 +14129,10 @@
 "average_speed": 3.8840000629425053,
 "elevation_gain": 6.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.52,
+"weight_date": "2025-04-20",
+"fat": 19.4
 },
 {
 "run_id": 1745144771000,
@@ -12093,7 +14148,10 @@
 "average_speed": 2.5469999313354488,
 "elevation_gain": 4.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.52,
+"weight_date": "2025-04-20",
+"fat": 19.4
 },
 {
 "run_id": 1745147910000,
@@ -12109,7 +14167,10 @@
 "average_speed": 3.7820000648498535,
 "elevation_gain": 0.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.52,
+"weight_date": "2025-04-20",
+"fat": 19.4
 },
 {
 "run_id": 1745238736000,
@@ -12125,7 +14186,10 @@
 "average_speed": 2.675,
 "elevation_gain": 11.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 76.26,
+"weight_date": "2025-04-21",
+"fat": 19.3
 },
 {
 "run_id": 1745238740000,
@@ -12141,7 +14205,10 @@
 "average_speed": 2.656263514703998,
 "elevation_gain": 12.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 76.26,
+"weight_date": "2025-04-21",
+"fat": 19.3
 },
 {
 "run_id": 1745281710000,
@@ -12157,7 +14224,10 @@
 "average_speed": 5.677999973297119,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 76.0,
+"weight_date": "2025-04-22",
+"fat": 19.2
 },
 {
 "run_id": 1745316536000,
@@ -12173,7 +14243,10 @@
 "average_speed": 5.754000186920166,
 "elevation_gain": 52.0,
 "source": "Garmin Connect",
-"streak": 3
+"streak": 3,
+"weight": 76.0,
+"weight_date": "2025-04-22",
+"fat": 19.2
 },
 {
 "run_id": 1745454564000,
@@ -12189,7 +14262,10 @@
 "average_speed": 5.736000061035156,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.65,
+"weight_date": "2025-04-24",
+"fat": 19.5
 },
 {
 "run_id": 1745492437000,
@@ -12205,7 +14281,10 @@
 "average_speed": 6.409999847412109,
 "elevation_gain": 43.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.65,
+"weight_date": "2025-04-24",
+"fat": 19.5
 },
 {
 "run_id": 1745800077000,
@@ -12221,7 +14300,10 @@
 "average_speed": 5.929999828338623,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.13,
+"weight_date": "2025-04-28",
+"fat": 20.4
 },
 {
 "run_id": 1745835921000,
@@ -12237,7 +14319,10 @@
 "average_speed": 5.738999843597412,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.13,
+"weight_date": "2025-04-28",
+"fat": 20.4
 },
 {
 "run_id": 1746008744000,
@@ -12253,7 +14338,10 @@
 "average_speed": 2.503000020980835,
 "elevation_gain": 2.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.28,
+"weight_date": "2025-04-29",
+"fat": 19.3
 },
 {
 "run_id": 1746340029000,
@@ -12269,7 +14357,10 @@
 "average_speed": 5.855000019073486,
 "elevation_gain": 620.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.43,
+"weight_date": "2025-05-04",
+"fat": 19.4
 },
 {
 "run_id": 1747009724000,
@@ -12285,7 +14376,10 @@
 "average_speed": 5.909999847412109,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.74,
+"weight_date": "2025-05-12",
+"fat": 19.6
 },
 {
 "run_id": 1747044957000,
@@ -12301,7 +14395,10 @@
 "average_speed": 6.070000171661377,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.74,
+"weight_date": "2025-05-12",
+"fat": 19.6
 },
 {
 "run_id": 1747474079000,
@@ -12317,7 +14414,10 @@
 "average_speed": 0.4180000126361847,
 "elevation_gain": 21.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 75.87,
+"weight_date": "2025-05-15",
+"fat": 19.2
 },
 {
 "run_id": 1747701099000,
@@ -12333,7 +14433,10 @@
 "average_speed": 5.447999954223633,
 "elevation_gain": 93.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.52,
+"weight_date": "2025-05-20",
+"fat": 19.9
 },
 {
 "run_id": 1747736497000,
@@ -12349,7 +14452,10 @@
 "average_speed": 6.072,
 "elevation_gain": 75.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.52,
+"weight_date": "2025-05-20",
+"fat": 19.9
 },
 {
 "run_id": 1747736498000,
@@ -12365,7 +14471,10 @@
 "average_speed": 6.072000026702882,
 "elevation_gain": 56.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.52,
+"weight_date": "2025-05-20",
+"fat": 19.9
 },
 {
 "run_id": 1747874081000,
@@ -12381,7 +14490,10 @@
 "average_speed": 5.550000190734863,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.88,
+"weight_date": "2025-05-22",
+"fat": 19.6
 },
 {
 "run_id": 1747908869000,
@@ -12397,7 +14509,10 @@
 "average_speed": 6.021999835968018,
 "elevation_gain": 53.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.88,
+"weight_date": "2025-05-22",
+"fat": 19.6
 },
 {
 "run_id": 1747920605000,
@@ -12413,7 +14528,10 @@
 "average_speed": 5.448999881744385,
 "elevation_gain": 11.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.88,
+"weight_date": "2025-05-22",
+"fat": 19.6
 },
 {
 "run_id": 1748303285000,
@@ -12429,7 +14547,10 @@
 "average_speed": 5.673999786376953,
 "elevation_gain": 410.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.67,
+"weight_date": "2025-05-27",
+"fat": 19.5
 },
 {
 "run_id": 1748341925000,
@@ -12445,7 +14566,10 @@
 "average_speed": 6.27899980545044,
 "elevation_gain": 51.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.67,
+"weight_date": "2025-05-27",
+"fat": 19.5
 },
 {
 "run_id": 1748478253000,
@@ -12461,7 +14585,10 @@
 "average_speed": 5.880000114440918,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.26,
+"weight_date": "2025-05-29",
+"fat": 19.4
 },
 {
 "run_id": 1748514313000,
@@ -12477,7 +14604,10 @@
 "average_speed": 5.879000186920165,
 "elevation_gain": 55.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.26,
+"weight_date": "2025-05-29",
+"fat": 19.4
 },
 {
 "run_id": 1749080680000,
@@ -12493,7 +14623,10 @@
 "average_speed": 5.297999858856201,
 "elevation_gain": 358.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.62,
+"weight_date": "2025-06-05",
+"fat": 19.5
 },
 {
 "run_id": 1749120842000,
@@ -12509,7 +14642,10 @@
 "average_speed": 6.165999889373779,
 "elevation_gain": 52.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.62,
+"weight_date": "2025-06-05",
+"fat": 19.5
 },
 {
 "run_id": 1749512377000,
@@ -12525,7 +14661,10 @@
 "average_speed": 5.533999919891357,
 "elevation_gain": 367.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.88,
+"weight_date": "2025-06-10",
+"fat": 19.6
 },
 {
 "run_id": 1749550464000,
@@ -12541,7 +14680,10 @@
 "average_speed": 5.3420000076293945,
 "elevation_gain": 61.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.88,
+"weight_date": "2025-06-10",
+"fat": 19.6
 },
 {
 "run_id": 1749970616000,
@@ -12557,7 +14699,10 @@
 "average_speed": 4.646316570792354,
 "elevation_gain": 553.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.82,
+"weight_date": "2025-06-15",
+"fat": 19.6
 },
 {
 "run_id": 1750206315000,
@@ -12573,7 +14718,10 @@
 "average_speed": 5.328999996185303,
 "elevation_gain": 93.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.32,
+"weight_date": "2025-06-18",
+"fat": 19.8
 },
 {
 "run_id": 1750242286000,
@@ -12589,7 +14737,10 @@
 "average_speed": 4.998000144958496,
 "elevation_gain": 362.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.32,
+"weight_date": "2025-06-18",
+"fat": 19.8
 },
 {
 "run_id": 1750638691000,
@@ -12605,7 +14756,10 @@
 "average_speed": 5.561999797821045,
 "elevation_gain": 92.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.94,
+"weight_date": "2025-06-23",
+"fat": 19.7
 },
 {
 "run_id": 1750674240000,
@@ -12621,7 +14775,10 @@
 "average_speed": 5.335000038146973,
 "elevation_gain": 374.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.94,
+"weight_date": "2025-06-23",
+"fat": 19.7
 },
 {
 "run_id": 1750811460000,
@@ -12637,7 +14794,10 @@
 "average_speed": 5.556000232696532,
 "elevation_gain": 91.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.5,
+"weight_date": "2025-06-24",
+"fat": 19.5
 },
 {
 "run_id": 1750846219000,
@@ -12653,7 +14813,10 @@
 "average_speed": 4.303999900817871,
 "elevation_gain": 653.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.5,
+"weight_date": "2025-06-24",
+"fat": 19.5
 },
 {
 "run_id": 1751094444000,
@@ -12669,7 +14832,10 @@
 "average_speed": 5.316999912261962,
 "elevation_gain": 903.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.19,
+"weight_date": "2025-06-28",
+"fat": 19.3
 },
 {
 "run_id": 1751589233000,
@@ -12685,7 +14851,10 @@
 "average_speed": 5.260000228881836,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.68,
+"weight_date": "2025-07-04",
+"fat": 19.6
 },
 {
 "run_id": 1751625739000,
@@ -12701,7 +14870,10 @@
 "average_speed": 5.177,
 "elevation_gain": 83.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 76.68,
+"weight_date": "2025-07-04",
+"fat": 19.6
 },
 {
 "run_id": 1751625740000,
@@ -12717,7 +14889,10 @@
 "average_speed": 5.177000045776367,
 "elevation_gain": 49.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 76.68,
+"weight_date": "2025-07-04",
+"fat": 19.6
 },
 {
 "run_id": 1751847408000,
@@ -12733,7 +14908,10 @@
 "average_speed": 5.711999893188476,
 "elevation_gain": 85.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.39,
+"weight_date": "2025-07-07",
+"fat": 19.9
 },
 {
 "run_id": 1751883201000,
@@ -12749,7 +14927,10 @@
 "average_speed": 4.9039998054504395,
 "elevation_gain": 355.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.39,
+"weight_date": "2025-07-07",
+"fat": 19.9
 },
 {
 "run_id": 1753316580000,
@@ -12765,7 +14946,10 @@
 "average_speed": 5.690000057220459,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.77,
+"weight_date": "2025-07-24",
+"fat": 20.1
 },
 {
 "run_id": 1753353337000,
@@ -12781,7 +14965,10 @@
 "average_speed": 4.788000106811523,
 "elevation_gain": 361.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.77,
+"weight_date": "2025-07-24",
+"fat": 20.1
 },
 {
 "run_id": 1753677234000,
@@ -12797,7 +14984,10 @@
 "average_speed": 6.333,
 "elevation_gain": 593.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 77.01,
+"weight_date": "2025-07-28",
+"fat": 19.7
 },
 {
 "run_id": 1753677235000,
@@ -12813,7 +15003,10 @@
 "average_speed": 6.333000183105469,
 "elevation_gain": 377.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.01,
+"weight_date": "2025-07-28",
+"fat": 19.7
 },
 {
 "run_id": 1754267272000,
@@ -12829,7 +15022,10 @@
 "average_speed": 5.322000026702881,
 "elevation_gain": 80.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.69,
+"weight_date": "2025-08-04",
+"fat": 20.0
 },
 {
 "run_id": 1754561605000,
@@ -12845,7 +15041,10 @@
 "average_speed": 5.5370001792907715,
 "elevation_gain": 373.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.85,
+"weight_date": "2025-08-07",
+"fat": 20.1
 },
 {
 "run_id": 1754958314000,
@@ -12861,7 +15060,10 @@
 "average_speed": 5.5320000648498535,
 "elevation_gain": 93.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.09,
+"weight_date": "2025-08-12",
+"fat": 20.2
 },
 {
 "run_id": 1754993310000,
@@ -12877,7 +15079,10 @@
 "average_speed": 5.598000049591064,
 "elevation_gain": 356.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.09,
+"weight_date": "2025-08-12",
+"fat": 20.2
 },
 {
 "run_id": 1755307048000,
@@ -12893,7 +15098,10 @@
 "average_speed": 5.7820000648498535,
 "elevation_gain": 549.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.14,
+"weight_date": "2025-08-16",
+"fat": 20.2
 },
 {
 "run_id": 1755735697000,
@@ -12909,7 +15117,10 @@
 "average_speed": 5.573999881744385,
 "elevation_gain": 88.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.26,
+"weight_date": "2025-08-21",
+"fat": 20.3
 },
 {
 "run_id": 1755772737000,
@@ -12925,7 +15136,10 @@
 "average_speed": 5.9710001945495605,
 "elevation_gain": 50.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.26,
+"weight_date": "2025-08-21",
+"fat": 20.3
 },
 {
 "run_id": 1756081837000,
@@ -12941,7 +15155,10 @@
 "average_speed": 6.0329999923706055,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 79.25,
+"weight_date": "2025-08-25",
+"fat": 20.7
 },
 {
 "run_id": 1756118359000,
@@ -12957,7 +15174,10 @@
 "average_speed": 5.0929999351501465,
 "elevation_gain": 53.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 79.25,
+"weight_date": "2025-08-25",
+"fat": 20.7
 },
 {
 "run_id": 1756254385000,
@@ -12973,7 +15193,10 @@
 "average_speed": 5.638999938964844,
 "elevation_gain": 90.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.89,
+"weight_date": "2025-08-27",
+"fat": 20.1
 },
 {
 "run_id": 1756289472000,
@@ -12989,7 +15212,10 @@
 "average_speed": 5.618999958038329,
 "elevation_gain": 400.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.89,
+"weight_date": "2025-08-27",
+"fat": 20.1
 },
 {
 "run_id": 1756686683000,
@@ -13005,7 +15231,10 @@
 "average_speed": 5.552000045776367,
 "elevation_gain": 89.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 79.04,
+"weight_date": "2025-09-01",
+"fat": 20.6
 },
 {
 "run_id": 1756721359000,
@@ -13021,7 +15250,10 @@
 "average_speed": 5.376999855041504,
 "elevation_gain": 363.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 79.04,
+"weight_date": "2025-09-01",
+"fat": 20.6
 },
 {
 "run_id": 1756945800000,
@@ -13037,7 +15269,10 @@
 "average_speed": 5.9019999504089355,
 "elevation_gain": 83.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.7,
+"weight_date": "2025-09-03",
+"fat": 20.5
 },
 {
 "run_id": 1756981419000,
@@ -13053,7 +15288,10 @@
 "average_speed": 5.552999973297119,
 "elevation_gain": 363.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.7,
+"weight_date": "2025-09-03",
+"fat": 20.5
 },
 {
 "run_id": 1757121109000,
@@ -13069,7 +15307,10 @@
 "average_speed": 5.974999904632568,
 "elevation_gain": 344.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.27,
+"weight_date": "2025-09-06",
+"fat": 20.3
 },
 {
 "run_id": 1758847352000,
@@ -13085,7 +15326,10 @@
 "average_speed": 5.39300012588501,
 "elevation_gain": 93.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.96,
+"weight_date": "2025-09-26",
+"fat": 20.1
 },
 {
 "run_id": 1758882320000,
@@ -13101,7 +15345,10 @@
 "average_speed": 5.2270002365112305,
 "elevation_gain": 355.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 77.96,
+"weight_date": "2025-09-26",
+"fat": 20.1
 },
 {
 "run_id": 1760234953000,
@@ -13117,7 +15364,10 @@
 "average_speed": 5.573598014987154,
 "elevation_gain": 615.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.78,
+"weight_date": "2025-10-12",
+"fat": 20.5
 },
 {
 "run_id": 1760762735000,
@@ -13133,7 +15383,10 @@
 "average_speed": 0.24300448032777103,
 "elevation_gain": 19.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 78.94,
+"weight_date": "2025-10-16",
+"fat": 20.6
 },
 {
 "run_id": 1760849146000,
@@ -13149,7 +15402,10 @@
 "average_speed": 0.5452494912518713,
 "elevation_gain": 30.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 79.86,
+"weight_date": "2025-10-20",
+"fat": 21.0
 },
 {
 "run_id": 1761560504000,
@@ -13165,7 +15421,10 @@
 "average_speed": 2.385999917984009,
 "elevation_gain": 56.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 80.0,
+"weight_date": "2025-10-27",
+"fat": 21.1
 },
 {
 "run_id": 1764073202000,
@@ -13181,7 +15440,10 @@
 "average_speed": 5.378,
 "elevation_gain": 221.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 79.73,
+"weight_date": "2025-11-23",
+"fat": 21.0
 },
 {
 "run_id": 1764073203000,
@@ -13197,7 +15459,10 @@
 "average_speed": 5.377999782562256,
 "elevation_gain": 435.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 79.73,
+"weight_date": "2025-11-23",
+"fat": 21.0
 },
 {
 "run_id": 1766281374000,
@@ -13213,7 +15478,10 @@
 "average_speed": 5.125999927520752,
 "elevation_gain": 462.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 81.4,
+"weight_date": "2025-12-20",
+"fat": 21.7
 },
 {
 "run_id": 1767877792000,
@@ -13229,7 +15497,10 @@
 "average_speed": 2.296999931335449,
 "elevation_gain": 43.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 80.58,
+"weight_date": "2026-01-09",
+"fat": 21.3
 },
 {
 "run_id": 1768222954000,
@@ -13245,7 +15516,10 @@
 "average_speed": 2.3970000743865967,
 "elevation_gain": 18.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 81.49,
+"weight_date": "2026-01-12",
+"fat": 21.8
 },
 {
 "run_id": 1768655937000,
@@ -13261,7 +15535,10 @@
 "average_speed": 5.630000114440918,
 "elevation_gain": 96.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 80.5,
+"weight_date": "2026-01-16",
+"fat": 21.3
 },
 {
 "run_id": 1768706606000,
@@ -13277,7 +15554,10 @@
 "average_speed": 4.951000213623047,
 "elevation_gain": 109.0,
 "source": "Garmin Connect",
-"streak": 2
+"streak": 2,
+"weight": 80.06,
+"weight_date": "2026-01-18",
+"fat": 21.1
 },
 {
 "run_id": 1769555953000,
@@ -13293,7 +15573,10 @@
 "average_speed": 5.813000202178955,
 "elevation_gain": 185.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 82.09,
+"weight_date": "2026-01-28",
+"fat": 22.0
 },
 {
 "run_id": 1769596083000,
@@ -13309,7 +15592,10 @@
 "average_speed": 5.360000133514404,
 "elevation_gain": 155.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 82.09,
+"weight_date": "2026-01-28",
+"fat": 22.0
 },
 {
 "run_id": 1770817240000,
@@ -13325,7 +15611,10 @@
 "average_speed": 5.677000045776366,
 "elevation_gain": 116.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 81.45,
+"weight_date": "2026-02-11",
+"fat": 21.7
 },
 {
 "run_id": 1771025352000,
@@ -13341,7 +15630,10 @@
 "average_speed": 6.243000030517578,
 "elevation_gain": 94.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 82.71,
+"weight_date": "2026-02-14",
+"fat": 22.3
 },
 {
 "run_id": 1773718445000,
@@ -13357,7 +15649,10 @@
 "average_speed": 5.061999797821045,
 "elevation_gain": 8.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 81.95,
+"weight_date": "2026-03-16",
+"fat": 22.0
 },
 {
 "run_id": 1776758918000,
@@ -13373,7 +15668,10 @@
 "average_speed": 2.178999900817871,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 81.81,
+"weight_date": "2026-04-23",
+"fat": 21.9
 },
 {
 "run_id": 1777621613000,
@@ -13389,7 +15687,10 @@
 "average_speed": 0.5230000019073486,
 "elevation_gain": 72.0,
 "source": "Garmin Connect",
-"streak": 1
+"streak": 1,
+"weight": 82.67,
+"weight_date": "2026-05-04",
+"fat": 22.4
 },
 {
 "run_id": 1787283315000,
@@ -13405,7 +15706,10 @@
 "average_speed": 4.839,
 "elevation_gain": 154.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 86.87,
+"weight_date": "2026-08-21",
+"fat": 24.3
 },
 {
 "run_id": 1787460150000,
@@ -13421,7 +15725,10 @@
 "average_speed": 4.207,
 "elevation_gain": 551.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 86.79,
+"weight_date": "2026-08-23",
+"fat": 24.3
 },
 {
 "run_id": 1787564117000,
@@ -13437,7 +15744,10 @@
 "average_speed": 0.82,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 2
+"streak": 2,
+"weight": 86.79,
+"weight_date": "2026-08-23",
+"fat": 24.3
 },
 {
 "run_id": 1787644318000,
@@ -13453,7 +15763,10 @@
 "average_speed": 0.593,
 "elevation_gain": 0.0,
 "source": "",
-"streak": 3
+"streak": 3,
+"weight": 86.66,
+"weight_date": "2026-08-25",
+"fat": 24.2
 },
 {
 "run_id": 1788844182000,
@@ -13469,6 +15782,9 @@
 "average_speed": 4.245916424491432,
 "elevation_gain": 530.0,
 "source": "",
-"streak": 1
+"streak": 1,
+"weight": 86.05,
+"weight_date": "2026-09-08",
+"fat": 23.9
 }
 ]

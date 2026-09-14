@@ -14,6 +14,7 @@ import {
   RUNTABLE_TITLE,
   SHOW_ELEVATION_GAIN,
 } from '@/utils/const';
+import { HAS_WEIGHT_DATA } from '@/utils/weight';
 import RunRow from './RunRow';
 import styles from './style.module.css';
 import { Calendar, Bike, Footprints, Ruler, MapPin } from 'lucide-react';
@@ -100,6 +101,14 @@ const RunTable = ({
   };
   const sortDateFuncClick =
     sortFuncInfo === 'Date' ? sortDateFunc : sortDateFuncReverse;
+  const sortWeightFunc: SortFunc = (a, b) =>
+    sortFuncInfo === RUNTABLE_TITLE.WEIGHT_TITLE
+      ? (a.weight ?? 0) - (b.weight ?? 0)
+      : (b.weight ?? 0) - (a.weight ?? 0);
+  const sortBodyFatFunc: SortFunc = (a, b) =>
+    sortFuncInfo === RUNTABLE_TITLE.BODY_FAT_TITLE
+      ? (a.fat ?? 0) - (b.fat ?? 0)
+      : (b.fat ?? 0) - (a.fat ?? 0);
   const sortFuncMap = new Map([
     [RUNTABLE_TITLE.TYPE_TITLE, sortTypeFunc],
     ['KM', sortKMFunc],
@@ -108,10 +117,20 @@ const RunTable = ({
     ['BPM', sortBPMFunc],
     [RUNTABLE_TITLE.DURATION_TITLE, sortRunTimeFunc],
     [RUNTABLE_TITLE.DATE_TITLE, sortDateFuncClick],
+    // 体重相关列放在最后,没有数据源时整列移除(见下方 delete)
+    [RUNTABLE_TITLE.WEIGHT_TITLE, sortWeightFunc],
+    [RUNTABLE_TITLE.BODY_FAT_TITLE, sortBodyFatFunc],
   ]);
 
   if (!SHOW_ELEVATION_GAIN) {
-    sortFuncMap.delete('Elevation Gain');
+    sortFuncMap.delete(RUNTABLE_TITLE.ELEVATION_GAIN_TITLE);
+  }
+
+  // fork 本仓库但自己没有体脂秤账号时 HAS_WEIGHT_DATA 为 false,
+  // 体重/体脂率两列完全不渲染,对方无需改任何代码。
+  if (!HAS_WEIGHT_DATA) {
+    sortFuncMap.delete(RUNTABLE_TITLE.WEIGHT_TITLE);
+    sortFuncMap.delete(RUNTABLE_TITLE.BODY_FAT_TITLE);
   }
 
   const handleClick: React.MouseEventHandler<HTMLElement> = (e) => {
@@ -141,7 +160,7 @@ const RunTable = ({
       {(max_run || max_ride) && (
         <div className="mt-4 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {max_ride && (
-            <div className="rounded-xl bg-card-warm p-4 shadow-warm">
+            <div className="bg-card-warm rounded-xl p-4 shadow-warm">
               <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
                 <Bike className="h-4 w-4" />
                 {IS_CHINESE ? '最佳配速（骑行）' : 'Best Pace (Cycling)'}
@@ -163,7 +182,7 @@ const RunTable = ({
             </div>
           )}
           {max_run && (
-            <div className="rounded-xl bg-card-warm p-4 shadow-warm">
+            <div className="bg-card-warm rounded-xl p-4 shadow-warm">
               <div className="mb-3 flex items-center gap-2 text-sm font-semibold text-muted-foreground">
                 <Footprints className="h-4 w-4" />
                 {IS_CHINESE ? '最佳配速（跑步）' : 'Best Pace (Running)'}
@@ -186,9 +205,7 @@ const RunTable = ({
           )}
         </div>
       )}
-      <div
-        className={`${styles.tableContainer} max-h-[500px] overflow-y-auto`}
-      >
+      <div className={`${styles.tableContainer} max-h-[500px] overflow-y-auto`}>
         <table className={styles.runTable} cellSpacing="0" cellPadding="0">
           <thead>
             <tr>

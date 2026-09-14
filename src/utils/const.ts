@@ -45,6 +45,10 @@ const PRIVACY_MODE = false;
 const LIGHTS_ON = true;
 //set to `true` if you want to show the 'Elevation Gain' column
 const SHOW_ELEVATION_GAIN = true;
+//set to `true` if you want to show the weight / body-fat column and the weight chart.
+// 注意:没有体重数据时(例如 fork 本仓库但自己没有体脂秤账号)会自动整体隐藏,
+// 不需要把这里改成 false。
+const SHOW_WEIGHT = true;
 // richer title for the activity types (like garmin style)
 const RICH_TITLE = true;
 
@@ -225,6 +229,8 @@ const LATEST_START_TIME_TITLE = IS_CHINESE
 const NEW_CHECK_IN_LOCATION = IS_CHINESE
   ? '新打卡地点'
   : 'New check-in location';
+const WEIGHT_TITLE = IS_CHINESE ? '体重' : 'Weight';
+const BODY_FAT_TITLE = IS_CHINESE ? '体脂率' : 'Body Fat';
 
 const RUNTABLE_TITLE = {
   TYPE_TITLE,
@@ -239,7 +245,15 @@ const RUNTABLE_TITLE = {
   EARLIEST_START_TIME_TITLE,
   LATEST_START_TIME_TITLE,
   NEW_CHECK_IN_LOCATION,
+  WEIGHT_TITLE,
+  BODY_FAT_TITLE,
 };
+
+// 体重趋势图文案
+const WEIGHT_CHART_TITLE = IS_CHINESE ? '体重趋势' : 'Weight Trend';
+const WEIGHT_CHART_LATEST = IS_CHINESE ? '最新' : 'Latest';
+const WEIGHT_CHART_CHANGE = IS_CHINESE ? '区间变化' : 'Change';
+const WEIGHT_CHART_SPAN = IS_CHINESE ? '记录区间' : 'Span';
 
 //当某个活动的坐标数据为空时，定义到的城市
 const DEFAULT_LOCATION = { longitude: 113.9353, latitude: 22.5431, zoom: 9 };
@@ -263,7 +277,12 @@ export {
   PRIVACY_MODE,
   LIGHTS_ON,
   SHOW_ELEVATION_GAIN,
+  SHOW_WEIGHT,
   RICH_TITLE,
+  WEIGHT_CHART_TITLE,
+  WEIGHT_CHART_LATEST,
+  WEIGHT_CHART_CHANGE,
+  WEIGHT_CHART_SPAN,
   DEFAULT_LOCATION,
   SWITCH_LOCATION_BUTTON,
   SWITCH_TOTAL_BUTTON,

@@ -21,6 +21,9 @@
    - **[咕咚](#codoon咕咚)** (因咕咚限制单个设备原因，无法自动化)
    - **[行者](#行者)**
 1. 支持 [自驾(Google 路书)](#自驾google路书) , 把自驾路线也展示在地图上
+1. 支持**体重 / 体脂率**（可选，见 [体重 / 体脂率](#体重--体脂率可选)）：
+   把体脂秤的数据匹配到活动上，并在汇总页画体重趋势图；**没有配置数据源时会自动隐藏，
+   fork 本仓库的人不需要做任何改动**
 
 ## 一些个性化选项
 
@@ -146,6 +149,106 @@ hours_per_day = 6
 ```python
 python3(python) scripts\kml2polyline.py
 ```
+
+</details>
+
+### 体重 / 体脂率（可选）
+
+<details>
+<summary>把体脂秤的体重数据匹配到活动上，并画体重趋势图</summary>
+
+这是一个**完全可选**的功能：没有配置数据源时，表格里不会出现「体重」「体脂率」两列，
+汇总页也不会出现体重趋势图 —— fork 本仓库但自己没有体脂秤的人不需要做任何改动。
+
+取到的数据会按活动日期就近匹配（默认前后 3 天内最近的一条）。非当天的匹配会在数字后面
+标一个 `*`，鼠标悬停可以看到实际称重日期，例如「体重 86.79 kg（称重于 2026-08-23，与本次活动相差 1 天）」。
+历史记录里体脂率为 `0` 的按「没测出来」处理，不显示。
+
+#### 数据从哪来
+
+`run_page/weight_sources/` 里每个文件对应一种数据源，目前支持三种：
+
+| `source` | 说明 | 需要配置 |
+| --- | --- | --- |
+| `yunmai` | 好轻体脂秤，用账号密码直连 | Secret：`YUNMAI_ACCOUNT` / `YUNMAI_PASSWORD` |
+| `url` | 从一个远端 JSON 地址取数 | 变量：`WEIGHT_SOURCE_URL`（建议用 jsdelivr） |
+| `file` | 从一个本地 JSON 文件取数 | 变量：`WEIGHT_SOURCE_FILE` |
+
+新增一种数据源只需要在 `run_page/weight_sources/` 加一个文件，并在 `__init__.py` 里登记一行；
+匹配活动、写数据库、产出前端 JSON 全部由 `run_page/weight_sync.py` 统一处理，
+**编排层和前端都不需要改动**。
+
+#### 数据格式
+
+任何数据源最终都要产出一个 JSON 对象数组：
+
+```json
+[
+  { "date": "2026-09-14", "weight": 85.01, "fat": 23.4 },
+  { "date": "2026-09-13", "weight": 84.8, "fat": 23.2 }
+]
+```
+
+- `weight`（kg）与日期字段必填，`fat`（体脂率 %）可选。
+- 日期字段支持 `createTime`、`date`、`dateNum`（如 `20260914`），会自动识别。
+- **其余字段一律忽略**，所以原始导出里那些额外字段不需要清理。
+
+#### 好轻用户怎么接
+
+1. 在仓库 `Settings → Secrets and variables → Actions` 添加两个 **Secret**：
+   `YUNMAI_ACCOUNT`（手机号）、`YUNMAI_PASSWORD`。
+2. 添加一个 **Variable**：`WEIGHT_SOURCE` = `yunmai`。
+   （Variable **不会被 fork 继承**，所以别人 fork 你的仓库时这里是空的，功能自动隐藏。）
+3. 手动跑一次 `Weight Fetch` workflow 验证，之后它每天北京时间 06:00 自动取数。
+
+> **关于客户端常量**：好轻的接口需要在请求里带上 App 内置的 RSA 公钥与签名 secret。
+> 这两个值在 `run_page/weight_sources/yunmai.py` 里有内置默认值，**开箱可用**；
+> 如果你希望公开仓库里不留下可供他人直接复制的痕迹，可以把它们放进
+> `YUNMAI_RSA_PUBLIC_KEY`（多行 PEM 可写成一行、用 `\n` 转义）与 `YUNMAI_API_SECRET`
+> 两个 Secret，脚本会自动优先使用 Secret 里的值。
+
+#### 用 URL 而不是账号密码
+
+不想放账号密码的话，可以让别的程序（或另一个仓库的定时任务）先把数据导出成 JSON，
+你这边只配一个直链：
+
+```yaml
+# config.yaml
+sync:
+  weight:
+    source: url
+    source_url: 'https://cdn.jsdelivr.net/gh/<你的账号>/<你的仓库>@<分支>/<文件>.json'
+```
+
+> 建议用 jsdelivr 之类的 CDN，**不要用 `raw.githubusercontent.com`**：
+> 实测部分网络下 raw 会返回空响应，导致取数静默失败。
+
+#### 两个 workflow 的分工
+
+- `Weight Fetch`（`weight_fetch.yml`）：只负责取数，产出并提交 `src/static/weights.json`。
+- `Run Data Sync`（`run_data_sync.yml`）：用 `weight_sync.py --local` 把那份数据匹配到活动上。
+
+拆开的原因是 `run_page/data.db` 是 SQLite 二进制文件，两个 workflow 同时改它无法合并；
+两个 workflow 共用同一个 `concurrency` 组串行执行，避免 push 冲突。
+
+#### 本地调试
+
+```bash
+# 用本地 JSON 跑全流程
+python run_page/weight_sync.py --file /path/to/weight.json
+# 只取数，产出前端 JSON，不动数据库
+python run_page/weight_sync.py --fetch-only
+# 用已提交的 weights.json 只做匹配
+python run_page/weight_sync.py --local
+# 彻底关闭并清空
+python run_page/weight_sync.py --disable
+```
+
+#### 免责声明
+
+好轻直连适配器使用的是好轻 App 自身的接口，仅用于**导出你自己账号下的数据**做个人备份，
+与好轻官方无关，不提供任何代取服务，也不建议用于商业用途。请自行评估并承担使用风险；
+建议使用独立的密码，并保持低频调用（默认每天一次）。
 
 </details>
 

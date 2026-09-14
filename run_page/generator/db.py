@@ -45,6 +45,11 @@ ACTIVITY_KEYS = [
     "average_speed",
     "elevation_gain",
     "source",
+    # 体重相关字段（可选）。数据源未配置或没有数据时恒为 None,
+    # 前端会据此整体隐藏体重列与体重趋势图。
+    "weight",
+    "weight_date",
+    "fat",
 ]
 
 
@@ -66,6 +71,10 @@ class Activity(Base):
     elevation_gain = Column(Float)
     streak = None
     source = Column(String)
+    # 由体脂秤数据(见 run_page/weight_sync.py)按 ±N 天就近匹配写入
+    weight = Column(Float)  # kg
+    weight_date = Column(String)  # 实际称重日期 YYYY-MM-DD,与活动日期不同时前端会打星标
+    fat = Column(Float)  # 体脂率 %
 
     def to_dict(self):
         out = {}
@@ -80,6 +89,22 @@ class Activity(Base):
             out["streak"] = self.streak
 
         return out
+
+
+class Weight(Base):
+    """体脂秤的每日测量记录,与活动表独立。
+
+    本表是可选数据源的落点:没有配置数据源(例如被 fork 后对方没有体脂秤账号)时
+    本表为空,activities 里的 weight/weight_date/fat 均为 NULL,
+    前端不会渲染任何体重相关的列与图表。
+    """
+
+    __tablename__ = "weights"
+
+    date = Column(String, primary_key=True)  # YYYY-MM-DD,北京时间(称重当天)
+    weight = Column(Float)  # kg
+    fat = Column(Float)  # 体脂率 %,旧记录该值可能为 0(视为缺失,存 NULL)
+    measured_at = Column(String)  # 原始测量时间,便于排查
 
 
 def update_or_create_activity(session, run_activity):
