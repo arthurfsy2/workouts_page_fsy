@@ -1,5 +1,6 @@
-import { type FC } from 'react';
+import { type FC, useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
+  Brush,
   CartesianGrid,
   Legend,
   Line,
@@ -30,6 +31,52 @@ interface ChartPoint {
   fat: number | null;
 }
 
+/** 横轴刻度：ticks 为选中的日期点，formatter 决定刻度显示格式。 */
+interface TickAxis {
+  ticks: string[];
+  formatter: (_date: string) => string;
+}
+
+/** 依据可见区间跨度选择刻度粒度：超过 2 年按年、超过 90 天按月，其余均匀取点。 */
+function buildAxis(visible: ChartPoint[]): TickAxis {
+  if (visible.length === 0) return { ticks: [], formatter: (_v) => _v };
+  const spanDays =
+    (Date.parse(visible.at(-1)!.date) - Date.parse(visible[0].date)) /
+    86400000;
+
+  if (spanDays > 730) {
+    const ticks: string[] = [];
+    let lastYear = '';
+    visible.forEach((point) => {
+      const year = point.date.slice(0, 4);
+      if (year !== lastYear) {
+        ticks.push(point.date);
+        lastYear = year;
+      }
+    });
+    return { ticks, formatter: (value) => value.slice(0, 4) };
+  }
+
+  if (spanDays > 90) {
+    const ticks: string[] = [];
+    let lastMonth = '';
+    visible.forEach((point) => {
+      const month = point.date.slice(0, 7);
+      if (month !== lastMonth) {
+        ticks.push(point.date);
+        lastMonth = month;
+      }
+    });
+    return { ticks, formatter: (value) => value.slice(0, 7) };
+  }
+
+  const step = Math.max(1, Math.round(visible.length / 8));
+  const ticks = visible
+    .filter((_, index) => index % step === 0)
+    .map((point) => point.date);
+  return { ticks, formatter: (value) => value.slice(5) };
+}
+
 /**
  * 体重 / 体脂率趋势图。
  *
@@ -37,11 +84,48 @@ interface ChartPoint {
  * 调用方依据 `HAS_WEIGHT_DATA` 不渲染本组件，所以这里不必做空数据兜底。
  */
 const WeightChart: FC = () => {
-  const data: ChartPoint[] = WEIGHTS.map((point) => ({
-    date: point.date,
-    weight: point.weight,
-    fat: point.fat ?? null,
-  }));
+  // 数据保持同一引用，避免 Brush 拖动期间每次重渲染都重建 1600+ 个点
+  const data: ChartPoint[] = useMemo(
+    () =>
+      WEIGHTS.map((point) => ({
+        date: point.date,
+        weight: point.weight,
+        fat: point.fat ?? null,
+      })),
+    [],
+  );
+
+  // Brush 选中区间（全量时为 null），横轴刻度随可见数据动态调整。
+  // onChange 防抖提交：拖动中途重排图表会让 recharts 的拖拽中断。
+  const [view, setView] = useState<{
+    startIndex: number;
+    endIndex: number;
+  } | null>(null);
+  const brushTimer = useRef<ReturnType<typeof setTimeout>>();
+  useEffect(() => () => clearTimeout(brushTimer.current), []);
+  const handleBrushChange = useCallback(
+    (range: { startIndex?: number; endIndex?: number }) => {
+      if (range.startIndex == null || range.endIndex == null) {
+        clearTimeout(brushTimer.current);
+        setView(null);
+        return;
+      }
+      clearTimeout(brushTimer.current);
+      brushTimer.current = setTimeout(() => {
+        setView({
+          startIndex: range.startIndex as number,
+          endIndex: range.endIndex as number,
+        });
+      }, 150);
+    },
+    [],
+  );
+  const visible = useMemo(
+    () =>
+      view ? data.slice(view.startIndex, view.endIndex + 1) : data,
+    [view, data],
+  );
+  const { ticks, formatter } = useMemo(() => buildAxis(visible), [visible]);
 
   const first = data.at(0);
   const last = data.at(-1);
@@ -65,17 +149,6 @@ const WeightChart: FC = () => {
     Math.floor(Math.min(...fatValues) - 2),
     Math.ceil(Math.max(...fatValues) + 2),
   ];
-
-  // 横轴每年只留一个刻度，避免 1600+ 个日期糊成一片
-  const yearTicks: string[] = [];
-  let lastYear = '';
-  data.forEach((point) => {
-    const year = point.date.slice(0, 4);
-    if (year !== lastYear) {
-      yearTicks.push(point.date);
-      lastYear = year;
-    }
-  });
 
   return (
     <div className={styles.weightSection}>
@@ -110,8 +183,8 @@ const WeightChart: FC = () => {
               <XAxis
                 dataKey="date"
                 tick={AXIS_TICK}
-                ticks={yearTicks}
-                tickFormatter={(value: string) => value.slice(0, 4)}
+                ticks={ticks}
+                tickFormatter={formatter}
               />
               <YAxis yAxisId="weight" tick={AXIS_TICK} domain={weightDomain} />
               <YAxis
@@ -138,6 +211,7 @@ const WeightChart: FC = () => {
                 stroke={WEIGHT_LINE_COLOR}
                 strokeWidth={2}
                 dot={false}
+                isAnimationActive={false}
               />
               <Line
                 yAxisId="fat"
@@ -149,6 +223,14 @@ const WeightChart: FC = () => {
                 strokeWidth={1.5}
                 dot={false}
                 connectNulls
+                isAnimationActive={false}
+              />
+              <Brush
+                dataKey="date"
+                height={28}
+                travellerWidth={10}
+                stroke={MAIN_COLOR}
+                onChange={handleBrushChange}
               />
             </LineChart>
           </ResponsiveContainer>
