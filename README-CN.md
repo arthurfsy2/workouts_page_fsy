@@ -252,6 +252,51 @@ python run_page/weight_sync.py --disable
 
 </details>
 
+## 数据对账与去重
+
+<details>
+<summary>同一次活动被记了多条 / 佳明上删了记录但页面还在</summary>
+
+#### 背景
+
+本项目的 `run_id` 是**活动开始时间的毫秒时间戳**（不是平台活动 ID）。所以同一次骑行如果
+被码表和手机各记一次（开始时间差几秒），或者从两个平台各导入一次，就会在数据库里各存一行。
+历史上因此积累过大量重复，现已清理，并在两个方向加了防线：
+
+1. **入库守卫**（`run_page/generator/db.py` 的 `find_duplicate_activity`，所有 sync 脚本
+   共用）：新活动入库前按「同类型 + 距离差 <500m + 开始时间差 <10 分钟」模糊查重，
+   命中就更新已有记录而不是新建，日志里会打印 `duplicate detected: ... merging`
+2. **对账脚本**（`run_page/reconcile_garmin.py`）：清理「佳明官方库里已删除、本地 db 还在」
+   的记录（典型场景：分段活动合并后删掉了佳明上的分段）
+
+#### 对账脚本用法
+
+```bash
+# 试运行:只列出「佳明官方库已不存在、本地仍有」的可疑记录,不删任何东西
+uv run python run_page/reconcile_garmin.py
+
+# 人工过目确认无误后,真删并重新生成 activities.json
+uv run python run_page/reconcile_garmin.py --apply
+```
+
+佳明 token 读取 `~/.garminconnect_fsy`（garth 的 client dumps，CN 域名，过期自动刷新）。
+文件不存在时，用 `run_page/get_garmin_secret.py` 登录后把 `garth.client.dumps()` 的输出
+存为该文件即可。
+
+#### 安全边界（对其他数据源的影响）
+
+- 只比对 `source='Garmin Connect'` 的记录；咕咚 / Keep / GPX 等来源（`source=''`）
+  **不查也不删**，即使它们不在佳明官方库里
+- 匹配规则与入库守卫一致（同日 ±10 分钟、距离差 <500m），匹配不上才列为失效，
+  宁漏勿删；`--apply` 前请务必人工过目试运行输出
+
+#### 分段合并的标准流程
+
+在佳明 App 里合并分段、删除原分段 → 跑一次对账脚本（先 dry-run 看清单，确认后
+`--apply`）→ 数据库与前端数据自动恢复一致。
+
+</details>
+
 # 致谢
 
 - @[yihong0618](https://github.com/yihong0618) 特别棒的项目 [running_page](https://github.com/yihong0618/running_page) 非常感谢
