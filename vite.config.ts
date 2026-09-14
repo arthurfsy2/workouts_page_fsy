@@ -17,6 +17,10 @@ export default defineConfig({
     // Vite 8 原生支持 tsconfig paths,不再需要 vite-tsconfig-paths 插件
     tsconfigPaths: true,
   },
+  // maplibre-gl 的 worker 走 Vite 原生 worker 管线(?worker&url),需输出 ESM
+  worker: {
+    format: 'es',
+  },
   plugins: [
     react(),
     svgr({
