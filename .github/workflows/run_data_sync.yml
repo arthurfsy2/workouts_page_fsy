@@ -69,7 +69,10 @@ jobs:
           fetch-depth: 0
           persist-credentials: true
       - name: 安装 UV
-        uses: astral-sh/setup-uv@v10
+        # 注意:astral-sh/setup-uv 只发布了裸大版本标签 v4~v7,没有 v8/v9/v10,
+        # 所以这里必须写完整版本号;写成 @v10 会直接报
+        # "Unable to resolve action astral-sh/setup-uv@v10" 而失败。
+        uses: astral-sh/setup-uv@v10.1.0
         with:
           version: "latest"
           enable-cache: true
