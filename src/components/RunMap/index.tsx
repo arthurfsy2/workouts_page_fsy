@@ -13,6 +13,12 @@ import Map, {
   MapRef,
 } from 'react-map-gl/maplibre';
 import type { Map as MapLibreMap } from 'maplibre-gl';
+import * as maplibregl from 'maplibre-gl';
+// maplibre 用动态模板拼接 worker 地址(new URL(`./${t}`, import.meta.url)),
+// Vite 8 (rolldown) 无法静态分析导致产物缺少 worker 文件,这里显式指定。
+// 必须用 ?worker&url 而非 ?url:worker 内部还静态依赖 ./maplibre-gl-shared.mjs,
+// ?url 只拷贝 worker 自身,shared 缺失会让模块 worker 加载失败且不报错。
+import maplibreWorkerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?worker&url';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import useActivities from '@/hooks/useActivities';
 import {
@@ -44,6 +50,8 @@ import { FeatureCollection } from 'geojson';
 import { RPGeometry } from '@/static/run_countries';
 import LightsControl from '@/components/RunMap/LightsControl';
 import { useMapTheme, useThemeChangeCounter } from '@/hooks/useTheme';
+
+maplibregl.setWorkerUrl(maplibreWorkerUrl);
 
 interface IRunMapProps {
   title: string;
