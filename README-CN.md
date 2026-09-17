@@ -199,7 +199,8 @@ python3(python) scripts\kml2polyline.py
    `YUNMAI_ACCOUNT`（手机号）、`YUNMAI_PASSWORD`。
 2. 添加一个 **Variable**：`WEIGHT_SOURCE` = `yunmai`。
    （Variable **不会被 fork 继承**，所以别人 fork 你的仓库时这里是空的，功能自动隐藏。）
-3. 手动跑一次 `Weight Fetch` workflow 验证，之后它每天北京时间 06:00 自动取数。
+3. 手动跑一次 `Run Data Sync` workflow 验证，之后它会每天北京时间 09:00 / 19:30
+   自动取数并把体重匹配到活动上。
 
 > **关于客户端常量**：好轻的接口需要在请求里带上 App 内置的 RSA 公钥与签名 secret。
 > 这两个值在 `run_page/weight_sources/yunmai.py` 里有内置默认值，**开箱可用**；
@@ -223,13 +224,18 @@ sync:
 > 建议用 jsdelivr 之类的 CDN，**不要用 `raw.githubusercontent.com`**：
 > 实测部分网络下 raw 会返回空响应，导致取数静默失败。
 
-#### 两个 workflow 的分工
+#### 取数与匹配的时机
 
-- `Weight Fetch`（`weight_fetch.yml`）：只负责取数，产出并提交 `src/static/weights.json`。
-- `Run Data Sync`（`run_data_sync.yml`）：用 `weight_sync.py --local` 把那份数据匹配到活动上。
+`Run Data Sync`（`run_data_sync.yml`）在每天北京时间 09:00 / 19:30 运行，
+**每次运行时现拉体脂秤数据，然后立刻匹配到活动上**——取数和匹配在同一时刻完成，
+当天称的体重当天就能匹配上（前提是匹配发生时已经称过）。
 
-拆开的原因是 `run_page/data.db` 是 SQLite 二进制文件，两个 workflow 同时改它无法合并；
-两个 workflow 共用同一个 `concurrency` 组串行执行，避免 push 冲突。
+曾经把取数拆成独立的 `weight_fetch.yml`（每天 06:00 先取数提交快照，主管线再读
+快照匹配），但这样匹配永远用的是「上一次取数时刻」的体重：今天称的体重最早要
+明天才被匹配上，活动日期越新错位越明显，所以已合并进主管线。
+
+`run_page/data.db` 是 SQLite 二进制文件，主管线自带 `concurrency` 组串行执行，
+避免并发提交冲突。
 
 #### 本地调试
 
@@ -248,7 +254,7 @@ python run_page/weight_sync.py --disable
 
 好轻直连适配器使用的是好轻 App 自身的接口，仅用于**导出你自己账号下的数据**做个人备份，
 与好轻官方无关，不提供任何代取服务，也不建议用于商业用途。请自行评估并承担使用风险；
-建议使用独立的密码，并保持低频调用（默认每天一次）。
+建议使用独立的密码，并保持低频调用（随主管线每天两次）。
 
 </details>
 

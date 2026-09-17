@@ -24,7 +24,10 @@ on:
       - run_page/keep_to_strava_sync.py
       - run_page/oppo_sync.py
       - run_page/intervals_icu_sync.py
+      - run_page/weight_sync.py
+      - run_page/weight_sources/**
       - requirements.txt
+      - .github/workflows/run_data_sync.yml
 
 env:
   # please change to your own config.
@@ -47,8 +50,8 @@ env:
   GENERATE_MONTH_OF_LIFE: true # If you want to generate the month of life, set it to `true`
   BIRTHDAY_MONTH: 1992-05 # If you want to generate the month of life, set it to your birthday month, format is YYYY-MM
 
-# 与 weight_fetch.yml 共用同一个并发组:两个 workflow 都会向仓库提交,
-# 串行执行避免 push 冲突,也避免同时操作 run_page/data.db(SQLite 二进制无法合并)。
+# 本 workflow 会向仓库提交数据,串行执行避免 push 冲突,
+# 也避免并发操作 run_page/data.db(SQLite 二进制无法合并)。
 concurrency:
   group: data-sync-write
   cancel-in-progress: false
@@ -305,13 +308,20 @@ jobs:
           uv run python run_page/save_to_parqent.py
 
       # 体重(体脂秤)数据,可选功能。
-      # 取数在独立的 weight_fetch.yml 里完成并提交 src/static/weights.json,
-      # 这里只用 `--local` 把那份数据匹配到活动上 —— 因此本步骤
-      # 不需要任何凭证,也不会和取数 workflow 抢数据库。
-      # weights.json 为空时(例如别人 fork 了本仓库)脚本会安全跳过并清空,
-      # 站点不会显示体重列与体重图。
+      # 在匹配活动前**现拉**体脂秤数据:取数和匹配在同一时刻完成,
+      # 当天称的体重当天就能匹配上,不再依赖隔夜提交的 weights.json 快照。
+      # 未配置数据源时(例如 fork 本仓库,Variables/Secrets 不会被继承)
+      # 脚本会安全跳过并清空,站点不会显示体重列与体重图。
       - name: Run sync weight script
-        run: uv run python run_page/weight_sync.py --local
+        env:
+          WEIGHT_SOURCE: ${{ vars.WEIGHT_SOURCE }}
+          WEIGHT_SOURCE_URL: ${{ vars.WEIGHT_SOURCE_URL }}
+          YUNMAI_ACCOUNT: ${{ secrets.YUNMAI_ACCOUNT }}
+          YUNMAI_PASSWORD: ${{ secrets.YUNMAI_PASSWORD }}
+          YUNMAI_RSA_PUBLIC_KEY: ${{ secrets.YUNMAI_RSA_PUBLIC_KEY }}
+          YUNMAI_API_SECRET: ${{ secrets.YUNMAI_API_SECRET }}
+          WEIGHT_TOLERANCE_DAYS: '3'
+        run: uv run python run_page/weight_sync.py
 
       - name: Push new runs
         if: env.SAVE_DATA_IN_GITHUB_CACHE != 'true'
