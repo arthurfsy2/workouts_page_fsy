@@ -76,14 +76,13 @@ def parse_args():
         action="store_true",
         help=(
             "用本仓库已提交的 src/static/weights.json 做匹配 "
-            "(供主数据同步 workflow 使用:取数在独立的 workflow 里完成,"
-            "这里只负责把体重匹配到活动)"
+            "(调试用;主管线会现拉数据源,不走这条路径)"
         ),
     )
     parser.add_argument(
         "--fetch-only",
         action="store_true",
-        help="只取数并产出前端 JSON,不改动数据库(供独立取数 workflow 使用)",
+        help="只取数并产出前端 JSON,不改动数据库(调试 / 供外部消费)",
     )
     parser.add_argument(
         "--disable",
