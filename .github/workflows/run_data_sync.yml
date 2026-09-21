@@ -111,7 +111,14 @@ jobs:
             echo "🔄 找到之前的缓存！依赖安装较快"
           else
             echo "🔄 未命中缓存，首次安装依赖..."
-          fi 
+          fi
+
+      # 记录同步前的活动条数,用于提交信息判断"活动是否更新"。
+      # 体重同步也会改 data.db(weight 列),但不会增减活动条数,
+      # 所以活动是否更新以条数变化为准,而非 db 文件是否变化。
+      - name: 记录同步前活动数
+        run: |
+          echo "ACT_COUNT_BEFORE=$(sqlite3 run_page/data.db 'SELECT COUNT(*) FROM activities' 2>/dev/null || echo 0)" >> "$GITHUB_ENV"
           
       - name: 设置中文语言环境
         run: |
@@ -329,7 +336,19 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m 'Add new workouts' || echo "nothing to commit"
+          # 按变更内容生成提交信息:活动=条数变化,体重=weights.json 变化
+          ACT_COUNT_AFTER=$(sqlite3 run_page/data.db 'SELECT COUNT(*) FROM activities' 2>/dev/null || echo 0)
+          WEIGHT_CHANGED=$(git diff --cached --name-only | grep -c '^src/static/weights.json$' || true)
+          if [ "$ACT_COUNT_AFTER" != "${{ env.ACT_COUNT_BEFORE }}" ] && [ "$WEIGHT_CHANGED" != "0" ]; then
+            MSG="已更新体重、活动数据"
+          elif [ "$ACT_COUNT_AFTER" != "${{ env.ACT_COUNT_BEFORE }}" ]; then
+            MSG="已更新活动数据"
+          elif [ "$WEIGHT_CHANGED" != "0" ]; then
+            MSG="已更新体重数据"
+          else
+            MSG="更新数据"
+          fi
+          git commit -m "$MSG" || echo "nothing to commit"
           git push || echo "nothing to push"
 
       - name: Set Output
