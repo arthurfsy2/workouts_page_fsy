@@ -234,7 +234,8 @@ def write_weights_json(series):
         for point in series.values()
     ]
     with open(WEIGHT_JSON_FILE, "w", encoding="utf-8") as f:
-        json.dump(payload, f, ensure_ascii=False, separators=(",", ":"))
+        # indent=0 一行一条,和 activities.json 一致,git diff 才能看出单条变化
+        json.dump(payload, f, ensure_ascii=False, indent=0)
     print(f"  写出 {WEIGHT_JSON_FILE}({len(payload)} 条)")
 
 
