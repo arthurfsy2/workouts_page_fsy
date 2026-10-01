@@ -10,7 +10,7 @@ dependencies:
     version: 1.0.3(antd@5.29.3)(react-dom@19.3.0)(react@19.3.0)
   '@mapbox/mapbox-gl-language':
     specifier: ^1.0.1
-    version: 1.0.1(mapbox-gl@3.30.0)
+    version: 1.0.1(mapbox-gl@3.32.0)
   '@mapbox/polyline':
     specifier: ^1.2.1
     version: 1.2.1
@@ -61,7 +61,7 @@ dependencies:
     version: 3.0.0(react@19.3.0)
   react-map-gl:
     specifier: ^8.1.3
-    version: 8.1.3(mapbox-gl@3.30.0)(maplibre-gl@6.9.0)(react-dom@19.3.0)(react@19.3.0)
+    version: 8.1.3(mapbox-gl@3.32.0)(maplibre-gl@6.9.0)(react-dom@19.3.0)(react@19.3.0)
   react-router-dom:
     specifier: ^7.18.3
     version: 7.18.3(react-dom@19.3.0)(react@19.3.0)
@@ -489,12 +489,12 @@ packages:
     engines: {node: '>= 22'}
     dev: false
 
-  /@mapbox/mapbox-gl-language@1.0.1(mapbox-gl@3.30.0):
+  /@mapbox/mapbox-gl-language@1.0.1(mapbox-gl@3.32.0):
     resolution: {integrity: sha512-gL58ojl7gaWLfbSISoB2QJEfTK3j+NKvPH9og0r+c3bd5BNqhY19Eb4OPfDc5+dGmjW03LhtZBc4n2b7Xn8kjA==}
     peerDependencies:
       mapbox-gl: '>=0.29.0'
     dependencies:
-      mapbox-gl: 3.30.0
+      mapbox-gl: 3.32.0
     dev: false
 
   /@mapbox/point-geometry@1.1.0:
@@ -657,6 +657,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -665,6 +666,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -673,6 +675,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -681,6 +684,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -689,6 +693,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     optional: true
 
@@ -697,6 +702,7 @@ packages:
     engines: {node: '>= 10.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     optional: true
 
@@ -912,6 +918,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -921,6 +928,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -930,6 +938,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [ppc64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -939,6 +948,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [s390x]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -948,6 +958,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -957,6 +968,7 @@ packages:
     engines: {node: ^20.19.0 || >=22.12.0}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -1213,6 +1225,7 @@ packages:
     engines: {node: '>= 20'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -1222,6 +1235,7 @@ packages:
     engines: {node: '>= 20'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -1231,6 +1245,7 @@ packages:
     engines: {node: '>= 20'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -1240,6 +1255,7 @@ packages:
     engines: {node: '>= 20'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -1489,7 +1505,7 @@ packages:
       react: 19.3.0
     dev: false
 
-  /@vis.gl/react-mapbox@8.1.3(mapbox-gl@3.30.0)(react-dom@19.3.0)(react@19.3.0):
+  /@vis.gl/react-mapbox@8.1.3(mapbox-gl@3.32.0)(react-dom@19.3.0)(react@19.3.0):
     resolution: {integrity: sha512-96sCSl8BKoTLn2xMWlkjlR9GA5URM2t5Ln386t8pNVsoINsUXxweyuJ+gJlDe0GgAIOttXreU/1fK9AfrD28NA==}
     peerDependencies:
       mapbox-gl: '>=3.5.0'
@@ -1499,7 +1515,7 @@ packages:
       mapbox-gl:
         optional: true
     dependencies:
-      mapbox-gl: 3.30.0
+      mapbox-gl: 3.32.0
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
     dev: false
@@ -1810,8 +1826,8 @@ packages:
     resolution: {integrity: sha512-JZOSA7Mo9sNGB8+UjSgzdLtokWAky1zbztM3WRLCbZ70/3cTANmQmOdR7y2g+J0e2WXywy1yS468tY+IruqEww==}
     dev: false
 
-  /brace-expansion@1.1.18:
-    resolution: {integrity: sha512-Edep/X9fGqVNmzKBVsDYIOtD+z1tuezV70LBjdCst9Tqu76lsnvRiZ6oTic1n+/BIwX6QDGAO94PN4N2SADvtw==}
+  /brace-expansion@1.1.21:
+    resolution: {integrity: sha512-9zeA+KLZNNzglF2TPKRQEDyx6Yby7daAkuy8MiPzpXPsYDWi/DRM8jmwUDxokQjYqBpv5DgPiwD4h4ZZSy1Ujw==}
     dependencies:
       balanced-match: 1.0.2
       concat-map: 0.0.1
@@ -3454,6 +3470,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -3463,6 +3480,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -3472,6 +3490,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -3481,6 +3500,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [arm64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -3490,6 +3510,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: true
     optional: true
@@ -3499,6 +3520,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [glibc]
     requiresBuild: true
     dev: false
     optional: true
@@ -3508,6 +3530,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: true
     optional: true
@@ -3517,6 +3540,7 @@ packages:
     engines: {node: '>= 12.0.0'}
     cpu: [x64]
     os: [linux]
+    libc: [musl]
     requiresBuild: true
     dev: false
     optional: true
@@ -3670,8 +3694,8 @@ packages:
     engines: {node: '>=8'}
     dev: false
 
-  /mapbox-gl@3.30.0:
-    resolution: {integrity: sha512-26m0CSBszLkvbdVWf2oIZ3SjqCuResxJKEbupwwSyNwbwJAcgnMhDy2Yl5cSgtUxeamUJ1UeXRqpBmGEUVaAeQ==}
+  /mapbox-gl@3.32.0:
+    resolution: {integrity: sha512-+P4qrlyejQYLyz1Bfzoe+d5Ff5vAghH54RNHm1q2VeAZqkSjQ5e1XlovQoSHlf4xqpRJtJG58kn8nkLwPMQung==}
     dev: false
 
   /maplibre-gl@6.9.0:
@@ -3762,7 +3786,7 @@ packages:
   /minimatch@3.1.5:
     resolution: {integrity: sha512-VgjWUsnnT6n+NUk6eZq77zeFdpW2LWDzP6zFGrCbHXiYNul5Dzqk2HHQ5uFH2DNW5Xbp8+jVzaeNt94ssEEl4w==}
     dependencies:
-      brace-expansion: 1.1.18
+      brace-expansion: 1.1.21
     dev: true
 
   /minimist-options@4.1.0:
@@ -4693,7 +4717,7 @@ packages:
     resolution: {integrity: sha512-/LLMVyas0ljjAtoYiPqYiL8VWXzUUdThrmU5+n20DZv+a+ClRoevUzw5JxU+Ieh5/c87ytoTBV9G1FiKfNJdmg==}
     dev: false
 
-  /react-map-gl@8.1.3(mapbox-gl@3.30.0)(maplibre-gl@6.9.0)(react-dom@19.3.0)(react@19.3.0):
+  /react-map-gl@8.1.3(mapbox-gl@3.32.0)(maplibre-gl@6.9.0)(react-dom@19.3.0)(react@19.3.0):
     resolution: {integrity: sha512-i8ExMBodZ5waBlnnXhPHfubf1mSQrzVBKsp9LUSWIAQjOuUhI4Dv962rzE2QfI7n5oywunldQlxcW1Mjy8rp7w==}
     peerDependencies:
       mapbox-gl: '>=1.13.0'
@@ -4706,9 +4730,9 @@ packages:
       maplibre-gl:
         optional: true
     dependencies:
-      '@vis.gl/react-mapbox': 8.1.3(mapbox-gl@3.30.0)(react-dom@19.3.0)(react@19.3.0)
+      '@vis.gl/react-mapbox': 8.1.3(mapbox-gl@3.32.0)(react-dom@19.3.0)(react@19.3.0)
       '@vis.gl/react-maplibre': 8.1.3(maplibre-gl@6.9.0)(react-dom@19.3.0)(react@19.3.0)
-      mapbox-gl: 3.30.0
+      mapbox-gl: 3.32.0
       maplibre-gl: 6.9.0
       react: 19.3.0
       react-dom: 19.3.0(react@19.3.0)
