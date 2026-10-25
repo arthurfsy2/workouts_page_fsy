@@ -483,7 +483,10 @@ if __name__ == "__main__":
         help="to download personal documents or ebook",
     )
     options = parser.parse_args()
-    secret_string = options.secret_string
+    # secret 优先从环境变量读:
+    # 新版 garminconnect 的 secret 是 JSON (含空格与双引号), 直接展开到
+    # shell 命令行会被拆成多个参数, 必须走环境变量传递。
+    secret_string = os.environ.get("GARMIN_SECRET") or options.secret_string
     auth_domain = "CN" if options.is_cn else "COM"  # Default to COM if not specified
     file_type = options.download_file_type
     is_only_running = options.only_run

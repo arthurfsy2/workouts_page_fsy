@@ -1,5 +1,6 @@
 import argparse
 import asyncio
+import os
 from datetime import datetime
 
 from garmin_sync import Garmin
@@ -84,9 +85,12 @@ if __name__ == "__main__":
         )
 
     garmin_auth_domain = "CN" if options.is_cn else ""
+    # secret 优先从环境变量读 (新版 secret 是 JSON, 含空格与双引号,
+    # 直接展开到 shell 命令行会被拆成多个参数)
+    secret_string = os.environ.get("GARMIN_SECRET") or options.secret_string
 
     try:
-        garmin_client = Garmin(options.secret_string, garmin_auth_domain)
+        garmin_client = Garmin(secret_string, garmin_auth_domain)
         loop = asyncio.get_event_loop()
         future = asyncio.ensure_future(
             upload_to_activities(

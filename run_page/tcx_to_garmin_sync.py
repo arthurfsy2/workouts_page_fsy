@@ -37,7 +37,10 @@ def get_to_generate_files(last_time):
 async def upload_tcx_files_to_garmin(options):
     print("Need to load all tcx files maybe take some time")
     garmin_auth_domain = "CN" if options.is_cn else ""
-    garmin_client = Garmin(options.secret_string, garmin_auth_domain)
+    # secret 优先从环境变量读 (新版 secret 是 JSON, 含空格与双引号,
+    # 直接展开到 shell 命令行会被拆成多个参数)
+    secret_string = os.environ.get("GARMIN_SECRET") or options.secret_string
+    garmin_client = Garmin(secret_string, garmin_auth_domain)
 
     last_time = 0
     if not options.all:
