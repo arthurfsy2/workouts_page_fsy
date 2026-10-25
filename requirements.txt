@@ -109,6 +109,8 @@ numpy==2.3.1
     # via
     #   running-page
     #   timezonefinder
+oauthlib==4.0.0
+    # via requests-oauthlib
 openai==1.97.1
     # via running-page
 openpyxl==2.5.12 ; python_full_version < '3.13'
@@ -143,8 +145,11 @@ requests==2.34.2
     # via
     #   cloudscraper
     #   garminconnect
+    #   requests-oauthlib
     #   requests-toolbelt
     #   stravalib
+requests-oauthlib==2.0.0
+    # via running-page
 requests-toolbelt==1.0.0
     # via cloudscraper
 rich==14.0.0
