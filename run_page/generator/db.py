@@ -92,11 +92,11 @@ class Activity(Base):
 
 
 class Weight(Base):
-    """体脂秤的每日测量记录,与活动表独立。
+    """体脂秤的每日测量记录,与活动表独立.
 
     本表是可选数据源的落点:没有配置数据源(例如被 fork 后对方没有体脂秤账号)时
     本表为空,activities 里的 weight/weight_date/fat 均为 NULL,
-    前端不会渲染任何体重相关的列与图表。
+    前端不会渲染任何体重相关的列与图表.
     """
 
     __tablename__ = "weights"
@@ -108,11 +108,11 @@ class Weight(Base):
 
 
 def find_duplicate_activity(session, run_activity, type):
-    """识别 run_id 不同但实为同一次活动的已有记录。
+    """识别 run_id 不同但实为同一次活动的已有记录.
 
-    各同步管线用 开始时间戳(毫秒) 当 run_id，同一次活动从两个设备/平台导入时
-    开始时间差几秒，就会各自建行（历史上因此积累过大量重复）。这里按
-    类型 + 距离差 <500m + 开始时间差 <10分钟 模糊匹配，命中则更新已有记录。
+    各同步管线用 开始时间戳(毫秒) 当 run_id,同一次活动从两个设备/平台导入时
+    开始时间差几秒,就会各自建行(历史上因此积累过大量重复).这里按
+    类型 + 距离差 <500m + 开始时间差 <10分钟 模糊匹配,命中则更新已有记录.
     """
     start = run_activity.start_date_local
     if isinstance(start, str):
