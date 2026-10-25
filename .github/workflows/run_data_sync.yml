@@ -210,14 +210,6 @@ jobs:
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
         # uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING }} --only-run
 
-      - name: Diagnose Garmin secret (temporary)
-        if: env.RUN_TYPE == 'garmin_cn'
-        continue-on-error: true
-        env:
-          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING_CN }}
-          GARMIN_IS_CN: "1"
-        run: uv run python run_page/_diag_secret.py
-
       - name: Run sync Garmin CN script
         if: env.RUN_TYPE == 'garmin_cn'
         run: |
