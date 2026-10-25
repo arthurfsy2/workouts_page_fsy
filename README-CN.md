@@ -303,6 +303,40 @@ uv run python run_page/reconcile_garmin.py --apply
 
 </details>
 
+## 上传第三方 FIT 到 Garmin Connect（训练效果 TE）
+
+<details>
+<summary>为什么手动上传的顽鹿/迈金 FIT 没有训练效果？要改哪些字段？</summary>
+
+Garmin Connect 只在 `file_id` 能对应到账号里**已注册的 Garmin 设备**时才跑 Firstbeat 分析。
+它会拿 `file_id.serial_number` 去设备注册表匹配，匹配上才把活动归到那台设备
+（活动 DTO 的 `metadataDTO.deviceMetaDataDTO` 会填上 `deviceId` / `deviceTypePk` / `deviceVersionPk`）。
+第三方厂商（Magene / Onelap 等）的 FIT 匹配不到，TE 为空。
+
+| 字段 | 原始迈金 FIT | 改成 |
+| --- | --- | --- |
+| `file_id.manufacturer` | 107（MAGENE） | `1`（GARMIN） |
+| `file_id.product` | 50 | 自己账号里真实设备的 product（本账号手表 Forerunner 255 Music = `3990`） |
+| `file_id.serial_number` | 2505190202 | 那台设备的真实序列号（**最关键**，GC 靠它匹配） |
+| `file_id.product_name` | `C706_43138` | **删除**（不能留第三方型号串） |
+| `device_info` | 2 条设备信息 | 丢掉全部，替换为一条 Garmin 风格：`device_index=0, device_type=255, manufacturer=1, serial_number=..., product=..., software_version=29.05, source_type=5` |
+| `file_id.time_created` | 原始创建时间 | **错开**（判重看 serial_number + time_created，不看文件名，否则 409 Duplicate Activity） |
+
+注意：
+
+- 文件里写的 `total_training_effect` **会被 GC 忽略**，页面显示的是它自己算的值
+- 上传请用 `upload_activity()`，**不要用 `import_activity()`**：后者被标记为 import
+  rather than device-synced，可能绕开设备分析链路（未实测）
+- **爬升与设备身份无关**：`elevationCorrected` 是活动级开关，可随时用
+  `POST /activity-service/activity/toggleElevationCorrection/{id}` 切换
+  文件值 / Garmin DEM 重算值（库未封装，见 issue #275）
+- 以上是一整套改动的实测结果，未逐字段做隔离验证；属于 Garmin 未公开行为，官方改版可能失效
+- TE 无法通过 API 原地修改（PUT 200 但值不变），只能删活动后重传，`activityId` 会变
+
+完整字段表、证据核对、复现脚本与上传约定见 [`run_page/FIT_UPLOAD_GC.md`](run_page/FIT_UPLOAD_GC.md)。
+
+</details>
+
 # 致谢
 
 - @[yihong0618](https://github.com/yihong0618) 特别棒的项目 [running_page](https://github.com/yihong0618/running_page) 非常感谢
