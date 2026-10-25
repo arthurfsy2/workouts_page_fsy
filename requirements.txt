@@ -24,13 +24,15 @@ cairosvg==2.9.1
     # via running-page
 certifi==2025.1.31
     # via
+    #   curl-cffi
     #   httpcore
     #   httpx
     #   requests
     #   running-page
-cffi==1.17.1
+cffi==2.1.1
     # via
     #   cairocffi
+    #   curl-cffi
     #   timezonefinder
 charset-normalizer==3.4.2
     # via
@@ -46,6 +48,8 @@ cssselect2==0.8.0
     # via
     #   cairosvg
     #   svglib
+curl-cffi==0.16.3
+    # via garminconnect
 defusedxml==0.7.1
     # via cairosvg
 distro==1.9.0
@@ -64,7 +68,7 @@ future==1.0.0
     # via s2sphere
 garmin-fit-sdk==21.178.0
     # via running-page
-garth==0.5.17
+garminconnect==0.3.20
     # via running-page
 geographiclib==2.0
     # via geopy
@@ -76,8 +80,6 @@ greenlet==3.2.3 ; (python_full_version < '3.14' and platform_machine == 'AMD64')
     # via sqlalchemy
 h11==0.16.0
     # via httpcore
-h3==4.3.0 ; sys_platform == 'win32'
-    # via timezonefinder
 haversine==2.8.0
     # via running-page
 httpcore==1.0.9
@@ -107,8 +109,6 @@ numpy==2.3.1
     # via
     #   running-page
     #   timezonefinder
-oauthlib==4.0.0
-    # via requests-oauthlib
 openai==1.97.1
     # via running-page
 openpyxl==2.5.12 ; python_full_version < '3.13'
@@ -119,14 +119,12 @@ pillow==12.3.0
     #   reportlab
 polyline==2.0.2
     # via running-page
-pycparser==2.22
+pycparser==2.22 ; implementation_name != 'PyPy'
     # via cffi
 pycryptodome==3.23.0
     # via running-page
 pydantic==2.11.7
-    # via
-    #   garth
-    #   openai
+    # via openai
 pydantic-core==2.33.2
     # via pydantic
 pygments==2.21.0
@@ -144,12 +142,9 @@ reportlab==4.4.2
 requests==2.34.2
     # via
     #   cloudscraper
-    #   garth
-    #   requests-oauthlib
+    #   garminconnect
     #   requests-toolbelt
     #   stravalib
-requests-oauthlib==2.0.0
-    # via garth
 requests-toolbelt==1.0.0
     # via cloudscraper
 rich==14.0.0
@@ -180,8 +175,10 @@ tcxreader==0.4.11
     # via running-page
 tenacity==9.1.2
     # via running-page
-timezonefinder==6.6.3 ; sys_platform == 'win32'
+timezonefinder==9.2.0 ; sys_platform == 'win32'
     # via running-page
+timezonefinder-data==4.2026.5 ; sys_platform == 'win32'
+    # via timezonefinder
 tinycss2==1.4.0
     # via
     #   cairosvg
@@ -203,11 +200,15 @@ typing-extensions==4.16.0
 typing-inspection==0.4.1
     # via pydantic
 tzdata==2025.2 ; sys_platform == 'win32'
-    # via tzlocal
+    # via
+    #   garminconnect
+    #   tzlocal
 tzfpy==1.0.0 ; sys_platform != 'win32'
     # via running-page
 tzlocal==5.3.1
     # via running-page
+ua-generator==2.1.7
+    # via garminconnect
 units==0.7
     # via stravalib
 urllib3==2.8.0

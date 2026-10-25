@@ -1,0 +1,57 @@
+name: Verify Garmin Migration
+
+on:
+  workflow_dispatch:
+
+env:
+  RUN_TYPE: pass
+
+concurrency:
+  group: verify-garmin-migration
+  cancel-in-progress: false
+
+jobs:
+  verify:
+    name: Verify bridge in real CI env
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+
+      - name: 安装 UV
+        uses: astral-sh/setup-uv@v10.1.0
+        with:
+          version: "latest"
+          enable-cache: true
+
+      - name: 缓存 UV 环境
+        uses: actions/cache@v6
+        id: uv-cache
+        with:
+          path: |
+            ~/.cache/uv
+            .venv
+            ~/.local/share/uv/python
+          key: ${{ runner.os }}-uv-${{ hashFiles('pyproject.toml', 'uv.lock', 'requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-uv-
+
+      - name: 设置 Python
+        run: uv python install 3.13
+
+      - name: 安装依赖
+        run: |
+          if [ -f "pyproject.toml" ]; then
+            uv sync --frozen
+          else
+            uv pip install -r requirements.txt
+          fi
+
+      - name: 运行桥接验证
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING_CN }}
+          GARMIN_IS_CN: "1"
+        run: uv run python run_page/_verify_in_ci.py

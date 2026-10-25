@@ -12,8 +12,9 @@
 - 匹配规则与入库守卫一致:同一天、开始时间差 <=10 分钟、距离差 <500m
 - 官方库匹配不上才会被列为失效,宁漏勿删;删除前务必人工过目试运行输出
 
-佳明 token: 复用 ~/.garminconnect_fsy(内含 oauth token,过期自动刷新);
+佳明 token: 复用 ~/.garminconnect_fsy(内含令牌,过期自动刷新);
 不存在时按 get_garmin_secret.py 的说明重新生成后存为该文件。
+令牌格式兼容:garth 旧格式会被自动桥接成 DI 令牌格式。
 """
 
 import argparse
@@ -21,9 +22,7 @@ import datetime
 import json
 import os
 
-import garth
-
-garth.configure(domain="garmin.cn", ssl_verify=False)
+from garmin_auth import load_client, refresh_with_retry
 
 TOKEN_PATH = os.path.expanduser("~/.garminconnect_fsy")
 
@@ -31,14 +30,13 @@ MATCH_TIME_TOLERANCE = datetime.timedelta(minutes=10)
 MATCH_DISTANCE_TOLERANCE = 500  # 米
 
 
-def load_official_activities():
+def load_official_activities(client):
     """翻页拉取佳明官方全量活动列表。"""
     official = {}
     start = 0
+    page = []
     while True:
-        page = garth.client.connectapi(
-            f"activitylist-service/activities/search/activities?limit=100&start={start}"
-        )
+        page = client.get_activities(start, 100)
         if not page:
             break
         for a in page:
@@ -97,13 +95,12 @@ def main():
     if not os.path.exists(TOKEN_PATH):
         print(
             f"token file not found: {TOKEN_PATH}\n"
-            "先用 get_garmin_secret.py 登录并把 garth.client.dumps() 存入该文件"
+            "先用 get_garmin_secret.py 登录并把 secret 串存入该文件"
         )
         raise SystemExit(1)
-    garth.client.loads(open(TOKEN_PATH).read())
-    garth.client.refresh_oauth2()
+    client = load_client(open(TOKEN_PATH).read(), is_cn=True)
 
-    official = load_official_activities()
+    official = load_official_activities(client)
 
     session = init_db(
         os.path.join(os.path.dirname(os.path.abspath(__file__)), "data.db")

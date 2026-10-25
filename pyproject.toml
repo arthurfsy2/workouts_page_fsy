@@ -31,7 +31,7 @@ dependencies = [
   "fit-tool; python_version < '3.13'",
   "garmin-fit-sdk",
   "haversine==2.8.0",
-  "garth",
+  "garminconnect==0.3.20",
   "pycryptodome",
   "duckdb",
   "openai",
