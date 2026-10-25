@@ -58,7 +58,9 @@ if __name__ == "__main__":
         options.strava_client_secret,
         options.strava_refresh_token,
     )
-    secret_string = options.secret_string
+    # secret 优先从环境变量读 (新版 secret 是 JSON, 含空格与双引号,
+    # 直接展开到 shell 命令行会被拆成多个参数)
+    secret_string = os.environ.get("GARMIN_SECRET") or options.secret_string
     garmin_auth_domain = "CN" if options.is_cn else ""
     email = options.secret_string
     file_type = options.download_file_type

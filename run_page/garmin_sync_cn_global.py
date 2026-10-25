@@ -29,8 +29,13 @@ if __name__ == "__main__":
     )
 
     options = parser.parse_args()
-    secret_string_cn = options.cn_secret_string
-    secret_string_global = options.global_secret_string
+    # secret 优先从环境变量读:
+    # 新版 garminconnect 的 secret 是 JSON (含空格与双引号), 直接展开到
+    # shell 命令行会被拆成多个参数, 必须走环境变量传递。
+    secret_string_cn = os.environ.get("GARMIN_SECRET_CN") or options.cn_secret_string
+    secret_string_global = (
+        os.environ.get("GARMIN_SECRET") or options.global_secret_string
+    )
     auth_domain = "CN"
     is_only_running = options.only_run
     if secret_string_cn is None or secret_string_global is None:

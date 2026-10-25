@@ -197,34 +197,43 @@ jobs:
 
       - name: Run sync tcx to Garmin script
         if: env.RUN_TYPE == 'tcx_to_garmin'
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING_CN }}
         run: |
-          # uv run python run_page/tcx_to_garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING }}
-          uv run python run_page/tcx_to_garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }} --is-cn
+          # uv run python run_page/tcx_to_garmin_sync.py
+          uv run python run_page/tcx_to_garmin_sync.py --is-cn
 
       # for garmin if you want generate `tcx` you can add --tcx command in the args.
       - name: Run sync Garmin script
         if: env.RUN_TYPE == 'garmin'
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING }}
         run: |
           # make garmin secret string `uv run python run_page/get_garmin_secret.py ${email} ${password}
-          uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING }}
+          uv run python run_page/garmin_sync.py
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
-        # uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING }} --only-run
+        # uv run python run_page/garmin_sync.py --only-run
 
       - name: Run sync Garmin CN script
         if: env.RUN_TYPE == 'garmin_cn'
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING_CN }}
         run: |
           # make garmin secret string `uv run python run_page/get_garmin_secret.py ${email} ${password} --is-cn
-          uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }} --is-cn --fit
+          uv run python run_page/garmin_sync.py --is-cn --fit
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
-        # uv run python run_page/garmin_sync.py ${{ secrets.GARMIN_SECRET_STRING_CN }}  --only-run --is-cn
+        # uv run python run_page/garmin_sync.py --only-run --is-cn
 
       - name: Run sync Garmin CN to Garmin script
         if: env.RUN_TYPE == 'garmin_sync_cn_global'
+        env:
+          GARMIN_SECRET_CN: ${{ secrets.GARMIN_SECRET_STRING_CN }}
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING }}
         run: |
-          # make garmin secret string `uv run python run_page/garmin_sync_cn_global.py ${email} ${password} --is-cn
-          uv run python run_page/garmin_sync_cn_global.py ${{ secrets.GARMIN_SECRET_STRING_CN }} ${{ secrets.GARMIN_SECRET_STRING }}
+          # make garmin secret string `uv run python run_page/get_garmin_secret.py ${email} ${password} --is-cn
+          uv run python run_page/garmin_sync_cn_global.py --is-cn
         # If you only want to sync `type running` add args --only-run, default script is to sync all data (rides and runs).
-        # uv run python run_page/garmin_sync_cn_global.py ${{ secrets.GARMIN_SECRET_STRING_CN }} ${{ secrets.GARMIN_SECRET_STRING }}  --only-run
+        # uv run python run_page/garmin_sync_cn_global.py --only-run
 
       - name: Run sync Only GPX script
         if: env.RUN_TYPE == 'only_gpx'
@@ -243,18 +252,26 @@ jobs:
 
       - name: Run sync Strava to Garmin(Run with strava(or others upload to strava) data backup in Garmin)
         if: env.RUN_TYPE == 'strava_to_garmin'
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING }}
         run: |
-          uv run python run_page/strava_to_garmin_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_SECRET_STRING }} ${{ secrets.STRAVA_EMAIL }} ${{ secrets.STRAVA_PASSWORD }}
+          # secret 走环境变量 GARMIN_SECRET (新版是 JSON, 含空格与双引号,
+          # 直接展开到命令行会被拆成多个参数); 位置参数留空占位
+          uv run python run_page/strava_to_garmin_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} "" ${{ secrets.STRAVA_EMAIL }} ${{ secrets.STRAVA_PASSWORD }}
 
       - name: Run sync Strava to Garmin-cn(Run with strava(or others upload to strava) data backup in Garmin-cn)
         if: env.RUN_TYPE == 'strava_to_garmin_cn'
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING_CN }}
         run: |
-          uv run python run_page/strava_to_garmin_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_SECRET_STRING_CN }} ${{ secrets.STRAVA_EMAIL }} ${{ secrets.STRAVA_PASSWORD }} ${{ secrets.STRAVA_JWT }} --is-cn
+          uv run python run_page/strava_to_garmin_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} "" ${{ secrets.STRAVA_EMAIL }} ${{ secrets.STRAVA_PASSWORD }} ${{ secrets.STRAVA_JWT }} --is-cn
 
       - name: Run sync Garmin-cn to Strava(Run with Garmin data backup in Strava)
         if: env.RUN_TYPE == 'garmin_to_strava_cn'
+        env:
+          GARMIN_SECRET: ${{ secrets.GARMIN_SECRET_STRING_CN }}
         run: |
-          uv run python run_page/garmin_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }}  ${{ secrets.GARMIN_SECRET_STRING_CN }}  --is-cn --fit
+          uv run python run_page/garmin_to_strava_sync.py ${{ secrets.STRAVA_CLIENT_ID }} ${{ secrets.STRAVA_CLIENT_SECRET }} ${{ secrets.STRAVA_CLIENT_REFRESH_TOKEN }} "" --is-cn --fit
 
       - name: Run sync Garmin to Strava(Run with Garmin data backup in Strava)
         if: env.RUN_TYPE == 'garmin_to_strava'
