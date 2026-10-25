@@ -1,7 +1,7 @@
-"""对账脚本：清理「佳明官方库已删除、本地 db 仍在」的 Garmin 记录。
+"""对账脚本:清理「佳明官方库已删除,本地 db 仍在」的 Garmin 记录.
 
-使用场景：分段活动合并后删掉了佳明上的分段、或在佳明清理过重复记录——
-同步管线只增不删，这些行会一直留在本地 db。本脚本与官方库对账后清理。
+使用场景:分段活动合并后删掉了佳明上的分段,或在佳明清理过重复记录——
+同步管线只增不删,这些行会一直留在本地 db.本脚本与官方库对账后清理.
 
 用法:
   uv run python run_page/reconcile_garmin.py             # 试运行,只打印疑似失效记录
@@ -9,12 +9,12 @@
 
 安全边界:
 - 只处理 source='Garmin Connect' 的记录;咕咚/Keep/GPX 等其他来源(source='')不查不删
-- 匹配规则与入库守卫一致:同一天、开始时间差 <=10 分钟、距离差 <500m
+- 匹配规则与入库守卫一致:同一天,开始时间差 <=10 分钟,距离差 <500m
 - 官方库匹配不上才会被列为失效,宁漏勿删;删除前务必人工过目试运行输出
 
 佳明 token: 复用 ~/.garminconnect_fsy(内含令牌,过期自动刷新);
-不存在时按 get_garmin_secret.py 的说明重新生成后存为该文件。
-令牌格式兼容:garth 旧格式会被自动桥接成 DI 令牌格式。
+不存在时按 get_garmin_secret.py 的说明重新生成后存为该文件.
+令牌格式兼容:garth 旧格式会被自动桥接成 DI 令牌格式.
 """
 
 import argparse
@@ -22,7 +22,7 @@ import datetime
 import json
 import os
 
-from garmin_auth import load_client, refresh_with_retry
+from garmin_auth import load_client
 
 TOKEN_PATH = os.path.expanduser("~/.garminconnect_fsy")
 
@@ -31,7 +31,7 @@ MATCH_DISTANCE_TOLERANCE = 500  # 米
 
 
 def load_official_activities(client):
-    """翻页拉取佳明官方全量活动列表。"""
+    """翻页拉取佳明官方全量活动列表."""
     official = {}
     start = 0
     page = []
@@ -57,9 +57,9 @@ def load_official_activities(client):
 
 
 def find_match(row, official):
-    """按同日 + 时间/距离容差在官方列表中找对应活动,找不到返回 None。"""
+    """按同日 + 时间/距离容差在官方列表中找对应活动,找不到返回 None."""
     start = datetime.datetime.strptime(row.start_date_local, "%Y-%m-%d %H:%M:%S")
-    for off_start, off_dist, off_id, off_name in official.get(
+    for off_start, off_dist, off_id, _off_name in official.get(
         row.start_date_local[:10], []
     ):
         if (
@@ -71,9 +71,9 @@ def find_match(row, official):
 
 
 def regenerate_activities_json(session):
-    """删除后重建 activities.json,与各 sync 脚本末尾的导出逻辑一致。"""
-    from config import JSON_FILE, SQL_FILE  # noqa: E402
-    from generator import Generator  # noqa: E402
+    """删除后重建 activities.json,与各 sync 脚本末尾的导出逻辑一致."""
+    from config import JSON_FILE, SQL_FILE
+    from generator import Generator
 
     g = Generator(SQL_FILE)
     g.session = session

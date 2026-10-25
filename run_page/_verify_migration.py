@@ -1,6 +1,6 @@
-"""端到端验证：存量 garth secret 经桥接后，跑通 garmin_sync 的完整下载链路。
+"""端到端验证:存量 garth secret 经桥接后,跑通 garmin_sync 的完整下载链路.
 
-用项目里的真实 secret（run.sh 中的 GARMIN_SECRET_STRING_CN）验证：
+用项目里的真实 secret(run.sh 中的 GARMIN_SECRET_STRING_CN)验证:
   1. garmin_auth.load_client() 能桥接并认证
   2. Garmin.get_activities() 能拉到活动
   3. Garmin.get_activity_summary() 能拉到详情
@@ -27,7 +27,7 @@ async def main():
     print("=" * 70)
 
     client = Garmin(SECRET, "CN" if IS_CN else "COM", is_only_running=False)
-    print(f"[1] 认证成功，令牌已载入")
+    print("[1] 认证成功，令牌已载入")
     print(f"    Authorization 前缀: {client.headers['Authorization'][:14]}...")
 
     # 拉活动列表
@@ -65,7 +65,9 @@ async def main():
 
     # 下载 FIT（走 download-service/files，期望 ZIP）
     fit_data = await client.download_activity(aid, file_type="fit")
-    print(f"[6] download_activity(fit) 成功: {len(fit_data)} 字节, 头部={fit_data[:4]!r}")
+    print(
+        f"[6] download_activity(fit) 成功: {len(fit_data)} 字节, 头部={fit_data[:4]!r}"
+    )
     if fit_data[:2] == b"PK":
         import io
         import zipfile
@@ -73,7 +75,7 @@ async def main():
         zf = zipfile.ZipFile(io.BytesIO(fit_data), "r")
         print(f"    ZIP 内容: {zf.namelist()}")
     else:
-        print(f"    ⚠️ 非 ZIP 格式")
+        print("    ⚠️ 非 ZIP 格式")
 
     await client.req.aclose()
     print("")

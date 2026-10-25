@@ -54,9 +54,9 @@ class Garmin:
         """
         Init module
 
-        认证层已从 garth 迁移到 python-garminconnect（garth 已被作者弃用）。
-        存量 garth 格式的 secret 会被自动桥接成 DI 令牌格式，
-        因此无需重新生成凭据、无需改动 GitHub Secret。
+        认证层已从 garth 迁移到 python-garminconnect(garth 已被作者弃用).
+        存量 garth 格式的 secret 会被自动桥接成 DI 令牌格式,
+        因此无需重新生成凭据,无需改动 GitHub Secret.
         """
         self.req = httpx.AsyncClient(timeout=TIME_OUT)
         self.URL_DICT = (
@@ -81,7 +81,9 @@ class Garmin:
     def _refresh_with_retry_sync(self, max_retries=5, base_delay=10):
         """Synchronous retry for use when event loop may already be running."""
         try:
-            refresh_with_retry(self.client.client, max_retempts=max_retries, base_delay=base_delay)
+            refresh_with_retry(
+                self.client.client, max_retempts=max_retries, base_delay=base_delay
+            )
         except Exception:
             print(
                 "ERROR: Garmin DI token refresh failed after all retries. "
@@ -98,7 +100,9 @@ class Garmin:
 
         for attempt in range(max_retries):
             try:
-                refresh_with_retry(self.client.client, max_attempts=1, base_delay=base_delay)
+                refresh_with_retry(
+                    self.client.client, max_attempts=1, base_delay=base_delay
+                )
                 self.headers["Authorization"] = f"Bearer {self.client.client.di_token}"
                 return
             except requests.exceptions.HTTPError as e:

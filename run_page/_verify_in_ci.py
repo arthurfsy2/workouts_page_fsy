@@ -1,7 +1,7 @@
-"""CI 一次性验证任务：在真实 GitHub Secret 环境下验证新库桥接是否可用。
+"""CI 一次性验证任务:在真实 GitHub Secret 环境下验证新库桥接是否可用.
 
-用 workflow_dispatch 手动触发，把结果打到日志里。
-不修改任何持久化状态，只读 + 打印诊断信息。
+用 workflow_dispatch 手动触发,把结果打到日志里.
+不修改任何持久化状态,只读 + 打印诊断信息.
 """
 
 import asyncio
@@ -17,20 +17,24 @@ IS_CN = os.environ.get("GARMIN_IS_CN", "1") == "1"
 
 
 def diag_secret(secret):
-    """诊断 secret 的实际格式与有效期（不回显令牌内容）。"""
+    """诊断 secret 的实际格式与有效期(不回显令牌内容)."""
     print("--- secret 诊断 ---")
     print(f"  长度: {len(secret)}")
     try:
         raw = base64.urlsafe_b64decode(secret + "=" * (-len(secret) % 4))
         parsed = json.loads(raw)
     except Exception as e:
-        print(f"  不是 garth base64 格式: {type(e).__name__} -> 可能是 garminconnect 原生 JSON")
+        print(
+            f"  不是 garth base64 格式: {type(e).__name__} -> 可能是 garminconnect 原生 JSON"
+        )
         try:
             d = json.loads(secret)
             print(f"  JSON 字段: {list(d.keys())}")
             p = d.get("di_token", "").split(".")[1]
             payload = json.loads(base64.urlsafe_b64decode(p + "=" * (-len(p) % 4)))
-            print(f"  di_token exp: {payload.get('exp')}  client_id: {payload.get('client_id')}")
+            print(
+                f"  di_token exp: {payload.get('exp')}  client_id: {payload.get('client_id')}"
+            )
         except Exception as e2:
             print(f"  JSON 解析也失败: {e2}")
         return
@@ -41,9 +45,13 @@ def diag_secret(secret):
         print(f"  OAuth1 oauth_token: {o1.get('oauth_token','')[:20]}...")
         print(f"  OAuth1 domain: {o1.get('domain')}")
         print(f"  OAuth2 expires_at: {o2.get('expires_at')}")
-        print(f"  OAuth2 refresh_token_expires_at: {o2.get('refresh_token_expires_at')}")
+        print(
+            f"  OAuth2 refresh_token_expires_at: {o2.get('refresh_token_expires_at')}"
+        )
     else:
-        print(f"  格式: JSON dict, 字段 {list(parsed.keys()) if isinstance(parsed, dict) else type(parsed)}")
+        print(
+            f"  格式: JSON dict, 字段 {list(parsed.keys()) if isinstance(parsed, dict) else type(parsed)}"
+        )
 
 
 async def main():
